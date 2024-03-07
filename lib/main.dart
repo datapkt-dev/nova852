@@ -35,10 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      //   title: Text(widget.title),
-      // ),
       body: SafeArea(
         child: Expanded(
           child: SingleChildScrollView(
@@ -76,12 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ],
                                 onChanged: (value) {},
                               ),
-                              Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 0),
-                                  child: Container(
-                                    child: SvgPicture.asset('assets/icons/search.svg'),
-                                  )
-                              ),
+                              SvgPicture.asset('assets/icons/search.svg'),
                             ],
                           ),
                         ),
@@ -820,18 +811,381 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),  //精選
                     SizedBox(height: 40,),
                     Container(
-                      width: 168,
+                      width: 361,
                       child: Column(
                         children: [
                           Row(
                             children: [
+                              // OutlinedButton(
+                              //   onPressed: (){},
+                              //   child: Text('租屋'),
+                              // ),
                               Text('租屋'),
                               SizedBox(width: 32,),
+                              // OutlinedButton(
+                              //   onPressed: (){},
+                              //   child: Text('新盤'),
+                              // ),
                               Text('新盤'),
                               SizedBox(width: 32,),
+                              // OutlinedButton(
+                              //   onPressed: (){},
+                              //   child: Text('買樓'),
+                              // ),
                               Text('買樓'),
                             ],
                           ),
+                          SizedBox(height: 12,),
+                          SizedBox(height: 12,),
+                          Container(
+                            width: 361,
+                            height: 137,
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 99,
+                                  height: 68,
+                                  child: Image.asset('assets/images/house_d.jpeg'),
+                                ),
+                                SizedBox(width: 8,),
+                                Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 52,
+                                          height: 19,
+                                          color: Color(0xFFD7A769),
+                                          child: Text(
+                                            '豪華裝潢',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 11,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 8,),
+                                        Container(
+                                          width: 41,
+                                          height: 19,
+                                          decoration: ShapeDecoration(
+                                            shape: RoundedRectangleBorder(
+                                              side: BorderSide(width: 1, color: Color(0xFFD6D6D6)),
+                                              borderRadius: BorderRadius.circular(3),
+                                            ),
+                                          ),
+                                          child: Text(
+                                            '近學區',
+                                            style: TextStyle(
+                                              color: Color(0xFF333333),
+                                              fontSize: 11,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 4,),
+                                    SizedBox(
+                                      width: 230,
+                                      child: Text(
+                                        '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面',
+                                        style: TextStyle(
+                                          color: Color(0xFF333333),
+                                          fontSize: 15,
+                                          fontFamily: 'PingFang TC',
+                                          fontWeight: FontWeight.w400,
+                                          letterSpacing: 0.75,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 4,),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          '實36坪',
+                                          style: TextStyle(
+                                            color: Color(0xFF999999),
+                                            fontSize: 13,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                            height: 0.08,
+                                          ),
+                                        ),
+                                        SizedBox(width: 4,),
+                                        Text(
+                                          '2房',
+                                          style: TextStyle(
+                                            color: Color(0xFF999999),
+                                            fontSize: 13,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                            height: 0.08,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 4,),
+                                    Container(
+                                      width: 230,
+                                      height: 24,
+                                      child: Text(
+                                        '900 萬',
+                                        style: TextStyle(
+                                          color: Color(0xFFF12323),
+                                          fontSize: 20,
+                                          fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w500,
+                                          height: 0.06,
+                                          letterSpacing: 0.40,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 12,),
+                          Divider(),
+                          SizedBox(height: 12,),
+                          Container(
+                            width: 361,
+                            height: 137,
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 99,
+                                  height: 68,
+                                  child: Image.asset('assets/images/house_d.jpeg'),
+                                ),
+                                SizedBox(width: 8,),
+                                Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 52,
+                                          height: 19,
+                                          color: Color(0xFFD7A769),
+                                          child: Text(
+                                            '豪華裝潢',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 11,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 8,),
+                                        Container(
+                                          width: 41,
+                                          height: 19,
+                                          decoration: ShapeDecoration(
+                                            shape: RoundedRectangleBorder(
+                                              side: BorderSide(width: 1, color: Color(0xFFD6D6D6)),
+                                              borderRadius: BorderRadius.circular(3),
+                                            ),
+                                          ),
+                                          child: Text(
+                                            '近學區',
+                                            style: TextStyle(
+                                              color: Color(0xFF333333),
+                                              fontSize: 11,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 4,),
+                                    SizedBox(
+                                      width: 230,
+                                      child: Text(
+                                        '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面',
+                                        style: TextStyle(
+                                          color: Color(0xFF333333),
+                                          fontSize: 15,
+                                          fontFamily: 'PingFang TC',
+                                          fontWeight: FontWeight.w400,
+                                          letterSpacing: 0.75,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 4,),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          '實36坪',
+                                          style: TextStyle(
+                                            color: Color(0xFF999999),
+                                            fontSize: 13,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                            height: 0.08,
+                                          ),
+                                        ),
+                                        SizedBox(width: 4,),
+                                        Text(
+                                          '2房',
+                                          style: TextStyle(
+                                            color: Color(0xFF999999),
+                                            fontSize: 13,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                            height: 0.08,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 4,),
+                                    Container(
+                                      width: 230,
+                                      height: 24,
+                                      child: Text(
+                                        '900 萬',
+                                        style: TextStyle(
+                                          color: Color(0xFFF12323),
+                                          fontSize: 20,
+                                          fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w500,
+                                          height: 0.06,
+                                          letterSpacing: 0.40,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 12,),
+                          Divider(),
+                          SizedBox(height: 12,),
+                          Container(
+                            width: 361,
+                            height: 137,
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 99,
+                                  height: 68,
+                                  child: Image.asset('assets/images/house_d.jpeg'),
+                                ),
+                                SizedBox(width: 8,),
+                                Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 52,
+                                          height: 19,
+                                          color: Color(0xFFD7A769),
+                                          child: Text(
+                                            '豪華裝潢',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 11,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 8,),
+                                        Container(
+                                          width: 41,
+                                          height: 19,
+                                          decoration: ShapeDecoration(
+                                            shape: RoundedRectangleBorder(
+                                              side: BorderSide(width: 1, color: Color(0xFFD6D6D6)),
+                                              borderRadius: BorderRadius.circular(3),
+                                            ),
+                                          ),
+                                          child: Text(
+                                            '近學區',
+                                            style: TextStyle(
+                                              color: Color(0xFF333333),
+                                              fontSize: 11,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0,
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 4,),
+                                    SizedBox(
+                                      width: 230,
+                                      child: Text(
+                                        '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面',
+                                        style: TextStyle(
+                                          color: Color(0xFF333333),
+                                          fontSize: 15,
+                                          fontFamily: 'PingFang TC',
+                                          fontWeight: FontWeight.w400,
+                                          letterSpacing: 0.75,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 4,),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          '實36坪',
+                                          style: TextStyle(
+                                            color: Color(0xFF999999),
+                                            fontSize: 13,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                            height: 0.08,
+                                          ),
+                                        ),
+                                        SizedBox(width: 4,),
+                                        Text(
+                                          '2房',
+                                          style: TextStyle(
+                                            color: Color(0xFF999999),
+                                            fontSize: 13,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                            height: 0.08,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 4,),
+                                    Container(
+                                      width: 230,
+                                      height: 24,
+                                      child: Text(
+                                        '900 萬',
+                                        style: TextStyle(
+                                          color: Color(0xFFF12323),
+                                          fontSize: 20,
+                                          fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w500,
+                                          height: 0.06,
+                                          letterSpacing: 0.40,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 12,),
                         ],
                       ),
                     ),
@@ -840,6 +1194,28 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
           )
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/button.svg'),
+            label: '首頁',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/button.svg'),
+            label: '消息',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/button.svg'),
+            label: '我的',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/button.svg'),
+            label: '更多',
+          ),
+        ],
+        selectedItemColor: Colors.amber[800],
       ),
     );
   }

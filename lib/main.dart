@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nova852/components/button_s.dart';
+import 'package:nova852/components/info.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +33,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,56 +120,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Column(
-                            children: [
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: ShapeDecoration(
-                                  color: Color(0xFFD9D9D9),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(14),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 4,),
-                              Text('租屋')
-                            ],
-                          ),
+                          Button_s(button_text: '租屋'),
                           SizedBox(width: 42,),
-                          Column(
-                            children: [
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: ShapeDecoration(
-                                  color: Color(0xFFD9D9D9),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(14),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 4,),
-                              Text('租屋')
-                            ],
-                          ),
+                          Button_s(button_text: '買樓'),
                           SizedBox(width: 42,),
-                          Column(
-                            children: [
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: ShapeDecoration(
-                                  color: Color(0xFFD9D9D9),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(14),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 4,),
-                              Text('租屋')
-                            ],
-                          ),
+                          Button_s(button_text: '按揭'),
                         ],
                       ),
                     ),  //租屋
@@ -170,261 +134,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         Column(
                           children: [
-                            Container(
-                              width: 174,
-                              height: 160,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFFFFEBE3),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                              ),
-                              child: Container(
-                                width: 132,
-                                height: 37,
-                                margin: EdgeInsets.only(top: 21, left: 11),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '本月熱盤追擊',
-                                      style: TextStyle(
-                                        color: Color(0xFF333333),
-                                        fontSize: 15,
-                                        fontFamily: 'PingFang TC',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0.08,
-                                        letterSpacing: 0.75,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4,),
-                                    Text(
-                                      '本月瀏覽量最高新盤排名',
-                                      style: TextStyle(
-                                        color: Color(0xFF999999),
-                                        fontSize: 12,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w400,
-                                        height: 0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            InfoBoard(title: '本月熱盤追擊', subtitle: '本月瀏覽量最高新盤排名', bcolor: 0xFFFFEBE3, large: true,),
                             SizedBox(height: 8,),
-                            Container(
-                              width: 174,
-                              height: 77,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFFFFE5C4),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                              ),
-                              child: Container(
-                                width: 132,
-                                height: 37,
-                                margin: EdgeInsets.only(top: 21, left: 11),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '第五類標題',
-                                      style: TextStyle(
-                                        color: Color(0xFF333333),
-                                        fontSize: 15,
-                                        fontFamily: 'PingFang TC',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0.08,
-                                        letterSpacing: 0.75,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4,),
-                                    Text(
-                                      '第五分類副標',
-                                      style: TextStyle(
-                                        color: Color(0xFF999999),
-                                        fontSize: 12,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w400,
-                                        height: 0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            InfoBoard(title: '第五類標題', subtitle: '第五分類副標', bcolor: 0xFFFFE5C4, large: false),
                             SizedBox(height: 8,),
-                            Container(
-                              width: 174,
-                              height: 77,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFFFFE5C4),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                              ),
-                              child: Container(
-                                width: 132,
-                                height: 37,
-                                margin: EdgeInsets.only(top: 21, left: 11),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '第六類標題',
-                                      style: TextStyle(
-                                        color: Color(0xFF333333),
-                                        fontSize: 15,
-                                        fontFamily: 'PingFang TC',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0.08,
-                                        letterSpacing: 0.75,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4,),
-                                    Text(
-                                      '第六分類副標',
-                                      style: TextStyle(
-                                        color: Color(0xFF999999),
-                                        fontSize: 12,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w400,
-                                        height: 0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            InfoBoard(title: '第六類標題', subtitle: '第六分類副標', bcolor: 0xFFFFE5C4, large: false),
                           ],
                         ),
                         SizedBox(width: 13,),
                         Column(
                           children: [
-                            Container(
-                              width: 174,
-                              height: 77,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFFFFE5C4),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                              ),
-                              child: Container(
-                                width: 132,
-                                height: 37,
-                                margin: EdgeInsets.only(top: 21, left: 11),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '500萬內筍盤',
-                                      style: TextStyle(
-                                        color: Color(0xFF333333),
-                                        fontSize: 15,
-                                        fontFamily: 'PingFang TC',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0.08,
-                                        letterSpacing: 0.75,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4,),
-                                    Text(
-                                      '低價上車',
-                                      style: TextStyle(
-                                        color: Color(0xFF999999),
-                                        fontSize: 12,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w400,
-                                        height: 0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            InfoBoard(title: '500萬內筍盤', subtitle: '低價上車', bcolor: 0xFFFFE5C4, large: false),
                             SizedBox(height: 8,),
-                            Container(
-                              width: 174,
-                              height: 160,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFFFFECE3),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                              ),
-                              child: Container(
-                                width: 132,
-                                height: 37,
-                                margin: EdgeInsets.only(top: 21, left: 11),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '今日熱門筍盤',
-                                      style: TextStyle(
-                                        color: Color(0xFF333333),
-                                        fontSize: 15,
-                                        fontFamily: 'PingFang TC',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0.08,
-                                        letterSpacing: 0.75,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4,),
-                                    Text(
-                                      '500萬內筍盤',
-                                      style: TextStyle(
-                                        color: Color(0xFF999999),
-                                        fontSize: 12,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w400,
-                                        height: 0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            InfoBoard(title: '今日熱門筍盤', subtitle: '500萬內筍盤', bcolor: 0xFFFFECE3, large: true),
                             SizedBox(height: 8,),
-                            Container(
-                              width: 174,
-                              height: 77,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFFFFECE3),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                              ),
-                              child: Container(
-                                width: 132,
-                                height: 37,
-                                margin: EdgeInsets.only(top: 21, left: 11),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '第四類標題',
-                                      style: TextStyle(
-                                        color: Color(0xFF333333),
-                                        fontSize: 15,
-                                        fontFamily: 'PingFang TC',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0.08,
-                                        letterSpacing: 0.75,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4,),
-                                    Text(
-                                      '第四分類副標',
-                                      style: TextStyle(
-                                        color: Color(0xFF999999),
-                                        fontSize: 12,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w400,
-                                        height: 0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            InfoBoard(title: '第四類標題', subtitle: '第四分類副標', bcolor: 0xFFFFECE3, large: false),
                           ],
                         ),
                       ],
@@ -1408,7 +1132,9 @@ class _MyHomePageState extends State<MyHomePage> {
             label: '更多',
           ),
         ],
+        currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
       ),
     );
   }

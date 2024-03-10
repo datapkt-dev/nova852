@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -432,11 +433,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       width: 361,
                       height: 490,
-                      //color: Colors.blue,
                       alignment: Alignment.center,
                       child: Column(
                         children: [
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
@@ -462,18 +462,49 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 12,),
+                          const SizedBox(height: 12,),
                           Row(
                             children: [
                               Column(
                                 children: [
-                                  Container(
-                                    width: 168,
-                                    height: 128,
-                                    child: Image.asset('assets/images/house_a.jpeg'),
+                                  Stack(
+                                    children: [
+                                      SizedBox(
+                                        width: 168,
+                                        height: 128,
+                                        child: Image.asset('assets/images/house_a.jpeg'),
+                                      ),
+                                      Container(
+                                        width: 52,
+                                        height: 20,
+                                        decoration: ShapeDecoration(
+                                          color: Colors.black,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            SizedBox(width: 4,),
+                                            SvgPicture.asset('assets/icons/diamond.svg'),
+                                            SizedBox(width: 2,),
+                                            Text(
+                                              '鑽石',
+                                              style: TextStyle(
+                                                color: Color(0xFFF0C790),
+                                                fontSize: 12,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w500,
+                                                height: 0.08,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(height: 6,),
-                                  Container(
+                                  const SizedBox(height: 6,),
+                                  const SizedBox(
                                     width:168,
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -531,8 +562,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 6,),
-                                  Container(
+                                  const SizedBox(height: 6,),
+                                  const SizedBox(
                                       width: 168,
                                       height: 45,
                                       child: Text(
@@ -548,16 +579,47 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(width: 25,),
+                              const SizedBox(width: 25,),
                               Column(
                                 children: [
-                                  Container(
-                                    width: 168,
-                                    height: 128,
-                                    child: Image.asset('assets/images/house_b.jpeg'),
+                                  Stack(
+                                    children: [
+                                      SizedBox(
+                                        width: 168,
+                                        height: 128,
+                                        child: Image.asset('assets/images/house_b.jpeg'),
+                                      ),
+                                      Container(
+                                        width: 52,
+                                        height: 20,
+                                        decoration: ShapeDecoration(
+                                          color: Colors.black,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            SizedBox(width: 4,),
+                                            SvgPicture.asset('assets/icons/diamond.svg'),
+                                            SizedBox(width: 2,),
+                                            Text(
+                                              '鑽石',
+                                              style: TextStyle(
+                                                color: Color(0xFFF0C790),
+                                                fontSize: 12,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w500,
+                                                height: 0.08,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(height: 6,),
-                                  Container(
+                                  const SizedBox(height: 6,),
+                                  const SizedBox(
                                     width:168,
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -639,10 +701,41 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Column(
                                 children: [
-                                  Container(
-                                    width: 168,
-                                    height: 128,
-                                    child: Image.asset('assets/images/house_c.jpeg'),
+                                  Stack(
+                                    children: [
+                                      SizedBox(
+                                        width: 168,
+                                        height: 128,
+                                        child: Image.asset('assets/images/house_c.jpeg'),
+                                      ),
+                                      Container(
+                                        width: 52,
+                                        height: 20,
+                                        decoration: ShapeDecoration(
+                                          color: Colors.black,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            SizedBox(width: 4,),
+                                            SvgPicture.asset('assets/icons/diamond.svg'),
+                                            SizedBox(width: 2,),
+                                            Text(
+                                              '鑽石',
+                                              style: TextStyle(
+                                                color: Color(0xFFF0C790),
+                                                fontSize: 12,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w500,
+                                                height: 0.08,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   SizedBox(height: 6,),
                                   Container(
@@ -720,16 +813,47 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ],
                               ),
-                              SizedBox(width: 25,),
+                              const SizedBox(width: 25,),
                               Column(
                                 children: [
-                                  Container(
-                                    width: 168,
-                                    height: 128,
-                                    child: Image.asset('assets/images/house_d.jpeg'),
+                                  Stack(
+                                    children: [
+                                      SizedBox(
+                                        width: 168,
+                                        height: 128,
+                                        child: Image.asset('assets/images/house_d.jpeg'),
+                                      ),
+                                      Container(
+                                        width: 52,
+                                        height: 20,
+                                        decoration: ShapeDecoration(
+                                          color: Colors.black,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            SizedBox(width: 4,),
+                                            SvgPicture.asset('assets/icons/diamond.svg'),
+                                            SizedBox(width: 2,),
+                                            Text(
+                                              '鑽石',
+                                              style: TextStyle(
+                                                color: Color(0xFFF0C790),
+                                                fontSize: 12,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w500,
+                                                height: 0.08,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(height: 6,),
-                                  Container(
+                                  const SizedBox(height: 6,),
+                                  const SizedBox(
                                     width:168,
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -788,7 +912,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                   SizedBox(height: 6,),
-                                  Container(
+                                  SizedBox(
                                       width: 168,
                                       height: 45,
                                       child: Text(
@@ -809,8 +933,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                     ),  //精選
-                    SizedBox(height: 40,),
-                    Container(
+                    const SizedBox(height: 40,),
+                    SizedBox(
                       width: 361,
                       child: Column(
                         children: [
@@ -835,60 +959,79 @@ class _MyHomePageState extends State<MyHomePage> {
                               Text('買樓'),
                             ],
                           ),
-                          SizedBox(height: 12,),
-                          SizedBox(height: 12,),
+                          const SizedBox(height: 12,),
+                          const SizedBox(height: 12,),
                           Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
                             width: 361,
                             height: 137,
                             child: Row(
                               children: [
-                                Container(
-                                  width: 99,
-                                  height: 68,
-                                  child: Image.asset('assets/images/house_d.jpeg'),
-                                ),
-                                SizedBox(width: 8,),
                                 Column(
                                   children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: 52,
-                                          height: 19,
-                                          color: Color(0xFFD7A769),
-                                          child: Text(
-                                            '豪華裝潢',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 11,
-                                              fontFamily: 'PingFang TC',
-                                              fontWeight: FontWeight.w400,
-                                              height: 0,
+                                    SizedBox(
+                                      width: 123,
+                                      height: 92,
+                                      child: Image.asset('assets/images/house_d.jpeg'),
+                                    ),
+                                    SizedBox(height: 21,),
+                                  ],
+                                ),
+                                const SizedBox(width: 8,),
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 230,
+                                      height: 19,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            width: 52,
+                                            height: 19,
+                                            alignment: Alignment.center,
+                                            decoration: ShapeDecoration(
+                                              gradient: const LinearGradient(
+                                                begin: Alignment(1.00, 0.00),
+                                                end: Alignment(-1, 0),
+                                                colors: [Color(0xFFD7A769), Color(0xFFDBA154)],
+                                              ),
+                                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                            ),
+                                            child: const Text(
+                                              '豪華裝潢',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 11,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w400,
+                                                height: 0,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        SizedBox(width: 8,),
-                                        Container(
-                                          width: 41,
-                                          height: 19,
-                                          decoration: ShapeDecoration(
-                                            shape: RoundedRectangleBorder(
-                                              side: BorderSide(width: 1, color: Color(0xFFD6D6D6)),
-                                              borderRadius: BorderRadius.circular(3),
+                                          const SizedBox(width: 8,),
+                                          Container(
+                                            width: 41,
+                                            height: 19,
+                                            alignment: Alignment.center,
+                                            decoration: ShapeDecoration(
+                                              shape: RoundedRectangleBorder(
+                                                side: const BorderSide(width: 1, color: Color(0xFFD6D6D6)),
+                                                borderRadius: BorderRadius.circular(3),
+                                              ),
                                             ),
-                                          ),
-                                          child: Text(
-                                            '近學區',
-                                            style: TextStyle(
-                                              color: Color(0xFF333333),
-                                              fontSize: 11,
-                                              fontFamily: 'PingFang TC',
-                                              fontWeight: FontWeight.w400,
-                                              height: 0,
+                                            child: const Text(
+                                              '近學區',
+                                              style: TextStyle(
+                                                color: Color(0xFF333333),
+                                                fontSize: 11,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w400,
+                                                height: 0,
+                                              ),
                                             ),
-                                          ),
-                                        )
-                                      ],
+                                          )
+                                        ],
+                                      ),
                                     ),
                                     SizedBox(height: 4,),
                                     SizedBox(
@@ -905,35 +1048,39 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                     ),
                                     SizedBox(height: 4,),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          '實36坪',
-                                          style: TextStyle(
-                                            color: Color(0xFF999999),
-                                            fontSize: 13,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w400,
-                                            height: 0.08,
-                                          ),
-                                        ),
-                                        SizedBox(width: 4,),
-                                        Text(
-                                          '2房',
-                                          style: TextStyle(
-                                            color: Color(0xFF999999),
-                                            fontSize: 13,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w400,
-                                            height: 0.08,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(height: 4,),
                                     Container(
                                       width: 230,
-                                      height: 24,
+                                      height: 13,
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            '實36坪',
+                                            style: TextStyle(
+                                              color: Color(0xFF999999),
+                                              fontSize: 13,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0.08,
+                                            ),
+                                          ),
+                                          SizedBox(width: 4,),
+                                          Text(
+                                            '2房',
+                                            style: TextStyle(
+                                              color: Color(0xFF999999),
+                                              fontSize: 13,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0.08,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: 10,),
+                                    Container(
+                                      alignment: Alignment.bottomRight,
+                                      width: 230,
                                       child: Text(
                                         '900 萬',
                                         style: TextStyle(
@@ -955,57 +1102,76 @@ class _MyHomePageState extends State<MyHomePage> {
                           Divider(),
                           SizedBox(height: 12,),
                           Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
                             width: 361,
                             height: 137,
                             child: Row(
                               children: [
-                                Container(
-                                  width: 99,
-                                  height: 68,
-                                  child: Image.asset('assets/images/house_d.jpeg'),
-                                ),
-                                SizedBox(width: 8,),
                                 Column(
                                   children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: 52,
-                                          height: 19,
-                                          color: Color(0xFFD7A769),
-                                          child: Text(
-                                            '豪華裝潢',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 11,
-                                              fontFamily: 'PingFang TC',
-                                              fontWeight: FontWeight.w400,
-                                              height: 0,
+                                    SizedBox(
+                                      width: 123,
+                                      height: 92,
+                                      child: Image.asset('assets/images/house_c.jpeg'),
+                                    ),
+                                    SizedBox(height: 21,),
+                                  ],
+                                ),
+                                const SizedBox(width: 8,),
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 230,
+                                      height: 19,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            width: 52,
+                                            height: 19,
+                                            alignment: Alignment.center,
+                                            decoration: ShapeDecoration(
+                                              gradient: const LinearGradient(
+                                                begin: Alignment(1.00, 0.00),
+                                                end: Alignment(-1, 0),
+                                                colors: [Color(0xFFD7A769), Color(0xFFDBA154)],
+                                              ),
+                                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                            ),
+                                            child: const Text(
+                                              '豪華裝潢',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 11,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w400,
+                                                height: 0,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        SizedBox(width: 8,),
-                                        Container(
-                                          width: 41,
-                                          height: 19,
-                                          decoration: ShapeDecoration(
-                                            shape: RoundedRectangleBorder(
-                                              side: BorderSide(width: 1, color: Color(0xFFD6D6D6)),
-                                              borderRadius: BorderRadius.circular(3),
+                                          const SizedBox(width: 8,),
+                                          Container(
+                                            width: 41,
+                                            height: 19,
+                                            alignment: Alignment.center,
+                                            decoration: ShapeDecoration(
+                                              shape: RoundedRectangleBorder(
+                                                side: const BorderSide(width: 1, color: Color(0xFFD6D6D6)),
+                                                borderRadius: BorderRadius.circular(3),
+                                              ),
                                             ),
-                                          ),
-                                          child: Text(
-                                            '近學區',
-                                            style: TextStyle(
-                                              color: Color(0xFF333333),
-                                              fontSize: 11,
-                                              fontFamily: 'PingFang TC',
-                                              fontWeight: FontWeight.w400,
-                                              height: 0,
+                                            child: const Text(
+                                              '近學區',
+                                              style: TextStyle(
+                                                color: Color(0xFF333333),
+                                                fontSize: 11,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w400,
+                                                height: 0,
+                                              ),
                                             ),
-                                          ),
-                                        )
-                                      ],
+                                          )
+                                        ],
+                                      ),
                                     ),
                                     SizedBox(height: 4,),
                                     SizedBox(
@@ -1022,37 +1188,41 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                     ),
                                     SizedBox(height: 4,),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          '實36坪',
-                                          style: TextStyle(
-                                            color: Color(0xFF999999),
-                                            fontSize: 13,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w400,
-                                            height: 0.08,
-                                          ),
-                                        ),
-                                        SizedBox(width: 4,),
-                                        Text(
-                                          '2房',
-                                          style: TextStyle(
-                                            color: Color(0xFF999999),
-                                            fontSize: 13,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w400,
-                                            height: 0.08,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(height: 4,),
                                     Container(
                                       width: 230,
-                                      height: 24,
+                                      height: 13,
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            '實36坪',
+                                            style: TextStyle(
+                                              color: Color(0xFF999999),
+                                              fontSize: 13,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0.08,
+                                            ),
+                                          ),
+                                          SizedBox(width: 4,),
+                                          Text(
+                                            '2房',
+                                            style: TextStyle(
+                                              color: Color(0xFF999999),
+                                              fontSize: 13,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0.08,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: 10,),
+                                    Container(
+                                      alignment: Alignment.bottomRight,
+                                      width: 230,
                                       child: Text(
-                                        '900 萬',
+                                        '1400 萬',
                                         style: TextStyle(
                                           color: Color(0xFFF12323),
                                           fontSize: 20,
@@ -1072,57 +1242,76 @@ class _MyHomePageState extends State<MyHomePage> {
                           Divider(),
                           SizedBox(height: 12,),
                           Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
                             width: 361,
                             height: 137,
                             child: Row(
                               children: [
-                                Container(
-                                  width: 99,
-                                  height: 68,
-                                  child: Image.asset('assets/images/house_d.jpeg'),
-                                ),
-                                SizedBox(width: 8,),
                                 Column(
                                   children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: 52,
-                                          height: 19,
-                                          color: Color(0xFFD7A769),
-                                          child: Text(
-                                            '豪華裝潢',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 11,
-                                              fontFamily: 'PingFang TC',
-                                              fontWeight: FontWeight.w400,
-                                              height: 0,
+                                    SizedBox(
+                                      width: 123,
+                                      height: 92,
+                                      child: Image.asset('assets/images/house_e.jpeg'),
+                                    ),
+                                    SizedBox(height: 21,),
+                                  ],
+                                ),
+                                const SizedBox(width: 8,),
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 230,
+                                      height: 19,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            width: 52,
+                                            height: 19,
+                                            alignment: Alignment.center,
+                                            decoration: ShapeDecoration(
+                                              gradient: const LinearGradient(
+                                                begin: Alignment(1.00, 0.00),
+                                                end: Alignment(-1, 0),
+                                                colors: [Color(0xFFD7A769), Color(0xFFDBA154)],
+                                              ),
+                                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                            ),
+                                            child: const Text(
+                                              '豪華裝潢',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 11,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w400,
+                                                height: 0,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        SizedBox(width: 8,),
-                                        Container(
-                                          width: 41,
-                                          height: 19,
-                                          decoration: ShapeDecoration(
-                                            shape: RoundedRectangleBorder(
-                                              side: BorderSide(width: 1, color: Color(0xFFD6D6D6)),
-                                              borderRadius: BorderRadius.circular(3),
+                                          const SizedBox(width: 8,),
+                                          Container(
+                                            width: 41,
+                                            height: 19,
+                                            alignment: Alignment.center,
+                                            decoration: ShapeDecoration(
+                                              shape: RoundedRectangleBorder(
+                                                side: const BorderSide(width: 1, color: Color(0xFFD6D6D6)),
+                                                borderRadius: BorderRadius.circular(3),
+                                              ),
                                             ),
-                                          ),
-                                          child: Text(
-                                            '近學區',
-                                            style: TextStyle(
-                                              color: Color(0xFF333333),
-                                              fontSize: 11,
-                                              fontFamily: 'PingFang TC',
-                                              fontWeight: FontWeight.w400,
-                                              height: 0,
+                                            child: const Text(
+                                              '近學區',
+                                              style: TextStyle(
+                                                color: Color(0xFF333333),
+                                                fontSize: 11,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w400,
+                                                height: 0,
+                                              ),
                                             ),
-                                          ),
-                                        )
-                                      ],
+                                          )
+                                        ],
+                                      ),
                                     ),
                                     SizedBox(height: 4,),
                                     SizedBox(
@@ -1139,37 +1328,41 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                     ),
                                     SizedBox(height: 4,),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          '實36坪',
-                                          style: TextStyle(
-                                            color: Color(0xFF999999),
-                                            fontSize: 13,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w400,
-                                            height: 0.08,
-                                          ),
-                                        ),
-                                        SizedBox(width: 4,),
-                                        Text(
-                                          '2房',
-                                          style: TextStyle(
-                                            color: Color(0xFF999999),
-                                            fontSize: 13,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w400,
-                                            height: 0.08,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(height: 4,),
                                     Container(
                                       width: 230,
-                                      height: 24,
+                                      height: 13,
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            '實36坪',
+                                            style: TextStyle(
+                                              color: Color(0xFF999999),
+                                              fontSize: 13,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0.08,
+                                            ),
+                                          ),
+                                          SizedBox(width: 4,),
+                                          Text(
+                                            '2房',
+                                            style: TextStyle(
+                                              color: Color(0xFF999999),
+                                              fontSize: 13,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0.08,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: 10,),
+                                    Container(
+                                      alignment: Alignment.bottomRight,
+                                      width: 230,
                                       child: Text(
-                                        '900 萬',
+                                        '1280 萬',
                                         style: TextStyle(
                                           color: Color(0xFFF12323),
                                           fontSize: 20,

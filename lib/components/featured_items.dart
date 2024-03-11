@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class FeaturedItems extends StatelessWidget {
-  int price, area, rooms;
-  String img, caption;
-  FeaturedItems({super.key, required this.img, required this.price, required this.area, required this.rooms, required this.caption});
+  final int price, area, rooms;
+  final String img, caption;
+  const FeaturedItems({super.key, required this.img, required this.price, required this.area, required this.rooms, required this.caption});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class FeaturedItems extends StatelessWidget {
             Container(
               width: 52,
               height: 20,
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Colors.black,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
@@ -28,10 +28,10 @@ class FeaturedItems extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  SizedBox(width: 4,),
+                  const SizedBox(width: 4,),
                   SvgPicture.asset('assets/icons/diamond.svg'),
-                  SizedBox(width: 2,),
-                  Text(
+                  const SizedBox(width: 2,),
+                  const Text(
                     '鑽石',
                     style: TextStyle(
                       color: Color(0xFFF0C790),
@@ -47,7 +47,7 @@ class FeaturedItems extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 6,),
-        const SizedBox(
+        SizedBox(
           width:168,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,8 +55,8 @@ class FeaturedItems extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    '900',
-                    style: TextStyle(
+                    '$price',
+                    style: const TextStyle(
                       color: Color(0xFFF12323),
                       fontSize: 20,
                       fontFamily: 'Inter',
@@ -65,7 +65,7 @@ class FeaturedItems extends StatelessWidget {
                       letterSpacing: 0.40,
                     ),
                   ),
-                  Text(
+                  const Text(
                     '萬',
                     style: TextStyle(
                       color: Color(0xFFF12323),
@@ -81,8 +81,8 @@ class FeaturedItems extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    '實36坪',
-                    style: TextStyle(
+                    '實$area坪',
+                    style: const TextStyle(
                       color: Color(0xFF999999),
                       fontSize: 13,
                       fontFamily: 'PingFang TC',
@@ -91,8 +91,8 @@ class FeaturedItems extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '2房',
-                    style: TextStyle(
+                    '$rooms房',
+                    style: const TextStyle(
                       color: Color(0xFF999999),
                       fontSize: 13,
                       fontFamily: 'PingFang TC',
@@ -106,12 +106,12 @@ class FeaturedItems extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 6,),
-        const SizedBox(
+        SizedBox(
             width: 168,
             height: 45,
             child: Text(
-              '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面',
-              style: TextStyle(
+              '$caption',
+              style: const TextStyle(
                 color: Color(0xFF333333),
                 fontSize: 15,
                 fontFamily: 'PingFang TC',

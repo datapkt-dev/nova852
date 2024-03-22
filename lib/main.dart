@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nova852/components/bottombar.dart';
 import 'package:nova852/components/button_s.dart';
 import 'package:nova852/components/featured_items.dart';
 import 'package:nova852/components/info.dart';
@@ -19,29 +20,23 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  MyHomePage({super.key, required this.title});
 
   final String title;
+  final List<String> tab = ['租屋', '新盤', '買樓'];
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -211,25 +206,41 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     children: [
                       Row(
-                        children: [
-                          // OutlinedButton(
-                          //   onPressed: (){},
-                          //   child: Text('租屋'),
-                          // ),
-                          Text('租屋'),
-                          SizedBox(width: 32,),
-                          // OutlinedButton(
-                          //   onPressed: (){},
-                          //   child: Text('新盤'),
-                          // ),
-                          Text('新盤'),
-                          SizedBox(width: 32,),
-                          // OutlinedButton(
-                          //   onPressed: (){},
-                          //   child: Text('買樓'),
-                          // ),
-                          Text('買樓'),
-                        ],
+                        children: List.generate(3, (index) {
+                          return Row(
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    _selectedIndex = index;
+                                  });
+                                },
+                                child: Container(
+                                  width: 40,
+                                  alignment: Alignment.center,
+                                  decoration: _selectedIndex == index ? BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
+                                        color: Color(0xFFD7A769),
+                                        width: 2,
+                                      ),
+                                    ),
+                                  ) : null,
+                                  child: Text(
+                                    widget.tab[index],
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontFamily: 'PingFang TC',
+                                      fontSize: 18,
+                                      fontWeight: _selectedIndex == index ? FontWeight.w500 : FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 32,),
+                            ],
+                          );
+                        }),
                       ),
                       const SizedBox(height: 12,),
                       const SizedBox(height: 12,),
@@ -659,30 +670,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         )
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/button.svg'),
-            label: '首頁',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/button.svg'),
-            label: '消息',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/button.svg'),
-            label: '我的',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/button.svg'),
-            label: '更多',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

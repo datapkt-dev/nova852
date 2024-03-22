@@ -35,7 +35,7 @@ class InfoBoard extends StatelessWidget {
                   letterSpacing: 0.75,
                 ),
               ),
-              SizedBox(height: 4,),
+              SizedBox(height: 10,),
               Text(
                 subtitle,
                 style: TextStyle(
@@ -77,7 +77,7 @@ class InfoBoard extends StatelessWidget {
                   letterSpacing: 0.75,
                 ),
               ),
-              SizedBox(height: 4,),
+              SizedBox(height: 10,),
               Text(
                 subtitle,
                 style: TextStyle(

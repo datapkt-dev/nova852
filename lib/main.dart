@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/components/bottombar.dart';
@@ -37,6 +38,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
+  String? dropdownValue = '新盤';
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               children: [
                 Container(
-                  width: 345,
+                  width: 380,
                   height: 44,
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
@@ -55,41 +57,49 @@ class _MyHomePageState extends State<MyHomePage> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: '請輸入搜索內容',
-                      hintStyle: TextStyle(
-                        color: Color(0xFF999999),
-                        fontSize: 14,
-                        fontFamily: 'PingFang TC',
-                        fontWeight: FontWeight.w400,
-                      ),
-                      prefixIcon: Row(
-                        children: [
-                          DropdownButton(
-                            value: '0',
-                            items: [
-                              DropdownMenuItem(
-                                value: '0',
-                                child: Text('新盤'),
+                  child: Row(
+                    children: [
+                      SizedBox(width: 10,),
+                      DropdownButton(
+                        underline: Container(),
+                        value: dropdownValue,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownValue = newValue;
+                          });
+                        },
+                        items: widget.tab.map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                              style: TextStyle(
+                                color: Color(0xFF333333),
                               ),
-                            ],
-                            onChanged: (value) {},
-                          ),
-                          SvgPicture.asset('assets/icons/search.svg'),
-                        ],
+                            ),
+                          );
+                        }).toList(), // 转换为列表
                       ),
-                    ),
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontFamily: 'PingFang TC',
-                      fontWeight: FontWeight.w400,
-                    ),
-                    cursorColor: Colors.black,
-                  ),
-                ),  //搜尋
+                      Expanded(
+                        child: TextFormField(
+                        controller: null,
+                        onChanged: null,
+                        decoration: InputDecoration(
+                          hintText: "輸入街道或路名",
+                          border: InputBorder.none,
+                          //focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFEEEEEE))),
+                          prefixIcon: Icon(Icons.search),
+                          // suffixIcon: IconButton(
+                          //   icon: Icon(Icons.clear),
+                          //   onPressed: () {},
+                          // ),
+                          contentPadding: EdgeInsets.symmetric(vertical: 5),
+                        ),
+                      ),
+                      ),
+                    ],
+                  )
+                ),
                 SizedBox(height: 16,),
                 Container(
                   width: 320,

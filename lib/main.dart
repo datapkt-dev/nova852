@@ -42,6 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight= MediaQuery.of(context).size.height;
+    double hScale = screenHeight/8852;
+    double wScale = screenWidth/393;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -210,7 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),  //精選
-                const SizedBox(height: 40,),
+                SizedBox(height: 40,),
                 SizedBox(
                   width: 361,
                   child: Column(

@@ -64,6 +64,8 @@ flutter:
     - assets/icons/search.svg
     - assets/icons/button.svg
     - assets/icons/diamond.svg
+    - assets/icons/navLocation.svg
+    - assets/icons/search2.svg
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg
     - assets/images/house_b.jpeg

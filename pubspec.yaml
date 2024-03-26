@@ -66,12 +66,15 @@ flutter:
     - assets/icons/diamond.svg
     - assets/icons/navLocation.svg
     - assets/icons/search2.svg
+    - assets/icons/videoplay.svg
+
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg
     - assets/images/house_b.jpeg
     - assets/images/house_c.jpeg
     - assets/images/house_d.jpeg
     - assets/images/house_e.jpeg
+    - assets/images/rentalitem.jpeg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

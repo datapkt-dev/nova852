@@ -168,9 +168,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 361,
                   height: 490,
                   alignment: Alignment.center,
-                  child: Column(
+                  child: const Column(
                     children: [
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -196,11 +196,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 12,),
+                      SizedBox(height: 12,),
                       Row(
                         children: [
                           FeaturedItems(img: 'assets/images/house_a.jpeg', price: 900, area: 36, rooms: 2, caption: '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面'),
-                          const SizedBox(width: 25,),
+                          SizedBox(width: 25,),
                           FeaturedItems(img: 'assets/images/house_b.jpeg', price: 1688, area: 42, rooms: 3, caption: '獨賣挑高美景大3房'),
                         ],
                       ),
@@ -208,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Row(
                         children: [
                           FeaturedItems(img: 'assets/images/house_c.jpeg', price: 900, area: 36, rooms: 2, caption: '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面'),
-                          const SizedBox(width: 25,),
+                          SizedBox(width: 25,),
                           FeaturedItems(img: 'assets/images/house_d.jpeg', price: 900, area: 36, rooms: 2, caption: '獨賣挑高美景大3房'),
                         ],
                       ),

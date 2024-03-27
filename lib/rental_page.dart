@@ -18,7 +18,7 @@ class _RentalPageState extends State<RentalPage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/8852;
+    double hScale = screenHeight/852;
     double wScale = screenWidth/393;
 
     return Scaffold(
@@ -120,12 +120,25 @@ class _RentalPageState extends State<RentalPage> {
                   ),
                 ),
                 Expanded(
-                  child: ListView.separated(
+                  child: ListView.builder(
                     itemBuilder: (context, index) {
                     return Column(
                       children: [
                         Container(
                           width: double.infinity,
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                                BoxShadow(
+                                  color: Color(0XFFFEF5EB),
+                                ),
+                                BoxShadow(
+                                  color: Colors.white,
+                                  blurRadius: 10,
+                                  spreadRadius: 10,
+                                  offset: Offset(0, 30),
+                                ),
+                              ],
+                          ),
                           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -385,7 +398,6 @@ class _RentalPageState extends State<RentalPage> {
                       ],
                     );
                   },
-                    separatorBuilder: (context, index) => Divider(height: 1),
                     itemCount: 5,
                   ),
                 ),

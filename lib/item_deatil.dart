@@ -102,7 +102,7 @@ class _ItemDetailState extends State<ItemDetail> {
                             Container(
                               width: double.infinity,
                               height: 280,
-                              color: Colors.green,
+                              color: Color(0xFFD9D9D9),
                             ), //照片
                             Container(
                               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -125,6 +125,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                       Row(
                                         children: [
                                           Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 '\$16,900/月',
@@ -146,7 +147,9 @@ class _ItemDetailState extends State<ItemDetail> {
                                               )
                                             ],
                                           ),
+                                          SizedBox(width: 16,),
                                           Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 '2房2廳',
@@ -1058,10 +1061,372 @@ class _ItemDetailState extends State<ItemDetail> {
                                 fontFamily: 'PingFang TC',
                                 fontWeight: FontWeight.w500,
                               ),
-                            )
+                            ),
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.all(12),
+                              decoration: ShapeDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment(-1, 0),
+                                  end: Alignment(1, 0),
+                                  colors: [Color(0xFFF4F4F4), Color(0x00EBEBEB)],
+                                ),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: ShapeDecoration(
+                                          color: Color(0xFFD9D9D9),
+                                          shape: OvalBorder(),
+                                        ),
+                                      ),
+                                      SizedBox(width: 8,),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            '何小姐',
+                                            style: TextStyle(
+                                              color: Color(0xFF333333),
+                                              fontSize: 18,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Text(
+                                            '牌照：E-123456',
+                                            style: TextStyle(
+                                              color: Color(0xFF999999),
+                                              fontSize: 15,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: ShapeDecoration(
+                                          color: Color(0xFFD9D9D9),
+                                          shape: OvalBorder(),
+                                        ),
+                                      ),
+                                      SizedBox(width: 11,),
+                                      Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: ShapeDecoration(
+                                          color: Color(0xFFD9D9D9),
+                                          shape: OvalBorder(),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '地產代理',
+                                  style: TextStyle(
+                                    color: Color(0xFF858585),
+                                    fontSize: 16,
+                                    fontFamily: 'PingFang TC',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                SizedBox(width: 10,),
+                                Text(
+                                  '志豐地產',
+                                  style: TextStyle(
+                                    color: Color(0xFF333333),
+                                    fontSize: 16,
+                                    fontFamily: 'PingFang TC',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '公司牌照',
+                                  style: TextStyle(
+                                    color: Color(0xFF858585),
+                                    fontSize: 16,
+                                    fontFamily: 'PingFang TC',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                SizedBox(width: 10,),
+                                Text(
+                                  'Ｃ-123456',
+                                  style: TextStyle(
+                                    color: Color(0xFF333333),
+                                    fontSize: 16,
+                                    fontFamily: 'PingFang TC',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '地址',
+                                  style: TextStyle(
+                                    color: Color(0xFF858585),
+                                    fontSize: 16,
+                                    fontFamily: 'PingFang TC',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                SizedBox(width: 10,),
+                                Text(
+                                  '元朗鳳小南街9號好順利大廈',
+                                  style: TextStyle(
+                                    color: Color(0xFF333333),
+                                    fontSize: 16,
+                                    fontFamily: 'PingFang TC',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                )
+                              ],
+                            ),
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+                              decoration: ShapeDecoration(
+                                color: Color(0xFFFDF5EB),
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(width: 1, color: Color(0xFFFFDA96)),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        width: 72,
+                                        height: 49,
+                                        color: Color(0xFFD9D9D9),
+                                      ),
+                                      SizedBox(width: 18,),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            '3個',
+                                            style: TextStyle(
+                                              color: Color(0xFF7B5304),
+                                              fontSize: 18,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Text(
+                                            '盤售',
+                                            style: TextStyle(
+                                              color: Color(0xFF7B5304),
+                                              fontSize: 15,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      VerticalDivider(
+                                        width: 20,
+                                        thickness: 10,
+                                        indent: 20,
+                                        endIndent: 0,
+                                        color: Colors.red,
+                                      ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            '5個',
+                                            style: TextStyle(
+                                              color: Color(0xFF7B5304),
+                                              fontSize: 18,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Text(
+                                            '盤售',
+                                            style: TextStyle(
+                                              color: Color(0xFF7B5304),
+                                              fontSize: 15,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text(
+                                            '查看代理',
+                                            style: TextStyle(
+                                              color: Color(0xFF7B5304),
+                                              fontSize: 15,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                          Text(
+                                            '所有放盤',
+                                            style: TextStyle(
+                                              color: Color(0xFF7B5304),
+                                              fontSize: 15,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(width: 8,),
+                                      Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: ShapeDecoration(
+                                          color: Color(0xFFD9D9D9),
+                                          shape: OvalBorder(),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Divider(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      '溫馨提醒',
+                                      style: TextStyle(
+                                        color: Color(0xFF858585),
+                                        fontSize: 15,
+                                        fontFamily: 'PingFang TC',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    SvgPicture.asset(
+                                      'assets/icons/search.svg',
+                                      color: Color(0xFF858585), // 使用'defaultColor'属性
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      '我要投訴',
+                                      style: TextStyle(
+                                        color: Color(0xFF125CEB),
+                                        fontSize: 15,
+                                        fontFamily: 'PingFang TC',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ],
                         ),
-                      )
+                      ),
+                      SizedBox(height: 8,),
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(16),
+                        color: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '更多推薦',
+                              style: TextStyle(
+                                color: Color(0xFF333333),
+                                fontSize: 18,
+                                fontFamily: 'PingFang TC',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: 16,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 136,
+                                  height: 116,
+                                  color: Color(0xFFD9D9D9),
+                                ),
+                                Container(
+                                  width: 230,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面',
+                                        style: TextStyle(
+                                          color: Color(0xFF333333),
+                                          fontSize: 18,
+                                          fontFamily: 'PingFang TC',
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                        overflow: TextOverflow.visible,
+                                      ),
+                                      Text(
+                                        '車位｜太古城',
+                                        style: TextStyle(
+                                          color: Color(0xFF999999),
+                                          fontSize: 13,
+                                          fontFamily: 'PingFang TC',
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                      Text(
+                                        '\$16800 /月',
+                                        style: TextStyle(
+                                          color: Color(0xFFF12323),
+                                          fontSize: 20,
+                                          fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),

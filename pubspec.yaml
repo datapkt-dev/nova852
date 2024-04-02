@@ -67,6 +67,7 @@ flutter:
     - assets/icons/navLocation.svg
     - assets/icons/search2.svg
     - assets/icons/videoplay.svg
+    - assets/icons/message.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg
@@ -75,6 +76,7 @@ flutter:
     - assets/images/house_d.jpeg
     - assets/images/house_e.jpeg
     - assets/images/rentalitem.jpeg
+    - assets/images/item_img.jpeg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

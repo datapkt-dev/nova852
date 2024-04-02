@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:nova852/buying_page.dart';
 import 'package:nova852/components/bottombar.dart';
 import 'package:nova852/components/button_s.dart';
 import 'package:nova852/components/featured_items.dart';
 import 'package:nova852/components/info.dart';
+import 'package:nova852/mortgage_page.dart';
+import 'package:nova852/rental_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -130,11 +131,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ButtonS(buttonText: '租屋'),
+                      ButtonS(buttonText: '租屋', page: RentalPage()),
                       SizedBox(width: 42,),
-                      ButtonS(buttonText: '買樓'),
+                      ButtonS(buttonText: '買樓', page: BuyingPage(),),
                       SizedBox(width: 42,),
-                      ButtonS(buttonText: '按揭'),
+                      ButtonS(buttonText: '按揭', page: MortgagePage(),),
                     ],
                   ),
                 ),  //租屋

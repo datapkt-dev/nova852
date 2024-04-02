@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nova852/rental_page.dart';
 
 class ButtonS extends StatelessWidget {
   final String buttonText;
-  const ButtonS({super.key, required this.buttonText});
+  final dynamic page;
+  ButtonS({super.key, required this.buttonText, this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,9 @@ class ButtonS extends StatelessWidget {
             ),
           ),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+            if (page != null) {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+            }
           },
         ),
         const SizedBox(height: 4,),

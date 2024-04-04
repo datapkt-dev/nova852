@@ -6,7 +6,7 @@ import 'components/button_s.dart';
 class ItemDetail extends StatefulWidget {
   ItemDetail({super.key});
 
-  final List<String> tab2 = ['基礎信息', '屋內設備', '特色描述', '周邊配套',];
+  final List<String> tab = ['基礎信息', '屋內設備', '特色描述', '周邊配套',];
 
   @override
   State<ItemDetail> createState() => _ItemDetailState();
@@ -20,7 +20,7 @@ class _ItemDetailState extends State<ItemDetail> {
   void _scrollToPosition() {
     final RenderBox? scrollTo = scrollKey.currentContext?.findRenderObject() as RenderBox?;
     if (scrollTo != null) {
-      final scrollToOffset = scrollTo.localToGlobal(Offset.zero);
+      final scrollToOffset = scrollTo.localToGlobal(Offset(0, -168));
       _scrollController.animateTo(
         scrollToOffset.dy,
         duration: Duration(milliseconds: 500),
@@ -60,7 +60,7 @@ class _ItemDetailState extends State<ItemDetail> {
                     padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: List.generate(widget.tab2.length, (index) {
+                      children: List.generate(widget.tab.length, (index) {
                         return Row(
                           children: [
                             Container(
@@ -85,7 +85,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                   child: Row(
                                     children: [
                                       Text(
-                                        widget.tab2[index],
+                                        widget.tab[index],
                                         style: TextStyle(
                                           color: _selectedIndex == index ? Color(0xFF333333) : Color(0xFF999999),
                                           fontFamily: 'PingFang TC',

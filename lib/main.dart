@@ -4,6 +4,7 @@ import 'package:nova852/components/bottombar.dart';
 import 'package:nova852/components/button_s.dart';
 import 'package:nova852/components/featured_items.dart';
 import 'package:nova852/components/info.dart';
+import 'package:nova852/lab/rental_page_lab.dart';
 import 'package:nova852/mortgage_page.dart';
 import 'package:nova852/rental_page.dart';
 
@@ -135,7 +136,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(width: 42,),
                       ButtonS(buttonText: '買樓', page: BuyingPage(),),
                       SizedBox(width: 42,),
-                      ButtonS(buttonText: '按揭', page: MortgagePage(),),
+                      ButtonS(buttonText: '按揭', page: RentalPageLab(),),
+                      // ButtonS(buttonText: '按揭', page: MortgagePage(),),
                     ],
                   ),
                 ),  //租屋
@@ -169,7 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 361,
                   height: 490,
                   alignment: Alignment.center,
-                  child: const Column(
+                  child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -184,17 +186,26 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 0,
                             ),
                           ),
-                          Text(
-                            '更多',
-                            style: TextStyle(
-                              color: Color(0xFF999999),
-                              fontSize: 15,
-                              fontFamily: 'PingFang TC',
-                              fontWeight: FontWeight.w400,
-                              height: 0.10,
-                              letterSpacing: 0.75,
+                          InkWell(
+                            child: Text(
+                              '更多',
+                              style: TextStyle(
+                                color: Color(0xFF999999),
+                                fontSize: 15,
+                                fontFamily: 'PingFang TC',
+                                fontWeight: FontWeight.w400,
+                                height: 0.10,
+                                letterSpacing: 0.75,
+                              ),
                             ),
-                          ),
+                            onTap: () {
+                              print("123");
+
+                              //Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPageLab()));
+                            },
+
+                          )
+
                         ],
                       ),
                       SizedBox(height: 12,),

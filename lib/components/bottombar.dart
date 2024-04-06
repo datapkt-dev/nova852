@@ -23,16 +23,16 @@ class _BottomBarState extends State<BottomBar> {
 
     switch (index) {
       case 0:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => IndexPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => IndexPage()));
         break;
       case 1:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => BreakingNewsPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => BreakingNewsPage()));
         break;
       case 2:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
         break;
       case 3:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()));
         break;
     }
   }

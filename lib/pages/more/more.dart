@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../components/bottombar.dart';
+
 class MorePage extends StatefulWidget {
   const MorePage({super.key});
 
@@ -10,6 +12,10 @@ class MorePage extends StatefulWidget {
 class _MorePageState extends State<MorePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("更多"),);
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(child: Text('更多'),),
+      bottomNavigationBar: BottomBar(),
+    );
   }
 }

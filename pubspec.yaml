@@ -68,6 +68,14 @@ flutter:
     - assets/icons/search2.svg
     - assets/icons/videoplay.svg
     - assets/icons/message.svg
+    - assets/icons/bottombar/breakingnews.svg
+    - assets/icons/bottombar/breakingnews_selected.svg
+    - assets/icons/bottombar/index.svg
+    - assets/icons/bottombar/index_selected.svg
+    - assets/icons/bottombar/more.svg
+    - assets/icons/bottombar/more_selected.svg
+    - assets/icons/bottombar/profile.svg
+    - assets/icons/bottombar/profile_selected.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

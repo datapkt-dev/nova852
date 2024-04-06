@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../components/bottombar.dart';
+
 class BreakingNewsPage extends StatefulWidget {
   const BreakingNewsPage({super.key});
 
@@ -10,6 +12,10 @@ class BreakingNewsPage extends StatefulWidget {
 class _BreakingNewsPageState extends State<BreakingNewsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(child: Text('消息'),),
+      bottomNavigationBar: BottomBar(),
+    );
   }
 }

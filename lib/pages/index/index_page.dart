@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../components/bottombar.dart';
+
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
 
@@ -10,6 +12,10 @@ class IndexPage extends StatefulWidget {
 class _IndexPageState extends State<IndexPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('首頁'),);
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(child: Text('首頁'),),
+      bottomNavigationBar: BottomBar(),
+    );
   }
 }

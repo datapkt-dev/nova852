@@ -8,47 +8,54 @@ class FeaturedItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight= MediaQuery.of(context).size.height;
+    double hScale = screenHeight/852;
+    double wScale = screenWidth/393;
+
     return Column(
       children: [
         Stack(
           children: [
             SizedBox(
-              width: 168,
-              height: 128,
+              width: 168 * wScale,
+              height: 128 * hScale,
               child: Image.asset(img),
             ),
-            Container(
-              width: 52,
-              height: 20,
-              decoration: const ShapeDecoration(
-                color: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+            Positioned(
+              top: 8 * hScale,
+              child: Container(
+                width: 52 * wScale,
+                height: 20 * hScale,
+                decoration: const ShapeDecoration(
+                  color: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                  ),
                 ),
-              ),
-              child: Row(
-                children: [
-                  const SizedBox(width: 4,),
-                  SvgPicture.asset('assets/icons/diamond.svg'),
-                  const SizedBox(width: 2,),
-                  const Text(
-                    '鑽石',
-                    style: TextStyle(
-                      color: Color(0xFFF0C790),
-                      fontSize: 12,
-                      fontFamily: 'PingFang TC',
-                      fontWeight: FontWeight.w500,
-                      height: 0.08,
-                    ),
-                  )
-                ],
+                child: Row(
+                  children: [
+                    SizedBox(width: 4 * wScale,),
+                    SvgPicture.asset('assets/icons/diamond.svg'),
+                    SizedBox(width: 2 * wScale,),
+                    const Text(
+                      '鑽石',
+                      style: TextStyle(
+                        color: Color(0xFFF0C790),
+                        fontSize: 12,
+                        fontFamily: 'PingFang TC',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ],
         ),
-        const SizedBox(height: 6,),
+        //SizedBox(height: 3 * hScale,),
         SizedBox(
-          width:168,
+          width: 168 * wScale,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -61,8 +68,6 @@ class FeaturedItems extends StatelessWidget {
                       fontSize: 20,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
-                      height: 0.06,
-                      letterSpacing: 0.40,
                     ),
                   ),
                   const Text(
@@ -72,8 +77,7 @@ class FeaturedItems extends StatelessWidget {
                       fontSize: 15,
                       fontFamily: 'PingFang TC',
                       fontWeight: FontWeight.w500,
-                      height: 0.08,
-                      letterSpacing: 0.75,
+
                     ),
                   ),
                 ],
@@ -87,7 +91,6 @@ class FeaturedItems extends StatelessWidget {
                       fontSize: 13,
                       fontFamily: 'PingFang TC',
                       fontWeight: FontWeight.w400,
-                      height: 0.08,
                     ),
                   ),
                   Text(
@@ -97,7 +100,6 @@ class FeaturedItems extends StatelessWidget {
                       fontSize: 13,
                       fontFamily: 'PingFang TC',
                       fontWeight: FontWeight.w400,
-                      height: 0.08,
                     ),
                   ),
                 ],
@@ -105,10 +107,10 @@ class FeaturedItems extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 6,),
+        //SizedBox(height: 6 * hScale,),
         SizedBox(
-            width: 168,
-            height: 45,
+            width: 168 * wScale,
+            height: 45 * hScale,
             child: Text(
               '$caption',
               style: const TextStyle(

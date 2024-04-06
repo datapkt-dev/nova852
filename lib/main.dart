@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/8852;
+    double hScale = screenHeight/852;
     double wScale = screenWidth/393;
 
     return Scaffold(
@@ -56,8 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               children: [
                 Container(
-                  width: 380,
-                  height: 44,
+                  width: 380 * wScale,
+                  height: 44 * hScale,
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(width: 1, color: Color(0xFFEEEEEE)),
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   child: Row(
                     children: [
-                      SizedBox(width: 10,),
+                      SizedBox(width: 10 * wScale,),
                       DropdownButton(
                         underline: Container(),
                         value: dropdownValue,
@@ -100,17 +100,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           //   icon: Icon(Icons.clear),
                           //   onPressed: () {},
                           // ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 5),
+                          contentPadding: EdgeInsets.symmetric(vertical: 5 * hScale),
                         ),
                       ),
                       ),
                     ],
                   )
                 ),
-                SizedBox(height: 16,),
+                SizedBox(height: 16 * hScale,),
                 Container(
-                  width: 320,
-                  height: 184,
+                  width: 320 * wScale,
+                  height: 184 * hScale,
                   decoration: ShapeDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/landscape.jpeg'),
@@ -127,49 +127,48 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ), //圖片輪播
-                SizedBox(height: 16,),
+                SizedBox(height: 16 * hScale,),
                 Container(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ButtonS(buttonText: '租屋', page: RentalPage()),
-                      SizedBox(width: 42,),
+                      SizedBox(width: 42 * wScale,),
                       ButtonS(buttonText: '買樓', page: BuyingPage(),),
-                      SizedBox(width: 42,),
+                      SizedBox(width: 42 * wScale,),
                       ButtonS(buttonText: '按揭', page: RentalPageLab(),),
                       // ButtonS(buttonText: '按揭', page: MortgagePage(),),
                     ],
                   ),
                 ),  //租屋
-                SizedBox(height: 30,),
+                SizedBox(height: 30 * hScale,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       children: [
                         InfoBoard(title: '本月熱盤追擊', subtitle: '本月瀏覽量最高新盤排名', bcolor: 0xFFFFEBE3, large: true,),
-                        SizedBox(height: 8,),
+                        SizedBox(height: 8 * hScale,),
                         InfoBoard(title: '第五類標題', subtitle: '第五分類副標', bcolor: 0xFFFFE5C4, large: false),
-                        SizedBox(height: 8,),
+                        SizedBox(height: 8 * hScale,),
                         InfoBoard(title: '第六類標題', subtitle: '第六分類副標', bcolor: 0xFFFFE5C4, large: false),
                       ],
                     ),
-                    SizedBox(width: 13,),
+                    SizedBox(width: 13 * wScale,),
                     Column(
                       children: [
                         InfoBoard(title: '500萬內筍盤', subtitle: '低價上車', bcolor: 0xFFFFE5C4, large: false),
-                        SizedBox(height: 8,),
+                        SizedBox(height: 8 * hScale,),
                         InfoBoard(title: '今日熱門筍盤', subtitle: '500萬內筍盤', bcolor: 0xFFFFECE3, large: true),
-                        SizedBox(height: 8,),
+                        SizedBox(height: 8 * hScale,),
                         InfoBoard(title: '第四類標題', subtitle: '第四分類副標', bcolor: 0xFFFFECE3, large: false),
                       ],
                     ),
                   ],
                 ),  //三色塊
-                SizedBox(height: 28,),
+                SizedBox(height: 28 * hScale,),
                 Container(
-                  width: 361,
-                  height: 490,
+                  width: 361 * wScale,
                   alignment: Alignment.center,
                   child: Column(
                     children: [
@@ -194,13 +193,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontSize: 15,
                                 fontFamily: 'PingFang TC',
                                 fontWeight: FontWeight.w400,
-                                height: 0.10,
-                                letterSpacing: 0.75,
                               ),
                             ),
                             onTap: () {
                               print("123");
-
                               //Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPageLab()));
                             },
 
@@ -208,28 +204,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
                         ],
                       ),
-                      SizedBox(height: 12,),
+                      SizedBox(height: 12 * hScale,),
                       Row(
                         children: [
                           FeaturedItems(img: 'assets/images/house_a.jpeg', price: 900, area: 36, rooms: 2, caption: '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面'),
-                          SizedBox(width: 25,),
+                          SizedBox(width: 25 * wScale,),
                           FeaturedItems(img: 'assets/images/house_b.jpeg', price: 1688, area: 42, rooms: 3, caption: '獨賣挑高美景大3房'),
                         ],
                       ),
-                      SizedBox(height: 15,),
+                      SizedBox(height: 15 * hScale,),
                       Row(
                         children: [
                           FeaturedItems(img: 'assets/images/house_c.jpeg', price: 900, area: 36, rooms: 2, caption: '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面'),
-                          SizedBox(width: 25,),
+                          SizedBox(width: 25 * wScale,),
                           FeaturedItems(img: 'assets/images/house_d.jpeg', price: 900, area: 36, rooms: 2, caption: '獨賣挑高美景大3房'),
                         ],
                       ),
                     ],
                   ),
                 ),  //精選
-                SizedBox(height: 40,),
+                SizedBox(height: 40 * hScale,),
                 SizedBox(
-                  width: 361,
+                  width: 361 * wScale,
                   child: Column(
                     children: [
                       Row(
@@ -243,13 +239,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                   });
                                 },
                                 child: Container(
-                                  width: 40,
+                                  width: 40 * wScale,
                                   alignment: Alignment.center,
                                   decoration: _selectedIndex == index ? BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
                                         color: Color(0xFFD7A769),
-                                        width: 2,
+                                        width: 2 * wScale,
                                       ),
                                     ),
                                   ) : null,
@@ -264,40 +260,39 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 32,),
+                              SizedBox(width: 32 * wScale,),
                             ],
                           );
                         }),
                       ),
-                      const SizedBox(height: 12,),
-                      const SizedBox(height: 12,),
+                      SizedBox(height: 12 * hScale,),
                       Container(
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        width: 361,
-                        height: 137,
+                        padding: EdgeInsets.symmetric(vertical: 12 * hScale),
+                        width: 361 * wScale,
+                        height: 145 * hScale,
                         child: Row(
                           children: [
                             Column(
                               children: [
                                 SizedBox(
-                                  width: 123,
-                                  height: 92,
+                                  width: 123 * wScale,
+                                  height: 92 * hScale,
                                   child: Image.asset('assets/images/house_d.jpeg'),
                                 ),
-                                SizedBox(height: 21,),
+                                SizedBox(height: 21 * hScale,),
                               ],
                             ),
-                            const SizedBox(width: 8,),
+                            SizedBox(width: 8 * wScale,),
                             Column(
                               children: [
                                 Container(
-                                  width: 230,
-                                  height: 19,
+                                  width: 230 * wScale,
+                                  height: 19 * hScale,
                                   child: Row(
                                     children: [
                                       Container(
-                                        width: 52,
-                                        height: 19,
+                                        width: 52 * wScale,
+                                        height: 19 * hScale,
                                         alignment: Alignment.center,
                                         decoration: ShapeDecoration(
                                           gradient: const LinearGradient(
@@ -314,14 +309,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                             fontSize: 11,
                                             fontFamily: 'PingFang TC',
                                             fontWeight: FontWeight.w400,
-                                            height: 0,
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(width: 8,),
+                                      SizedBox(width: 8 * wScale,),
                                       Container(
-                                        width: 41,
-                                        height: 19,
+                                        width: 41 * wScale,
+                                        height: 19 * hScale,
                                         alignment: Alignment.center,
                                         decoration: ShapeDecoration(
                                           shape: RoundedRectangleBorder(
@@ -336,16 +330,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                             fontSize: 11,
                                             fontFamily: 'PingFang TC',
                                             fontWeight: FontWeight.w400,
-                                            height: 0,
                                           ),
                                         ),
                                       )
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 4,),
+                                SizedBox(height: 4 * hScale,),
                                 SizedBox(
-                                  width: 230,
+                                  width: 230 * wScale,
                                   child: Text(
                                     '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面',
                                     style: TextStyle(
@@ -357,10 +350,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 4,),
+                                SizedBox(height: 4 * hScale,),
                                 Container(
-                                  width: 230,
-                                  height: 13,
+                                  width: 230 * wScale,
+                                  height: 13 * hScale,
                                   child: Row(
                                     children: [
                                       Text(
@@ -370,10 +363,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                           fontSize: 13,
                                           fontFamily: 'PingFang TC',
                                           fontWeight: FontWeight.w400,
-                                          height: 0.08,
                                         ),
                                       ),
-                                      SizedBox(width: 4,),
+                                      SizedBox(width: 4 * wScale,),
                                       Text(
                                         '2房',
                                         style: TextStyle(
@@ -381,16 +373,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                           fontSize: 13,
                                           fontFamily: 'PingFang TC',
                                           fontWeight: FontWeight.w400,
-                                          height: 0.08,
                                         ),
                                       )
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 10,),
+                                SizedBox(height: 10 * hScale,),
                                 Container(
                                   alignment: Alignment.bottomRight,
-                                  width: 230,
+                                  width: 230 * wScale,
                                   child: Text(
                                     '900 萬',
                                     style: TextStyle(
@@ -398,8 +389,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       fontSize: 20,
                                       fontFamily: 'Inter',
                                       fontWeight: FontWeight.w500,
-                                      height: 0.06,
-                                      letterSpacing: 0.40,
                                     ),
                                   ),
                                 )
@@ -408,36 +397,34 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 12,),
                       Divider(),
-                      SizedBox(height: 12,),
                       Container(
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        width: 361,
-                        height: 137,
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        width: 361 * wScale,
+                        height: 145 * hScale,
                         child: Row(
                           children: [
                             Column(
                               children: [
                                 SizedBox(
-                                  width: 123,
-                                  height: 92,
+                                  width: 123 * wScale,
+                                  height: 92 * hScale,
                                   child: Image.asset('assets/images/house_c.jpeg'),
                                 ),
-                                SizedBox(height: 21,),
+                                SizedBox(height: 21 * hScale,),
                               ],
                             ),
-                            const SizedBox(width: 8,),
+                            SizedBox(width: 8 * wScale,),
                             Column(
                               children: [
                                 Container(
-                                  width: 230,
-                                  height: 19,
+                                  width: 230 * wScale,
+                                  height: 19 * hScale,
                                   child: Row(
                                     children: [
                                       Container(
-                                        width: 52,
-                                        height: 19,
+                                        width: 52 * wScale,
+                                        height: 19 * hScale,
                                         alignment: Alignment.center,
                                         decoration: ShapeDecoration(
                                           gradient: const LinearGradient(
@@ -454,14 +441,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                             fontSize: 11,
                                             fontFamily: 'PingFang TC',
                                             fontWeight: FontWeight.w400,
-                                            height: 0,
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(width: 8,),
+                                      SizedBox(width: 8 * wScale,),
                                       Container(
-                                        width: 41,
-                                        height: 19,
+                                        width: 41 * wScale,
+                                        height: 19 * hScale,
                                         alignment: Alignment.center,
                                         decoration: ShapeDecoration(
                                           shape: RoundedRectangleBorder(
@@ -476,16 +462,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                             fontSize: 11,
                                             fontFamily: 'PingFang TC',
                                             fontWeight: FontWeight.w400,
-                                            height: 0,
                                           ),
                                         ),
                                       )
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 4,),
+                                SizedBox(height: 4 * hScale,),
                                 SizedBox(
-                                  width: 230,
+                                  width: 230 * wScale,
                                   child: Text(
                                     '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面',
                                     style: TextStyle(
@@ -493,14 +478,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                       fontSize: 15,
                                       fontFamily: 'PingFang TC',
                                       fontWeight: FontWeight.w400,
-                                      letterSpacing: 0.75,
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 4,),
+                                SizedBox(height: 4 * hScale,),
                                 Container(
-                                  width: 230,
-                                  height: 13,
+                                  width: 230 * wScale,
+                                  height: 13 * hScale,
                                   child: Row(
                                     children: [
                                       Text(
@@ -510,10 +494,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                           fontSize: 13,
                                           fontFamily: 'PingFang TC',
                                           fontWeight: FontWeight.w400,
-                                          height: 0.08,
                                         ),
                                       ),
-                                      SizedBox(width: 4,),
+                                      SizedBox(width: 4 * wScale,),
                                       Text(
                                         '2房',
                                         style: TextStyle(
@@ -521,16 +504,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                           fontSize: 13,
                                           fontFamily: 'PingFang TC',
                                           fontWeight: FontWeight.w400,
-                                          height: 0.08,
                                         ),
                                       )
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 10,),
+                                SizedBox(height: 10 * hScale,),
                                 Container(
                                   alignment: Alignment.bottomRight,
-                                  width: 230,
+                                  width: 230 * wScale,
                                   child: Text(
                                     '1400 萬',
                                     style: TextStyle(
@@ -538,8 +520,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       fontSize: 20,
                                       fontFamily: 'Inter',
                                       fontWeight: FontWeight.w500,
-                                      height: 0.06,
-                                      letterSpacing: 0.40,
                                     ),
                                   ),
                                 )
@@ -548,36 +528,34 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 12,),
                       Divider(),
-                      SizedBox(height: 12,),
                       Container(
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        width: 361,
-                        height: 137,
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        width: 361 * wScale,
+                        height: 145 * hScale,
                         child: Row(
                           children: [
                             Column(
                               children: [
                                 SizedBox(
-                                  width: 123,
-                                  height: 92,
+                                  width: 123 * wScale,
+                                  height: 92 * hScale,
                                   child: Image.asset('assets/images/house_e.jpeg'),
                                 ),
-                                SizedBox(height: 21,),
+                                SizedBox(height: 21 * hScale,),
                               ],
                             ),
-                            const SizedBox(width: 8,),
+                            SizedBox(width: 8 * wScale,),
                             Column(
                               children: [
                                 Container(
-                                  width: 230,
-                                  height: 19,
+                                  width: 230 * wScale,
+                                  height: 19 * hScale,
                                   child: Row(
                                     children: [
                                       Container(
-                                        width: 52,
-                                        height: 19,
+                                        width: 52 * wScale,
+                                        height: 19 * hScale,
                                         alignment: Alignment.center,
                                         decoration: ShapeDecoration(
                                           gradient: const LinearGradient(
@@ -594,14 +572,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                             fontSize: 11,
                                             fontFamily: 'PingFang TC',
                                             fontWeight: FontWeight.w400,
-                                            height: 0,
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(width: 8,),
+                                      SizedBox(width: 8 * wScale,),
                                       Container(
-                                        width: 41,
-                                        height: 19,
+                                        width: 41 * wScale,
+                                        height: 19 * hScale,
                                         alignment: Alignment.center,
                                         decoration: ShapeDecoration(
                                           shape: RoundedRectangleBorder(
@@ -616,16 +593,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                             fontSize: 11,
                                             fontFamily: 'PingFang TC',
                                             fontWeight: FontWeight.w400,
-                                            height: 0,
                                           ),
                                         ),
                                       )
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 4,),
+                                SizedBox(height: 4 * hScale,),
                                 SizedBox(
-                                  width: 230,
+                                  width: 230 * wScale,
                                   child: Text(
                                     '近交流道大面寬黃金雙店面黃金雙店面黃金雙店面',
                                     style: TextStyle(
@@ -633,14 +609,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                       fontSize: 15,
                                       fontFamily: 'PingFang TC',
                                       fontWeight: FontWeight.w400,
-                                      letterSpacing: 0.75,
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 4,),
+                                SizedBox(height: 4 * hScale,),
                                 Container(
-                                  width: 230,
-                                  height: 13,
+                                  width: 230 * wScale,
+                                  height: 13 * hScale,
                                   child: Row(
                                     children: [
                                       Text(
@@ -650,10 +625,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                           fontSize: 13,
                                           fontFamily: 'PingFang TC',
                                           fontWeight: FontWeight.w400,
-                                          height: 0.08,
                                         ),
                                       ),
-                                      SizedBox(width: 4,),
+                                      SizedBox(width: 4 * wScale,),
                                       Text(
                                         '2房',
                                         style: TextStyle(
@@ -661,16 +635,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                           fontSize: 13,
                                           fontFamily: 'PingFang TC',
                                           fontWeight: FontWeight.w400,
-                                          height: 0.08,
                                         ),
                                       )
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 10,),
+                                SizedBox(height: 10 * hScale,),
                                 Container(
                                   alignment: Alignment.bottomRight,
-                                  width: 230,
+                                  width: 230 * wScale,
                                   child: Text(
                                     '1280 萬',
                                     style: TextStyle(
@@ -678,8 +651,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       fontSize: 20,
                                       fontFamily: 'Inter',
                                       fontWeight: FontWeight.w500,
-                                      height: 0.06,
-                                      letterSpacing: 0.40,
                                     ),
                                   ),
                                 )
@@ -688,7 +659,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 12,),
                     ],
                   ),
                 ),

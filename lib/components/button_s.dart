@@ -7,12 +7,17 @@ class ButtonS extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight= MediaQuery.of(context).size.height;
+    double hScale = screenHeight/852;
+    double wScale = screenWidth/393;
+
     return Column(
       children: [
         GestureDetector(
           child: Container(
-            width: 40,
-            height: 40,
+            width: 40 * wScale,
+            height: 40 * hScale,
             decoration: ShapeDecoration(
               color: const Color(0xFFD9D9D9),
               shape: RoundedRectangleBorder(
@@ -26,7 +31,7 @@ class ButtonS extends StatelessWidget {
             }
           },
         ),
-        const SizedBox(height: 4,),
+        SizedBox(height: 4 * hScale,),
         Text(buttonText)
       ],
     );

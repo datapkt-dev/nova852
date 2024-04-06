@@ -8,18 +8,23 @@ class InfoBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight= MediaQuery.of(context).size.height;
+    double hScale = screenHeight/852;
+    double wScale = screenWidth/393;
+
     if (large) {
       return Container(
-        width: 174,
-        height: 160,
+        width: 174 * wScale,
+        height: 160 * hScale,
         decoration: ShapeDecoration(
           color: Color(bcolor),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         ),
         child: Container(
-          width: 132,
-          height: 37,
-          margin: EdgeInsets.only(top: 21, left: 11),
+          width: 132 * wScale,
+          height: 37 * hScale,
+          margin: EdgeInsets.only(top: 21 * hScale, left: 11 * wScale),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,11 +36,9 @@ class InfoBoard extends StatelessWidget {
                   fontSize: 15,
                   fontFamily: 'PingFang TC',
                   fontWeight: FontWeight.w500,
-                  height: 0.08,
-                  letterSpacing: 0.75,
                 ),
               ),
-              SizedBox(height: 10,),
+              //SizedBox(height: 10 * hScale,),
               Text(
                 subtitle,
                 style: TextStyle(
@@ -43,7 +46,6 @@ class InfoBoard extends StatelessWidget {
                   fontSize: 12,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w400,
-                  height: 0,
                 ),
               ),
             ],
@@ -52,16 +54,16 @@ class InfoBoard extends StatelessWidget {
       );
     } else {
       return Container(
-        width: 174,
-        height: 77,
+        width: 174 * wScale,
+        height: 77 * hScale,
         decoration: ShapeDecoration(
           color: Color(bcolor),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         ),
         child: Container(
-          width: 132,
-          height: 37,
-          margin: EdgeInsets.only(top: 21, left: 11),
+          width: 132 * wScale,
+          height: 37 * hScale,
+          margin: EdgeInsets.only(top: 21 * hScale, left: 11 * wScale),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,11 +75,9 @@ class InfoBoard extends StatelessWidget {
                   fontSize: 15,
                   fontFamily: 'PingFang TC',
                   fontWeight: FontWeight.w500,
-                  height: 0.08,
-                  letterSpacing: 0.75,
                 ),
               ),
-              SizedBox(height: 10,),
+              //SizedBox(height: 10 * hScale,),
               Text(
                 subtitle,
                 style: TextStyle(
@@ -85,7 +85,6 @@ class InfoBoard extends StatelessWidget {
                   fontSize: 12,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w400,
-                  height: 0,
                 ),
               ),
             ],

@@ -12,10 +12,8 @@ class MorePage extends StatefulWidget {
 class _MorePageState extends State<MorePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(child: Text('更多'),),
-      bottomNavigationBar: BottomBar(),
+    return Center(
+      child: Text('更多'),
     );
   }
 }

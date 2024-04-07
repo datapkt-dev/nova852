@@ -12,10 +12,8 @@ class BreakingNewsPage extends StatefulWidget {
 class _BreakingNewsPageState extends State<BreakingNewsPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(child: Text('消息'),),
-      bottomNavigationBar: BottomBar(),
+    return Center(
+      child: Text('消息'),
     );
   }
 }

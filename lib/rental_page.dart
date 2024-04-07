@@ -322,7 +322,7 @@ class _RentalPageState extends State<RentalPage> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Container(
-                    height: 50,
+                    height: 50 * hScale,
                     padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -393,12 +393,12 @@ class _RentalPageState extends State<RentalPage> {
                                   Stack(
                                     children: [
                                       SizedBox(
-                                        width: 150,
+                                        width: 150 * wScale,
                                         child: Image.asset('assets/images/rentalitem.jpeg'),
                                       ),
                                       Container(
-                                        width: 52,
-                                        height: 20,
+                                        width: 52 * wScale,
+                                        height: 20 * hScale,
                                         decoration: const ShapeDecoration(
                                           color: Colors.black,
                                           shape: RoundedRectangleBorder(
@@ -407,17 +407,16 @@ class _RentalPageState extends State<RentalPage> {
                                         ),
                                         child: Row(
                                           children: [
-                                            const SizedBox(width: 4,),
+                                            SizedBox(width: 4 * wScale,),
                                             SvgPicture.asset('assets/icons/diamond.svg'),
-                                            const SizedBox(width: 2,),
-                                            const Text(
+                                            SizedBox(width: 2 * wScale,),
+                                            Text(
                                               '鑽石',
                                               style: TextStyle(
                                                 color: Color(0xFFF0C790),
                                                 fontSize: 12,
                                                 fontFamily: 'PingFang TC',
                                                 fontWeight: FontWeight.w500,
-                                                height: 0.08,
                                               ),
                                             )
                                           ],
@@ -434,7 +433,7 @@ class _RentalPageState extends State<RentalPage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(
-                                        width: 230,
+                                        width: 230 * wScale,
                                         child: Text(
                                           '近交流道大面寬黃金雙店面',
                                           style: TextStyle(
@@ -454,7 +453,7 @@ class _RentalPageState extends State<RentalPage> {
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),
-                                      SizedBox(height: 4,),
+                                      SizedBox(height: 4 * hScale,),
                                       Text(
                                         '\$60 萬',
                                         style: TextStyle(
@@ -470,7 +469,7 @@ class _RentalPageState extends State<RentalPage> {
                                 ],
                               )
                           ),
-                          SizedBox(height: 16,)
+                          SizedBox(height: 16 * hScale,)
                         ],
                       ),
                     );

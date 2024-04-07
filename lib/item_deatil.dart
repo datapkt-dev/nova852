@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -117,8 +118,17 @@ class _ItemDetailState extends State<ItemDetail> {
                           children: [
                             Container(
                               width: double.infinity,
-                              //height: 280,
-                              child: Image.asset('assets/images/item_img.jpeg'),
+                              height: 280,
+                              //child: Image.asset('assets/images/item_img.jpeg'),
+                              child: Swiper(
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Image.asset(
+                                    'assets/images/item_img.jpeg',
+                                    fit: BoxFit.fill,
+                                  );
+                                },
+                                itemCount: 3,
+                              ),
                             ), //照片
                             Container(
                               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),

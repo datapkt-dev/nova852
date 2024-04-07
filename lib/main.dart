@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:nova852/buying_page.dart';
 import 'package:nova852/components/bottombar.dart';
@@ -112,10 +113,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 320 * wScale,
                   height: 184 * hScale,
                   decoration: ShapeDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/landscape.jpeg'),
-                      fit: BoxFit.fill,
-                    ),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                     shadows: [
                       BoxShadow(
@@ -125,6 +122,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         spreadRadius: 0,
                       )
                     ],
+                  ),
+                  child: Swiper(
+                    itemBuilder: (BuildContext context, int index) {
+                      return Image.asset(
+                        'assets/images/landscape.jpeg',
+                        fit: BoxFit.fill,
+                      );
+                    },
+                    itemCount: 10,
                   ),
                 ), //圖片輪播
                 SizedBox(height: 16 * hScale,),

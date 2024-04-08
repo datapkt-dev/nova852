@@ -626,15 +626,16 @@ class _ItemDetailState extends State<ItemDetail> {
                                               ),
                                             ),
                                             SizedBox(width: 8,),
-                                            Text(
-                                              '(代理商提供)',
-                                              style: TextStyle(
-                                                color: Color(0xFF999999),
-                                                fontSize: 13,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
+                                            // Text(
+                                            //   '(代理商提供)',
+                                            //   style: TextStyle(
+                                            //     color: Color(0xFF999999),
+                                            //     fontSize: 13,
+                                            //     fontFamily: 'PingFang TC',
+                                            //     fontWeight: FontWeight.w400,
+                                            //   ),
+                                            //   overflow: TextOverflow.visible,
+                                            // ),
                                           ],
                                         ),
                                       ],
@@ -1503,7 +1504,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                   color: Color(0xFFD9D9D9),
                                 ),
                                 Container(
-                                  width: 230,
+                                  width: 200 * wScale,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
@@ -1515,7 +1516,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           fontFamily: 'PingFang TC',
                                           fontWeight: FontWeight.w500,
                                         ),
-                                        overflow: TextOverflow.visible,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                       SizedBox(height: 4,),
                                       Text(

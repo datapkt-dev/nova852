@@ -39,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: SafeArea(
           child: Center(
-        child: ButtonS(buttonText: '起始頁面', page: BottomBar(),),
-      )
+            child: ButtonS(buttonText: '起始頁面', page: BottomBar(),),
+          )
       ),
     );
   }

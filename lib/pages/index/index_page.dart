@@ -1,5 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:nova852/lab/p1.dart';
+import 'package:nova852/lab/rental_page_lab.dart';
 
 import '../../buying_page.dart';
 import '../../components/bottombar.dart';
@@ -118,7 +120,7 @@ class _IndexPageState extends State<IndexPage> {
                   SizedBox(width: 42 * wScale,),
                   ButtonS(buttonText: '買樓', page: BuyingPage(),),
                   SizedBox(width: 42 * wScale,),
-                  ButtonS(buttonText: '按揭',),
+                  ButtonS(buttonText: '按揭',page: T1Page(),),
                 ],
               ),
             ),  //租屋

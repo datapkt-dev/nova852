@@ -433,7 +433,7 @@ class _RentalPageState extends State<RentalPage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(
-                                        width: 230 * wScale,
+                                        width: 200 * wScale,
                                         child: Text(
                                           '近交流道大面寬黃金雙店面',
                                           style: TextStyle(
@@ -442,6 +442,7 @@ class _RentalPageState extends State<RentalPage> {
                                             fontFamily: 'PingFang TC',
                                             fontWeight: FontWeight.w500,
                                           ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       Text(

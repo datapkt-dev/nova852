@@ -32,6 +32,11 @@ class _ItemDetailState extends State<ItemDetail> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight= MediaQuery.of(context).size.height;
+    double hScale = screenHeight/852;
+    double wScale = screenWidth/393;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('4房1廳 ＄23,500/月'),
@@ -1034,27 +1039,27 @@ class _ItemDetailState extends State<ItemDetail> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
                                   child: ButtonS(buttonText: '交通'),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
                                   child: ButtonS(buttonText: '交通'),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
                                   child: ButtonS(buttonText: '交通'),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
                                   child: ButtonS(buttonText: '交通'),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
                                   child: ButtonS(buttonText: '交通'),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
                                   child: ButtonS(buttonText: '交通'),
                                 ),
                               ],

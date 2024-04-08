@@ -1,14 +1,13 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:nova852/lab/p1.dart';
-import 'package:nova852/lab/rental_page_lab.dart';
 
 import '../../buying_page.dart';
 import '../../components/bottombar.dart';
 import '../../components/button_s.dart';
 import '../../components/featured_items.dart';
 import '../../components/info.dart';
-import '../../rental_page.dart';
+import 'rental_page.dart';
 
 class IndexPage extends StatefulWidget {
   IndexPage({super.key});

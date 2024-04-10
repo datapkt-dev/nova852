@@ -36,12 +36,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      body: SafeArea(
-          child: Center(
-            child: ButtonS(buttonText: '起始頁面', page: BottomBar(),),
-          )
-      ),
-    );
+    return BottomBar();
   }
 }

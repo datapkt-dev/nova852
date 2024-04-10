@@ -206,17 +206,41 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         color: Color(0xFFEBEBEB),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                       ),
-                      alignment: Alignment.center,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
                         children: [
                           SvgPicture.asset('assets/icons/reset.svg'),
-                          Text('重置'),
+                          Text(
+                            '重置',
+                            style: TextStyle(
+                              color: Color(0xFF858585),
+                              fontSize: 18,
+                              fontFamily: 'PingFang TC',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          )
                         ],
                       ),
                     ),
                     Container(
-                      color: Color(0xFF50C5D5),
-                      child: Text('確定'),
+                      width: 230,
+                      height: 50,
+                      decoration: ShapeDecoration(
+                        color: Color(0xFF50C5D5),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        '確定',
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                     ),
                   ],
                 )

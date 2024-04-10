@@ -12,7 +12,7 @@ class RentalPage extends StatefulWidget {
 
   final List<String> tab = ['區域', '價錢', '用途', '更多', '排序'];
   final List<String> tab2 = ['減價盤', '上車盤', '7日新上架', '筍盤', '9成按揭', '獨家盤', '業主盤', '鎖匙盤'];
-  final filterWidget = [AreaWidget2(), null, FunctionWidget2(), null];
+  final filterWidget = [AreaWidget2(), PriceWidget(), FunctionWidget2(), Container(), Container()];
 
   @override
   State<RentalPage> createState() => _RentalPageState();
@@ -215,18 +215,17 @@ class _RentalPageState extends State<RentalPage> {
                     ),
                     if (_isOverlayVisible) ...[
                       Positioned(
-                        top: 41*hScale, // 向下推移20px
+                        top: 41 * hScale,
                         left: 0,
                         right: 0,
                         bottom: 0,
                         child: ModalBarrier(
-                          color: Colors.black54, // 暗色遮罩
-                          dismissible: true, // 點擊遮罩是否可以關閉Overlay
+                          color: Colors.black54,
+                          dismissible: true,
                           onDismiss: () {
                             setState(() {
                               _showContainer = !_showContainer;
                               _isOverlayVisible = false;
-                              // _showB= !_showB; // 切換 ContainerA 的顯示狀態
                             });
                           },
                         ),
@@ -252,7 +251,7 @@ class _RentalPageState extends State<RentalPage> {
                                       alignment: Alignment.center,
                                       child: InkWell(
                                         onTap: () {
-                                          _isOverlayVisible = !_isOverlayVisible; // 切換遮罩顯示狀態
+                                          _isOverlayVisible = !_isOverlayVisible;
                                           setState(() {
                                             _showContainer = !_showContainer;
                                             _selectedIndex = index;
@@ -292,7 +291,7 @@ class _RentalPageState extends State<RentalPage> {
                         ),
                         Visibility(
                           visible: _showContainer,
-                          child: PriceWidget(),
+                          child: widget.filterWidget[_selectedIndex],
                           // child: FunctionWidget2(),
                         ),
                       ],

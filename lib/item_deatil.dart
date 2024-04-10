@@ -1554,6 +1554,83 @@ class _ItemDetailState extends State<ItemDetail> {
           ),
         )
       ),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 7),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFFD9D9D9),
+                      shape: OvalBorder(),
+                    ),
+                  ),
+                  SizedBox(width: 4,),
+                  Text(
+                    'Tiffany Chan',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontFamily: 'PingFang TC',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Container(
+                    width: 93,
+                    height: 48,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFF50C5D5),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      '電話查詢',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontFamily: 'PingFang TC',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 9,),
+                  Container(
+                    width: 93,
+                    height: 48,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFF50C5D5),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      '電話查詢',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontFamily: 'PingFang TC',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )
+      ),
     );
   }
 }

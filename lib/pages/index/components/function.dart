@@ -12,7 +12,7 @@ class FunctionWidget2 extends StatefulWidget {
 }
 
 class _FunctionWidgetState extends State<FunctionWidget2> {
-  int _selectedIndex = 0;
+  int _selectedIndex = -1;
   bool _showContainer = false;
 
   @override
@@ -199,28 +199,36 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: 115,
-                      height: 50,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFFEBEBEB),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SvgPicture.asset('assets/icons/reset.svg'),
-                          Text(
-                            '重置',
-                            style: TextStyle(
-                              color: Color(0xFF858585),
-                              fontSize: 18,
-                              fontFamily: 'PingFang TC',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          )
-                        ],
+                    InkWell(
+                      onTap: (){
+                        setState(() {
+                          _selectedIndex = -1;
+                          _showContainer = false;
+                        });
+                      },
+                      child: Container(
+                        width: 115,
+                        height: 50,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFFEBEBEB),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            SvgPicture.asset('assets/icons/reset.svg'),
+                            Text(
+                              '重置',
+                              style: TextStyle(
+                                color: Color(0xFF858585),
+                                fontSize: 18,
+                                fontFamily: 'PingFang TC',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                     Container(

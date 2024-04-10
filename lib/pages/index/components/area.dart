@@ -162,28 +162,37 @@ class _AreaWidgetState extends State<AreaWidget2> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: 115,
-                    height: 50,
-                    decoration: ShapeDecoration(
-                      color: Color(0xFFEBEBEB),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        SvgPicture.asset('assets/icons/reset.svg'),
-                        Text(
-                          '重置',
-                          style: TextStyle(
-                            color: Color(0xFF858585),
-                            fontSize: 18,
-                            fontFamily: 'PingFang TC',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        )
-                      ],
+                  InkWell(
+                    onTap: (){
+                      setState(() {
+                        _selectedIndex = 0;
+                        _selectedZone = -1;
+                        _showArea = false;
+                      });
+                    },
+                    child: Container(
+                      width: 115,
+                      height: 50,
+                      decoration: ShapeDecoration(
+                        color: Color(0xFFEBEBEB),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          SvgPicture.asset('assets/icons/reset.svg'),
+                          Text(
+                            '重置',
+                            style: TextStyle(
+                              color: Color(0xFF858585),
+                              fontSize: 18,
+                              fontFamily: 'PingFang TC',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Container(

@@ -77,6 +77,15 @@ flutter:
     - assets/icons/bottombar/more_selected.svg
     - assets/icons/bottombar/profile.svg
     - assets/icons/bottombar/profile_selected.svg
+    - assets/icons/news.svg
+    - assets/icons/red_point.svg
+    - assets/icons/speaker.svg
+    - assets/icons/calendar.svg
+    - assets/icons/heart_box.svg
+    - assets/icons/contract.svg
+    - assets/icons/coins.svg
+    - assets/icons/fix.svg
+    - assets/icons/service.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

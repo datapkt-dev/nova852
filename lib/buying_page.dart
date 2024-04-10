@@ -1,22 +1,37 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/item_deatil.dart';
+import 'package:nova852/lab/components/function.dart';
+import 'package:nova852/lab/components/price.dart';
+import 'package:nova852/pages/index/components/area.dart';
+import 'package:nova852/pages/index/components/function.dart';
 
 class BuyingPage extends StatefulWidget {
   BuyingPage({super.key});
 
   final List<String> tab = ['區域', '價錢', '用途', '更多', '排序'];
-  final List<String> tab2 = ['7日新上架', '筍盤', '減價盤', '可分租', '業主盤', '可養寵物', '設備齊全', '豪華裝修'];
+  final List<String> tab2 = ['減價盤', '上車盤', '7日新上架', '筍盤', '9成按揭', '獨家盤', '業主盤', '鎖匙盤'];
+  final filterWidget = [AreaWidget2(), PriceWidget(), FunctionWidget2(), Container(), Container()];
 
   @override
-  State<BuyingPage> createState() => _BuyingPageState();
+  State<BuyingPage> createState() => _RentalPageState();
 }
 
-class _BuyingPageState extends State<BuyingPage> {
+class _RentalPageState extends State<BuyingPage> {
   int _selectedIndex = 0;
+  double _height = 40;
+  bool _showContainer = false;
+  final List<int> items = List<int>.generate(100, (i) => i + 1);
+  bool _isOverlayVisible = false;
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight= MediaQuery.of(context).size.height;
+    double hScale = screenHeight/852;
+    double wScale = screenWidth/393;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('買樓'),
@@ -32,208 +47,257 @@ class _BuyingPageState extends State<BuyingPage> {
         ],
       ),
       body: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                height: 40,
-                padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: List.generate(widget.tab.length, (index) {
-                    return Container(
-                      width: 72,
-                      alignment: Alignment.center,
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            _selectedIndex = index;
-                          });
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
+          children: [
+            Column(
+              children: [
+                SizedBox(height: 40*hScale,),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Container(
+                    height: 50 * hScale,
+                    padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: List.generate(widget.tab2.length, (index) {
+                        return Row(
                           children: [
-                            Text(
-                              widget.tab[index],
-                              style: TextStyle(
-                                color: _selectedIndex == index ? Color(0xFFFF8000) : Color(0xFF333333),
-                                fontFamily: 'PingFang TC',
-                                fontSize: 18,
-                                //fontWeight: _selectedIndex == index ? FontWeight.w500 : FontWeight.w400,
+                            Container(
+                              height: 34,
+                              padding: EdgeInsets.symmetric(horizontal: 12),
+                              color: _selectedIndex == index ? Color(0xFFFF8000) : Color(0xFFF3F4F6),
+                              child: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      _selectedIndex = index;
+                                    });
+                                  },
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        widget.tab2[index],
+                                        style: TextStyle(
+                                          color: _selectedIndex == index ? Colors.white : Color(0xFF333333),
+                                          fontFamily: 'PingFang TC',
+                                          fontSize: 18,
+                                          //fontWeight: _selectedIndex == index ? FontWeight.w500 : FontWeight.w400,
+                                        ),
+                                      ),
+                                    ],
+                                  )
                               ),
                             ),
-                            Icon(
-                              Icons.arrow_drop_down,
-                              color: _selectedIndex == index ? Color(0xFFFF8000) : Color(0xFF333333),
+                            SizedBox(width: 8,),
+                          ],
+                        );
+                      }),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0XFFFEF5EB),
+                                    ),
+                                    BoxShadow(
+                                      color: Colors.white,
+                                      blurRadius: 10,
+                                      spreadRadius: 10,
+                                      offset: Offset(0, 30),
+                                    ),
+                                  ],
+                                ),
+                                padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Stack(
+                                      children: [
+                                        SizedBox(
+                                          width: 150 * wScale,
+                                          child: Image.asset('assets/images/rentalitem.jpeg'),
+                                        ),
+                                        Container(
+                                          width: 52 * wScale,
+                                          height: 20 * hScale,
+                                          decoration: const ShapeDecoration(
+                                            color: Colors.black,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(width: 4 * wScale,),
+                                              SvgPicture.asset('assets/icons/diamond.svg'),
+                                              SizedBox(width: 2 * wScale,),
+                                              Text(
+                                                '鑽石',
+                                                style: TextStyle(
+                                                  color: Color(0xFFF0C790),
+                                                  fontSize: 12,
+                                                  fontFamily: 'PingFang TC',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Positioned(
+                                          left: 0,
+                                          bottom: 0,
+                                          child: SvgPicture.asset('assets/icons/videoplay.svg'),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          width: 200 * wScale,
+                                          child: Text(
+                                            '近交流道大面寬黃金雙店面',
+                                            style: TextStyle(
+                                              color: Color(0xFF333333),
+                                              fontSize: 18,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                        Text(
+                                          '車位｜太古城',
+                                          style: TextStyle(
+                                            color: Color(0xFF999999),
+                                            fontSize: 15,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        SizedBox(height: 4 * hScale,),
+                                        Text(
+                                          '\$60 萬',
+                                          style: TextStyle(
+                                            color: Color(0xFFF12323),
+                                            fontSize: 20,
+                                            fontFamily: 'Inter',
+                                            fontWeight: FontWeight.w500,
+                                            //letterSpacing: 0.40,
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                )
                             ),
+                            SizedBox(height: 16 * hScale,)
                           ],
                         ),
-                      ),
-                    );
-                  }),
+                      );
+                    },
+                    itemCount: 5,
+                  ),
+                )
+              ],
+            ),
+            if (_isOverlayVisible) ...[
+              Positioned(
+                top: 41 * hScale,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: ModalBarrier(
+                  color: Colors.black54,
+                  dismissible: true,
+                  onDismiss: () {
+                    setState(() {
+                      _showContainer = !_showContainer;
+                      _isOverlayVisible = false;
+                    });
+                  },
                 ),
               ),
-              Divider(height: 0,),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Container(
-                  height: 50,
-                  padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List.generate(widget.tab2.length, (index) {
-                      return Row(
-                        children: [
-                          Container(
-                            height: 34,
-                            padding: EdgeInsets.symmetric(horizontal: 12),
-                            color: _selectedIndex == index ? Color(0xFFEE4130) : Color(0xFFF3F4F6),
-                            child: InkWell(
+            ],
+            Column(
+              children: [
+                AnimatedContainer(
+                  //height: 440,
+                  //padding: EdgeInsets.only(left: 16, right: 16, top: 0),
+                  duration: Duration(milliseconds: 300),
+                  alignment: Alignment.topCenter,
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: List.generate(widget.tab.length, (index) {
+                            return Container(
+                              width: 72,
+                              alignment: Alignment.center,
+                              child: InkWell(
                                 onTap: () {
+                                  _isOverlayVisible = !_isOverlayVisible;
                                   setState(() {
+                                    _showContainer = !_showContainer;
                                     _selectedIndex = index;
+                                    if (_height == 40) {
+                                      _height = 100;
+                                    } else {
+                                      _height = 40;
+                                    }
                                   });
                                 },
                                 child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      widget.tab2[index],
+                                      widget.tab[index],
                                       style: TextStyle(
-                                        color: _selectedIndex == index ? Colors.white : Color(0xFF333333),
+                                        color: _selectedIndex == index ? Color(0xFFFF8000) : Color(0xFF333333),
                                         fontFamily: 'PingFang TC',
                                         fontSize: 18,
                                         //fontWeight: _selectedIndex == index ? FontWeight.w500 : FontWeight.w400,
                                       ),
                                     ),
+                                    Icon(
+                                      Icons.arrow_drop_down,
+                                      color: _selectedIndex == index ? Color(0xFFFF8000) : Color(0xFF333333),
+                                    ),
                                   ],
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 8,),
-                        ],
-                      );
-                    }),
+                                ),
+                              ),
+                            );
+                          }),
+                        ),
+                      ),
+                      Divider(height: 0,),
+                    ],
                   ),
                 ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
-                      },
-                      child: Column(
-                        children: [
-                          Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0XFFFEF5EB),
-                                  ),
-                                  BoxShadow(
-                                    color: Colors.white,
-                                    blurRadius: 10,
-                                    spreadRadius: 10,
-                                    offset: Offset(0, 30),
-                                  ),
-                                ],
-                              ),
-                              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Stack(
-                                    children: [
-                                      SizedBox(
-                                        width: 150,
-                                        child: Image.asset('assets/images/rentalitem.jpeg'),
-                                      ),
-                                      Container(
-                                        width: 52,
-                                        height: 20,
-                                        decoration: const ShapeDecoration(
-                                          color: Colors.black,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            const SizedBox(width: 4,),
-                                            SvgPicture.asset('assets/icons/diamond.svg'),
-                                            const SizedBox(width: 2,),
-                                            const Text(
-                                              '鑽石',
-                                              style: TextStyle(
-                                                color: Color(0xFFF0C790),
-                                                fontSize: 12,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w500,
-                                                height: 0.08,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                      Positioned(
-                                        left: 0,
-                                        bottom: 0,
-                                        child: SvgPicture.asset('assets/icons/videoplay.svg'),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(
-                                        width: 230,
-                                        child: Text(
-                                          '近交流道大面寬黃金雙店面',
-                                          style: TextStyle(
-                                            color: Color(0xFF333333),
-                                            fontSize: 18,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        '車位｜太古城',
-                                        style: TextStyle(
-                                          color: Color(0xFF999999),
-                                          fontSize: 15,
-                                          fontFamily: 'PingFang TC',
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                      SizedBox(height: 4,),
-                                      Text(
-                                        '\$60 萬',
-                                        style: TextStyle(
-                                          color: Color(0xFFF12323),
-                                          fontSize: 20,
-                                          fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          //letterSpacing: 0.40,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              )
-                          ),
-                          SizedBox(height: 16,)
-                        ],
-                      ),
-                    );
-                  },
-                  itemCount: 5,
+                Visibility(
+                  visible: _showContainer,
+                  child: widget.filterWidget[_selectedIndex],
+                  // child: FunctionWidget2(),
                 ),
-              ),
-            ],
-          )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

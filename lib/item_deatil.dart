@@ -690,10 +690,10 @@ class _ItemDetailState extends State<ItemDetail> {
                             SizedBox(height: 16,),
                             Row(
                               children: [
-                                Container(
-                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                                  child: ButtonS(buttonText: '冷氣'),
-                                ),
+                                // Container(
+                                //   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                                //   child: ButtonS(buttonText: '冷氣'),
+                                // ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                                   child: ButtonS(buttonText: '熱水爐'),
@@ -701,6 +701,20 @@ class _ItemDetailState extends State<ItemDetail> {
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                                   child: ButtonS(buttonText: '床'),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                                  child: Column(
+                                    children: [
+                                      GestureDetector(
+                                        child: SvgPicture.asset('assets/icons/furniture/aircon.svg'),
+                                        onTap: () {
+                                        },
+                                      ),
+                                      SizedBox(height: 4 * hScale,),
+                                      Text('冷氣')
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -1041,28 +1055,112 @@ class _ItemDetailState extends State<ItemDetail> {
                               children: [
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
-                                  child: ButtonS(buttonText: '交通'),
+                                  child: Column(
+                                    children: [
+                                      GestureDetector(
+                                        child: SvgPicture.asset('assets/icons/facility/bank.svg'),
+                                        onTap: () {
+                                        },
+                                      ),
+                                      SizedBox(height: 4 * hScale,),
+                                      Text('交通')
+                                    ],
+                                  ),
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
-                                  child: ButtonS(buttonText: '交通'),
+                                  child: Column(
+                                    children: [
+                                      GestureDetector(
+                                        child: SvgPicture.asset('assets/icons/facility/hospital.svg'),
+                                        onTap: () {
+                                        },
+                                      ),
+                                      SizedBox(height: 4 * hScale,),
+                                      Text('交通')
+                                    ],
+                                  ),
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
-                                  child: ButtonS(buttonText: '交通'),
+                                  child: Column(
+                                    children: [
+                                      GestureDetector(
+                                        child: SvgPicture.asset('assets/icons/facility/restaurant.svg'),
+                                        onTap: () {
+                                        },
+                                      ),
+                                      SizedBox(height: 4 * hScale,),
+                                      Text('交通')
+                                    ],
+                                  ),
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
-                                  child: ButtonS(buttonText: '交通'),
+                                  child: Column(
+                                    children: [
+                                      GestureDetector(
+                                        child: SvgPicture.asset('assets/icons/facility/school.svg'),
+                                        onTap: () {
+                                        },
+                                      ),
+                                      SizedBox(height: 4 * hScale,),
+                                      Text('交通')
+                                    ],
+                                  ),
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
-                                  child: ButtonS(buttonText: '交通'),
+                                  child: Column(
+                                    children: [
+                                      GestureDetector(
+                                        child: SvgPicture.asset('assets/icons/facility/supermarket.svg'),
+                                        onTap: () {
+                                        },
+                                      ),
+                                      SizedBox(height: 4 * hScale,),
+                                      Text('交通')
+                                    ],
+                                  ),
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
-                                  child: ButtonS(buttonText: '交通'),
+                                  child: Column(
+                                    children: [
+                                      GestureDetector(
+                                        child: SvgPicture.asset('assets/icons/facility/trafic.svg'),
+                                        onTap: () {
+                                        },
+                                      ),
+                                      SizedBox(height: 4 * hScale,),
+                                      Text('交通')
+                                    ],
+                                  ),
                                 ),
+                                // Container(
+                                //   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
+                                //   child: ButtonS(buttonText: '交通'),
+                                // ),
+                                // Container(
+                                //   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
+                                //   child: ButtonS(buttonText: '交通'),
+                                // ),
+                                // Container(
+                                //   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
+                                //   child: ButtonS(buttonText: '交通'),
+                                // ),
+                                // Container(
+                                //   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
+                                //   child: ButtonS(buttonText: '交通'),
+                                // ),
+                                // Container(
+                                //   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
+                                //   child: ButtonS(buttonText: '交通'),
+                                // ),
+                                // Container(
+                                //   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6 * wScale),
+                                //   child: ButtonS(buttonText: '交通'),
+                                // ),
                               ],
                             ),
                             SizedBox(height: 16,),

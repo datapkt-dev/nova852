@@ -298,8 +298,6 @@ class _RentalPageState extends State<RentalPage> {
                     )
                   ],
             ),
-
-
         ),
     );
   }

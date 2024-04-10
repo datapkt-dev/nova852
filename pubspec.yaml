@@ -86,6 +86,18 @@ flutter:
     - assets/icons/coins.svg
     - assets/icons/fix.svg
     - assets/icons/service.svg
+    - assets/icons/reset.svg
+    - assets/icons/furniture/aircon.svg
+    - assets/icons/furniture/microwave.svg
+    - assets/icons/furniture/refrigerator.svg
+    - assets/icons/furniture/tv.svg
+    - assets/icons/furniture/washer.svg
+    - assets/icons/facility/bank.svg
+    - assets/icons/facility/hospital.svg
+    - assets/icons/facility/restaurant.svg
+    - assets/icons/facility/school.svg
+    - assets/icons/facility/supermarket.svg
+    - assets/icons/facility/trafic.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

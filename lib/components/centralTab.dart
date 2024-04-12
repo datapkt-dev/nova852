@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nova852/pages/profile/contract_history.dart';
+import 'package:nova852/pages/profile/payment_list.dart';
 
 class CentralTab extends StatelessWidget {
   const CentralTab({super.key});
@@ -21,69 +23,79 @@ class CentralTab extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 60,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  padding: const EdgeInsets.all(4),
-                  child: SvgPicture.asset(
-                    'assets/icons/contract.svg',
-                    width: 24.0, // 設定寬度
-                    height: 24.0, // 設定高度
-                  )
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  '歷年合約',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    color: Color(0xFF333333),
-                    fontSize: 13,
-                    fontFamily: 'PingFang TC',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ContractHistory()));
+            },
+            child: Container(
+              width: 60,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                      width: 40,
+                      height: 40,
+                      padding: const EdgeInsets.all(4),
+                      child: SvgPicture.asset(
+                        'assets/icons/contract.svg',
+                        width: 24.0, // 設定寬度
+                        height: 24.0, // 設定高度
+                      )
                   ),
-                ),
-              ],
+                  const SizedBox(height: 4),
+                  Text(
+                    '歷年合約',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      color: Color(0xFF333333),
+                      fontSize: 13,
+                      fontFamily: 'PingFang TC',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(width: 7),
-          Container(
-            width: 60,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  padding: const EdgeInsets.all(4),
-                  child: SvgPicture.asset(
-                    'assets/icons/coins.svg',
-                    width: 24.0, // 設定寬度
-                    height: 24.0, // 設定高度
-                  )
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  '繳款進度',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    color: Color(0xFF333333),
-                    fontSize: 13,
-                    fontFamily: 'PingFang TC',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentListPage()));
+            },
+            child: Container(
+              width: 60,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                      width: 40,
+                      height: 40,
+                      padding: const EdgeInsets.all(4),
+                      child: SvgPicture.asset(
+                        'assets/icons/coins.svg',
+                        width: 24.0, // 設定寬度
+                        height: 24.0, // 設定高度
+                      )
                   ),
-                ),
-              ],
+                  const SizedBox(height: 4),
+                  Text(
+                    '帳單列表',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      color: Color(0xFF333333),
+                      fontSize: 13,
+                      fontFamily: 'PingFang TC',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(width: 7),
@@ -167,6 +179,11 @@ class PaymentTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight= MediaQuery.of(context).size.height;
+    double hScale = screenHeight/852;
+    double wScale = screenWidth/393;
+
     return Container(
       width: 345,
       height: 117,
@@ -209,7 +226,7 @@ class PaymentTab extends StatelessWidget {
                     height: 0,
                   ),
                 ),
-                const SizedBox(width: 155),
+                SizedBox(width: 145*wScale),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: ShapeDecoration(

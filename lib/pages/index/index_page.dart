@@ -1,12 +1,14 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:nova852/lab/p1.dart';
+// import 'package:nova852/mortgage_page.dart';
 
 import 'buying_page.dart';
 import '../../components/bottombar.dart';
 import '../../components/button_s.dart';
 import '../../components/featured_items.dart';
 import '../../components/info.dart';
+import 'mortgage_page.dart';
 import 'rental_page.dart';
 
 class IndexPage extends StatefulWidget {
@@ -119,7 +121,7 @@ class _IndexPageState extends State<IndexPage> {
                   SizedBox(width: 42 * wScale,),
                   ButtonS(buttonText: '買樓', page: BuyingPage(),),
                   SizedBox(width: 42 * wScale,),
-                  ButtonS(buttonText: '按揭',page: T1Page(),),
+                  ButtonS(buttonText: '按揭',page: MortgagePage(),),
                 ],
               ),
             ),  //租屋
@@ -178,7 +180,6 @@ class _IndexPageState extends State<IndexPage> {
                           ),
                         ),
                         onTap: () {
-                          print("123");
                           //Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPageLab()));
                         },
 

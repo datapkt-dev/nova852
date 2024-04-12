@@ -6,74 +6,11 @@ import 'package:nova852/components/options.dart';
 
 import '../../components/bottombar.dart';
 
-// class ProfilePage extends StatefulWidget {
-//   const ProfilePage({super.key});
-//
-//   @override
-//   State<ProfilePage> createState() => _ProfilePageState();
-// }
-//
-// class _ProfilePageState extends State<ProfilePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//       child: Text('我的'),
-//     );
-//   }
-// }
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key,required});
 
-String? _loginType;
 
-// Future<void> signOut(BuildContext context) async {
-//   // 获取当前登录的类型
-//
-//
-//   if (_loginType == 'Google') {
-//     // 登出 Google
-//     await FirebaseAuth.instance.signOut();
-//   } else if (_loginType == 'LINE') {
-//     // 登出 LINE
-//     await LineSDK.instance.logout();
-//   }
-//
-//   Navigator.of(context).pushAndRemoveUntil(
-//     MaterialPageRoute(builder: (context) => LoginPage()),
-//         (Route<dynamic> route) => false,
-//   );
-//
-//
-// }
-//
-// Future<Map<String, String?>> checkLoginStatus() async {
-//   // 初始化返回的用户名和登录类型
-//
-//   Map<String, String?> loginData = {'type': null, 'name': null, 'photoURL': null};
-//
-//   // 检查 Firebase 登录状态
-//   final firebaseUser = FirebaseAuth.instance.currentUser;
-//   if (firebaseUser != null) {
-//     _loginType = 'Google';
-//     loginData['type'] = 'Google';
-//     loginData['name'] = firebaseUser.displayName;
-//     loginData['photoURL'] = firebaseUser.photoURL ?? 'https://via.placeholder.com/80x80';
-//     return loginData;
-//   }
-//
-//   // 检查 LINE 登录状态
-//   final lineAccessToken = await LineSDK.instance.currentAccessToken;
-//   if (lineAccessToken != null) {
-//     final userProfile = await LineSDK.instance.getProfile();
-//     _loginType = 'LINE';
-//     loginData['type'] = 'LINE';
-//     loginData['name'] = userProfile?.displayName;
-//     loginData['photoURL'] = userProfile?.pictureUrl ?? 'https://via.placeholder.com/80x80';
-//   }
-//
-//   return loginData;
-// }
 
 @override
 Widget build(BuildContext context) {

@@ -6,13 +6,14 @@ import 'package:nova852/lab/components/function.dart';
 import 'package:nova852/lab/components/price.dart';
 import 'package:nova852/pages/index/components/area.dart';
 import 'package:nova852/pages/index/components/function.dart';
+import 'package:nova852/pages/index/components/more.dart';
 
 class RentalPage extends StatefulWidget {
   RentalPage({super.key});
 
   final List<String> tab = ['區域', '價錢', '用途', '更多', '排序'];
   final List<String> tab2 = ['減價盤', '上車盤', '7日新上架', '筍盤', '9成按揭', '獨家盤', '業主盤', '鎖匙盤'];
-  final filterWidget = [AreaWidget2(), PriceWidget(), FunctionWidget2(), Container(), Container()];
+  final filterWidget = [AreaWidget2(), PriceWidget(), FunctionWidget2(), MoreWidget(), Container()];
 
   @override
   State<RentalPage> createState() => _RentalPageState();

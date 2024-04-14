@@ -153,7 +153,7 @@ class _BreakingNewsPageState extends State<BreakingNewsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("消息"),
+        title: Text('信息'),
       ),
       body: SafeArea(
         child: Container(

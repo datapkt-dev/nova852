@@ -16,7 +16,7 @@ class _BottomBarState extends State<BottomBar> {
 
   // int _selectedIndex = 0;
   int _currentIndex = 0;
-  final pages = [IndexPage(), BreakingNewsPage(), ProfilePage(), MorePage()];
+  final pages = [IndexPage(), ProfilePage(), BreakingNewsPage(), MorePage()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -43,12 +43,12 @@ class _BottomBarState extends State<BottomBar> {
             label: '首頁',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/bottombar/breakingnews${_currentIndex == 1 ? '_selected' : ''}.svg'),
-            label: '消息',
-          ),
-          BottomNavigationBarItem(
             icon: SvgPicture.asset('assets/icons/bottombar/profile${_currentIndex == 2 ? '_selected' : ''}.svg'),
             label: '我的',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/bottombar/breakingnews${_currentIndex == 1 ? '_selected' : ''}.svg'),
+            label: '信息',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset('assets/icons/bottombar/more${_currentIndex == 3 ? '_selected' : ''}.svg'),

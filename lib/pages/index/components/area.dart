@@ -13,8 +13,8 @@ class AreaWidget2 extends StatefulWidget {
 
 class _AreaWidgetState extends State<AreaWidget2> {
   int _selectedIndex = 0;
-  int _selectedZone = -1;
-  bool _showArea = false;
+  int _selectedZone = 0;
+  bool _showArea = true;
 
   @override
   Widget build(BuildContext context) {

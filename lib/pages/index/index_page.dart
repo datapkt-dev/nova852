@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nova852/lab/p1.dart';
 // import 'package:nova852/mortgage_page.dart';
 
@@ -74,13 +75,8 @@ class _IndexPageState extends State<IndexPage> {
                         decoration: InputDecoration(
                           hintText: "輸入街道或路名",
                           border: InputBorder.none,
-                          //focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFEEEEEE))),
                           prefixIcon: Icon(Icons.search),
-                          // suffixIcon: IconButton(
-                          //   icon: Icon(Icons.clear),
-                          //   onPressed: () {},
-                          // ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 5 * hScale),
+                          contentPadding: EdgeInsets.symmetric(vertical: 5),
                         ),
                       ),
                     ),
@@ -117,11 +113,68 @@ class _IndexPageState extends State<IndexPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ButtonS(buttonText: '租屋', page: RentalPage()),
+                  ButtonS(
+                    buttonText: '租屋',
+                    page: RentalPage(),
+                    icon: Container(
+                      width: 40 * wScale,
+                      height: 40 * hScale,
+                      decoration: ShapeDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment(0.00, -1.00),
+                          end: Alignment(0, 1),
+                          colors: [Color(0xFFFD6B48), Color(0xFFFE7752)],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                      ),
+                      padding: EdgeInsets.all(8),
+                      child: SvgPicture.asset('assets/icons/rentalpage.svg'),
+                    ),
+                  ),
                   SizedBox(width: 42 * wScale,),
-                  ButtonS(buttonText: '買樓', page: BuyingPage(),),
+                  ButtonS(
+                    buttonText: '買樓',
+                    page: BuyingPage(),
+                    icon: Container(
+                      width: 40 * wScale,
+                      height: 40 * hScale,
+                      decoration: ShapeDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment(0.00, -1.00),
+                          end: Alignment(0, 1),
+                          colors: [Color(0xFF67D7E7), Color(0xFF50C5D5)],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                      ),
+                      padding: EdgeInsets.all(8),
+                      child: SvgPicture.asset('assets/icons/buyingpage.svg'),
+                    ),
+                  ),
                   SizedBox(width: 42 * wScale,),
-                  ButtonS(buttonText: '按揭',page: MortgagePage(),),
+                  ButtonS(
+                    buttonText: '按揭',
+                    page: MortgagePage(),
+                    icon: Container(
+                      width: 40 * wScale,
+                      height: 40 * hScale,
+                      decoration: ShapeDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment(0.00, -1.00),
+                          end: Alignment(0, 1),
+                          colors: [Color(0xFF46AAF8), Color(0xFF4FB5FA)],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                      ),
+                      padding: EdgeInsets.all(8),
+                      child: SvgPicture.asset('assets/icons/mortgagepage.svg'),
+                    ),
+                  ),
                 ],
               ),
             ),  //租屋
@@ -227,7 +280,7 @@ class _IndexPageState extends State<IndexPage> {
                               decoration: _selectedIndex == index ? BoxDecoration(
                                 border: Border(
                                   bottom: BorderSide(
-                                    color: Color(0xFFD7A769),
+                                    color: Color(0xFF50C5D5),
                                     width: 2 * wScale,
                                   ),
                                 ),
@@ -252,7 +305,7 @@ class _IndexPageState extends State<IndexPage> {
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 12 * hScale),
                     width: 361 * wScale,
-                    height: 145 * hScale,
+                    height: 147 * hScale,
                     child: Row(
                       children: [
                         Column(
@@ -278,11 +331,7 @@ class _IndexPageState extends State<IndexPage> {
                                     height: 19 * hScale,
                                     alignment: Alignment.center,
                                     decoration: ShapeDecoration(
-                                      gradient: const LinearGradient(
-                                        begin: Alignment(1.00, 0.00),
-                                        end: Alignment(-1, 0),
-                                        colors: [Color(0xFFD7A769), Color(0xFFDBA154)],
-                                      ),
+                                      color: Color(0xFF50C5D5),
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                     ),
                                     child: const Text(
@@ -336,7 +385,7 @@ class _IndexPageState extends State<IndexPage> {
                             SizedBox(height: 4 * hScale,),
                             Container(
                               width: 230 * wScale,
-                              height: 13 * hScale,
+                              height: 15 * hScale,
                               child: Row(
                                 children: [
                                   Text(
@@ -384,7 +433,7 @@ class _IndexPageState extends State<IndexPage> {
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 12),
                     width: 361 * wScale,
-                    height: 145 * hScale,
+                    height: 147 * hScale,
                     child: Row(
                       children: [
                         Column(
@@ -410,11 +459,7 @@ class _IndexPageState extends State<IndexPage> {
                                     height: 19 * hScale,
                                     alignment: Alignment.center,
                                     decoration: ShapeDecoration(
-                                      gradient: const LinearGradient(
-                                        begin: Alignment(1.00, 0.00),
-                                        end: Alignment(-1, 0),
-                                        colors: [Color(0xFFD7A769), Color(0xFFDBA154)],
-                                      ),
+                                      color: Color(0xFF50C5D5),
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                     ),
                                     child: const Text(
@@ -467,7 +512,7 @@ class _IndexPageState extends State<IndexPage> {
                             SizedBox(height: 4 * hScale,),
                             Container(
                               width: 230 * wScale,
-                              height: 13 * hScale,
+                              height: 15 * hScale,
                               child: Row(
                                 children: [
                                   Text(
@@ -515,7 +560,7 @@ class _IndexPageState extends State<IndexPage> {
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 12),
                     width: 361 * wScale,
-                    height: 145 * hScale,
+                    height: 147 * hScale,
                     child: Row(
                       children: [
                         Column(
@@ -541,11 +586,7 @@ class _IndexPageState extends State<IndexPage> {
                                     height: 19 * hScale,
                                     alignment: Alignment.center,
                                     decoration: ShapeDecoration(
-                                      gradient: const LinearGradient(
-                                        begin: Alignment(1.00, 0.00),
-                                        end: Alignment(-1, 0),
-                                        colors: [Color(0xFFD7A769), Color(0xFFDBA154)],
-                                      ),
+                                      color: Color(0xFF50C5D5),
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                     ),
                                     child: const Text(
@@ -598,7 +639,7 @@ class _IndexPageState extends State<IndexPage> {
                             SizedBox(height: 4 * hScale,),
                             Container(
                               width: 230 * wScale,
-                              height: 13 * hScale,
+                              height: 15 * hScale,
                               child: Row(
                                 children: [
                                   Text(

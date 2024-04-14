@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class ButtonS extends StatelessWidget {
   final String buttonText;
-  final dynamic page;
-  ButtonS({super.key, required this.buttonText, this.page});
+  final dynamic page, icon;
+  ButtonS({super.key, required this.buttonText, this.page, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ButtonS extends StatelessWidget {
     return Column(
       children: [
         GestureDetector(
-          child: Container(
+          child: icon==null ? Container(
             width: 40 * wScale,
             height: 40 * hScale,
             decoration: ShapeDecoration(
@@ -24,7 +24,7 @@ class ButtonS extends StatelessWidget {
                 borderRadius: BorderRadius.circular(14),
               ),
             ),
-          ),
+          ) : icon,
           onTap: () {
             if (page != null) {
               Navigator.push(context, MaterialPageRoute(builder: (context) => page));

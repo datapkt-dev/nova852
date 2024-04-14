@@ -76,7 +76,7 @@ class _ItemDetailState extends State<ItemDetail> {
                               decoration: _selectedIndex == index ? BoxDecoration(
                                 border: Border(
                                   bottom: BorderSide(
-                                    color: Color(0xFFFF8000),
+                                    color: Color(0xFF50C5D5),
                                     width: 2,
                                   ),
                                 ),
@@ -209,15 +209,15 @@ class _ItemDetailState extends State<ItemDetail> {
                                         height: 28,
                                         alignment: Alignment.center,
                                         decoration: ShapeDecoration(
-                                          color: Color(0xFFFFF7EB),
+                                          color: Color(0xFFE7FCFF),
                                           shape: RoundedRectangleBorder(
-                                            side: BorderSide(width: 1, color: Color(0xFFFF8000)),
+                                            side: BorderSide(width: 1, color: Color(0xFF50C5D5)),
                                           ),
                                         ),
                                         child: Text(
                                           '不可分租',
                                           style: TextStyle(
-                                            color: Color(0xFFFF8000),
+                                            color: Color(0xFF50C5D5),
                                             fontSize: 15,
                                             fontFamily: 'PingFang TC',
                                             fontWeight: FontWeight.w400,
@@ -228,10 +228,16 @@ class _ItemDetailState extends State<ItemDetail> {
                                   ),
                                   SizedBox(height: 12,),
                                   Container(
-                                    color: Color(0xFFFFF7EB),
                                     width: double.infinity,
                                     height: 75,
-                                    padding: EdgeInsets.symmetric(horizontal: 8),
+                                    padding: EdgeInsets.symmetric(horizontal: 26 * wScale),
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        begin: Alignment(1.00, 0.04),
+                                        end: Alignment(-1, -0.04),
+                                        colors: [Color(0xFFDAF7F7), Color(0xFFD1EFEF)],
+                                      ),
+                                    ),
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
@@ -250,7 +256,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             Text(
                                               '475呎',
                                               style: TextStyle(
-                                                color: Color(0xFFFF8000),
+                                                color: Color(0xFF50C5D5),
                                                 fontSize: 15,
                                                 fontFamily: 'PingFang TC',
                                                 fontWeight: FontWeight.w400,
@@ -262,7 +268,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             width: 95,
                                             height: 38,
                                             decoration: ShapeDecoration(
-                                              color: Color(0xFFFF8000),
+                                              color: Color(0xFF50C5D5),
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                             ),
                                             child: Center(
@@ -418,47 +424,25 @@ class _ItemDetailState extends State<ItemDetail> {
                                   Container(
                                     padding: EdgeInsets.symmetric(vertical: 9),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Row(
-                                          children: [
-                                            Text(
-                                              '樓層',
-                                              style: TextStyle(
-                                                color: Color(0xFF858585),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                            SizedBox(width: 10,),
-                                            Text(
-                                              '地下/（共3層）',
-                                              style: TextStyle(
-                                                color: Color(0xFF333333),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            )
-                                          ],
+                                        Text(
+                                          '樓層',
+                                          style: TextStyle(
+                                            color: Color(0xFF858585),
+                                            fontSize: 16,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                          ),
                                         ),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              '查詢樓層',
-                                              style: TextStyle(
-                                                color: Color(0xFF125CEB),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                            SizedBox(width: 8,),
-                                            Icon(
-                                              Icons.arrow_forward_ios,
-                                            ),
-                                          ],
+                                        SizedBox(width: 10,),
+                                        Text(
+                                          '地下/（共3層）',
+                                          style: TextStyle(
+                                            color: Color(0xFF333333),
+                                            fontSize: 16,
+                                            fontFamily: 'PingFang TC',
+                                            fontWeight: FontWeight.w400,
+                                          ),
                                         )
                                       ],
                                     ),
@@ -653,39 +637,16 @@ class _ItemDetailState extends State<ItemDetail> {
                         color: Colors.white,
                         padding: EdgeInsets.all(16),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  '屋內設備',
-                                  style: TextStyle(
-                                    color: Color(0xFF333333),
-                                    fontSize: 18,
-                                    fontFamily: 'PingFang TC',
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    SvgPicture.asset('assets/icons/message.svg'),
-                                    SizedBox(width: 4,),
-                                    Text(
-                                      '查詢更多傢私',
-                                      style: TextStyle(
-                                        color: Color(0xFF125CEB),
-                                        fontSize: 16,
-                                        fontFamily: 'PingFang TC',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Icon(
-                                      Icons.arrow_forward_ios,
-                                    ),
-                                  ],
-                                ),
-                              ],
+                            Text(
+                              '屋內設備',
+                              style: TextStyle(
+                                color: Color(0xFF333333),
+                                fontSize: 18,
+                                fontFamily: 'PingFang TC',
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                             SizedBox(height: 16,),
                             Row(
@@ -903,143 +864,13 @@ class _ItemDetailState extends State<ItemDetail> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '熱門查詢',
+                              '周邊配套',
                               style: TextStyle(
                                 color: Color(0xFF333333),
                                 fontSize: 18,
                                 fontFamily: 'PingFang TC',
                                 fontWeight: FontWeight.w500,
                               ),
-                            ),
-                            SizedBox(height: 16,),
-                            Wrap(
-                              runSpacing: 10,
-                              spacing: 10,
-                              children: [
-                                Container(
-                                  color: Color(0xFFF3F4F6),
-                                  padding: const EdgeInsets.all(12),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SvgPicture.asset('assets/icons/search.svg'),
-                                      SizedBox(width: 8,),
-                                      Text(
-                                        '方便停車嗎？',
-                                        style: TextStyle(
-                                          color: Color(0xFF333333),
-                                          fontSize: 15,
-                                          fontFamily: 'PingFang TC',
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ),
-                                Container(
-                                  color: Color(0xFFF3F4F6),
-                                  padding: const EdgeInsets.all(12),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SvgPicture.asset('assets/icons/search.svg'),
-                                      SizedBox(width: 8,),
-                                      Text(
-                                        '這個盤還嗎？',
-                                        style: TextStyle(
-                                          color: Color(0xFF333333),
-                                          fontSize: 15,
-                                          fontFamily: 'PingFang TC',
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ),
-                                Container(
-                                  color: Color(0xFFF3F4F6),
-                                  padding: const EdgeInsets.all(12),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SvgPicture.asset('assets/icons/search.svg'),
-                                      SizedBox(width: 8,),
-                                      Text(
-                                        '可以養寵物嗎？',
-                                        style: TextStyle(
-                                          color: Color(0xFF333333),
-                                          fontSize: 15,
-                                          fontFamily: 'PingFang TC',
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ),
-                                Container(
-                                  color: Color(0xFFF3F4F6),
-                                  padding: const EdgeInsets.all(12),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SvgPicture.asset('assets/icons/search.svg'),
-                                      SizedBox(width: 8,),
-                                      Text(
-                                        'WIFI免費嗎？',
-                                        style: TextStyle(
-                                          color: Color(0xFF333333),
-                                          fontSize: 15,
-                                          fontFamily: 'PingFang TC',
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ), //熱門查詢
-                      SizedBox(height: 8,),
-                      Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(16),
-                        color: Colors.white,
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  '周邊配套',
-                                  style: TextStyle(
-                                    color: Color(0xFF333333),
-                                    fontSize: 18,
-                                    fontFamily: 'PingFang TC',
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    SvgPicture.asset('assets/icons/message.svg'),
-                                    SizedBox(width: 4,),
-                                    Text(
-                                      '詢問周邊詳情',
-                                      style: TextStyle(
-                                        color: Color(0xFF125CEB),
-                                        fontSize: 16,
-                                        fontFamily: 'PingFang TC',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Icon(
-                                      Icons.arrow_forward_ios,
-                                    ),
-                                  ],
-                                ),
-                              ],
                             ),
                             SizedBox(height: 16,),
                             Container(
@@ -1270,7 +1101,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                 gradient: LinearGradient(
                                   begin: Alignment(-1, 0),
                                   end: Alignment(1, 0),
-                                  colors: [Color(0xFFF4F4F4), Color(0x00EBEBEB)],
+                                  colors: [Color(0xFFF3F3F3), Color(0x00EBEBEB)],
                                 ),
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                               ),
@@ -1421,9 +1252,9 @@ class _ItemDetailState extends State<ItemDetail> {
                               width: double.infinity,
                               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
                               decoration: ShapeDecoration(
-                                color: Color(0xFFFDF5EB),
+                                color: Color(0xFFE7FCFF),
                                 shape: RoundedRectangleBorder(
-                                  side: BorderSide(width: 1, color: Color(0xFFFFDA96)),
+                                  side: BorderSide(width: 1, color: Color(0xFF96D9FF)),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
                               ),
@@ -1443,7 +1274,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Text(
                                             '3個',
                                             style: TextStyle(
-                                              color: Color(0xFF7B5304),
+                                              color: Color(0xFF37B8CA),
                                               fontSize: 18,
                                               fontFamily: 'PingFang TC',
                                               fontWeight: FontWeight.w500,
@@ -1452,7 +1283,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Text(
                                             '盤售',
                                             style: TextStyle(
-                                              color: Color(0xFF7B5304),
+                                              color: Color(0xFF37B8CA),
                                               fontSize: 15,
                                               fontFamily: 'PingFang TC',
                                               fontWeight: FontWeight.w400,
@@ -1472,16 +1303,16 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Text(
                                             '5個',
                                             style: TextStyle(
-                                              color: Color(0xFF7B5304),
+                                              color: Color(0xFF37B8CA),
                                               fontSize: 18,
                                               fontFamily: 'PingFang TC',
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
                                           Text(
-                                            '盤售',
+                                            '租盤',
                                             style: TextStyle(
-                                              color: Color(0xFF7B5304),
+                                              color: Color(0xFF37B8CA),
                                               fontSize: 15,
                                               fontFamily: 'PingFang TC',
                                               fontWeight: FontWeight.w400,
@@ -1498,7 +1329,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Text(
                                             '查看代理',
                                             style: TextStyle(
-                                              color: Color(0xFF7B5304),
+                                              color: Color(0xFF37B8CA),
                                               fontSize: 15,
                                               fontFamily: 'PingFang TC',
                                               fontWeight: FontWeight.w400,
@@ -1507,7 +1338,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Text(
                                             '所有放盤',
                                             style: TextStyle(
-                                              color: Color(0xFF7B5304),
+                                              color: Color(0xFF37B8CA),
                                               fontSize: 15,
                                               fontFamily: 'PingFang TC',
                                               fontWeight: FontWeight.w400,
@@ -1520,7 +1351,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                         width: 40,
                                         height: 40,
                                         decoration: ShapeDecoration(
-                                          color: Color(0xFFD9D9D9),
+                                          color: Color(0xFF99DDE7),
                                           shape: OvalBorder(),
                                         ),
                                       ),

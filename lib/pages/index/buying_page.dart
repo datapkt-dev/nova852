@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/item_deatil.dart';
-import 'package:nova852/lab/components/function.dart';
 import 'package:nova852/lab/components/price.dart';
 import 'package:nova852/pages/index/components/area.dart';
 import 'package:nova852/pages/index/components/function.dart';
@@ -65,7 +64,7 @@ class _RentalPageState extends State<BuyingPage> {
                             Container(
                               height: 34,
                               padding: EdgeInsets.symmetric(horizontal: 12),
-                              color: _selectedIndex == index ? Color(0xFFFF8000) : Color(0xFFF3F4F6),
+                              color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFFF3F4F6),
                               child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -268,7 +267,7 @@ class _RentalPageState extends State<BuyingPage> {
                                     Text(
                                       widget.tab[index],
                                       style: TextStyle(
-                                        color: _selectedIndex == index ? Color(0xFFFF8000) : Color(0xFF333333),
+                                        color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
                                         fontFamily: 'PingFang TC',
                                         fontSize: 18,
                                         //fontWeight: _selectedIndex == index ? FontWeight.w500 : FontWeight.w400,
@@ -276,7 +275,7 @@ class _RentalPageState extends State<BuyingPage> {
                                     ),
                                     Icon(
                                       Icons.arrow_drop_down,
-                                      color: _selectedIndex == index ? Color(0xFFFF8000) : Color(0xFF333333),
+                                      color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
                                     ),
                                   ],
                                 ),

@@ -98,6 +98,9 @@ flutter:
     - assets/icons/facility/school.svg
     - assets/icons/facility/supermarket.svg
     - assets/icons/facility/trafic.svg
+    - assets/icons/buyingpage.svg
+    - assets/icons/mortgagepage.svg
+    - assets/icons/rentalpage.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

@@ -1525,7 +1525,6 @@ class _ItemDetailState extends State<ItemDetail> {
                     alignment: Alignment.center,
                     child: Text(
                       '電話查詢',
-                      textAlign: TextAlign.right,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -1539,18 +1538,23 @@ class _ItemDetailState extends State<ItemDetail> {
                     width: 93,
                     height: 48,
                     decoration: ShapeDecoration(
-                      color: Color(0xFF50C5D5),
+                      gradient: LinearGradient(
+                        begin: Alignment(0.96, -0.29),
+                        end: Alignment(-0.96, 0.29),
+                        colors: [Color(0xFF59DA72), Color(0xFF4AC662)],
+                      ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      '電話查詢',
-                      textAlign: TextAlign.right,
+                      'whatsapp\n查詢',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontFamily: 'PingFang TC',
                         fontWeight: FontWeight.w400,
+                        height: 0,
                       ),
                     ),
                   ),

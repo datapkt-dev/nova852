@@ -26,10 +26,12 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                 width: double.infinity,
                 child: Row(
                   children: [
-                    Column(
+                    Flexible(
+                      flex: 3,
+                      child: Column(
                       children: List.generate(6, (index) {
                         return Container(
-                            width: 140,
+                            width: double.infinity,
                             color: _selectedIndex == index ? Colors.white : Color(0xFFF5F5F5),
                             padding: EdgeInsets.all(16),
                             child: InkWell(
@@ -60,8 +62,10 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         );
                       }),
                     ),
-                    Container(
-                      width: 253,
+                    ),
+                    Flexible(
+                      flex: 5,
+                      child: Container(
                       height: double.infinity,
                       color: Color(0xFFFBFBFB),
                       child: Visibility(
@@ -149,7 +153,8 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                           ],
                         ),
                       ),
-                    )
+                    ),
+                    ),
                   ],
                 )
             ),
@@ -197,9 +202,10 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
             Container(
                 padding: EdgeInsets.symmetric(vertical: 9, horizontal: 16),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
+                    Flexible(
+                      flex: 1,
+                      child: InkWell(
                       onTap: (){
                         setState(() {
                           _selectedIndex = -1;
@@ -231,7 +237,11 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         ),
                       ),
                     ),
-                    Container(
+                    ),
+                    SizedBox(width: 15,),
+                    Flexible(
+                      flex: 2,
+                      child: Container(
                       width: 230,
                       height: 50,
                       decoration: ShapeDecoration(
@@ -249,6 +259,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
+                    ),
                     ),
                   ],
                 )

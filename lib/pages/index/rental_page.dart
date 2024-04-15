@@ -234,10 +234,7 @@ class _RentalPageState extends State<RentalPage> {
                     ],
                     Column(
                       children: [
-                        AnimatedContainer(
-                          //height: 440,
-                          //padding: EdgeInsets.only(left: 16, right: 16, top: 0),
-                          duration: Duration(milliseconds: 300),
+                        Container(
                           alignment: Alignment.topCenter,
                           child: Column(
                             children: [
@@ -245,10 +242,10 @@ class _RentalPageState extends State<RentalPage> {
                                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                                 alignment: Alignment.center,
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: List.generate(widget.tab.length, (index) {
-                                    return Container(
-                                      width: 72,
+                                    return Flexible(
+                                      flex: 1,
+                                      child: Container(
                                       alignment: Alignment.center,
                                       child: InkWell(
                                         onTap: () {
@@ -256,11 +253,6 @@ class _RentalPageState extends State<RentalPage> {
                                           setState(() {
                                             _showContainer = !_showContainer;
                                             _selectedIndex = index;
-                                            if (_height == 40) {
-                                              _height = 100;
-                                            } else {
-                                              _height = 40;
-                                            }
                                           });
                                         },
                                         child: Row(
@@ -282,6 +274,7 @@ class _RentalPageState extends State<RentalPage> {
                                           ],
                                         ),
                                       ),
+                                    ),
                                     );
                                   }),
                                 ),
@@ -296,7 +289,7 @@ class _RentalPageState extends State<RentalPage> {
                           // child: FunctionWidget2(),
                         ),
                       ],
-                    )
+                    ),
                   ],
             ),
         ),

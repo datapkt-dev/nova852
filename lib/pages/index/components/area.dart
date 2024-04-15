@@ -160,43 +160,46 @@ class _AreaWidgetState extends State<AreaWidget2> {
           Container(
               padding: EdgeInsets.symmetric(vertical: 9, horizontal: 16),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    onTap: (){
-                      setState(() {
-                        _selectedIndex = 0;
-                        _selectedZone = -1;
-                        _showArea = false;
-                      });
-                    },
-                    child: Container(
-                      width: 115,
-                      height: 50,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFFEBEBEB),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SvgPicture.asset('assets/icons/reset.svg'),
-                          Text(
-                            '重置',
-                            style: TextStyle(
-                              color: Color(0xFF858585),
-                              fontSize: 18,
-                              fontFamily: 'PingFang TC',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          )
-                        ],
+                  Flexible(
+                    flex: 1,
+                    child: InkWell(
+                      onTap: (){
+                        setState(() {
+                          _selectedIndex = 0;
+                          _selectedZone = -1;
+                          _showArea = false;
+                        });
+                      },
+                      child: Container(
+                        height: 50,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFFEBEBEB),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            SvgPicture.asset('assets/icons/reset.svg'),
+                            Text(
+                              '重置',
+                              style: TextStyle(
+                                color: Color(0xFF858585),
+                                fontSize: 18,
+                                fontFamily: 'PingFang TC',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                  Container(
-                    width: 230,
+                  SizedBox(width: 15,),
+                  Flexible(
+                    flex: 2,
+                    child: Container(
                     height: 50,
                     decoration: ShapeDecoration(
                       color: Color(0xFF50C5D5),
@@ -213,6 +216,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
+                  ),
                   ),
                 ],
               )

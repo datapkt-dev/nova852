@@ -78,9 +78,9 @@ class _Btn1State extends State<Btn1> {
           isSelect=!isSelect;
         });
       },
-      child: Container(
-        width: 110*wScale,
-        height: 34*hScale,
+      child: Flexible(
+        flex: 1,
+        child: Container(
         decoration: BoxDecoration(color:  isSelect?Color(0xFFE8FCFF):Color(0xFFF3F4F6)),
         child: Container(
           padding: const EdgeInsets.all(8),
@@ -108,6 +108,7 @@ class _Btn1State extends State<Btn1> {
             ],
           ),
         ),
+      ),
       ),
     );
   }

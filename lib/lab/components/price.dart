@@ -20,7 +20,6 @@ class _PriceWidgetState extends State<PriceWidget> {
 
     return Container(
         width: double.infinity,
-        //height: 150,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(color: Colors.white),
         child: Column(
@@ -176,8 +175,6 @@ class _PriceWidgetState extends State<PriceWidget> {
               ),
             ),
             Container(
-              // width: 393*wScale,
-              // height: 76*hScale,
               child: Column(
                 children: [
                   Row(
@@ -186,22 +183,22 @@ class _PriceWidgetState extends State<PriceWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Btn1(btnText: "5,000以下"),
-                      SizedBox(width: 8*wScale),
+                      SizedBox(width: 8),
                       Btn1(btnText: "5,000-10,000元"),
-                      SizedBox(width: 8*wScale),
+                      SizedBox(width: 8),
                       Btn1(btnText: "15,000-10,000元")
                     ],
                   ),
-                  SizedBox(height: 8*hScale,),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Btn1(btnText: "5,000以下"),
-                      SizedBox(width: 8*wScale),
+                      SizedBox(width: 8),
                       Btn1(btnText: "5,000-10,000元"),
-                      SizedBox(width: 8*wScale),
+                      SizedBox(width: 8),
                       Btn1(btnText: "15,000-10,000元")
                     ],
                   ),
@@ -211,9 +208,10 @@ class _PriceWidgetState extends State<PriceWidget> {
             Container(
                 padding: EdgeInsets.only(top: 9,),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
+                    Flexible(
+                      flex: 1,
+                      child: Container(
                       width: 115,
                       height: 50,
                       decoration: ShapeDecoration(
@@ -237,7 +235,11 @@ class _PriceWidgetState extends State<PriceWidget> {
                         ],
                       ),
                     ),
-                    Container(
+                    ),
+                    SizedBox(width: 15,),
+                    Flexible(
+                      flex: 2,
+                      child: Container(
                       width: 230,
                       height: 50,
                       decoration: ShapeDecoration(
@@ -255,6 +257,7 @@ class _PriceWidgetState extends State<PriceWidget> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
+                    ),
                     ),
                   ],
                 )

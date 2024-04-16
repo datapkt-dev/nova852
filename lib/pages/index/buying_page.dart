@@ -107,7 +107,7 @@ class _RentalPageState extends State<BuyingPage> {
                                 decoration: BoxDecoration(
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Color(0XFFFEF5EB),
+                                      color: Color(0XFFE8FCFF),
                                     ),
                                     BoxShadow(
                                       color: Colors.white,

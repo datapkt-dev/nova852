@@ -75,79 +75,175 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                             Container(
                               padding: EdgeInsets.all(16),
                               alignment: Alignment.centerLeft,
-                              child: Text(
-                                '不限',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 16,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '不限',
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontSize: 16,
+                                      fontFamily: 'PingFang TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 16,
+                                    height: 16,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                             Container(
                               padding: EdgeInsets.all(16),
                               alignment: Alignment.centerLeft,
-                              child: Text(
-                                '屋苑',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 16,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '屋苑',
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontSize: 16,
+                                      fontFamily: 'PingFang TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 16,
+                                    height: 16,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                             Container(
                               padding: EdgeInsets.all(16),
                               alignment: Alignment.centerLeft,
-                              child: Text(
-                                '單棟式大廈',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 16,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '單棟式大廈',
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontSize: 16,
+                                      fontFamily: 'PingFang TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 16,
+                                    height: 16,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                             Container(
                               padding: EdgeInsets.all(16),
                               alignment: Alignment.centerLeft,
-                              child: Text(
-                                '村屋',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 16,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '村屋',
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontSize: 16,
+                                      fontFamily: 'PingFang TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 16,
+                                    height: 16,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                             Container(
                               padding: EdgeInsets.all(16),
                               alignment: Alignment.centerLeft,
-                              child: Text(
-                                '唐樓',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 16,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '唐樓',
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontSize: 16,
+                                      fontFamily: 'PingFang TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 16,
+                                    height: 16,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                             Container(
                               padding: EdgeInsets.all(16),
                               alignment: Alignment.centerLeft,
-                              child: Text(
-                                '居屋/公屋',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 16,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '居屋/公屋',
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontSize: 16,
+                                      fontFamily: 'PingFang TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 16,
+                                    height: 16,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
+                                        borderRadius: BorderRadius.circular(2),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                           ],

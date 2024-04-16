@@ -70,51 +70,91 @@ class _AreaWidgetState extends State<AreaWidget2> {
               }),
             ),
           ),
-          Container(
-              height: 330,
-              width: double.infinity,
-              child: Visibility(
-                visible: _showArea,
-                child: Column(
-                  children: List.generate(6, (index) {
-                    return Container(
-                        color: _selectedIndex == index ? Colors.white : null,
-                        padding: EdgeInsets.all(16),
-                        alignment: Alignment.centerLeft,
-                        child: InkWell(
-                          onTap: () {
-                            setState(() {
-                              _selectedIndex = index;
-                            });
-                          },
-                          child: Row(
-                            children: [
-                              Text(
-                                widget.area[index],
-                                style: TextStyle(
-                                  color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
-                                  fontSize: 16,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
+          Row(
+            children: [
+              Flexible(
+                flex: 4,
+                child: Container(
+                    child: Visibility(
+                      visible: _showArea,
+                      child: Column(
+                        children: List.generate(6, (index) {
+                          return Container(
+                              color: _selectedIndex == index ? Colors.white : null,
+                              padding: EdgeInsets.all(16),
+                              alignment: Alignment.centerLeft,
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    _selectedIndex = index;
+                                  });
+                                },
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      widget.area[index],
+                                      style: TextStyle(
+                                        color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
+                                        fontSize: 16,
+                                        fontFamily: 'PingFang TC',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10,),
+                                    Text(
+                                      '（30207）',
+                                      style: TextStyle(
+                                        color: Color(0xFF858585),
+                                        fontSize: 13,
+                                        fontFamily: 'PingFang TC',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              SizedBox(width: 10,),
-                              Text(
-                                '（30207）',
-                                style: TextStyle(
-                                  color: Color(0xFF858585),
-                                  fontSize: 13,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                    );
-                  }),
+                              )
+                          );
+                        }),
+                      ),
+                    )
                 ),
-              )
+              ),
+              Flexible(
+                flex: 5,
+                child: Container(
+                  width: double.infinity,
+                  color: Colors.white,
+                  child: Visibility(
+                    visible: _showArea,
+                    child: Column(
+                    children: List.generate(6, (index) {
+                      return Container(
+                          color: _selectedIndex == index ? Colors.white : null,
+                          padding: EdgeInsets.all(16),
+                          alignment: Alignment.centerLeft,
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                _selectedIndex = index;
+                              });
+                            },
+                            child: Text(
+                              '分區子項目 $index',
+                              style: TextStyle(
+                                color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
+                                fontSize: 16,
+                                fontFamily: 'PingFang TC',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          )
+                      );
+                    }),
+                  ),
+                  ),
+                ),
+              ),
+            ],
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),

@@ -84,8 +84,10 @@ class _ItemDetailState extends State<ItemDetail> {
                               child: InkWell(
                                   onTap: () {
                                     setState(() {
+                                      if (index == 1 && _selectedIndex != 1) {
+                                        _scrollToPosition();
+                                      }
                                       _selectedIndex = index;
-                                      _scrollToPosition();
                                     });
                                   },
                                   child: Row(

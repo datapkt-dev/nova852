@@ -18,17 +18,17 @@ class _ItemDetailState extends State<ItemDetail> {
 
   final ScrollController _scrollController = ScrollController();
   GlobalKey scrollKey = GlobalKey();
-  void _scrollToPosition() {
-    final RenderBox? scrollTo = scrollKey.currentContext?.findRenderObject() as RenderBox?;
-    if (scrollTo != null) {
-      final scrollToOffset = scrollTo.localToGlobal(Offset(0, -168));
-      _scrollController.animateTo(
-        scrollToOffset.dy,
-        duration: Duration(milliseconds: 500),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
+  // void _scrollToPosition() {
+  //   final RenderBox? scrollTo = scrollKey.currentContext?.findRenderObject() as RenderBox?;
+  //   if (scrollTo != null) {
+  //     final scrollToOffset = scrollTo.localToGlobal(Offset(0, -168));
+  //     _scrollController.animateTo(
+  //       scrollToOffset.dy,
+  //       duration: Duration(milliseconds: 500),
+  //       curve: Curves.easeInOut,
+  //     );
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -84,9 +84,9 @@ class _ItemDetailState extends State<ItemDetail> {
                               child: InkWell(
                                   onTap: () {
                                     setState(() {
-                                      if (index == 1 && _selectedIndex != 1) {
-                                        _scrollToPosition();
-                                      }
+                                      // if (index == 1 && _selectedIndex != 1) {
+                                      //   _scrollToPosition();
+                                      // }
                                       _selectedIndex = index;
                                     });
                                   },

@@ -207,8 +207,8 @@ class _AreaWidgetState extends State<AreaWidget2> {
                       onTap: (){
                         setState(() {
                           _selectedIndex = 0;
-                          _selectedZone = -1;
-                          _showArea = false;
+                          _selectedZone = 0;
+                          _showArea = true;
                         });
                       },
                       child: Container(

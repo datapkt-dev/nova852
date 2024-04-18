@@ -16,7 +16,7 @@ import 'rental_page.dart';
 class IndexPage extends StatefulWidget {
   IndexPage({super.key});
 
-  final List<String> tab = ['租屋', '新盤', '買樓'];
+  final List<String> tab = ['租屋', '買樓', '新盤'];
 
   @override
   State<IndexPage> createState() => _IndexPageState();
@@ -272,7 +272,7 @@ class _IndexPageState extends State<IndexPage> {
                   child: Column(
                     children: [
                       Row(
-                        children: List.generate(3, (index) {
+                        children: List.generate(2, (index) {
                           return Row(
                             children: [
                               InkWell(

@@ -16,22 +16,26 @@ class ButtonS extends StatelessWidget {
       children: [
         GestureDetector(
           child: icon==null ? Container(
-            width: 40 * wScale,
-            height: 40 * hScale,
+            width: 40,
+            height: 40,
             decoration: ShapeDecoration(
               color: const Color(0xFFD9D9D9),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(14),
               ),
             ),
-          ) : icon,
+          ) : Container(
+            width: 30,
+            height: 30,
+            child: icon,
+          ),
           onTap: () {
             if (page != null) {
               Navigator.push(context, MaterialPageRoute(builder: (context) => page));
             }
           },
         ),
-        SizedBox(height: 4 * hScale,),
+        SizedBox(height: 4,),
         Text(buttonText)
       ],
     );

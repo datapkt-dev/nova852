@@ -659,39 +659,23 @@ class _ItemDetailState extends State<ItemDetail> {
                                 // ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                                  child: ButtonS(buttonText: '熱水爐'),
+                                  child: ButtonS(buttonText: 'TV', icon: SvgPicture.asset('assets/icons/furniture/tv.svg'),),
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                                  child: ButtonS(buttonText: '床'),
+                                  child: ButtonS(buttonText: '洗衣機', icon: SvgPicture.asset('assets/icons/furniture/washer.svg'),),
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                                  child: Column(
-                                    children: [
-                                      GestureDetector(
-                                        child: SvgPicture.asset('assets/icons/furniture/aircon.svg'),
-                                        onTap: () {
-                                        },
-                                      ),
-                                      SizedBox(height: 4 * hScale,),
-                                      Text('冷氣')
-                                    ],
-                                  ),
+                                  child: ButtonS(buttonText: '冷氣', icon: SvgPicture.asset('assets/icons/furniture/aircon.svg'),),
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                                  child: Column(
-                                    children: [
-                                      GestureDetector(
-                                        child: SvgPicture.asset('assets/icons/furniture/aircon.svg'),
-                                        onTap: () {
-                                        },
-                                      ),
-                                      SizedBox(height: 4 * hScale,),
-                                      Text('冷氣')
-                                    ],
-                                  ),
+                                  child: ButtonS(buttonText: '微波爐', icon: SvgPicture.asset('assets/icons/furniture/microwave.svg'),),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                                  child: ButtonS(buttonText: '雪櫃', icon: SvgPicture.asset('assets/icons/furniture/refrigerator.svg'),),
                                 ),
                               ],
                             ),
@@ -895,6 +879,10 @@ class _ItemDetailState extends State<ItemDetail> {
                               decoration: ShapeDecoration(
                                 color: Color(0xFFD9D9D9),
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
+                              ),
+                              child: Image.asset(
+                                'assets/images/map.jpg',
+                                fit: BoxFit.fill,
                               ),
                             ),
                             Row(
@@ -1126,13 +1114,9 @@ class _ItemDetailState extends State<ItemDetail> {
                                 children: [
                                   Row(
                                     children: [
-                                      Container(
-                                        width: 40,
-                                        height: 40,
-                                        decoration: ShapeDecoration(
-                                          color: Color(0xFFD9D9D9),
-                                          shape: OvalBorder(),
-                                        ),
+                                      CircleAvatar(
+                                        radius: 20,
+                                        backgroundImage: AssetImage('assets/icons/saler_male.png'),
                                       ),
                                       SizedBox(width: 8,),
                                       Column(
@@ -1163,21 +1147,29 @@ class _ItemDetailState extends State<ItemDetail> {
                                   Row(
                                     children: [
                                       Container(
-                                        width: 40,
-                                        height: 40,
+                                        width: 48,
+                                        height: 48,
+                                        padding: EdgeInsets.all(10),
                                         decoration: ShapeDecoration(
-                                          color: Color(0xFFD9D9D9),
-                                          shape: OvalBorder(),
+                                          color: Color(0xFFFFF2E3),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(47),
+                                          ),
                                         ),
+                                        child: SvgPicture.asset('assets/icons/phone.svg'),
                                       ),
                                       SizedBox(width: 11,),
                                       Container(
-                                        width: 40,
-                                        height: 40,
+                                        width: 48,
+                                        height: 48,
+                                        padding: EdgeInsets.all(10),
                                         decoration: ShapeDecoration(
-                                          color: Color(0xFFD9D9D9),
-                                          shape: OvalBorder(),
+                                          color: Color(0xFFE9FBF0),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(47),
+                                          ),
                                         ),
+                                        child: SvgPicture.asset('assets/icons/VoIP.svg'),
                                       ),
                                     ],
                                   )
@@ -1282,7 +1274,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                       Container(
                                         width: 72,
                                         height: 49,
-                                        color: Color(0xFFD9D9D9),
+                                        child: Image.asset(
+                                          'assets/images/house_b.jpeg',
+                                          fit: BoxFit.fill,
+                                        ),
                                       ),
                                       SizedBox(width: 18,),
                                       Column(
@@ -1370,6 +1365,9 @@ class _ItemDetailState extends State<ItemDetail> {
                                           color: Color(0xFF99DDE7),
                                           shape: OvalBorder(),
                                         ),
+                                        child: Icon(
+                                          Icons.arrow_forward_ios,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -1447,6 +1445,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                   width: 136,
                                   height: 116,
                                   color: Color(0xFFD9D9D9),
+                                  child: Image.asset(
+                                    'assets/images/house_a.jpeg',
+                                    fit: BoxFit.fill,
+                                  ),
                                 ),
                                 Container(
                                   width: 200 * wScale,
@@ -1508,13 +1510,18 @@ class _ItemDetailState extends State<ItemDetail> {
             children: [
               Row(
                 children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: ShapeDecoration(
-                      color: Color(0xFFD9D9D9),
-                      shape: OvalBorder(),
-                    ),
+                  // Container(
+                  //   width: 40,
+                  //   height: 40,
+                  //   decoration: ShapeDecoration(
+                  //     color: Color(0xFFD9D9D9),
+                  //     shape: OvalBorder(),
+                  //   ),
+                  //   child: Image.asset('assets/icons/saler_male.png'),
+                  // ),
+                  CircleAvatar(
+                      radius: 20,
+                      backgroundImage: AssetImage('assets/icons/saler_female.png'),
                   ),
                   SizedBox(width: 4,),
                   Text(

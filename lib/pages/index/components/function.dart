@@ -304,7 +304,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                       child: InkWell(
                       onTap: (){
                         setState(() {
-                          _selectedIndex = -1;
+                          _selectedIndex = 0;
                           _showContainer = false;
                         });
                       },

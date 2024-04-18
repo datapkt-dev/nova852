@@ -12,7 +12,7 @@ class FunctionWidget2 extends StatefulWidget {
 }
 
 class _FunctionWidgetState extends State<FunctionWidget2> {
-  int _selectedIndex = -1;
+  int _selectedIndex = 0;
   bool _showContainer = false;
 
   @override

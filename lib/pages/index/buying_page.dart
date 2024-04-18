@@ -33,7 +33,7 @@ class _RentalPageState extends State<BuyingPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('買樓'),
+        title: Text('租屋'),
         actions: [
           IconButton(
             onPressed: (){},
@@ -64,7 +64,7 @@ class _RentalPageState extends State<BuyingPage> {
                             Container(
                               height: 34,
                               padding: EdgeInsets.symmetric(horizontal: 12),
-                              color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFFF3F4F6),
+                              color: _selectedIndex == index ? Color(0xFF3093EE) : Color(0xFFF3F4F6),
                               child: InkWell(
                                   onTap: () {
                                     setState(() {
@@ -103,7 +103,7 @@ class _RentalPageState extends State<BuyingPage> {
                         child: Column(
                           children: [
                             Container(
-                                width: double.infinity,
+                              //width: double.infinity,
                                 decoration: BoxDecoration(
                                   boxShadow: [
                                     BoxShadow(
@@ -122,83 +122,228 @@ class _RentalPageState extends State<BuyingPage> {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Stack(
-                                      children: [
-                                        SizedBox(
-                                          width: 150 * wScale,
-                                          child: Image.asset('assets/images/rentalitem.jpeg'),
-                                        ),
-                                        Container(
-                                          width: 52 * wScale,
-                                          height: 20 * hScale,
-                                          decoration: const ShapeDecoration(
-                                            color: Colors.black,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                                    Flexible(
+                                        flex: 10,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Stack(
+                                              children: [
+                                                SizedBox(
+                                                  width: 150 * wScale,
+                                                  child: Image.asset('assets/images/rentalitem.jpeg'),
+                                                ),
+                                                Container(
+                                                  width: 52 * wScale,
+                                                  height: 20 * hScale,
+                                                  decoration: const ShapeDecoration(
+                                                    color: Colors.black,
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
+                                                    ),
+                                                  ),
+                                                  child: Row(
+                                                    children: [
+                                                      SizedBox(width: 4 * wScale,),
+                                                      SvgPicture.asset('assets/icons/diamond.svg'),
+                                                      SizedBox(width: 2 * wScale,),
+                                                      Text(
+                                                        '鑽石',
+                                                        style: TextStyle(
+                                                          color: Color(0xFFF0C790),
+                                                          fontSize: 12,
+                                                          fontFamily: 'PingFang TC',
+                                                          fontWeight: FontWeight.w500,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                Positioned(
+                                                  left: 0,
+                                                  bottom: 0,
+                                                  child: SvgPicture.asset('assets/icons/videoplay.svg'),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(height: 16,),
+                                            Container(
+                                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                              decoration: ShapeDecoration(
+                                                color: Color(0xFFE8FCFF),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.circular(28),
+                                                ),
+                                              ),
+                                              child: Text(
+                                                '3天前刊登',
+                                                style: TextStyle(
+                                                  color: Color(0xFF858585),
+                                                  fontSize: 13,
+                                                  fontFamily: 'PingFang TC',
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Flexible(
+                                      flex: 16,
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          SizedBox(
+                                            width: 200 * wScale,
+                                            child: Text(
+                                              '近交流道大面寬黃金雙店面',
+                                              style: TextStyle(
+                                                color: Color(0xFF333333),
+                                                fontSize: 18,
+                                                fontFamily: 'PingFang TC',
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
                                             ),
                                           ),
-                                          child: Row(
+                                          Text(
+                                            '2房｜實471呎 ｜ 泰峯',
+                                            style: TextStyle(
+                                              color: Color(0xFF999999),
+                                              fontSize: 15,
+                                              fontFamily: 'PingFang TC',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                          SizedBox(height: 4,),
+                                          Text(
+                                            '\$60 萬',
+                                            style: TextStyle(
+                                              color: Color(0xFFF12323),
+                                              fontSize: 20,
+                                              fontFamily: 'Inter',
+                                              fontWeight: FontWeight.w500,
+                                              //letterSpacing: 0.40,
+                                            ),
+                                          ),
+                                          Wrap(
+                                            spacing: 8,
+                                            runSpacing: 8,
                                             children: [
-                                              SizedBox(width: 4 * wScale,),
-                                              SvgPicture.asset('assets/icons/diamond.svg'),
-                                              SizedBox(width: 2 * wScale,),
-                                              Text(
-                                                '鑽石',
-                                                style: TextStyle(
-                                                  color: Color(0xFFF0C790),
-                                                  fontSize: 12,
-                                                  fontFamily: 'PingFang TC',
-                                                  fontWeight: FontWeight.w500,
+                                              Container(
+                                                constraints: BoxConstraints(maxWidth: 49),
+                                                alignment: Alignment.center,
+                                                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFF2F6FC),
+                                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                                 ),
-                                              )
+                                                child: Text(
+                                                  '近學區',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF333333),
+                                                    fontSize: 13,
+                                                    fontFamily: 'PingFang TC',
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                constraints: BoxConstraints(maxWidth: 49),
+                                                alignment: Alignment.center,
+                                                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFF2F6FC),
+                                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                                ),
+                                                child: Text(
+                                                  '近學區',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF333333),
+                                                    fontSize: 13,
+                                                    fontFamily: 'PingFang TC',
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                constraints: BoxConstraints(maxWidth: 49),
+                                                alignment: Alignment.center,
+                                                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFF2F6FC),
+                                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                                ),
+                                                child: Text(
+                                                  '近學區',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF333333),
+                                                    fontSize: 13,
+                                                    fontFamily: 'PingFang TC',
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                constraints: BoxConstraints(maxWidth: 49),
+                                                alignment: Alignment.center,
+                                                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFF2F6FC),
+                                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                                ),
+                                                child: Text(
+                                                  '近學區',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF333333),
+                                                    fontSize: 13,
+                                                    fontFamily: 'PingFang TC',
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                constraints: BoxConstraints(maxWidth: 49),
+                                                alignment: Alignment.center,
+                                                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFF2F6FC),
+                                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                                ),
+                                                child: Text(
+                                                  '近學區',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF333333),
+                                                    fontSize: 13,
+                                                    fontFamily: 'PingFang TC',
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                constraints: BoxConstraints(maxWidth: 49),
+                                                alignment: Alignment.center,
+                                                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFF2F6FC),
+                                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                                ),
+                                                child: Text(
+                                                  '近學區',
+                                                  style: TextStyle(
+                                                    color: Color(0xFF333333),
+                                                    fontSize: 13,
+                                                    fontFamily: 'PingFang TC',
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
                                             ],
                                           ),
-                                        ),
-                                        Positioned(
-                                          left: 0,
-                                          bottom: 0,
-                                          child: SvgPicture.asset('assets/icons/videoplay.svg'),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        SizedBox(
-                                          width: 200 * wScale,
-                                          child: Text(
-                                            '近交流道大面寬黃金雙店面',
-                                            style: TextStyle(
-                                              color: Color(0xFF333333),
-                                              fontSize: 18,
-                                              fontFamily: 'PingFang TC',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        ),
-                                        Text(
-                                          '車位｜太古城',
-                                          style: TextStyle(
-                                            color: Color(0xFF999999),
-                                            fontSize: 15,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                        SizedBox(height: 4 * hScale,),
-                                        Text(
-                                          '\$60 萬',
-                                          style: TextStyle(
-                                            color: Color(0xFFF12323),
-                                            fontSize: 20,
-                                            fontFamily: 'Inter',
-                                            fontWeight: FontWeight.w500,
-                                            //letterSpacing: 0.40,
-                                          ),
-                                        ),
-                                      ],
-                                    )
                                   ],
                                 )
                             ),
@@ -232,10 +377,7 @@ class _RentalPageState extends State<BuyingPage> {
             ],
             Column(
               children: [
-                AnimatedContainer(
-                  //height: 440,
-                  //padding: EdgeInsets.only(left: 16, right: 16, top: 0),
-                  duration: Duration(milliseconds: 300),
+                Container(
                   alignment: Alignment.topCenter,
                   child: Column(
                     children: [
@@ -243,41 +385,37 @@ class _RentalPageState extends State<BuyingPage> {
                         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         alignment: Alignment.center,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: List.generate(widget.tab.length, (index) {
-                            return Container(
-                              width: 72,
-                              alignment: Alignment.center,
-                              child: InkWell(
-                                onTap: () {
-                                  _isOverlayVisible = !_isOverlayVisible;
-                                  setState(() {
-                                    _showContainer = !_showContainer;
-                                    _selectedIndex = index;
-                                    if (_height == 40) {
-                                      _height = 100;
-                                    } else {
-                                      _height = 40;
-                                    }
-                                  });
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      widget.tab[index],
-                                      style: TextStyle(
-                                        color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
-                                        fontFamily: 'PingFang TC',
-                                        fontSize: 18,
-                                        //fontWeight: _selectedIndex == index ? FontWeight.w500 : FontWeight.w400,
+                            return Flexible(
+                              flex: 1,
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: InkWell(
+                                  onTap: () {
+                                    _isOverlayVisible = !_isOverlayVisible;
+                                    setState(() {
+                                      _showContainer = !_showContainer;
+                                      _selectedIndex = index;
+                                    });
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        widget.tab[index],
+                                        style: TextStyle(
+                                          color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
+                                          fontFamily: 'PingFang TC',
+                                          fontSize: 18,
+                                          //fontWeight: _selectedIndex == index ? FontWeight.w500 : FontWeight.w400,
+                                        ),
                                       ),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_drop_down,
-                                      color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
-                                    ),
-                                  ],
+                                      Icon(
+                                        Icons.arrow_drop_down,
+                                        color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             );
@@ -294,7 +432,7 @@ class _RentalPageState extends State<BuyingPage> {
                   // child: FunctionWidget2(),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

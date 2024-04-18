@@ -679,6 +679,20 @@ class _ItemDetailState extends State<ItemDetail> {
                                     ],
                                   ),
                                 ),
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                                  child: Column(
+                                    children: [
+                                      GestureDetector(
+                                        child: SvgPicture.asset('assets/icons/furniture/aircon.svg'),
+                                        onTap: () {
+                                        },
+                                      ),
+                                      SizedBox(height: 4 * hScale,),
+                                      Text('冷氣')
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ],

@@ -107,41 +107,6 @@ class CentralTab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: 40,
-                  height: 40,
-                  padding: const EdgeInsets.all(4),
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
-                  child: SvgPicture.asset(
-                    'assets/icons/fix.svg',
-                    width: 24.0, // 設定寬度
-                    height: 24.0, // 設定高度
-                  )
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  '報修',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    color: Color(0xFF333333),
-                    fontSize: 13,
-                    fontFamily: 'PingFang TC',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 7),
-          Container(
-            width: 60,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
                     width: 40,
                     height: 40,
                     padding: const EdgeInsets.all(4),

@@ -86,9 +86,7 @@ Widget build(BuildContext context) {
                   const PaymentTab(),
                   SizedBox(height: 20,),
                   const CentralTab(),
-                  SizedBox(height: 10,),
-                  const Options(),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 50,),
                   GestureDetector(
                       onTap: () async{
                         // await signOut(context);

@@ -26,15 +26,14 @@ class _PriceWidgetState extends State<PriceWidget> {
           children: [
             Container(
               width: 393,
-              height: 37,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: 115,
-                    height: 37,
+                    width: 115*wScale,
+                    height: 37*hScale,
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                     clipBehavior: Clip.antiAlias,
                     decoration: ShapeDecoration(
@@ -174,93 +173,34 @@ class _PriceWidgetState extends State<PriceWidget> {
                 },
               ),
             ),
-            Container(
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Btn1(btnText: "5,000以下"),
-                      SizedBox(width: 8),
-                      Btn1(btnText: "5,000-10,000元"),
-                      SizedBox(width: 8),
-                      Btn1(btnText: "15,000-10,000元")
-                    ],
-                  ),
-                  SizedBox(height: 8),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Btn1(btnText: "5,000以下"),
-                      SizedBox(width: 8),
-                      Btn1(btnText: "5,000-10,000元"),
-                      SizedBox(width: 8),
-                      Btn1(btnText: "15,000-10,000元")
-                    ],
-                  ),
-                ],
-              )
-            ),
-            Container(
-                padding: EdgeInsets.only(top: 9,),
-                child: Row(
+            Column(
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                      width: 115,
-                      height: 50,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFFEBEBEB),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SvgPicture.asset('assets/icons/reset.svg'),
-                          Text(
-                            '重置',
-                            style: TextStyle(
-                              color: Color(0xFF858585),
-                              fontSize: 18,
-                              fontFamily: 'PingFang TC',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    ),
-                    SizedBox(width: 15,),
-                    Flexible(
-                      flex: 2,
-                      child: Container(
-                      width: 230,
-                      height: 50,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFF50C5D5),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        '確定',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontFamily: 'PingFang TC',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                    ),
+                    Btn1(btnText: "5,000以下"),
+                    SizedBox(width: 8),
+                    Btn1(btnText: "5,000-10,000元"),
+                    SizedBox(width: 8),
+                    Btn1(btnText: "15,000-10,000元")
                   ],
-                )
+                ),
+                SizedBox(height: 8),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Btn1(btnText: "5,000以下"),
+                    SizedBox(width: 8),
+                    Btn1(btnText: "5,000-10,000元"),
+                    SizedBox(width: 8),
+                    Btn1(btnText: "15,000-10,000元")
+                  ],
+                ),
+              ],
             ),
           ],
         )

@@ -319,52 +319,61 @@ class _ItemDetailState extends State<ItemDetail> {
                                     padding: EdgeInsets.symmetric(vertical: 9),
                                     child: Row(
                                       children: [
-                                        Row(
-                                          children: [
-                                            Text(
-                                              '用途',
-                                              style: TextStyle(
-                                                color: Color(0xFF858585),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
+                                        Expanded(
+                                            flex:1,
+                                            child: Container(
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    '用途',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF858585),
+                                                      fontSize: 16,
+                                                      fontFamily: 'PingFang TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 10,),
+                                                  Text(
+                                                    '住宅-村屋',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF333333),
+                                                      fontSize: 16,
+                                                      fontFamily: 'PingFang TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
-                                            SizedBox(width: 10,),
-                                            Text(
-                                              '住宅-村屋',
-                                              style: TextStyle(
-                                                color: Color(0xFF333333),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                            )
                                         ),
-                                        SizedBox(width: 29,),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              '按金',
-                                              style: TextStyle(
-                                                color: Color(0xFF858585),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
+                                        Expanded(
+                                            flex:1,
+                                            child: Container(
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    '按金',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF858585),
+                                                      fontSize: 16,
+                                                      fontFamily: 'PingFang TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 10,),
+                                                  Text(
+                                                    '二個月押金',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF333333),
+                                                      fontSize: 16,
+                                                      fontFamily: 'PingFang TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
-                                            SizedBox(width: 10,),
-                                            Text(
-                                              '二個月押金',
-                                              style: TextStyle(
-                                                color: Color(0xFF333333),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                            )
                                         ),
                                       ],
                                     ),
@@ -373,52 +382,61 @@ class _ItemDetailState extends State<ItemDetail> {
                                     padding: EdgeInsets.symmetric(vertical: 9),
                                     child: Row(
                                       children: [
-                                        Row(
-                                          children: [
-                                            Text(
-                                              '裝修',
-                                              style: TextStyle(
-                                                color: Color(0xFF858585),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
+                                        Expanded(
+                                            flex:1,
+                                            child: Container(
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    '裝修',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF858585),
+                                                      fontSize: 16,
+                                                      fontFamily: 'PingFang TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 10,),
+                                                  Text(
+                                                    '精緻裝修',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF333333),
+                                                      fontSize: 16,
+                                                      fontFamily: 'PingFang TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
-                                            SizedBox(width: 10,),
-                                            Text(
-                                              '雅緻裝修',
-                                              style: TextStyle(
-                                                color: Color(0xFF333333),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                            )
                                         ),
-                                        SizedBox(width: 29,),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              '坐向',
-                                              style: TextStyle(
-                                                color: Color(0xFF858585),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
+                                        Expanded(
+                                            flex:1,
+                                            child: Container(
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    '坐向',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF858585),
+                                                      fontSize: 16,
+                                                      fontFamily: 'PingFang TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 10,),
+                                                  Text(
+                                                    '南',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF333333),
+                                                      fontSize: 16,
+                                                      fontFamily: 'PingFang TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
-                                            SizedBox(width: 10,),
-                                            Text(
-                                              '南',
-                                              style: TextStyle(
-                                                color: Color(0xFF333333),
-                                                fontSize: 16,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                            )
                                         ),
                                       ],
                                     ),

@@ -62,7 +62,7 @@ class _ContractHistoryState extends State<ContractHistory> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                SvgPicture.asset("assets/icons/house.svg"),
+                                SvgPicture.asset("assets/icons/home-smile.svg"),
                                 SizedBox(width: 12*wScale),
                                 Text(
                                   'B05',

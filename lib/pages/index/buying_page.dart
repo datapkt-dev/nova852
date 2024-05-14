@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/item_deatil.dart';
 import 'package:nova852/lab/components/price.dart';
+import 'package:nova852/pages/index/buying_detail.dart';
 import 'package:nova852/pages/index/components/area.dart';
 import 'package:nova852/pages/index/components/function.dart';
 
@@ -33,7 +34,8 @@ class _RentalPageState extends State<BuyingPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('租屋'),
+        backgroundColor: Colors.white,
+        title: Text('買樓'),
         actions: [
           IconButton(
             onPressed: (){},
@@ -98,7 +100,7 @@ class _RentalPageState extends State<BuyingPage> {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => BuyingDetail()));
                         },
                         child: Column(
                           children: [
@@ -436,6 +438,7 @@ class _RentalPageState extends State<BuyingPage> {
           ],
         ),
       ),
+      backgroundColor: Colors.white,
     );
   }
 }

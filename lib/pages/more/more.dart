@@ -25,7 +25,8 @@ class _MorePageState extends State<MorePage> {
             ItemData4(headString: "推薦好友", ),
             ItemData1(headString: "關於我們",),
           ],
-        )
+        ),
+      backgroundColor: Colors.white,
     );
   }
 }

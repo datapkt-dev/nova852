@@ -60,7 +60,7 @@ class _PaymentListPageState extends State<PaymentListPage> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      SvgPicture.asset("assets/icons/house.svg"),
+                                      SvgPicture.asset("assets/icons/home-smile.svg"),
                                       const SizedBox(width: 8),
                                       Text(
                                         'B05',

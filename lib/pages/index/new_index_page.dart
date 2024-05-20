@@ -33,8 +33,8 @@ class _NewIndexPageState extends State<NewIndexPage> {
           ),
           SizedBox(height: 10),
           Container(
-              padding: EdgeInsets.symmetric(horizontal: 13),
-              child: Column(
+            padding: EdgeInsets.symmetric(horizontal: 13),
+            child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
@@ -993,8 +993,38 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ],
                     ),
                   ),
+                  SizedBox(height: 12,),
+                  Center(
+                    child: Container(
+                      width: 116,
+                      height: 24,
+                      alignment: Alignment.center,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: ShapeDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment(0.99, -0.16),
+                          end: Alignment(-0.99, 0.16),
+                          colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      child: Text(
+                        '更多樓盤',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontFamily: 'Noto Sans TC',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30,),
                 ],
-              )
+              ),
           ),
         ],
       ),

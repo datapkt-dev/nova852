@@ -5,6 +5,8 @@ import 'package:nova852/pages/index/index_page.dart';
 import 'package:nova852/pages/more/more.dart';
 import 'package:nova852/pages/profile/profile.dart';
 
+import '../pages/index/new_index_page.dart';
+
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
 
@@ -14,9 +16,8 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
 
-  // int _selectedIndex = 0;
   int _currentIndex = 0;
-  final pages = [IndexPage(), ProfilePage(), BreakingNewsPage(), MorePage()];
+  final pages = [NewIndexPage(), Container(),ProfilePage(), BreakingNewsPage(), MorePage()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -37,21 +38,50 @@ class _BottomBarState extends State<BottomBar> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
+        items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/bottombar/index${_currentIndex == 0 ? '_selected' : ''}.svg'),
+            icon: SvgPicture.asset(
+              width: 24,
+              height: 24,
+              color: _currentIndex == 0 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
+              'assets/icons/bottombar/home.svg',
+            ),
             label: '首頁',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/bottombar/profile${_currentIndex == 2 ? '_selected' : ''}.svg'),
-            label: '我的',
+            icon: SvgPicture.asset(
+              width: 24,
+              height: 24,
+              color: _currentIndex == 1 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
+              'assets/icons/bottombar/search.svg',
+            ),
+            label: '搜尋',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/bottombar/breakingnews${_currentIndex == 1 ? '_selected' : ''}.svg'),
+            icon: SvgPicture.asset(
+              width: 24,
+              height: 24,
+              color: _currentIndex == 2 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
+              'assets/icons/bottombar/personal.svg',
+            ),
+            label: '個人',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              width: 24,
+              height: 24,
+              color: _currentIndex == 3 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
+              'assets/icons/bottombar/message.svg',
+            ),
             label: '信息',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/icons/bottombar/more${_currentIndex == 3 ? '_selected' : ''}.svg'),
+            icon: SvgPicture.asset(
+              width: 24,
+              height: 24,
+              color: _currentIndex == 4 ? Color(0xFF50C5D5) : null,
+              'assets/icons/bottombar/more_.svg',
+            ),
             label: '更多',
           ),
         ],

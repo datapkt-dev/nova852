@@ -965,7 +965,6 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     fontSize: 14,
                                                     fontFamily: 'Noto Sans TC',
                                                     fontWeight: FontWeight.w500,
-                                                    height: 0.11,
                                                   ),
                                                 ),
                                                 Text(
@@ -975,7 +974,6 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     fontSize: 10,
                                                     fontFamily: 'Noto Sans TC',
                                                     fontWeight: FontWeight.w500,
-                                                    height: 0.22,
                                                   ),
                                                 ),
                                               ],

@@ -110,6 +110,11 @@ flutter:
     - assets/icons/bottombar/more_.svg
     - assets/icons/bottombar/personal.svg
     - assets/icons/bottombar/search.svg
+    - assets/icons/item_detail/bookmark.svg
+    - assets/icons/item_detail/share.svg
+    - assets/icons/item_detail/location.svg
+    - assets/icons/item_detail/phone.svg
+    - assets/icons/item_detail/whatsapp.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/pages/breaking_news/breaking_news.dart';
 import 'package:nova852/pages/index/index_page.dart';
+import 'package:nova852/pages/index/rental_page.dart';
 import 'package:nova852/pages/more/more.dart';
 import 'package:nova852/pages/profile/profile.dart';
 
@@ -17,7 +18,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
 
   int _currentIndex = 0;
-  final pages = [NewIndexPage(), Container(), ProfilePage(), BreakingNewsPage(), MorePage()];
+  final pages = [NewIndexPage(), RentalPage(), ProfilePage(), BreakingNewsPage(), MorePage()];
 
   void _onItemTapped(int index) {
     setState(() {

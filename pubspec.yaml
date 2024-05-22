@@ -100,11 +100,11 @@ flutter:
     - assets/icons/VoIP.svg
     - assets/icons/redPonit.svg
     - assets/icons/home-smile.svg
-    - assets/icons/tools/tools_a.svg
-    - assets/icons/tools/tools_b.svg
-    - assets/icons/tools/tools_c.svg
-    - assets/icons/tools/tools_d.svg
-    - assets/icons/tools/tools_e.svg
+    - assets/icons/tools/bank.svg
+    - assets/icons/tools/contact.svg
+    - assets/icons/tools/contract.svg
+    - assets/icons/tools/deal.svg
+    - assets/icons/tools/plan.svg
     - assets/icons/bottombar/home.svg
     - assets/icons/bottombar/message.svg
     - assets/icons/bottombar/more_.svg
@@ -138,6 +138,10 @@ flutter:
     - assets/images/buying_featured.png
     - assets/images/buying_discount.png
     - assets/images/featured_item.png
+    - assets/images/tools/tools_a.jpeg
+    - assets/images/tools/tools_b.jpeg
+    - assets/images/tools/tools_d.jpeg
+    - assets/images/tools/tools_e.jpeg
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nova852/pages/index/bank_plan.dart';
 
 class NewIndexPage extends StatefulWidget {
   const NewIndexPage({super.key});
@@ -452,7 +453,12 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           children: [
                             Column(
                               children: [
-                                SvgPicture.asset('assets/icons/tools/tools_a.svg'),
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundImage: AssetImage('assets/images/tools/tools_a.jpeg'),
+                                  child: SvgPicture.asset('assets/icons/tools/deal.svg'),
+                                ),
+                                SizedBox(height: 4,),
                                 Text(
                                   '屋苑成交',
                                   style: TextStyle(
@@ -461,12 +467,17 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w500,
                                   ),
-                                )
+                                ),
                               ],
                             ),
                             Column(
                               children: [
-                                SvgPicture.asset('assets/icons/tools/tools_b.svg'),
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundImage: AssetImage('assets/images/tools/tools_b.jpeg'),
+                                  child: SvgPicture.asset('assets/icons/tools/plan.svg'),
+                                ),
+                                SizedBox(height: 4,),
                                 Text(
                                   '按揭計劃',
                                   style: TextStyle(
@@ -475,26 +486,56 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w500,
                                   ),
-                                )
+                                ),
                               ],
                             ),
-                            Column(
-                              children: [
-                                SvgPicture.asset('assets/icons/tools/tools_c.svg'),
-                                Text(
-                                  '銀行計劃',
-                                  style: TextStyle(
-                                    color: Color(0xFF171717),
-                                    fontSize: 10,
-                                    fontFamily: 'Noto Sans TC',
-                                    fontWeight: FontWeight.w500,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => BankPlan()));
+                              },
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/tools/tools_a.jpeg'),
+                                        fit: BoxFit.fill,
+                                        alignment: Alignment(
+                                          // 調整這些值來改變圖像的對齊位置
+                                          1, // 水平對齊 -1.0: 左, 0.0: 中, 1.0: 右
+                                          1, // 垂直對齊 -1.0: 上, 0.0: 中, 1.0: 下
+                                        ),
+                                      ),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      'assets/icons/tools/bank.svg',
+                                    ),
                                   ),
-                                )
-                              ],
+                                  SizedBox(height: 4,),
+                                  Text(
+                                    '銀行計劃',
+                                    style: TextStyle(
+                                      color: Color(0xFF171717),
+                                      fontSize: 10,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             Column(
                               children: [
-                                SvgPicture.asset('assets/icons/tools/tools_d.svg'),
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundImage: AssetImage('assets/images/tools/tools_d.jpeg'),
+                                  child: SvgPicture.asset('assets/icons/tools/contract.svg'),
+                                ),
+                                SizedBox(height: 4,),
                                 Text(
                                   '電子租約',
                                   style: TextStyle(
@@ -503,12 +544,17 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w500,
                                   ),
-                                )
+                                ),
                               ],
                             ),
                             Column(
                               children: [
-                                SvgPicture.asset('assets/icons/tools/tools_e.svg'),
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundImage: AssetImage('assets/images/tools/tools_e.jpeg'),
+                                  child: SvgPicture.asset('assets/icons/tools/contact.svg'),
+                                ),
+                                SizedBox(height: 4,),
                                 Text(
                                   '聯絡我們',
                                   style: TextStyle(
@@ -517,7 +563,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w500,
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ],

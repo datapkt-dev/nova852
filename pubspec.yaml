@@ -115,6 +115,7 @@ flutter:
     - assets/icons/item_detail/location.svg
     - assets/icons/item_detail/phone.svg
     - assets/icons/item_detail/whatsapp.svg
+    - assets/icons/rental_page/sorting.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

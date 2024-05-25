@@ -53,15 +53,15 @@ class _RentalPageState extends State<RentalPage> {
                   children: [
                     Column(
                       children: [
-                        SizedBox(height: 40*hScale,),
+                        SizedBox(height: 35,),
                         Expanded(
                           child: SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
                                 child: Container(
-                                  height: 50 * hScale,
+                                  height: 50,
                                   padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
                                   child: Row(
                                     children: List.generate(widget.tab2.length, (index) {
@@ -102,268 +102,178 @@ class _RentalPageState extends State<RentalPage> {
                                   ),
                                 ),
                               ),
-                              Column(
-                                  children: List.generate(5, (index) {
-                                    return GestureDetector(
+                                Column(
+                                children: List.generate(4, (index) {
+                                  return Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
+                                    padding: EdgeInsets.all(12),
+                                    child: GestureDetector(
                                       onTap: () {
                                         Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
                                       },
-                                      child: Column(
-                                        children: [
-                                          Container(
-                                            //width: double.infinity,
-                                              decoration: BoxDecoration(
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Color(0XFFE8FCFF),
+                                      child: Container(
+                                        padding: EdgeInsets.symmetric(vertical: 10),
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              width: 120,
+                                              height: 132,
+                                              decoration: ShapeDecoration(
+                                                image: DecorationImage(
+                                                  image: AssetImage('assets/images/featured_item.png'),
+                                                  fit: BoxFit.fill,
+                                                ),
+                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                                              ),
+                                            ),
+                                            SizedBox(width: 10,),
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    '將軍澳 東港城 1座 高層 C室',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF171717),
+                                                      fontSize: 14,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
                                                   ),
-                                                  BoxShadow(
-                                                    color: Colors.white,
-                                                    blurRadius: 10,
-                                                    spreadRadius: 10,
-                                                    offset: Offset(0, 30),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                    children: [
+                                                      Text(
+                                                        '實用 463呎',
+                                                        style: TextStyle(
+                                                          color: Color(0xFF171717),
+                                                          fontSize: 10,
+                                                          fontFamily: 'Noto Sans TC',
+                                                          fontWeight: FontWeight.w500,
+                                                        ),
+                                                      ),
+                                                      SizedBox(width: 8,),
+                                                      Text(
+                                                        '@ \$10,234',
+                                                        style: TextStyle(
+                                                          color: Color(0xFFB3B3B3),
+                                                          fontSize: 10,
+                                                          fontFamily: 'Noto Sans TC',
+                                                          fontWeight: FontWeight.w500,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Text(
+                                                    '1房 1廳',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF171717),
+                                                      fontSize: 10,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                  Divider(color: Color(0xFF171717),),
+                                                  Text(
+                                                    '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF171717),
+                                                      fontSize: 10,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                    maxLines: 2,
+                                                    overflow: TextOverflow.ellipsis,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Container(
+                                                            width: 57,
+                                                            height: 20,
+                                                            decoration: ShapeDecoration(
+                                                              shape: RoundedRectangleBorder(
+                                                                side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                                borderRadius: BorderRadius.circular(10),
+                                                              ),
+                                                            ),
+                                                            alignment: Alignment.center,
+                                                            child: Text(
+                                                              'Tagging',
+                                                              style: TextStyle(
+                                                                color: Color(0xFF07A1B4),
+                                                                fontSize: 8,
+                                                                fontFamily: 'Noto Sans TC',
+                                                                fontWeight: FontWeight.w500,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SizedBox(width: 4,),
+                                                          Container(
+                                                            width: 57,
+                                                            height: 20,
+                                                            decoration: ShapeDecoration(
+                                                              shape: RoundedRectangleBorder(
+                                                                side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                                borderRadius: BorderRadius.circular(10),
+                                                              ),
+                                                            ),
+                                                            alignment: Alignment.center,
+                                                            child: Text(
+                                                              'Tagging',
+                                                              style: TextStyle(
+                                                                color: Color(0xFF07A1B4),
+                                                                fontSize: 8,
+                                                                fontFamily: 'Noto Sans TC',
+                                                                fontWeight: FontWeight.w500,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          Text(
+                                                            '\$900',
+                                                            style: TextStyle(
+                                                              color: Color(0xFFE86100),
+                                                              fontSize: 14,
+                                                              fontFamily: 'Noto Sans TC',
+                                                              fontWeight: FontWeight.w500,
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            '萬',
+                                                            style: TextStyle(
+                                                              color: Color(0xFFE86100),
+                                                              fontSize: 10,
+                                                              fontFamily: 'Noto Sans TC',
+                                                              fontWeight: FontWeight.w500,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      )
+                                                    ],
                                                   ),
                                                 ],
                                               ),
-                                              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                                              child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  Flexible(
-                                                      flex: 10,
-                                                      child: Column(
-                                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Stack(
-                                                            children: [
-                                                              SizedBox(
-                                                                width: 150 * wScale,
-                                                                child: Image.asset('assets/images/rentalitem.jpeg'),
-                                                              ),
-                                                              Container(
-                                                                width: 52 * wScale,
-                                                                height: 20 * hScale,
-                                                                decoration: const ShapeDecoration(
-                                                                  color: Colors.black,
-                                                                  shape: RoundedRectangleBorder(
-                                                                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
-                                                                  ),
-                                                                ),
-                                                                child: Row(
-                                                                  children: [
-                                                                    SizedBox(width: 4 * wScale,),
-                                                                    SvgPicture.asset('assets/icons/diamond.svg'),
-                                                                    SizedBox(width: 2 * wScale,),
-                                                                    Text(
-                                                                      '鑽石',
-                                                                      style: TextStyle(
-                                                                        color: Color(0xFFF0C790),
-                                                                        fontSize: 12,
-                                                                        fontFamily: 'PingFang TC',
-                                                                        fontWeight: FontWeight.w500,
-                                                                      ),
-                                                                    )
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              Positioned(
-                                                                left: 0,
-                                                                bottom: 0,
-                                                                child: SvgPicture.asset('assets/icons/videoplay.svg'),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          SizedBox(height: 16,),
-                                                          Container(
-                                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                                            decoration: ShapeDecoration(
-                                                              color: Color(0xFFE8FCFF),
-                                                              shape: RoundedRectangleBorder(
-                                                                borderRadius: BorderRadius.circular(28),
-                                                              ),
-                                                            ),
-                                                            child: Text(
-                                                              '3天前刊登',
-                                                              style: TextStyle(
-                                                                color: Color(0xFF858585),
-                                                                fontSize: 13,
-                                                                fontFamily: 'PingFang TC',
-                                                                fontWeight: FontWeight.w400,
-                                                              ),
-                                                            ),
-                                                          )
-                                                        ],
-                                                      )
-                                                  ),
-                                                  SizedBox(width: 8,),
-                                                  Flexible(
-                                                    flex: 16,
-                                                    child: Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 200 * wScale,
-                                                          child: Text(
-                                                            '近交流道大面寬黃金雙店面',
-                                                            style: TextStyle(
-                                                              color: Color(0xFF333333),
-                                                              fontSize: 18,
-                                                              fontFamily: 'PingFang TC',
-                                                              fontWeight: FontWeight.w500,
-                                                            ),
-                                                            overflow: TextOverflow.ellipsis,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          '車位｜太古城',
-                                                          style: TextStyle(
-                                                            color: Color(0xFF999999),
-                                                            fontSize: 15,
-                                                            fontFamily: 'PingFang TC',
-                                                            fontWeight: FontWeight.w400,
-                                                          ),
-                                                        ),
-                                                        SizedBox(height: 4,),
-                                                        Text(
-                                                          '\$60 萬',
-                                                          style: TextStyle(
-                                                            color: Color(0xFFF12323),
-                                                            fontSize: 20,
-                                                            fontFamily: 'Inter',
-                                                            fontWeight: FontWeight.w500,
-                                                            //letterSpacing: 0.40,
-                                                          ),
-                                                        ),
-                                                        Wrap(
-                                                          spacing: 8,
-                                                          runSpacing: 8,
-                                                          children: [
-                                                            Container(
-                                                              constraints: BoxConstraints(maxWidth: 49),
-                                                              alignment: Alignment.center,
-                                                              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                                              decoration: ShapeDecoration(
-                                                                color: Color(0xFFF2F6FC),
-                                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                                              ),
-                                                              child: Text(
-                                                                '近學區',
-                                                                style: TextStyle(
-                                                                  color: Color(0xFF333333),
-                                                                  fontSize: 13,
-                                                                  fontFamily: 'PingFang TC',
-                                                                  fontWeight: FontWeight.w400,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              constraints: BoxConstraints(maxWidth: 49),
-                                                              alignment: Alignment.center,
-                                                              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                                              decoration: ShapeDecoration(
-                                                                color: Color(0xFFF2F6FC),
-                                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                                              ),
-                                                              child: Text(
-                                                                '近學區',
-                                                                style: TextStyle(
-                                                                  color: Color(0xFF333333),
-                                                                  fontSize: 13,
-                                                                  fontFamily: 'PingFang TC',
-                                                                  fontWeight: FontWeight.w400,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              constraints: BoxConstraints(maxWidth: 49),
-                                                              alignment: Alignment.center,
-                                                              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                                              decoration: ShapeDecoration(
-                                                                color: Color(0xFFF2F6FC),
-                                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                                              ),
-                                                              child: Text(
-                                                                '近學區',
-                                                                style: TextStyle(
-                                                                  color: Color(0xFF333333),
-                                                                  fontSize: 13,
-                                                                  fontFamily: 'PingFang TC',
-                                                                  fontWeight: FontWeight.w400,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              constraints: BoxConstraints(maxWidth: 49),
-                                                              alignment: Alignment.center,
-                                                              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                                              decoration: ShapeDecoration(
-                                                                color: Color(0xFFF2F6FC),
-                                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                                              ),
-                                                              child: Text(
-                                                                '近學區',
-                                                                style: TextStyle(
-                                                                  color: Color(0xFF333333),
-                                                                  fontSize: 13,
-                                                                  fontFamily: 'PingFang TC',
-                                                                  fontWeight: FontWeight.w400,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              constraints: BoxConstraints(maxWidth: 49),
-                                                              alignment: Alignment.center,
-                                                              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                                              decoration: ShapeDecoration(
-                                                                color: Color(0xFFF2F6FC),
-                                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                                              ),
-                                                              child: Text(
-                                                                '近學區',
-                                                                style: TextStyle(
-                                                                  color: Color(0xFF333333),
-                                                                  fontSize: 13,
-                                                                  fontFamily: 'PingFang TC',
-                                                                  fontWeight: FontWeight.w400,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                              constraints: BoxConstraints(maxWidth: 49),
-                                                              alignment: Alignment.center,
-                                                              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                                                              decoration: ShapeDecoration(
-                                                                color: Color(0xFFF2F6FC),
-                                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                                              ),
-                                                              child: Text(
-                                                                '近學區',
-                                                                style: TextStyle(
-                                                                  color: Color(0xFF333333),
-                                                                  fontSize: 13,
-                                                                  fontFamily: 'PingFang TC',
-                                                                  fontWeight: FontWeight.w400,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              )
-                                          ),
-                                          SizedBox(height: 16 * hScale,)
-                                        ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    );
-                                  })
+                                    ),
+                                  );
+                                }),
                               ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
                         ),
                       ],
                     ),

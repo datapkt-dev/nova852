@@ -69,7 +69,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     '我想買樓',
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -84,7 +84,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                       '我想租樓',
                                       style: TextStyle(
                                         color: Color(0xFFB3B3B3),
-                                        fontSize: 12,
+                                        fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -127,7 +127,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               '搜尋心水樓盤',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 14,
+                                                fontSize: 16,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -157,7 +157,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '店鋪',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -192,7 +192,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '住宅',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -221,7 +221,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '豪宅',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -250,7 +250,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '工廈/商廈',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -279,7 +279,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '車位',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -320,7 +320,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                         '精選新盤 (售)',
                                         style: TextStyle(
                                           color: Color(0xFF171717),
-                                          fontSize: 14,
+                                          fontSize: 16,
                                           fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w700,
                                         ),
@@ -329,7 +329,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                         'Nova為你推介最新精選筍盤',
                                         style: TextStyle(
                                           color: Color(0xFF171717),
-                                          fontSize: 10,
+                                          fontSize: 12,
                                           fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -366,7 +366,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '優惠上車盤',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w700,
                                             ),
@@ -375,7 +375,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '600萬內筍盤',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -407,7 +407,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '本月熱門新盤',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w700,
                                             ),
@@ -416,7 +416,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             '新盤同你逐個睇',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -440,7 +440,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         '相關工具',
                         style: TextStyle(
                           color: Color(0xFF171717),
-                          fontSize: 14,
+                          fontSize: 16,
                           fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w500,
                         ),
@@ -463,7 +463,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                   '屋苑成交',
                                   style: TextStyle(
                                     color: Color(0xFF171717),
-                                    fontSize: 10,
+                                    fontSize: 12,
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -482,7 +482,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                   '按揭計劃',
                                   style: TextStyle(
                                     color: Color(0xFF171717),
-                                    fontSize: 10,
+                                    fontSize: 12,
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -520,7 +520,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     '銀行計劃',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 10,
+                                      fontSize: 12,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -540,7 +540,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                   '電子租約',
                                   style: TextStyle(
                                     color: Color(0xFF171717),
-                                    fontSize: 10,
+                                    fontSize: 12,
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -559,7 +559,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                   '聯絡我們',
                                   style: TextStyle(
                                     color: Color(0xFF171717),
-                                    fontSize: 10,
+                                    fontSize: 12,
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -579,7 +579,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         '精選樓盤',
                         style: TextStyle(
                           color: Color(0xFF171717),
-                          fontSize: 14,
+                          fontSize: 16,
                           fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w500,
                         ),
@@ -588,7 +588,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         '更多',
                         style: TextStyle(
                           color: Color(0xFF07A1B4),
-                          fontSize: 10,
+                          fontSize: 12,
                           fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
@@ -649,7 +649,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               '精選',
                                               style: TextStyle(
                                                 color: Color(0xFFF0C790),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'PingFang TC',
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -669,7 +669,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           '將軍澳 東港城 1座 高層 C室',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 14,
+                                            fontSize: 16,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -680,7 +680,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               '實用 463呎',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -690,7 +690,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               '@ \$10,234',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -701,7 +701,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           '1房 1廳',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 10,
+                                            fontSize: 12,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -726,7 +726,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     'Tagging',
                                                     style: TextStyle(
                                                       color: Color(0xFF07A1B4),
-                                                      fontSize: 8,
+                                                      fontSize: 10,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -747,7 +747,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     'Tagging',
                                                     style: TextStyle(
                                                       color: Color(0xFF07A1B4),
-                                                      fontSize: 8,
+                                                      fontSize: 10,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -771,7 +771,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     '\$900',
                                                     style: TextStyle(
                                                       color: Colors.white,
-                                                      fontSize: 14,
+                                                      fontSize: 16,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -780,7 +780,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     '萬',
                                                     style: TextStyle(
                                                       color: Colors.white,
-                                                      fontSize: 10,
+                                                      fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                       height: 0.22,
@@ -806,7 +806,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                     '最新放盤',
                     style: TextStyle(
                       color: Color(0xFF171717),
-                      fontSize: 14,
+                      fontSize: 16,
                       fontFamily: 'Noto Sans TC',
                       fontWeight: FontWeight.w500,
                     ),
@@ -843,7 +843,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                       '我想買樓',
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 12,
+                                        fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -858,7 +858,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                         '我想租樓',
                                         style: TextStyle(
                                           color: Color(0xFFB3B3B3),
-                                          fontSize: 12,
+                                          fontSize: 14,
                                           fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -904,7 +904,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           '將軍澳 東港城 1座 高層 C室',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 14,
+                                            fontSize: 16,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -916,7 +916,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               '實用 463呎',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -926,7 +926,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               '@ \$10,234',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -937,7 +937,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           '1房 1廳',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 10,
+                                            fontSize: 12,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -947,7 +947,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 10,
+                                            fontSize: 12,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -973,7 +973,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     'Tagging',
                                                     style: TextStyle(
                                                       color: Color(0xFF07A1B4),
-                                                      fontSize: 8,
+                                                      fontSize: 10,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -994,7 +994,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     'Tagging',
                                                     style: TextStyle(
                                                       color: Color(0xFF07A1B4),
-                                                      fontSize: 8,
+                                                      fontSize: 10,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -1008,7 +1008,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                   '\$900',
                                                   style: TextStyle(
                                                     color: Color(0xFFE86100),
-                                                    fontSize: 14,
+                                                    fontSize: 16,
                                                     fontFamily: 'Noto Sans TC',
                                                     fontWeight: FontWeight.w500,
                                                   ),
@@ -1017,7 +1017,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                   '萬',
                                                   style: TextStyle(
                                                     color: Color(0xFFE86100),
-                                                    fontSize: 10,
+                                                    fontSize: 12,
                                                     fontFamily: 'Noto Sans TC',
                                                     fontWeight: FontWeight.w500,
                                                   ),
@@ -1059,7 +1059,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 12,
+                          fontSize: 14,
                           fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w500,
                         ),

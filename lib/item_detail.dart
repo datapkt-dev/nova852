@@ -31,7 +31,7 @@ class _ItemDetailState extends State<ItemDetail> {
           '將軍澳 東港城 1座 高層 C室',
           style: TextStyle(
             color: Color(0xFF171717),
-            fontSize: 16,
+            fontSize: 18,
             fontFamily: 'Noto Sans TC',
             fontWeight: FontWeight.w500,
           ),
@@ -87,7 +87,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '將軍澳 東港城 1座 高層 C室',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 16,
+                                      fontSize: 18,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -102,7 +102,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           '將軍澳 坑口 重華路 8號',
                                           style: TextStyle(
                                             color: Color(0xFFB3B3B3),
-                                            fontSize: 10,
+                                            fontSize: 12,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -120,7 +120,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '租金',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -129,7 +129,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '\$14,000 ',
                                             style: TextStyle(
                                               color: Color(0xFFE86100),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -144,7 +144,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '實用',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -156,7 +156,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 '506',
                                                 style: TextStyle(
                                                   color: Color(0xFF171717),
-                                                  fontSize: 14,
+                                                  fontSize: 16,
                                                   fontFamily: 'Noto Sans TC',
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -165,7 +165,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 '呎',
                                                 style: TextStyle(
                                                   color: Color(0xFF171717),
-                                                  fontSize: 10,
+                                                  fontSize: 12,
                                                   fontFamily: 'Noto Sans TC',
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -182,7 +182,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '建築',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -194,7 +194,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 '720',
                                                 style: TextStyle(
                                                   color: Color(0xFF171717),
-                                                  fontSize: 14,
+                                                  fontSize: 16,
                                                   fontFamily: 'Noto Sans TC',
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -203,7 +203,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 '呎',
                                                 style: TextStyle(
                                                   color: Color(0xFF171717),
-                                                  fontSize: 10,
+                                                  fontSize: 12,
                                                   fontFamily: 'Noto Sans TC',
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -220,7 +220,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '間隔',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -229,7 +229,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '2房1廳',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -246,7 +246,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 10,
+                                      fontSize: 12,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -263,7 +263,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '用途',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -272,7 +272,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '住宅-屋苑',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -282,7 +282,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '坐向',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -291,7 +291,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '南',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -309,7 +309,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '按金',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -318,7 +318,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '2個',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -328,7 +328,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '樓齡',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -337,7 +337,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '14年',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -355,7 +355,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '裝修',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -364,7 +364,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '精緻裝修',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -374,7 +374,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '刊登時間',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 10,
+                                                fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -383,7 +383,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                               '29/4/2024',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -400,7 +400,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                         '房源編號：R102390',
                                         style: TextStyle(
                                           color: Color(0xFFB3B3B3),
-                                          fontSize: 10,
+                                          fontSize: 12,
                                           fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w400,
                                         ),
@@ -410,7 +410,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                         '物業編號：E75687781',
                                         style: TextStyle(
                                           color: Color(0xFFB3B3B3),
-                                          fontSize: 10,
+                                          fontSize: 12,
                                           fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w400,
                                         ),
@@ -435,7 +435,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '屋內設施',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -456,7 +456,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -475,7 +475,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -494,7 +494,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -513,7 +513,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -532,7 +532,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -546,7 +546,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '特色描述',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -570,7 +570,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -590,7 +590,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -610,7 +610,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -630,7 +630,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -650,7 +650,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -670,7 +670,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -690,7 +690,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -710,7 +710,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -730,7 +730,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -750,7 +750,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -770,7 +770,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -790,7 +790,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
-                                            fontSize: 8,
+                                            fontSize: 10,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -803,7 +803,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '樓盤詳情',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -813,7 +813,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 10,
+                                      fontSize: 12,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -836,7 +836,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '鄰近設施',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -874,7 +874,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '交通',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -898,7 +898,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '超市',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -922,7 +922,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '餐飲',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -946,7 +946,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '銀行',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -970,7 +970,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '學校',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -994,7 +994,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '醫院',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -1013,7 +1013,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'xxx巴士站',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1023,7 +1023,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           textAlign: TextAlign.right,
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1040,7 +1040,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'xxx巴士站',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1050,7 +1050,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           textAlign: TextAlign.right,
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1067,7 +1067,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'xxx巴士站',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1077,7 +1077,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           textAlign: TextAlign.right,
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1094,7 +1094,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'xxx巴士站',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1104,7 +1104,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           textAlign: TextAlign.right,
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1121,7 +1121,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           'xxx巴士站',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1131,7 +1131,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           textAlign: TextAlign.right,
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -1157,7 +1157,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '聯絡代理',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1180,7 +1180,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 'Jay Chou',
                                                 style: TextStyle(
                                                   color: Color(0xFF171717),
-                                                  fontSize: 14,
+                                                  fontSize: 16,
                                                   fontFamily: 'Noto Sans TC',
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -1189,7 +1189,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 'C-123456',
                                                 style: TextStyle(
                                                   color: Color(0xFFB3B3B3),
-                                                  fontSize: 10,
+                                                  fontSize: 12,
                                                   fontFamily: 'Noto Sans TC',
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -1248,7 +1248,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '公司名稱',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -1257,7 +1257,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '中原地產',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 12,
+                                              fontSize: 14,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -1271,7 +1271,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '公司牌照',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -1280,7 +1280,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             'C-000227',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 12,
+                                              fontSize: 14,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -1294,7 +1294,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '公司地址',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
-                                              fontSize: 10,
+                                              fontSize: 12,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -1303,7 +1303,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             '長沙灣 醫局街233號',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
-                                              fontSize: 12,
+                                              fontSize: 14,
                                               fontFamily: 'Noto Sans TC',
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -1334,7 +1334,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 12,
+                                          fontSize: 14,
                                           fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -1359,7 +1359,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '相關樓盤',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1398,7 +1398,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                     '將軍澳 東港城 1座 高層 C室',
                                                     style: TextStyle(
                                                       color: Color(0xFF171717),
-                                                      fontSize: 14,
+                                                      fontSize: 16,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -1410,7 +1410,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                         '實用 463呎',
                                                         style: TextStyle(
                                                           color: Color(0xFF171717),
-                                                          fontSize: 10,
+                                                          fontSize: 12,
                                                           fontFamily: 'Noto Sans TC',
                                                           fontWeight: FontWeight.w500,
                                                         ),
@@ -1420,7 +1420,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                         '@ \$10,234',
                                                         style: TextStyle(
                                                           color: Color(0xFFB3B3B3),
-                                                          fontSize: 10,
+                                                          fontSize: 12,
                                                           fontFamily: 'Noto Sans TC',
                                                           fontWeight: FontWeight.w500,
                                                         ),
@@ -1431,7 +1431,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                     '1房 1廳',
                                                     style: TextStyle(
                                                       color: Color(0xFF171717),
-                                                      fontSize: 10,
+                                                      fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -1441,7 +1441,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                     '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
                                                     style: TextStyle(
                                                       color: Color(0xFF171717),
-                                                      fontSize: 10,
+                                                      fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w400,
                                                     ),
@@ -1467,7 +1467,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                               'Tagging',
                                                               style: TextStyle(
                                                                 color: Color(0xFF07A1B4),
-                                                                fontSize: 8,
+                                                                fontSize: 10,
                                                                 fontFamily: 'Noto Sans TC',
                                                                 fontWeight: FontWeight.w500,
                                                               ),
@@ -1488,7 +1488,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                               'Tagging',
                                                               style: TextStyle(
                                                                 color: Color(0xFF07A1B4),
-                                                                fontSize: 8,
+                                                                fontSize: 10,
                                                                 fontFamily: 'Noto Sans TC',
                                                                 fontWeight: FontWeight.w500,
                                                               ),
@@ -1502,7 +1502,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                             '\$900',
                                                             style: TextStyle(
                                                               color: Color(0xFFE86100),
-                                                              fontSize: 14,
+                                                              fontSize: 16,
                                                               fontFamily: 'Noto Sans TC',
                                                               fontWeight: FontWeight.w500,
                                                             ),
@@ -1511,7 +1511,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                             '萬',
                                                             style: TextStyle(
                                                               color: Color(0xFFE86100),
-                                                              fontSize: 10,
+                                                              fontSize: 12,
                                                               fontFamily: 'Noto Sans TC',
                                                               fontWeight: FontWeight.w500,
                                                             ),
@@ -1582,7 +1582,7 @@ class _ItemDetailState extends State<ItemDetail> {
                         'Jay Chou',
                         style: TextStyle(
                           color: Color(0xFF171717),
-                          fontSize: 14,
+                          fontSize: 16,
                           fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w500,
                         ),
@@ -1591,7 +1591,7 @@ class _ItemDetailState extends State<ItemDetail> {
                         'C-123456',
                         style: TextStyle(
                           color: Color(0xFFB3B3B3),
-                          fontSize: 10,
+                          fontSize: 12,
                           fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w500,
                         ),

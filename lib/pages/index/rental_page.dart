@@ -88,7 +88,7 @@ class _RentalPageState extends State<RentalPage> {
                                                 widget.tab2[index],
                                                 style: TextStyle(
                                                   color: Color(0xFF07A1B4),
-                                                  fontSize: 8,
+                                                  fontSize: 10,
                                                   fontFamily: 'Noto Sans TC',
                                                   fontWeight: FontWeight.w500,
                                                 ),
@@ -139,7 +139,7 @@ class _RentalPageState extends State<RentalPage> {
                                                     '將軍澳 東港城 1座 高層 C室',
                                                     style: TextStyle(
                                                       color: Color(0xFF171717),
-                                                      fontSize: 14,
+                                                      fontSize: 16,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -151,7 +151,7 @@ class _RentalPageState extends State<RentalPage> {
                                                         '實用 463呎',
                                                         style: TextStyle(
                                                           color: Color(0xFF171717),
-                                                          fontSize: 10,
+                                                          fontSize: 12,
                                                           fontFamily: 'Noto Sans TC',
                                                           fontWeight: FontWeight.w500,
                                                         ),
@@ -161,7 +161,7 @@ class _RentalPageState extends State<RentalPage> {
                                                         '@ \$10,234',
                                                         style: TextStyle(
                                                           color: Color(0xFFB3B3B3),
-                                                          fontSize: 10,
+                                                          fontSize: 12,
                                                           fontFamily: 'Noto Sans TC',
                                                           fontWeight: FontWeight.w500,
                                                         ),
@@ -172,7 +172,7 @@ class _RentalPageState extends State<RentalPage> {
                                                     '1房 1廳',
                                                     style: TextStyle(
                                                       color: Color(0xFF171717),
-                                                      fontSize: 10,
+                                                      fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -182,7 +182,7 @@ class _RentalPageState extends State<RentalPage> {
                                                     '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
                                                     style: TextStyle(
                                                       color: Color(0xFF171717),
-                                                      fontSize: 10,
+                                                      fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w400,
                                                     ),
@@ -208,7 +208,7 @@ class _RentalPageState extends State<RentalPage> {
                                                               'Tagging',
                                                               style: TextStyle(
                                                                 color: Color(0xFF07A1B4),
-                                                                fontSize: 8,
+                                                                fontSize: 10,
                                                                 fontFamily: 'Noto Sans TC',
                                                                 fontWeight: FontWeight.w500,
                                                               ),
@@ -229,7 +229,7 @@ class _RentalPageState extends State<RentalPage> {
                                                               'Tagging',
                                                               style: TextStyle(
                                                                 color: Color(0xFF07A1B4),
-                                                                fontSize: 8,
+                                                                fontSize: 10,
                                                                 fontFamily: 'Noto Sans TC',
                                                                 fontWeight: FontWeight.w500,
                                                               ),
@@ -243,7 +243,7 @@ class _RentalPageState extends State<RentalPage> {
                                                             '\$900',
                                                             style: TextStyle(
                                                               color: Color(0xFFE86100),
-                                                              fontSize: 14,
+                                                              fontSize: 16,
                                                               fontFamily: 'Noto Sans TC',
                                                               fontWeight: FontWeight.w500,
                                                             ),
@@ -252,7 +252,7 @@ class _RentalPageState extends State<RentalPage> {
                                                             '萬',
                                                             style: TextStyle(
                                                               color: Color(0xFFE86100),
-                                                              fontSize: 10,
+                                                              fontSize: 12,
                                                               fontFamily: 'Noto Sans TC',
                                                               fontWeight: FontWeight.w500,
                                                             ),
@@ -329,7 +329,7 @@ class _RentalPageState extends State<RentalPage> {
                                                 style: TextStyle(
                                                   color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
                                                   fontFamily: 'PingFang TC',
-                                                  fontSize: 18,
+                                                  fontSize: 20,
                                                 ),
                                               ),
                                               Icon(

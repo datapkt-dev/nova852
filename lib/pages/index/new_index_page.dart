@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/pages/index/bank_plan.dart';
+import 'package:nova852/pages/index/rental_page.dart';
 
 class NewIndexPage extends StatefulWidget {
   const NewIndexPage({super.key});
@@ -1038,30 +1039,35 @@ class _NewIndexPageState extends State<NewIndexPage> {
                     ),
                   ),
                   SizedBox(height: 12,),
-                  Center(
-                    child: Container(
-                      width: 116,
-                      height: 24,
-                      alignment: Alignment.center,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: ShapeDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment(0.99, -0.16),
-                          end: Alignment(-0.99, 0.16),
-                          colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                    },
+                    child: Center(
+                      child: Container(
+                        width: 116,
+                        height: 24,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment(0.99, -0.16),
+                            end: Alignment(-0.99, 0.16),
+                            colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                      child: Text(
-                        '更多樓盤',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Noto Sans TC',
-                          fontWeight: FontWeight.w500,
+                        child: Text(
+                          '更多樓盤',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/pages/breaking_news/breaking_news.dart';
-import 'package:nova852/pages/index/index_page.dart';
 import 'package:nova852/pages/index/rental_page.dart';
 import 'package:nova852/pages/more/more.dart';
 import 'package:nova852/pages/profile/profile.dart';
+import 'package:nova852/pages/search/search_page.dart';
 
 import '../pages/index/new_index_page.dart';
 
@@ -18,7 +18,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
 
   int _currentIndex = 0;
-  final pages = [NewIndexPage(), RentalPage(), ProfilePage(), BreakingNewsPage(), MorePage()];
+  final pages = [NewIndexPage(), SearchPage(), ProfilePage(), BreakingNewsPage(), MorePage()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -28,16 +28,15 @@ class _BottomBarState extends State<BottomBar> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: pages[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(

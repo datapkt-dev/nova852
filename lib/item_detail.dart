@@ -1546,7 +1546,7 @@ class _ItemDetailState extends State<ItemDetail> {
         elevation: 0,
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.only(left: 12, right: 12, top: 20),
+          padding: EdgeInsets.only(left: 12, right: 12, top: 10),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(

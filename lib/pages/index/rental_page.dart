@@ -328,7 +328,7 @@ class _RentalPageState extends State<RentalPage> {
                                                 widget.tab[index],
                                                 style: TextStyle(
                                                   color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
-                                                  fontFamily: 'PingFang TC',
+                                                  fontFamily: 'Noto Sans TC',
                                                   fontSize: 20,
                                                 ),
                                               ),

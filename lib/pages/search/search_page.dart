@@ -19,30 +19,64 @@ class _SearchPageState extends State<SearchPage> {
         centerTitle: false,
         title: Text('搜尋'),
       ),
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12,),
+            child: Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 12,),
+              padding: EdgeInsets.all(10),
               decoration: ShapeDecoration(
-                color: Colors.white,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(6),
-                    bottomRight: Radius.circular(6),
-                  ),
+                  side: BorderSide(width: 1, color: Color(0xFF171717),),
+                  borderRadius: BorderRadius.circular(4),
                 ),
-                shadows: [
-                  BoxShadow(
-                    color: Color(0x3FC9C9C9),
-                    blurRadius: 4,
-                    offset: Offset(0, 4),
-                    spreadRadius: 0,
-                  )
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    width: 24,
+                    height: 24,
+                    color: Color(0xFF171717),
+                    'assets/icons/bottombar/search.svg',),
+                  SizedBox(width: 15,),
+                  Text(
+                    '地區 / 屋苑 / 港鐵 ',
+                    style: TextStyle(
+                      color: Color(0xFF171717),
+                      fontSize: 12,
+                      fontFamily: 'Noto Sans TC',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                 ],
               ),
+            ),
+          ),
+          SizedBox(height: 13,),
+          Container(
+            width: double.infinity,
+            decoration: ShapeDecoration(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(6),
+                  bottomRight: Radius.circular(6),
+                ),
+              ),
+              shadows: [
+                BoxShadow(
+                  color: Color(0x3FC9C9C9),
+                  blurRadius: 4,
+                  offset: Offset(0, 4),
+                  spreadRadius: 0,
+                )
+              ],
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -73,431 +107,431 @@ class _SearchPageState extends State<SearchPage> {
                 ],
               ),
             ),
-            Expanded(
-              child: SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 12,),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '熱門搜尋',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontFamily: 'Noto Sans TC',
-                        fontWeight: FontWeight.w500,
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 12,),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '熱門搜尋',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Noto Sans TC',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(height: 10,),
+                  Wrap(
+                    spacing: 12,
+                    runSpacing: 12,
+                    children: [
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 10,),
-                    Wrap(
-                      spacing: 12,
-                      runSpacing: 12,
-                      children: [
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 50,),
-                    Text(
-                      '搜尋紀錄',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontFamily: 'Noto Sans TC',
-                        fontWeight: FontWeight.w500,
                       ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 50,),
+                  Text(
+                    '搜尋紀錄',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Noto Sans TC',
+                      fontWeight: FontWeight.w500,
                     ),
-                    SizedBox(height: 10,),
-                    Wrap(
-                      spacing: 12,
-                      runSpacing: 12,
-                      children: [
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                  ),
+                  SizedBox(height: 10,),
+                  Wrap(
+                    spacing: 12,
+                    runSpacing: 12,
+                    children: [
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Container(
-                          width: 93,
-                          height: 30,
-                          alignment: Alignment.center,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          child: Text(
-                            'Tagging',
-                            style: TextStyle(
-                              color: Color(0xFF07A1B4),
-                              fontSize: 14,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 93,
+                        height: 30,
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFF07A1B4)),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'Tagging',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
-            ),
-          ],
-        ),
+          ),
+          ),
+        ],
       ),
     );
   }

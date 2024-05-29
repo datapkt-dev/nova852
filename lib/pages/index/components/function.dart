@@ -24,239 +24,6 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
       color: Colors.white,
       child: Column(
           children: [
-            // Container(
-            //     height: 330,
-            //     width: double.infinity,
-            //     child: Row(
-            //       children: [
-            //         Flexible(
-            //           flex: 3,
-            //           child: Column(
-            //             children: List.generate(6, (index) {
-            //               return Container(
-            //                   width: double.infinity,
-            //                   color: _selectedIndex == index ? Colors.white : Color(0xFFF5F5F5),
-            //                   padding: EdgeInsets.all(16),
-            //                   child: InkWell(
-            //                     onTap: () {
-            //                       setState(() {
-            //                         _selectedIndex = index;
-            //                         if (index == 1) {
-            //                           _showContainer = true;
-            //                         } else {
-            //                           _showContainer = false;
-            //                         }
-            //                       });
-            //                     },
-            //                     child: Row(
-            //                       children: [
-            //                         Text(
-            //                           widget.area[index],
-            //                           style: TextStyle(
-            //                             color: _selectedIndex == index ? Color(0xFF50C5D5) : Color(0xFF333333),
-            //                             fontSize: 16,
-            //                             fontFamily: 'PingFang TC',
-            //                             fontWeight: FontWeight.w400,
-            //                           ),
-            //                         ),
-            //                       ],
-            //                     ),
-            //                   )
-            //               );
-            //             }),
-            //           ),
-            //         ),
-            //         Flexible(
-            //           flex: 5,
-            //           child: Container(
-            //             height: double.infinity,
-            //             color: Color(0xFFFBFBFB),
-            //             child: Visibility(
-            //               visible: _showContainer,
-            //               child: Column(
-            //                 children: [
-            //                   Container(
-            //                     padding: EdgeInsets.all(16),
-            //                     alignment: Alignment.centerLeft,
-            //                     child: Row(
-            //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                       children: [
-            //                         Text(
-            //                           '不限',
-            //                           style: TextStyle(
-            //                             color: Color(0xFF333333),
-            //                             fontSize: 16,
-            //                             fontFamily: 'PingFang TC',
-            //                             fontWeight: FontWeight.w400,
-            //                           ),
-            //                         ),
-            //                         Container(
-            //                           width: 16,
-            //                           height: 16,
-            //                           decoration: ShapeDecoration(
-            //                             color: Colors.white,
-            //                             shape: RoundedRectangleBorder(
-            //                               side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
-            //                               borderRadius: BorderRadius.circular(2),
-            //                             ),
-            //                           ),
-            //                         ),
-            //                       ],
-            //                     ),
-            //                   ),
-            //                   Container(
-            //                     padding: EdgeInsets.all(16),
-            //                     alignment: Alignment.centerLeft,
-            //                     child: Row(
-            //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                       children: [
-            //                         Text(
-            //                           '屋苑',
-            //                           style: TextStyle(
-            //                             color: Color(0xFF333333),
-            //                             fontSize: 16,
-            //                             fontFamily: 'PingFang TC',
-            //                             fontWeight: FontWeight.w400,
-            //                           ),
-            //                         ),
-            //                         Container(
-            //                           width: 16,
-            //                           height: 16,
-            //                           decoration: ShapeDecoration(
-            //                             color: Colors.white,
-            //                             shape: RoundedRectangleBorder(
-            //                               side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
-            //                               borderRadius: BorderRadius.circular(2),
-            //                             ),
-            //                           ),
-            //                         )
-            //                       ],
-            //                     ),
-            //                   ),
-            //                   Container(
-            //                     padding: EdgeInsets.all(16),
-            //                     alignment: Alignment.centerLeft,
-            //                     child: Row(
-            //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                       children: [
-            //                         Text(
-            //                           '單棟式大廈',
-            //                           style: TextStyle(
-            //                             color: Color(0xFF333333),
-            //                             fontSize: 16,
-            //                             fontFamily: 'PingFang TC',
-            //                             fontWeight: FontWeight.w400,
-            //                           ),
-            //                         ),
-            //                         Container(
-            //                           width: 16,
-            //                           height: 16,
-            //                           decoration: ShapeDecoration(
-            //                             color: Colors.white,
-            //                             shape: RoundedRectangleBorder(
-            //                               side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
-            //                               borderRadius: BorderRadius.circular(2),
-            //                             ),
-            //                           ),
-            //                         )
-            //                       ],
-            //                     ),
-            //                   ),
-            //                   Container(
-            //                     padding: EdgeInsets.all(16),
-            //                     alignment: Alignment.centerLeft,
-            //                     child: Row(
-            //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                       children: [
-            //                         Text(
-            //                           '村屋',
-            //                           style: TextStyle(
-            //                             color: Color(0xFF333333),
-            //                             fontSize: 16,
-            //                             fontFamily: 'PingFang TC',
-            //                             fontWeight: FontWeight.w400,
-            //                           ),
-            //                         ),
-            //                         Container(
-            //                           width: 16,
-            //                           height: 16,
-            //                           decoration: ShapeDecoration(
-            //                             color: Colors.white,
-            //                             shape: RoundedRectangleBorder(
-            //                               side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
-            //                               borderRadius: BorderRadius.circular(2),
-            //                             ),
-            //                           ),
-            //                         )
-            //                       ],
-            //                     ),
-            //                   ),
-            //                   Container(
-            //                     padding: EdgeInsets.all(16),
-            //                     alignment: Alignment.centerLeft,
-            //                     child: Row(
-            //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                       children: [
-            //                         Text(
-            //                           '唐樓',
-            //                           style: TextStyle(
-            //                             color: Color(0xFF333333),
-            //                             fontSize: 16,
-            //                             fontFamily: 'PingFang TC',
-            //                             fontWeight: FontWeight.w400,
-            //                           ),
-            //                         ),
-            //                         Container(
-            //                           width: 16,
-            //                           height: 16,
-            //                           decoration: ShapeDecoration(
-            //                             color: Colors.white,
-            //                             shape: RoundedRectangleBorder(
-            //                               side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
-            //                               borderRadius: BorderRadius.circular(2),
-            //                             ),
-            //                           ),
-            //                         )
-            //                       ],
-            //                     ),
-            //                   ),
-            //                   Container(
-            //                     padding: EdgeInsets.all(16),
-            //                     alignment: Alignment.centerLeft,
-            //                     child: Row(
-            //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                       children: [
-            //                         Text(
-            //                           '居屋/公屋',
-            //                           style: TextStyle(
-            //                             color: Color(0xFF333333),
-            //                             fontSize: 16,
-            //                             fontFamily: 'PingFang TC',
-            //                             fontWeight: FontWeight.w400,
-            //                           ),
-            //                         ),
-            //                         Container(
-            //                           width: 16,
-            //                           height: 16,
-            //                           decoration: ShapeDecoration(
-            //                             color: Colors.white,
-            //                             shape: RoundedRectangleBorder(
-            //                               side: BorderSide(width: 1, color: Color(0xFFC2C2C2)),
-            //                               borderRadius: BorderRadius.circular(2),
-            //                             ),
-            //                           ),
-            //                         )
-            //                       ],
-            //                     ),
-            //                   ),
-            //                 ],
-            //               ),
-            //             ),
-            //           ),
-            //         ),
-            //       ],
-            //     )
-            // ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 32),
               child: Column(
@@ -280,7 +47,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         style: TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 16,
-                          fontFamily: 'PingFang TC',
+                          fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -306,7 +73,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         style: TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 16,
-                          fontFamily: 'PingFang TC',
+                          fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -332,7 +99,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         style: TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 16,
-                          fontFamily: 'PingFang TC',
+                          fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -358,7 +125,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         style: TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 16,
-                          fontFamily: 'PingFang TC',
+                          fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -384,7 +151,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         style: TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 16,
-                          fontFamily: 'PingFang TC',
+                          fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -410,7 +177,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         style: TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 16,
-                          fontFamily: 'PingFang TC',
+                          fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -436,7 +203,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         style: TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 16,
-                          fontFamily: 'PingFang TC',
+                          fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -490,7 +257,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                             style: TextStyle(
                               color: Color(0xFF858585),
                               fontSize: 18,
-                              fontFamily: 'PingFang TC',
+                              fontFamily: 'Noto Sans TC',
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -504,8 +271,14 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                         width: 230,
                         height: 50,
                         decoration: ShapeDecoration(
-                          color: Color(0xFF50C5D5),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                          gradient: LinearGradient(
+                            begin: Alignment(0.99, -0.16),
+                            end: Alignment(-0.99, 0.16),
+                            colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(3),
+                          ),
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -514,7 +287,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
-                            fontFamily: 'PingFang TC',
+                            fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w400,
                           ),
                         ),

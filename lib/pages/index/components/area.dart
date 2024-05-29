@@ -46,7 +46,6 @@ class _AreaWidgetState extends State<AreaWidget2> {
                         });
                       },
                       child: Container(
-                        height: double.infinity,
                         // color: Colors.deepOrange,
                         alignment: Alignment.center,
                         decoration: _selectedArea == index ? BoxDecoration(
@@ -61,7 +60,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                           widget.zone[index],
                           style: TextStyle(
                             fontSize: 18,
-                            fontFamily: 'PingFang TC',
+                            fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -77,46 +76,64 @@ class _AreaWidgetState extends State<AreaWidget2> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  child: Visibility(
-                    visible: _showArea,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: List.generate(widget.area.length, (index) {
-                        return InkWell(
-                          onTap: () {
-                            setState(() {
-                              _selectedZone = index;
-                            });
-                          },
-                          child: Container(
-                            width: 114,
-                            height: 36,
-                            color: _selectedZone == index ? Color(0xFF50C5D5) : null,
-                            alignment: Alignment.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  widget.area[index],
-                                  style: TextStyle(
-                                    color: _selectedZone == index ? Colors.white : null,
-                                    fontSize: 16,
-                                    fontFamily: 'PingFang TC',
-                                    fontWeight: FontWeight.w400,
+                Expanded(
+                  child: Container(
+                    width: double.infinity,
+                    child: Visibility(
+                      visible: _showArea,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: List.generate(widget.area.length, (index) {
+                          return InkWell(
+                            onTap: () {
+                              setState(() {
+                                _selectedZone = index;
+                              });
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: 36,
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.symmetric(vertical: 7, horizontal: 10,),
+                              decoration: BoxDecoration(
+                                gradient: _selectedZone == index ? LinearGradient(
+                                  begin: Alignment(0.99, -0.16),
+                                  end: Alignment(-0.99, 0.16),
+                                  colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                ) : null,
+                                border: index < widget.area.length-1
+                                    ? Border(
+                                  bottom: BorderSide(
+                                    color: Color(0xFFB3B3B3),
+                                    width: 1,
                                   ),
-                                ),
-                                SizedBox(width: 30,),
-                                Icon(
-                                  size: 16,
-                                  color: _selectedZone == index ? Colors.white : null,
-                                  _selectedZone == index ? Icons.arrow_back_ios : Icons.arrow_forward_ios,
-                                ),
-                              ],
+                                )
+                                    : null,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    widget.area[index],
+                                    style: TextStyle(
+                                      color: _selectedZone == index ? Colors.white : null,
+                                      fontSize: 16,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  SizedBox(width: 30,),
+                                  Icon(
+                                    size: 16,
+                                    color: _selectedZone == index ? Colors.white : null,
+                                    _selectedZone == index ? Icons.arrow_back_ios : Icons.arrow_forward_ios,
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        );
-                      }),
+                          );
+                        }),
+                      ),
                     ),
                   ),
                 ),
@@ -138,11 +155,15 @@ class _AreaWidgetState extends State<AreaWidget2> {
                                 },
                                 child: Container(
                                   height: 36,
-                                  width: 114,
-                                  padding: EdgeInsets.symmetric(vertical: 7, horizontal: 8,),
+                                  padding: EdgeInsets.symmetric(vertical: 7, horizontal: 10,),
                                   alignment: Alignment.centerLeft,
                                   decoration: BoxDecoration(
-                                    color: _selectedAreaChild == index ? Color(0xFF50C5D5) : null,
+                                    // color: _selectedAreaChild == index ? Color(0xFF50C5D5) : null,
+                                    gradient: _selectedAreaChild == index ? LinearGradient(
+                                      begin: Alignment(0.99, -0.16),
+                                      end: Alignment(-0.99, 0.16),
+                                      colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                    ) : null,
                                     border: index < widget.areachild_0.length-1
                                         ? Border(
                                       bottom: BorderSide(
@@ -160,7 +181,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                                         style: TextStyle(
                                           color: _selectedAreaChild == index ? Colors.white : null,
                                           fontSize: 16,
-                                          fontFamily: 'PingFang TC',
+                                          fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),
@@ -225,8 +246,8 @@ class _AreaWidgetState extends State<AreaWidget2> {
                           '重置',
                           style: TextStyle(
                             color: Color(0xFF858585),
-                            fontSize: 18,
-                            fontFamily: 'PingFang TC',
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -239,18 +260,24 @@ class _AreaWidgetState extends State<AreaWidget2> {
                     child: Container(
                       height: 50,
                       decoration: ShapeDecoration(
-                        color: Color(0xFF50C5D5),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                        gradient: LinearGradient(
+                          begin: Alignment(0.99, -0.16),
+                          end: Alignment(-0.99, 0.16),
+                          colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(3),
+                        ),
                       ),
                       alignment: Alignment.center,
                       child: Text(
-                        '確定',
-                        textAlign: TextAlign.right,
+                        '確定 (7,623個樓盤)',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
-                          fontFamily: 'PingFang TC',
-                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          fontFamily: 'Noto Sans TC',
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),

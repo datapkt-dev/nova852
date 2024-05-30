@@ -13,8 +13,7 @@ class _MoreWidgetState extends State<MoreWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 393,
-      height: 1013,
+      width: double.infinity,
       decoration: BoxDecoration(color: Colors.white),
       child: Column(
         mainAxisSize: MainAxisSize.min,

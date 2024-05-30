@@ -26,32 +26,20 @@ class _SearchPageState extends State<SearchPage> {
             padding: EdgeInsets.symmetric(horizontal: 12,),
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.symmetric(horizontal: 10,),
               decoration: ShapeDecoration(
                 shape: RoundedRectangleBorder(
                   side: BorderSide(width: 1, color: Color(0xFF171717),),
                   borderRadius: BorderRadius.circular(4),
                 ),
               ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    width: 24,
-                    height: 24,
-                    color: Color(0xFF171717),
-                    'assets/icons/bottombar/search.svg',),
-                  SizedBox(width: 15,),
-                  Text(
-                    '地區 / 屋苑 / 港鐵 ',
-                    style: TextStyle(
-                      color: Color(0xFF171717),
-                      fontSize: 12,
-                      fontFamily: 'Noto Sans TC',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
+              child: TextField(
+                maxLines: 1,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.search),
+                  hintText: '地區 / 屋苑 / 港鐵',
+                  border: InputBorder.none,
+                ),
               ),
             ),
           ),

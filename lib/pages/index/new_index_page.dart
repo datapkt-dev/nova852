@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/about_us.dart';
+import 'package:nova852/item_detail.dart';
 import 'package:nova852/pages/index/bank_plan.dart';
 import 'package:nova852/pages/index/mortgage_page.dart';
 import 'package:nova852/pages/index/rental_page.dart';
@@ -110,8 +111,44 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                 child: Column(
                                   children: [
                                     Expanded(
+                                      child: GestureDetector(
+                                        child: Container(
+                                          alignment: Alignment.center,
+                                          decoration: ShapeDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage('assets/images/index_block_buying.png'),
+                                              fit: BoxFit.cover,
+                                            ),
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                                          ),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Image.asset(
+                                                height: 113,
+                                                width: 103,
+                                                'assets/images/searching.png',
+                                              ),
+                                              Text(
+                                                '搜尋心水樓盤',
+                                                style: TextStyle(
+                                                  color: Color(0xFF171717),
+                                                  fontSize: 16,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        onTap: () {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                                        },
+                                      ),
+                                    ),
+                                    SizedBox(height: 4,),
+                                    GestureDetector(
                                       child: Container(
-                                        alignment: Alignment.center,
                                         decoration: ShapeDecoration(
                                           image: DecorationImage(
                                             image: AssetImage('assets/images/index_block_buying.png'),
@@ -119,16 +156,16 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           ),
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                         ),
-                                        child: Column(
+                                        child: Row(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Image.asset(
-                                              height: 113,
-                                              width: 103,
-                                              'assets/images/searching.png',
+                                              width: 51,
+                                              height: 51,
+                                              'assets/images/shop.png',
                                             ),
                                             Text(
-                                              '搜尋心水樓盤',
+                                              '店鋪',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
                                                 fontSize: 16,
@@ -139,35 +176,9 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           ],
                                         ),
                                       ),
-                                    ),
-                                    SizedBox(height: 4,),
-                                    Container(
-                                      decoration: ShapeDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('assets/images/index_block_buying.png'),
-                                          fit: BoxFit.cover,
-                                        ),
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            width: 51,
-                                            height: 51,
-                                            'assets/images/shop.png',
-                                          ),
-                                          Text(
-                                            '店鋪',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 16,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                      onTap: () {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                                      },
                                     ),
                                   ],
                                 ),
@@ -176,120 +187,140 @@ class _NewIndexPageState extends State<NewIndexPage> {
                               Flexible(
                                 child: Column(
                                   children: [
-                                    Container(
-                                      decoration: ShapeDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('assets/images/index_block_buying.png'),
-                                          fit: BoxFit.cover,
+                                    GestureDetector(
+                                      child: Container(
+                                        decoration: ShapeDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage('assets/images/index_block_buying.png'),
+                                            fit: BoxFit.cover,
+                                          ),
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                         ),
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            width: 51,
-                                            height: 51,
-                                            'assets/images/residential.png',
-                                          ),
-                                          Text(
-                                            '住宅',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 16,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              width: 51,
+                                              height: 51,
+                                              'assets/images/residential.png',
                                             ),
-                                          ),
-                                        ],
+                                            Text(
+                                              '住宅',
+                                              style: TextStyle(
+                                                color: Color(0xFF171717),
+                                                fontSize: 16,
+                                                fontFamily: 'Noto Sans TC',
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
+                                      onTap: () {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                                      },
                                     ),
                                     SizedBox(height: 4,),
-                                    Container(
-                                      decoration: ShapeDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('assets/images/index_block_buying.png'),
-                                          fit: BoxFit.cover,
+                                    GestureDetector(
+                                      child: Container(
+                                        decoration: ShapeDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage('assets/images/index_block_buying.png'),
+                                            fit: BoxFit.cover,
+                                          ),
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                         ),
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            width: 51,
-                                            height: 51,
-                                            'assets/images/mansion.png',
-                                          ),
-                                          Text(
-                                            '豪宅',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 16,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              width: 51,
+                                              height: 51,
+                                              'assets/images/mansion.png',
                                             ),
-                                          ),
-                                        ],
+                                            Text(
+                                              '豪宅',
+                                              style: TextStyle(
+                                                color: Color(0xFF171717),
+                                                fontSize: 16,
+                                                fontFamily: 'Noto Sans TC',
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
+                                      onTap: () {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                                      },
                                     ),
                                     SizedBox(height: 4,),
-                                    Container(
-                                      decoration: ShapeDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('assets/images/index_block_buying.png'),
-                                          fit: BoxFit.cover,
+                                    GestureDetector(
+                                      child: Container(
+                                        decoration: ShapeDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage('assets/images/index_block_buying.png'),
+                                            fit: BoxFit.cover,
+                                          ),
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                         ),
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            width: 51,
-                                            height: 51,
-                                            'assets/images/office.png',
-                                          ),
-                                          Text(
-                                            '工廈/商廈',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 16,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              width: 51,
+                                              height: 51,
+                                              'assets/images/office.png',
                                             ),
-                                          ),
-                                        ],
+                                            Text(
+                                              '工廈/商廈',
+                                              style: TextStyle(
+                                                color: Color(0xFF171717),
+                                                fontSize: 16,
+                                                fontFamily: 'Noto Sans TC',
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
+                                      onTap: () {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                                      },
                                     ),
                                     SizedBox(height: 4,),
-                                    Container(
-                                      decoration: ShapeDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('assets/images/index_block_buying.png'),
-                                          fit: BoxFit.cover,
+                                    GestureDetector(
+                                      child: Container(
+                                        decoration: ShapeDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage('assets/images/index_block_buying.png'),
+                                            fit: BoxFit.cover,
+                                          ),
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                                         ),
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Image.asset(
-                                            width: 51,
-                                            height: 51,
-                                            'assets/images/parking.png',
-                                          ),
-                                          Text(
-                                            '車位',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 16,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              width: 51,
+                                              height: 51,
+                                              'assets/images/parking.png',
                                             ),
-                                          ),
-                                        ],
+                                            Text(
+                                              '車位',
+                                              style: TextStyle(
+                                                color: Color(0xFF171717),
+                                                fontSize: 16,
+                                                fontFamily: 'Noto Sans TC',
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
+                                      onTap: () {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                                      },
                                     ),
                                   ],
                                 ),
@@ -619,203 +650,208 @@ class _NewIndexPageState extends State<NewIndexPage> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                         children: List.generate(3, (index) {
-                          return Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4),
-                            child: Container(
-                              width: 286,
-                              height: 291,
-                              decoration: ShapeDecoration(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                              ),
-                              child: Column(
-                                children: [
-                                  Stack(
-                                    children: [
-                                      Container(
-                                        width: 286,
-                                        height: 181,
-                                        decoration: ShapeDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage('assets/images/featured_item.png'),
-                                            fit: BoxFit.fill,
-                                          ),
-                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                                        ),
-                                      ),
-                                      Container(
-                                        width: 50,
-                                        height: 22,
-                                        decoration: ShapeDecoration(
-                                          color: Color(0xFF171717),
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(6),
-                                              bottomRight: Radius.circular(6),
-                                            ),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            SizedBox(width: 4,),
-                                            SvgPicture.asset(
-                                              width: 14,
-                                              height: 14,
-                                              'assets/icons/diamond.svg',
-                                            ),
-                                            SizedBox(width: 2,),
-                                            const Text(
-                                              '精選',
-                                              style: TextStyle(
-                                                color: Color(0xFFF0C790),
-                                                fontSize: 14,
-                                                fontFamily: 'PingFang TC',
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.only(left: 12, right: 12, bottom: 14, top: 3),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                          return GestureDetector(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 4),
+                              child: Container(
+                                width: 286,
+                                height: 291,
+                                decoration: ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Stack(
                                       children: [
-                                        Text(
-                                          '將軍澳 東港城 1座 高層 C室',
-                                          style: TextStyle(
-                                            color: Color(0xFF171717),
-                                            fontSize: 16,
-                                            fontFamily: 'Noto Sans TC',
-                                            fontWeight: FontWeight.w500,
+                                        Container(
+                                          width: 286,
+                                          height: 181,
+                                          decoration: ShapeDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage('assets/images/featured_item.png'),
+                                              fit: BoxFit.fill,
+                                            ),
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
                                           ),
                                         ),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              '實用 463呎',
-                                              style: TextStyle(
-                                                color: Color(0xFF171717),
-                                                fontSize: 12,
-                                                fontFamily: 'Noto Sans TC',
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            ),
-                                            SizedBox(width: 10,),
-                                            Text(
-                                              '@ \$10,234',
-                                              style: TextStyle(
-                                                color: Color(0xFFB3B3B3),
-                                                fontSize: 12,
-                                                fontFamily: 'Noto Sans TC',
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Text(
-                                          '1房 1廳',
-                                          style: TextStyle(
+                                        Container(
+                                          width: 50,
+                                          height: 22,
+                                          decoration: ShapeDecoration(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
-                                            fontFamily: 'Noto Sans TC',
-                                            fontWeight: FontWeight.w500,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(6),
+                                                bottomRight: Radius.circular(6),
+                                              ),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(width: 4,),
+                                              SvgPicture.asset(
+                                                width: 14,
+                                                height: 14,
+                                                'assets/icons/diamond.svg',
+                                              ),
+                                              SizedBox(width: 2,),
+                                              const Text(
+                                                '精選',
+                                                style: TextStyle(
+                                                  color: Color(0xFFF0C790),
+                                                  fontSize: 14,
+                                                  fontFamily: 'PingFang TC',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              )
+                                            ],
                                           ),
                                         ),
-                                        SizedBox(height: 7,),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  width: 57,
-                                                  height: 20,
-                                                  alignment: Alignment.center,
-                                                  decoration: ShapeDecoration(
-                                                    shape: RoundedRectangleBorder(
-                                                      side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
-                                                      borderRadius: BorderRadius.circular(10),
-                                                    ),
-                                                  ),
-                                                  child: Text(
-                                                    'Tagging',
-                                                    style: TextStyle(
-                                                      color: Color(0xFF07A1B4),
-                                                      fontSize: 10,
-                                                      fontFamily: 'Noto Sans TC',
-                                                      fontWeight: FontWeight.w500,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(width: 4,),
-                                                Container(
-                                                  width: 57,
-                                                  height: 20,
-                                                  alignment: Alignment.center,
-                                                  decoration: ShapeDecoration(
-                                                    shape: RoundedRectangleBorder(
-                                                      side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
-                                                      borderRadius: BorderRadius.circular(10),
-                                                    ),
-                                                  ),
-                                                  child: Text(
-                                                    'Tagging',
-                                                    style: TextStyle(
-                                                      color: Color(0xFF07A1B4),
-                                                      fontSize: 10,
-                                                      fontFamily: 'Noto Sans TC',
-                                                      fontWeight: FontWeight.w500,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
+                                      ],
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(left: 12, right: 12, bottom: 14, top: 3),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            '將軍澳 東港城 1座 高層 C室',
+                                            style: TextStyle(
+                                              color: Color(0xFF171717),
+                                              fontSize: 16,
+                                              fontFamily: 'Noto Sans TC',
+                                              fontWeight: FontWeight.w500,
                                             ),
-                                            Container(
-                                              width: 64,
-                                              height: 20,
-                                              decoration: ShapeDecoration(
-                                                color: Color(0xFFE86100),
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius: BorderRadius.circular(10),
+                                          ),
+                                          Row(
+                                            children: [
+                                              Text(
+                                                '實用 463呎',
+                                                style: TextStyle(
+                                                  color: Color(0xFF171717),
+                                                  fontSize: 12,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w500,
                                                 ),
                                               ),
-                                              child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.center,
+                                              SizedBox(width: 10,),
+                                              Text(
+                                                '@ \$10,234',
+                                                style: TextStyle(
+                                                  color: Color(0xFFB3B3B3),
+                                                  fontSize: 12,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Text(
+                                            '1房 1廳',
+                                            style: TextStyle(
+                                              color: Color(0xFF171717),
+                                              fontSize: 12,
+                                              fontFamily: 'Noto Sans TC',
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          SizedBox(height: 7,),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Row(
                                                 children: [
-                                                  Text(
-                                                    '\$900',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 16,
-                                                      fontFamily: 'Noto Sans TC',
-                                                      fontWeight: FontWeight.w500,
+                                                  Container(
+                                                    width: 57,
+                                                    height: 20,
+                                                    alignment: Alignment.center,
+                                                    decoration: ShapeDecoration(
+                                                      shape: RoundedRectangleBorder(
+                                                        side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                        borderRadius: BorderRadius.circular(10),
+                                                      ),
+                                                    ),
+                                                    child: Text(
+                                                      'Tagging',
+                                                      style: TextStyle(
+                                                        color: Color(0xFF07A1B4),
+                                                        fontSize: 10,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                      ),
                                                     ),
                                                   ),
-                                                  Text(
-                                                    '萬',
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 12,
-                                                      fontFamily: 'Noto Sans TC',
-                                                      fontWeight: FontWeight.w500,
-                                                      height: 0.22,
+                                                  SizedBox(width: 4,),
+                                                  Container(
+                                                    width: 57,
+                                                    height: 20,
+                                                    alignment: Alignment.center,
+                                                    decoration: ShapeDecoration(
+                                                      shape: RoundedRectangleBorder(
+                                                        side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                        borderRadius: BorderRadius.circular(10),
+                                                      ),
+                                                    ),
+                                                    child: Text(
+                                                      'Tagging',
+                                                      style: TextStyle(
+                                                        color: Color(0xFF07A1B4),
+                                                        fontSize: 10,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                              Container(
+                                                width: 64,
+                                                height: 20,
+                                                decoration: ShapeDecoration(
+                                                  color: Color(0xFFE86100),
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius.circular(10),
+                                                  ),
+                                                ),
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      '\$900',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 16,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      '萬',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 12,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                        height: 0.22,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                            },
                           );
                         })
                     ),
@@ -891,165 +927,170 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         SizedBox(height: 10,),
                         Column(
                           children: List.generate(4, (index) {
-                            return Container(
-                              padding: EdgeInsets.symmetric(vertical: 10),
-                              decoration: index < 3 ? BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                                      color: Color(0xFFB3B3B3),
-                                      width: 1,
-                                    )
-                                ),
-                              ) : null,
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: 120,
-                                    height: 132,
-                                    decoration: ShapeDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage('assets/images/featured_item.png'),
-                                        fit: BoxFit.fill,
+                            return GestureDetector(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                decoration: index < 3 ? BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(
+                                        color: Color(0xFFB3B3B3),
+                                        width: 1,
+                                      )
+                                  ),
+                                ) : null,
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: 120,
+                                      height: 132,
+                                      decoration: ShapeDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage('assets/images/featured_item.png'),
+                                          fit: BoxFit.fill,
+                                        ),
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
                                       ),
-                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
                                     ),
-                                  ),
-                                  SizedBox(width: 10,),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          '將軍澳 東港城 1座 高層 C室',
-                                          style: TextStyle(
-                                            color: Color(0xFF171717),
-                                            fontSize: 16,
-                                            fontFamily: 'Noto Sans TC',
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              '實用 463呎',
-                                              style: TextStyle(
-                                                color: Color(0xFF171717),
-                                                fontSize: 12,
-                                                fontFamily: 'Noto Sans TC',
-                                                fontWeight: FontWeight.w500,
-                                              ),
+                                    SizedBox(width: 10,),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            '將軍澳 東港城 1座 高層 C室',
+                                            style: TextStyle(
+                                              color: Color(0xFF171717),
+                                              fontSize: 16,
+                                              fontFamily: 'Noto Sans TC',
+                                              fontWeight: FontWeight.w500,
                                             ),
-                                            SizedBox(width: 8,),
-                                            Text(
-                                              '@ \$10,234',
-                                              style: TextStyle(
-                                                color: Color(0xFFB3B3B3),
-                                                fontSize: 12,
-                                                fontFamily: 'Noto Sans TC',
-                                                fontWeight: FontWeight.w500,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                '實用 463呎',
+                                                style: TextStyle(
+                                                  color: Color(0xFF171717),
+                                                  fontSize: 12,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                        Text(
-                                          '1房 1廳',
-                                          style: TextStyle(
-                                            color: Color(0xFF171717),
-                                            fontSize: 12,
-                                            fontFamily: 'Noto Sans TC',
-                                            fontWeight: FontWeight.w500,
+                                              SizedBox(width: 8,),
+                                              Text(
+                                                '@ \$10,234',
+                                                style: TextStyle(
+                                                  color: Color(0xFFB3B3B3),
+                                                  fontSize: 12,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              )
+                                            ],
                                           ),
-                                        ),
-                                        Divider(color: Color(0xFF171717),),
-                                        Text(
-                                          '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
-                                          style: TextStyle(
-                                            color: Color(0xFF171717),
-                                            fontSize: 12,
-                                            fontFamily: 'Noto Sans TC',
-                                            fontWeight: FontWeight.w400,
+                                          Text(
+                                            '1房 1廳',
+                                            style: TextStyle(
+                                              color: Color(0xFF171717),
+                                              fontSize: 12,
+                                              fontFamily: 'Noto Sans TC',
+                                              fontWeight: FontWeight.w500,
+                                            ),
                                           ),
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  width: 57,
-                                                  height: 20,
-                                                  decoration: ShapeDecoration(
-                                                    shape: RoundedRectangleBorder(
-                                                      side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
-                                                      borderRadius: BorderRadius.circular(10),
+                                          Divider(color: Color(0xFF171717),),
+                                          Text(
+                                            '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
+                                            style: TextStyle(
+                                              color: Color(0xFF171717),
+                                              fontSize: 12,
+                                              fontFamily: 'Noto Sans TC',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Container(
+                                                    width: 57,
+                                                    height: 20,
+                                                    decoration: ShapeDecoration(
+                                                      shape: RoundedRectangleBorder(
+                                                        side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                        borderRadius: BorderRadius.circular(10),
+                                                      ),
+                                                    ),
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      'Tagging',
+                                                      style: TextStyle(
+                                                        color: Color(0xFF07A1B4),
+                                                        fontSize: 10,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                      ),
                                                     ),
                                                   ),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Tagging',
+                                                  SizedBox(width: 4,),
+                                                  Container(
+                                                    width: 57,
+                                                    height: 20,
+                                                    decoration: ShapeDecoration(
+                                                      shape: RoundedRectangleBorder(
+                                                        side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                        borderRadius: BorderRadius.circular(10),
+                                                      ),
+                                                    ),
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      'Tagging',
+                                                      style: TextStyle(
+                                                        color: Color(0xFF07A1B4),
+                                                        fontSize: 10,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text(
+                                                    '\$900',
                                                     style: TextStyle(
-                                                      color: Color(0xFF07A1B4),
-                                                      fontSize: 10,
+                                                      color: Color(0xFFE86100),
+                                                      fontSize: 16,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
                                                   ),
-                                                ),
-                                                SizedBox(width: 4,),
-                                                Container(
-                                                  width: 57,
-                                                  height: 20,
-                                                  decoration: ShapeDecoration(
-                                                    shape: RoundedRectangleBorder(
-                                                      side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
-                                                      borderRadius: BorderRadius.circular(10),
-                                                    ),
-                                                  ),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Tagging',
+                                                  Text(
+                                                    '萬',
                                                     style: TextStyle(
-                                                      color: Color(0xFF07A1B4),
-                                                      fontSize: 10,
+                                                      color: Color(0xFFE86100),
+                                                      fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  '\$900',
-                                                  style: TextStyle(
-                                                    color: Color(0xFFE86100),
-                                                    fontSize: 16,
-                                                    fontFamily: 'Noto Sans TC',
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  '萬',
-                                                  style: TextStyle(
-                                                    color: Color(0xFFE86100),
-                                                    fontSize: 12,
-                                                    fontFamily: 'Noto Sans TC',
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                      ],
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                              },
                             );
                           }),
                         ),

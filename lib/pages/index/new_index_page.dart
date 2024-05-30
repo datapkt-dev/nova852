@@ -3,8 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nova852/about_us.dart';
 import 'package:nova852/pages/index/bank_plan.dart';
+import 'package:nova852/pages/index/mortgage_page.dart';
 import 'package:nova852/pages/index/rental_page.dart';
+import 'package:nova852/pages/profile/contract_history.dart';
 
 class NewIndexPage extends StatefulWidget {
   const NewIndexPage({super.key});
@@ -471,24 +474,29 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                 ),
                               ],
                             ),
-                            Column(
-                              children: [
-                                CircleAvatar(
-                                  radius: 25,
-                                  backgroundImage: AssetImage('assets/images/tools/tools_b.jpeg'),
-                                  child: SvgPicture.asset('assets/icons/tools/plan.svg'),
-                                ),
-                                SizedBox(height: 4,),
-                                Text(
-                                  '按揭計劃',
-                                  style: TextStyle(
-                                    color: Color(0xFF171717),
-                                    fontSize: 12,
-                                    fontFamily: 'Noto Sans TC',
-                                    fontWeight: FontWeight.w500,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => MortgagePage()));
+                              },
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: AssetImage('assets/images/tools/tools_b.jpeg'),
+                                    child: SvgPicture.asset('assets/icons/tools/plan.svg'),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(height: 4,),
+                                  Text(
+                                    '按揭計劃',
+                                    style: TextStyle(
+                                      color: Color(0xFF171717),
+                                      fontSize: 12,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             GestureDetector(
                               onTap: () {
@@ -529,43 +537,53 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                 ],
                               ),
                             ),
-                            Column(
-                              children: [
-                                CircleAvatar(
-                                  radius: 25,
-                                  backgroundImage: AssetImage('assets/images/tools/tools_d.jpeg'),
-                                  child: SvgPicture.asset('assets/icons/tools/contract.svg'),
-                                ),
-                                SizedBox(height: 4,),
-                                Text(
-                                  '電子租約',
-                                  style: TextStyle(
-                                    color: Color(0xFF171717),
-                                    fontSize: 12,
-                                    fontFamily: 'Noto Sans TC',
-                                    fontWeight: FontWeight.w500,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => ContractHistory()));
+                              },
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: AssetImage('assets/images/tools/tools_d.jpeg'),
+                                    child: SvgPicture.asset('assets/icons/tools/contract.svg'),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(height: 4,),
+                                  Text(
+                                    '電子租約',
+                                    style: TextStyle(
+                                      color: Color(0xFF171717),
+                                      fontSize: 12,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                            Column(
-                              children: [
-                                CircleAvatar(
-                                  radius: 25,
-                                  backgroundImage: AssetImage('assets/images/tools/tools_e.jpeg'),
-                                  child: SvgPicture.asset('assets/icons/tools/contact.svg'),
-                                ),
-                                SizedBox(height: 4,),
-                                Text(
-                                  '聯絡我們',
-                                  style: TextStyle(
-                                    color: Color(0xFF171717),
-                                    fontSize: 12,
-                                    fontFamily: 'Noto Sans TC',
-                                    fontWeight: FontWeight.w500,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => AboutUs()));
+                              },
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: AssetImage('assets/images/tools/tools_e.jpeg'),
+                                    child: SvgPicture.asset('assets/icons/tools/contact.svg'),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(height: 4,),
+                                  Text(
+                                    '聯絡我們',
+                                    style: TextStyle(
+                                      color: Color(0xFF171717),
+                                      fontSize: 12,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),

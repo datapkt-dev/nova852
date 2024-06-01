@@ -449,7 +449,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Container(
                                             width: 30,
                                             height: 30,
-                                            child: SvgPicture.asset('assets/icons/furniture/tv.svg'),
+                                            child: SvgPicture.asset(
+                                              color: Color(0xFF07A1B4),
+                                              'assets/icons/furniture_new/1_tv.svg',
+                                            ),
                                           ),
                                           Text(
                                             '電視',
@@ -468,7 +471,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Container(
                                             width: 30,
                                             height: 30,
-                                            child: SvgPicture.asset('assets/icons/furniture/washer.svg'),
+                                            child: SvgPicture.asset(
+                                              color: Color(0xFF07A1B4),
+                                              'assets/icons/furniture_new/4_washer.svg',
+                                            ),
                                           ),
                                           Text(
                                             '洗衣機',
@@ -487,7 +493,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Container(
                                             width: 30,
                                             height: 30,
-                                            child: SvgPicture.asset('assets/icons/furniture/aircon.svg'),
+                                            child: SvgPicture.asset(
+                                              color: Color(0xFF07A1B4),
+                                              'assets/icons/furniture_new/3_aricon.svg',
+                                            ),
                                           ),
                                           Text(
                                             '冷氣',
@@ -506,7 +515,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Container(
                                             width: 30,
                                             height: 30,
-                                            child: SvgPicture.asset('assets/icons/furniture/microwave.svg'),
+                                            child: SvgPicture.asset(
+                                              color: Color(0xFF07A1B4),
+                                              'assets/icons/furniture_new/2_microwave.svg',
+                                            ),
                                           ),
                                           Text(
                                             '微波爐',
@@ -525,7 +537,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                           Container(
                                             width: 30,
                                             height: 30,
-                                            child: SvgPicture.asset('assets/icons/furniture/refrigerator.svg'),
+                                            child: SvgPicture.asset(
+                                              color: Color(0xFF07A1B4),
+                                              'assets/icons/furniture_new/6_refrig.svg',
+                                            ),
                                           ),
                                           Text(
                                             '雪櫃',

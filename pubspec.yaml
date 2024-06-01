@@ -116,6 +116,16 @@ flutter:
     - assets/icons/item_detail/phone.svg
     - assets/icons/item_detail/whatsapp.svg
     - assets/icons/rental_page/sorting.svg
+    - assets/icons/furniture_new/1_tv.svg
+    - assets/icons/furniture_new/2_microwave.svg
+    - assets/icons/furniture_new/3_aricon.svg
+    - assets/icons/furniture_new/4_washer.svg
+    - assets/icons/furniture_new/5_heater.svg
+    - assets/icons/furniture_new/6_refrig.svg
+    - assets/icons/furniture_new/7_stove.svg
+    - assets/icons/furniture_new/8_cooker.svg
+    - assets/icons/furniture_new/9_hood.svg
+    - assets/icons/furniture_new/10_dishwasher.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

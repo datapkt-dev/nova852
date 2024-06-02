@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nova852/about_us.dart';
 
-import '../../components/bottombar.dart';
-
 class MorePage extends StatefulWidget {
   const MorePage({super.key});
 
@@ -42,7 +40,7 @@ class ItemData1 extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context) => AboutUs()));
       },
       child: Container(
-        width: 393,
+        width: double.infinity,
         height: 56,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -92,7 +90,7 @@ class ItemData2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 393,
+      width: double.infinity,
       height: 56,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -107,7 +105,7 @@ class ItemData2 extends StatelessWidget {
         ],
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -141,7 +139,7 @@ class ItemData3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 393,
+      width: double.infinity,
       height: 56,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -190,7 +188,7 @@ class ItemData4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 393,
+      width: double.infinity,
       height: 56,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(

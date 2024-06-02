@@ -76,8 +76,16 @@ class _RentalPageState extends State<RentalPage> {
                                             child: Container(
                                               height: 20,
                                               decoration: ShapeDecoration(
+                                                gradient: _selectedIndex == index ? LinearGradient(
+                                                  begin: Alignment(0.99, -0.16),
+                                                  end: Alignment(-0.99, 0.16),
+                                                  colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                                ) : null,
                                                 shape: RoundedRectangleBorder(
-                                                  side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                  side: BorderSide(
+                                                    width: 0.50,
+                                                    color: Color(0xFF07A1B4),
+                                                  ),
                                                   borderRadius: BorderRadius.circular(10),
                                                 ),
                                               ),
@@ -87,7 +95,7 @@ class _RentalPageState extends State<RentalPage> {
                                               child: Text(
                                                 widget.tab2[index],
                                                 style: TextStyle(
-                                                  color: Color(0xFF07A1B4),
+                                                  color: _selectedIndex == index ? Colors.white : Color(0xFF07A1B4),
                                                   fontSize: 10,
                                                   fontFamily: 'Noto Sans TC',
                                                   fontWeight: FontWeight.w500,

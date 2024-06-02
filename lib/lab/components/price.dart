@@ -227,24 +227,21 @@ class _PriceWidgetState extends State<PriceWidget> {
                     Expanded(
                       flex: 1,
                       child: InkWell(
-                        onTap: (){
-                          setState(() {
-                          });
-                        },
+                        onTap: () {},
                         child: Container(
                           height: 50,
                           alignment: Alignment.center,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFEBEBEB),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                            color: Color(0xFFB3B3B3),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                           ),
                           child: Text(
-                            '重置',
+                            '重設',
                             style: TextStyle(
-                              color: Color(0xFF858585),
+                              color: Colors.white,
                               fontSize: 14,
                               fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
@@ -261,9 +258,7 @@ class _PriceWidgetState extends State<PriceWidget> {
                             end: Alignment(-0.99, 0.16),
                             colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
                           ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(3),
-                          ),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                         ),
                         alignment: Alignment.center,
                         child: Text(

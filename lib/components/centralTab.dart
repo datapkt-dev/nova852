@@ -191,7 +191,6 @@ class PaymentTab extends StatelessWidget {
                     height: 0,
                   ),
                 ),
-                SizedBox(width: 145*wScale),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: ShapeDecoration(

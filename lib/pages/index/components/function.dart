@@ -213,8 +213,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
               ),
             ),
             Container(
-                width: double.infinity,
-                height: 100,
+                padding: EdgeInsets.symmetric(vertical: 9, horizontal: 16),
                 decoration: ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
@@ -232,33 +231,26 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                     )
                   ],
                 ),
-                padding: EdgeInsets.symmetric(vertical: 9, horizontal: 16),
                 child: Row(
                   children: [
                     Expanded(
                       flex: 1,
                       child: InkWell(
-                        onTap: (){
-                          setState(() {
-                            _selectedIndex = 0;
-                            _showContainer = false;
-                          });
-                        },
+                        onTap: () {},
                         child: Container(
-                          width: 115,
                           height: 50,
                           alignment: Alignment.center,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFEBEBEB),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                            color: Color(0xFFB3B3B3),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                           ),
                           child: Text(
                             '重設',
                             style: TextStyle(
-                              color: Color(0xFF858585),
-                              fontSize: 18,
+                              color: Colors.white,
+                              fontSize: 14,
                               fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
@@ -268,7 +260,6 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                     Expanded(
                       flex: 2,
                       child: Container(
-                        width: 230,
                         height: 50,
                         decoration: ShapeDecoration(
                           gradient: LinearGradient(
@@ -276,19 +267,17 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                             end: Alignment(-0.99, 0.16),
                             colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
                           ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(3),
-                          ),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                         ),
                         alignment: Alignment.center,
                         child: Text(
                           '確定 (7,623個樓盤)',
-                          textAlign: TextAlign.right,
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 14,
                             fontFamily: 'Noto Sans TC',
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),

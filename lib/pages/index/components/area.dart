@@ -29,7 +29,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
           Container(
             width: double.infinity,
             height: 50,
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
             child: Row(
               children: List.generate(widget.zone.length, (index) {
                 return Row(
@@ -46,12 +46,11 @@ class _AreaWidgetState extends State<AreaWidget2> {
                         });
                       },
                       child: Container(
-                        // color: Colors.deepOrange,
                         alignment: Alignment.center,
                         decoration: _selectedArea == index ? BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
-                              color: Color(0xFF50C5D5),
+                              color: Color(0xFFE86100),
                               width: 2,
                             ),
                           ),
@@ -239,16 +238,16 @@ class _AreaWidgetState extends State<AreaWidget2> {
                         height: 50,
                         alignment: Alignment.center,
                         decoration: ShapeDecoration(
-                          color: Color(0xFFEBEBEB),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+                          color: Color(0xFFB3B3B3),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                         ),
                         child: Text(
-                          '重置',
+                          '重設',
                           style: TextStyle(
-                            color: Color(0xFF858585),
+                            color: Colors.white,
                             fontSize: 14,
                             fontFamily: 'Noto Sans TC',
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
@@ -265,9 +264,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                           end: Alignment(-0.99, 0.16),
                           colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(3),
-                        ),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                       ),
                       alignment: Alignment.center,
                       child: Text(

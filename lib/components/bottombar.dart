@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/pages/breaking_news/breaking_news.dart';
-import 'package:nova852/pages/index/rental_page.dart';
 import 'package:nova852/pages/more/more.dart';
 import 'package:nova852/pages/profile/profile.dart';
 import 'package:nova852/pages/search/search_page.dart';

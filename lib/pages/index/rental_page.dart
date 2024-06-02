@@ -7,6 +7,7 @@ import 'package:nova852/lab/components/function.dart';
 import 'package:nova852/lab/components/price.dart';
 import 'package:nova852/pages/index/components/area.dart';
 import 'package:nova852/pages/index/components/function.dart';
+import 'package:nova852/pages/index/components/list_item.dart';
 import 'package:nova852/pages/index/components/more.dart';
 
 class RentalPage extends StatefulWidget {
@@ -59,57 +60,57 @@ class _RentalPageState extends State<RentalPage> {
                             child: Column(
                               children: [
                                 SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Container(
-                                  height: 50,
-                                  padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
-                                  child: Row(
-                                    children: List.generate(widget.tab2.length, (index) {
-                                      return Row(
-                                        children: [
-                                          InkWell(
-                                            onTap: () {
-                                              setState(() {
-                                                _selectedIndex = index;
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 20,
-                                              decoration: ShapeDecoration(
-                                                gradient: _selectedIndex == index ? LinearGradient(
-                                                  begin: Alignment(0.99, -0.16),
-                                                  end: Alignment(-0.99, 0.16),
-                                                  colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
-                                                ) : null,
-                                                shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                    width: 0.50,
-                                                    color: Color(0xFF07A1B4),
+                                  scrollDirection: Axis.horizontal,
+                                  child: Container(
+                                    height: 50,
+                                    padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
+                                    alignment: Alignment.center,
+                                    child: Row(
+                                      children: List.generate(widget.tab2.length, (index) {
+                                        return Row(
+                                          children: [
+                                            InkWell(
+                                              onTap: () {
+                                                setState(() {
+                                                  _selectedIndex = index;
+                                                });
+                                              },
+                                              child: Container(
+                                                height: 20,
+                                                decoration: ShapeDecoration(
+                                                  gradient: _selectedIndex == index ? LinearGradient(
+                                                    begin: Alignment(0.99, -0.16),
+                                                    end: Alignment(-0.99, 0.16),
+                                                    colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                                  ) : null,
+                                                  shape: RoundedRectangleBorder(
+                                                    side: BorderSide(
+                                                      width: 0.50,
+                                                      color: Color(0xFF07A1B4),
+                                                    ),
+                                                    borderRadius: BorderRadius.circular(10),
                                                   ),
-                                                  borderRadius: BorderRadius.circular(10),
                                                 ),
-                                              ),
-                                              alignment: Alignment.center,
-                                              padding: EdgeInsets.symmetric(horizontal: 12),
-                                              //color: _selectedIndex == index ? Color(0xFF3093EE) : Color(0xFFF3F4F6),
-                                              child: Text(
-                                                widget.tab2[index],
-                                                style: TextStyle(
-                                                  color: _selectedIndex == index ? Colors.white : Color(0xFF07A1B4),
-                                                  fontSize: 10,
-                                                  fontFamily: 'Noto Sans TC',
-                                                  fontWeight: FontWeight.w500,
+                                                alignment: Alignment.center,
+                                                padding: EdgeInsets.symmetric(horizontal: 12),
+                                                child: Text(
+                                                  widget.tab2[index],
+                                                  style: TextStyle(
+                                                    color: _selectedIndex == index ? Colors.white : Color(0xFF07A1B4),
+                                                    fontSize: 10,
+                                                    fontFamily: 'Noto Sans TC',
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          SizedBox(width: 4,),
-                                        ],
-                                      );
-                                    }),
+                                            SizedBox(width: 4,),
+                                          ],
+                                        );
+                                      }),
+                                    ),
                                   ),
                                 ),
-                              ),
                                 Column(
                                 children: List.generate(4, (index) {
                                   return Container(
@@ -125,155 +126,7 @@ class _RentalPageState extends State<RentalPage> {
                                       },
                                       child: Container(
                                         padding: EdgeInsets.symmetric(vertical: 10),
-                                        child: Row(
-                                          children: [
-                                            Container(
-                                              width: 120,
-                                              height: 132,
-                                              decoration: ShapeDecoration(
-                                                image: DecorationImage(
-                                                  image: AssetImage('assets/images/featured_item.png'),
-                                                  fit: BoxFit.fill,
-                                                ),
-                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                                              ),
-                                            ),
-                                            SizedBox(width: 10,),
-                                            Expanded(
-                                              child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    '將軍澳 東港城 1座 高層 C室',
-                                                    style: TextStyle(
-                                                      color: Color(0xFF171717),
-                                                      fontSize: 16,
-                                                      fontFamily: 'Noto Sans TC',
-                                                      fontWeight: FontWeight.w500,
-                                                    ),
-                                                  ),
-                                                  Row(
-                                                    mainAxisAlignment: MainAxisAlignment.start,
-                                                    children: [
-                                                      Text(
-                                                        '實用 463呎',
-                                                        style: TextStyle(
-                                                          color: Color(0xFF171717),
-                                                          fontSize: 12,
-                                                          fontFamily: 'Noto Sans TC',
-                                                          fontWeight: FontWeight.w500,
-                                                        ),
-                                                      ),
-                                                      SizedBox(width: 8,),
-                                                      Text(
-                                                        '@ \$10,234',
-                                                        style: TextStyle(
-                                                          color: Color(0xFFB3B3B3),
-                                                          fontSize: 12,
-                                                          fontFamily: 'Noto Sans TC',
-                                                          fontWeight: FontWeight.w500,
-                                                        ),
-                                                      )
-                                                    ],
-                                                  ),
-                                                  Text(
-                                                    '1房 1廳',
-                                                    style: TextStyle(
-                                                      color: Color(0xFF171717),
-                                                      fontSize: 12,
-                                                      fontFamily: 'Noto Sans TC',
-                                                      fontWeight: FontWeight.w500,
-                                                    ),
-                                                  ),
-                                                  Divider(color: Color(0xFF171717),),
-                                                  Text(
-                                                    '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
-                                                    style: TextStyle(
-                                                      color: Color(0xFF171717),
-                                                      fontSize: 12,
-                                                      fontFamily: 'Noto Sans TC',
-                                                      fontWeight: FontWeight.w400,
-                                                    ),
-                                                    maxLines: 2,
-                                                    overflow: TextOverflow.ellipsis,
-                                                  ),
-                                                  Row(
-                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                    children: [
-                                                      Row(
-                                                        children: [
-                                                          Container(
-                                                            width: 57,
-                                                            height: 20,
-                                                            decoration: ShapeDecoration(
-                                                              shape: RoundedRectangleBorder(
-                                                                side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
-                                                                borderRadius: BorderRadius.circular(10),
-                                                              ),
-                                                            ),
-                                                            alignment: Alignment.center,
-                                                            child: Text(
-                                                              'Tagging',
-                                                              style: TextStyle(
-                                                                color: Color(0xFF07A1B4),
-                                                                fontSize: 10,
-                                                                fontFamily: 'Noto Sans TC',
-                                                                fontWeight: FontWeight.w500,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          SizedBox(width: 4,),
-                                                          Container(
-                                                            width: 57,
-                                                            height: 20,
-                                                            decoration: ShapeDecoration(
-                                                              shape: RoundedRectangleBorder(
-                                                                side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
-                                                                borderRadius: BorderRadius.circular(10),
-                                                              ),
-                                                            ),
-                                                            alignment: Alignment.center,
-                                                            child: Text(
-                                                              'Tagging',
-                                                              style: TextStyle(
-                                                                color: Color(0xFF07A1B4),
-                                                                fontSize: 10,
-                                                                fontFamily: 'Noto Sans TC',
-                                                                fontWeight: FontWeight.w500,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Row(
-                                                        children: [
-                                                          Text(
-                                                            '\$900',
-                                                            style: TextStyle(
-                                                              color: Color(0xFFE86100),
-                                                              fontSize: 16,
-                                                              fontFamily: 'Noto Sans TC',
-                                                              fontWeight: FontWeight.w500,
-                                                            ),
-                                                          ),
-                                                          Text(
-                                                            '萬',
-                                                            style: TextStyle(
-                                                              color: Color(0xFFE86100),
-                                                              fontSize: 12,
-                                                              fontFamily: 'Noto Sans TC',
-                                                              fontWeight: FontWeight.w500,
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      )
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                                        child: ListItem(),
                                       ),
                                     ),
                                   );

@@ -41,7 +41,7 @@ class BlockRandS extends StatelessWidget {
                           Text(
                             '搜尋心水樓盤',
                             style: TextStyle(
-                              color: Color(0xFF171717),
+                              color: index == 0 ? Color(0xFF171717) : Colors.white,
                               fontSize: 16,
                               fontFamily: 'Noto Sans TC',
                               fontWeight: FontWeight.w500,
@@ -78,7 +78,7 @@ class BlockRandS extends StatelessWidget {
                         Text(
                           '店鋪',
                           style: TextStyle(
-                            color: Color(0xFF171717),
+                            color: index == 0 ? Color(0xFF171717) : Colors.white,
                             fontSize: 16,
                             fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w500,
@@ -122,7 +122,7 @@ class BlockRandS extends StatelessWidget {
                         Text(
                           '住宅',
                           style: TextStyle(
-                            color: Color(0xFF171717),
+                            color: index == 0 ? Color(0xFF171717) : Colors.white,
                             fontSize: 16,
                             fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w500,
@@ -160,7 +160,7 @@ class BlockRandS extends StatelessWidget {
                         Text(
                           '豪宅',
                           style: TextStyle(
-                            color: Color(0xFF171717),
+                            color: index == 0 ? Color(0xFF171717) : Colors.white,
                             fontSize: 16,
                             fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w500,
@@ -198,7 +198,7 @@ class BlockRandS extends StatelessWidget {
                         Text(
                           '工廈/商廈',
                           style: TextStyle(
-                            color: Color(0xFF171717),
+                            color: index == 0 ? Color(0xFF171717) : Colors.white,
                             fontSize: 16,
                             fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w500,
@@ -234,7 +234,7 @@ class BlockRandS extends StatelessWidget {
                         Text(
                           '車位',
                           style: TextStyle(
-                            color: Color(0xFF171717),
+                            color: index == 0 ? Color(0xFF171717) : Colors.white,
                             fontSize: 16,
                             fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w500,

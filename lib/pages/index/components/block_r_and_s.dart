@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../rental_page.dart';
+import 'package:nova852/pages/index/rental_page.dart';
 
 class BlockRandS extends StatelessWidget {
   final int index;

@@ -323,8 +323,9 @@ class BlockRandS extends StatelessWidget {
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
+                        children: index==0
+                            ? [
+                              Text(
                             '優惠上車盤',
                             style: TextStyle(
                               color: Color(0xFF171717),
@@ -333,7 +334,7 @@ class BlockRandS extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          Text(
+                              Text(
                             '600萬內筍盤',
                             style: TextStyle(
                               color: Color(0xFF171717),
@@ -342,7 +343,27 @@ class BlockRandS extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                        ],
+                            ]
+                            : [
+                              Text(
+                            '優惠租盤',
+                            style: TextStyle(
+                              color: Color(0xFF171717),
+                              fontSize: 16,
+                              fontFamily: 'Noto Sans TC',
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                              Text(
+                            '呎租萬七內筍盤',
+                            style: TextStyle(
+                              color: Color(0xFF171717),
+                              fontSize: 12,
+                              fontFamily: 'Noto Sans TC',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                            ],
                       ),
                     ),
                   ),

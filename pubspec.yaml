@@ -139,7 +139,8 @@ flutter:
     - assets/images/map.jpg
     - assets/images/index_banner.png
     - assets/images/searching.png
-    - assets/images/index_block_buying.png
+    - assets/images/index_block_buy.png
+    - assets/images/index_block_rent.png
     - assets/images/shop.png
     - assets/images/residential.png
     - assets/images/mansion.png

@@ -19,6 +19,8 @@ class NewIndexPage extends StatefulWidget {
 }
 
 class _NewIndexPageState extends State<NewIndexPage> {
+  int _UpperBlockIndex = 0;
+  int _LowerBlockIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -61,54 +63,72 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           child: Row(
                             children: [
                               Flexible(
-                                flex: 11,
-                                child: Container(
-                                  height: 33,
-                                  decoration: ShapeDecoration(
-                                    color: Color(0xFF171717),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(21.50),
-                                    ),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    '我想買樓',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontFamily: 'Noto Sans TC',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Flexible(
-                                  flex: 10,
+                                flex: _UpperBlockIndex == 0 ? 12 : 10,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _UpperBlockIndex = 0;
+                                    });
+                                  },
                                   child: Container(
+                                    height: 33,
+                                    decoration: _UpperBlockIndex == 0 ? ShapeDecoration(
+                                      color: Color(0xFF171717),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(21.50),
+                                      ),
+                                    ) : null,
                                     alignment: Alignment.center,
                                     child: Text(
-                                      '我想租樓',
+                                      '我想買樓',
                                       style: TextStyle(
-                                        color: Color(0xFFB3B3B3),
+                                        color: _UpperBlockIndex == 0 ? Colors.white : Color(0xFFB3B3B3),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                  )
+                                  ),
+                                ),
+                              ),
+                              Flexible(
+                                flex: _UpperBlockIndex == 1 ? 12 : 10,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _UpperBlockIndex = 1;
+                                    });
+                                  },
+                                  child: Container(
+                                    decoration: _UpperBlockIndex == 1 ? ShapeDecoration(
+                                      color: Color(0xFF171717),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(21.50),
+                                      ),
+                                    ) : null,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      '我想租樓',
+                                      style: TextStyle(
+                                        color: _UpperBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
+                                        fontSize: 14,
+                                        fontFamily: 'Noto Sans TC',
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
                         ),
-                        SizedBox(
-                          height: 8,
-                        ),
+                        SizedBox(height: 8,),
                         SizedBox(
                           height: 216,
                           width: double.infinity,
                           child: Row(
                             children: [
-                              Flexible(
+                              Expanded(
                                 child: Column(
                                   children: [
                                     Expanded(
@@ -185,7 +205,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                 ),
                               ),
                               SizedBox(width: 4,),
-                              Flexible(
+                              Expanded(
                                 child: Column(
                                   children: [
                                     GestureDetector(
@@ -650,7 +670,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                        children: List.generate(3, (index) {
+                        children: List.generate(10, (index) {
                           return GestureDetector(
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 4),
@@ -718,7 +738,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            '將軍澳 東港城 1座 高層 C室',
+                                            '將軍澳 東港城 1座 高層 C室 ${index+1}',
                                             style: TextStyle(
                                               color: Color(0xFF171717),
                                               fontSize: 16,
@@ -885,41 +905,61 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             child: Row(
                               children: [
                                 Flexible(
-                                  flex: 11,
-                                  child: Container(
-                                    height: 33,
-                                    decoration: ShapeDecoration(
-                                      color: Color(0xFF171717),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(21.50),
-                                      ),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      '我想買樓',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontFamily: 'Noto Sans TC',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Flexible(
-                                    flex: 10,
+                                  flex: _LowerBlockIndex == 0 ? 12 : 10,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        _LowerBlockIndex = 0;
+                                      });
+                                    },
                                     child: Container(
+                                      height: 33,
+                                      decoration: _LowerBlockIndex == 0 ? ShapeDecoration(
+                                        color: Color(0xFF171717),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(21.50),
+                                        ),
+                                      ) : null,
                                       alignment: Alignment.center,
                                       child: Text(
-                                        '我想租樓',
+                                        '我想買樓',
                                         style: TextStyle(
-                                          color: Color(0xFFB3B3B3),
+                                          color: _LowerBlockIndex == 0 ? Colors.white : Color(0xFFB3B3B3),
                                           fontSize: 14,
                                           fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                    )
+                                    ),
+                                  ),
+                                ),
+                                Flexible(
+                                  flex: _LowerBlockIndex == 1 ? 12 : 10,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        _LowerBlockIndex = 1;
+                                      });
+                                    },
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      decoration: _LowerBlockIndex == 1 ? ShapeDecoration(
+                                        color: Color(0xFF171717),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(21.50),
+                                        ),
+                                      ) : null,
+                                      child: Text(
+                                        '我想租樓',
+                                        style: TextStyle(
+                                          color: _LowerBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
+                                          fontSize: 14,
+                                          fontFamily: 'Noto Sans TC',
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),

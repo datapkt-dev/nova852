@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/item_detail.dart';
-import 'package:nova852/lab/components/function.dart';
 import 'package:nova852/lab/components/price.dart';
 import 'package:nova852/pages/index/components/area.dart';
 import 'package:nova852/pages/index/components/function.dart';
@@ -23,7 +22,6 @@ class RentalPage extends StatefulWidget {
 
 class _RentalPageState extends State<RentalPage> {
   int _selectedIndex = 0;
-  double _height = 40;
   bool _showContainer = false;
   final List<int> items = List<int>.generate(100, (i) => i + 1);
   bool _isOverlayVisible = false;

@@ -146,6 +146,9 @@ flutter:
     - assets/images/mansion.png
     - assets/images/office.png
     - assets/images/parking.png
+    - assets/images/index/block_rent_and_buy/rent_mansion.png
+    - assets/images/index/block_rent_and_buy/rent_office.png
+    - assets/images/index/block_rent_and_buy/rent_residential.png
     - assets/images/buying_hot.png
     - assets/images/buying_featured.png
     - assets/images/buying_discount.png

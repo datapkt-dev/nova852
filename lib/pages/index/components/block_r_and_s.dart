@@ -23,7 +23,9 @@ class BlockRandS extends StatelessWidget {
                       alignment: Alignment.center,
                       decoration: ShapeDecoration(
                         image: DecorationImage(
-                          image: index == 0 ? AssetImage('assets/images/index_block_buy.png') : AssetImage('assets/images/index_block_rent.png'),
+                          image: index == 0
+                              ? AssetImage('assets/images/index_block_buy.png')
+                              : AssetImage('assets/images/index_block_rent.png'),
                           fit: BoxFit.cover,
                         ),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -58,7 +60,9 @@ class BlockRandS extends StatelessWidget {
                   child: Container(
                     decoration: ShapeDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/index_block_buy.png'),
+                        image: index == 0
+                            ? AssetImage('assets/images/index_block_buy.png')
+                            : AssetImage('assets/images/index_block_rent.png'),
                         fit: BoxFit.cover,
                       ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -98,7 +102,9 @@ class BlockRandS extends StatelessWidget {
                   child: Container(
                     decoration: ShapeDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/index_block_buy.png'),
+                        image: index == 0
+                            ? AssetImage('assets/images/index_block_buy.png')
+                            : AssetImage('assets/images/index_block_rent.png'),
                         fit: BoxFit.cover,
                       ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -109,7 +115,9 @@ class BlockRandS extends StatelessWidget {
                         Image.asset(
                           width: 51,
                           height: 51,
-                          'assets/images/residential.png',
+                          index == 0
+                              ? 'assets/images/residential.png'
+                              : 'assets/images/index/block_rent_and_buy/rent_residential.png',
                         ),
                         Text(
                           '住宅',
@@ -132,7 +140,9 @@ class BlockRandS extends StatelessWidget {
                   child: Container(
                     decoration: ShapeDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/index_block_buy.png'),
+                        image: index == 0
+                            ? AssetImage('assets/images/index_block_buy.png')
+                            : AssetImage('assets/images/index_block_rent.png'),
                         fit: BoxFit.cover,
                       ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -143,7 +153,9 @@ class BlockRandS extends StatelessWidget {
                         Image.asset(
                           width: 51,
                           height: 51,
-                          'assets/images/mansion.png',
+                          index == 0
+                              ? 'assets/images/mansion.png'
+                              : 'assets/images/index/block_rent_and_buy/rent_mansion.png',
                         ),
                         Text(
                           '豪宅',
@@ -166,7 +178,9 @@ class BlockRandS extends StatelessWidget {
                   child: Container(
                     decoration: ShapeDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/index_block_buy.png'),
+                        image: index == 0
+                            ? AssetImage('assets/images/index_block_buy.png')
+                            : AssetImage('assets/images/index_block_rent.png'),
                         fit: BoxFit.cover,
                       ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -177,7 +191,9 @@ class BlockRandS extends StatelessWidget {
                         Image.asset(
                           width: 51,
                           height: 51,
-                          'assets/images/office.png',
+                          index == 0
+                              ? 'assets/images/office.png'
+                              : 'assets/images/index/block_rent_and_buy/rent_office.png',
                         ),
                         Text(
                           '工廈/商廈',
@@ -200,7 +216,9 @@ class BlockRandS extends StatelessWidget {
                   child: Container(
                     decoration: ShapeDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/index_block_buy.png'),
+                        image: index == 0
+                            ? AssetImage('assets/images/index_block_buy.png')
+                            : AssetImage('assets/images/index_block_rent.png'),
                         fit: BoxFit.cover,
                       ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),

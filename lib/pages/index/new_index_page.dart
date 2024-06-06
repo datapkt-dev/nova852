@@ -11,6 +11,7 @@ import 'package:nova852/pages/index/components/list_item.dart';
 import 'package:nova852/pages/index/mortgage_page.dart';
 import 'package:nova852/pages/index/rental_page.dart';
 import 'package:nova852/pages/profile/contract_history.dart';
+import 'package:nova852/test/maptest.dart';
 
 class NewIndexPage extends StatefulWidget {
   const NewIndexPage({super.key});
@@ -146,24 +147,29 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              children: [
-                                CircleAvatar(
-                                  radius: 25,
-                                  backgroundImage: AssetImage('assets/images/tools/tools_a.jpeg'),
-                                  child: SvgPicture.asset('assets/icons/tools/deal.svg'),
-                                ),
-                                SizedBox(height: 4,),
-                                Text(
-                                  '屋苑成交',
-                                  style: TextStyle(
-                                    color: Color(0xFF171717),
-                                    fontSize: 12,
-                                    fontFamily: 'Noto Sans TC',
-                                    fontWeight: FontWeight.w500,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => MapTest()));
+                              },
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: AssetImage('assets/images/tools/tools_a.jpeg'),
+                                    child: SvgPicture.asset('assets/icons/tools/deal.svg'),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(height: 4,),
+                                  Text(
+                                    '屋苑成交',
+                                    style: TextStyle(
+                                      color: Color(0xFF171717),
+                                      fontSize: 12,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             GestureDetector(
                               onTap: () {

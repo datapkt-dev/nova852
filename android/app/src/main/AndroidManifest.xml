@@ -3,6 +3,11 @@
         android:label="nova852"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <!-- Add the following entry, with your API key -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+                   android:value="AIzaSyD78u7-7wxA_MYYq6IqWFcX9CDHsBUJjGY"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

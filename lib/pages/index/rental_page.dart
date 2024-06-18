@@ -163,44 +163,47 @@ class _RentalPageState extends State<RentalPage> {
                               Container(
                                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                                 alignment: Alignment.center,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: List.generate(widget.tab.length, (index) {
-                                    return Container(
-                                      alignment: Alignment.center,
-                                      child: InkWell(
-                                        onTap: () {
-                                          _isOverlayVisible = !_isOverlayVisible;
-                                          setState(() {
-                                            _showContainer = !_showContainer;
-                                            _selectedIndex = index;
-                                          });
-                                        },
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            if (index == 5) ...[
-                                              SvgPicture.asset('assets/icons/rental_page/sorting.svg'),
-                                            ] else ...[
-                                              Text(
-                                                widget.tab[index],
-                                                style: TextStyle(
-                                                  color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
-                                                  fontFamily: 'Noto Sans TC',
-                                                  fontSize: 20,
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: List.generate(widget.tab.length, (index) {
+                                      return Container(
+                                        alignment: Alignment.center,
+                                        child: InkWell(
+                                          onTap: () {
+                                            _isOverlayVisible = !_isOverlayVisible;
+                                            setState(() {
+                                              _showContainer = !_showContainer;
+                                              _selectedIndex = index;
+                                            });
+                                          },
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              if (index == 5) ...[
+                                                SvgPicture.asset('assets/icons/rental_page/sorting.svg'),
+                                              ] else ...[
+                                                Text(
+                                                  widget.tab[index],
+                                                  style: TextStyle(
+                                                    color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                                    fontFamily: 'Noto Sans TC',
+                                                    fontSize: 20,
+                                                  ),
                                                 ),
-                                              ),
-                                              Icon(
-                                                Icons.arrow_drop_down,
-                                                color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
-                                              ),
-                                            ]
-                                          ],
+                                                Icon(
+                                                  Icons.arrow_drop_down,
+                                                  color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                                ),
+                                              ]
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    );
-                                  }),
+                                      );
+                                    }),
+                                  ),
                                 ),
                               ),
                               Divider(height: 0,),

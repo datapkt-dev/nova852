@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nova852/components/buttons/btn1.dart';
 
 class PriceWidget extends StatefulWidget {
   const PriceWidget({super.key});
@@ -10,7 +8,7 @@ class PriceWidget extends StatefulWidget {
 }
 
 class _PriceWidgetState extends State<PriceWidget> {
-  RangeValues _currentRangeValues = const RangeValues(40, 80);
+  RangeValues _currentRangeValues = const RangeValues(50000, 150000);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -23,17 +21,28 @@ class _PriceWidgetState extends State<PriceWidget> {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(color: Colors.white),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 393,
+            Text(
+              '價格範圍\$62萬-\$2億',
+              style: TextStyle(
+                color: Color(0xFF333333),
+                fontSize: 15,
+                fontFamily: 'PingFang TC',
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            SizedBox(height: 10,),
+            SizedBox(
+              width: double.infinity,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: 115*wScale,
-                    height: 37*hScale,
+                    width: 115,
+                    height: 37,
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                     clipBehavior: Clip.antiAlias,
                     decoration: ShapeDecoration(
@@ -49,7 +58,7 @@ class _PriceWidgetState extends State<PriceWidget> {
                     ),
                     child: Center(
                       child: Text(
-                        '${_currentRangeValues.start.round()}',
+                        '\$${_currentRangeValues.start.round()}',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Color(0xFF333333),
@@ -61,28 +70,19 @@ class _PriceWidgetState extends State<PriceWidget> {
                       ),
                     )
                   ),
-                  Container(
-                    width: 48,
-                    height: 37,
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 14.75,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 2,
-                                strokeAlign: BorderSide.strokeAlignCenter,
-                                color: Color(0xFFEBEBEB),
-                              ),
-                            ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Container(
+                      width: 15,
+                      decoration: ShapeDecoration(
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 2,
+                            strokeAlign: BorderSide.strokeAlignCenter,
+                            color: Color(0xFFEBEBEB),
                           ),
                         ),
-                      ],
+                      ),
                     ),
                   ),
                   Container(
@@ -112,7 +112,7 @@ class _PriceWidgetState extends State<PriceWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                '${_currentRangeValues.end.round()}',
+                                '\$${_currentRangeValues.end.round()}',
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
                                   color: Color(0xFF333333),
@@ -127,14 +127,12 @@ class _PriceWidgetState extends State<PriceWidget> {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          '元',
-                          textAlign: TextAlign.right,
+                          '萬',
                           style: TextStyle(
                             color: Color(0xFF333333),
                             fontSize: 15,
                             fontFamily: 'PingFang TC',
                             fontWeight: FontWeight.w400,
-                            height: 0,
                           ),
                         ),
                       ],
@@ -160,8 +158,8 @@ class _PriceWidgetState extends State<PriceWidget> {
               child: RangeSlider(
                 values: _currentRangeValues,
                 min: 0,
-                max: 100,
-                divisions: 100,
+                max: 200000,
+                divisions: 200000,
                 labels: RangeLabels(
                   _currentRangeValues.start.round().toString(),
                   _currentRangeValues.end.round().toString(),
@@ -172,35 +170,6 @@ class _PriceWidgetState extends State<PriceWidget> {
                   });
                 },
               ),
-            ),
-            Column(
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Btn1(btnText: "5,000以下"),
-                    SizedBox(width: 8),
-                    Btn1(btnText: "5,000-10,000元"),
-                    SizedBox(width: 8),
-                    Btn1(btnText: "15,000-10,000元")
-                  ],
-                ),
-                SizedBox(height: 8),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Btn1(btnText: "5,000以下"),
-                    SizedBox(width: 8),
-                    Btn1(btnText: "5,000-10,000元"),
-                    SizedBox(width: 8),
-                    Btn1(btnText: "15,000-10,000元")
-                  ],
-                ),
-              ],
             ),
             SizedBox(height: 10,),
             Container(

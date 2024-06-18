@@ -9,13 +9,6 @@ class MapTest extends StatefulWidget {
 }
 
 class _MapTestState extends State<MapTest> {
-  late GoogleMapController mapController;
-
-  final LatLng _center = const LatLng(45.521563, -122.677433);
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +16,23 @@ class _MapTestState extends State<MapTest> {
       appBar: AppBar(
         title: Text('地圖測試頁'),
       ),
-      body: GoogleMap(
-        onMapCreated: _onMapCreated,
-        initialCameraPosition: CameraPosition(
-          target: _center,
-          zoom: 11.0,
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30,),
+        child: GoogleMap(
+          initialCameraPosition: CameraPosition(
+            target: LatLng(-33.86, 151.20),
+            zoom: 15,
+          ),
+          markers: {
+            const Marker(
+              markerId: MarkerId('Sydney'),
+              position: LatLng(-33.86, 151.20),
+            )
+          },
         ),
-      ),
+      )
     );
   }
 }

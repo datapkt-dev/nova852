@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/pages/index/components/list_item.dart';
-
-import 'components/button_s.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ItemDetail extends StatefulWidget {
   ItemDetail({super.key});
@@ -16,14 +15,14 @@ class ItemDetail extends StatefulWidget {
 }
 
 class _ItemDetailState extends State<ItemDetail> {
-  int _selectedIndex = 0;
+  late GoogleMapController mapController;
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
+    // double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight= MediaQuery.of(context).size.height;
+    // double hScale = screenHeight/852;
+    // double wScale = screenWidth/393;
 
     return Scaffold(
       appBar: AppBar(
@@ -62,10 +61,19 @@ class _ItemDetailState extends State<ItemDetail> {
                         height: 308,
                         child: Swiper(
                           itemBuilder: (BuildContext context, int index) {
-                            return Image.asset(
-                              'assets/images/item_img.jpeg',
-                              fit: BoxFit.fill,
+                            return GestureDetector(
+                              onTap: () {
+                                showDialogFunc(context, 'assets/images/item_img.jpeg');
+                              },
+                              child: Image.asset(
+                                'assets/images/item_img.jpeg',
+                                fit: BoxFit.fill,
+                              ),
                             );
+                            // return Image.asset(
+                            //   'assets/images/item_img.jpeg',
+                            //   fit: BoxFit.fill,
+                            // );
                           },
                           itemCount: 3,
                         ),
@@ -861,12 +869,17 @@ class _ItemDetailState extends State<ItemDetail> {
                                   Container(
                                     width: double.infinity,
                                     height: 212,
-                                    decoration: ShapeDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage('assets/images/map.jpg'),
-                                        fit: BoxFit.fill,
+                                    child: GoogleMap(
+                                      initialCameraPosition: CameraPosition(
+                                        target: LatLng(-33.86, 151.20),
+                                        zoom: 15,
                                       ),
-                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                                      markers: {
+                                        const Marker(
+                                          markerId: MarkerId('Sydney'),
+                                          position: LatLng(-33.86, 151.20),
+                                        )
+                                      },
                                     ),
                                   ),
                                   SizedBox(height: 24,),
@@ -1511,4 +1524,23 @@ class _ItemDetailState extends State<ItemDetail> {
       ),
     );
   }
+}
+
+showDialogFunc(context, img) {
+  return showDialog(
+    context: context,
+    builder: (context) {
+      return Center(
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+          ),
+          padding: EdgeInsets.all(15),
+          child: Image.asset(img,),
+        ),
+      );
+    },
+  );
 }

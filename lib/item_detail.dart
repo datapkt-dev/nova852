@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/pages/index/components/list_item.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+// import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ItemDetail extends StatefulWidget {
   ItemDetail({super.key});
@@ -15,7 +15,7 @@ class ItemDetail extends StatefulWidget {
 }
 
 class _ItemDetailState extends State<ItemDetail> {
-  late GoogleMapController mapController;
+  // late GoogleMapController mapController;
 
   @override
   Widget build(BuildContext context) {
@@ -869,18 +869,18 @@ class _ItemDetailState extends State<ItemDetail> {
                                   Container(
                                     width: double.infinity,
                                     height: 212,
-                                    child: GoogleMap(
-                                      initialCameraPosition: CameraPosition(
-                                        target: LatLng(-33.86, 151.20),
-                                        zoom: 15,
-                                      ),
-                                      markers: {
-                                        const Marker(
-                                          markerId: MarkerId('Sydney'),
-                                          position: LatLng(-33.86, 151.20),
-                                        )
-                                      },
-                                    ),
+                                    // child: GoogleMap(
+                                    //   initialCameraPosition: CameraPosition(
+                                    //     target: LatLng(-33.86, 151.20),
+                                    //     zoom: 15,
+                                    //   ),
+                                    //   markers: {
+                                    //     const Marker(
+                                    //       markerId: MarkerId('Sydney'),
+                                    //       position: LatLng(-33.86, 151.20),
+                                    //     )
+                                    //   },
+                                    // ),
                                   ),
                                   SizedBox(height: 24,),
                                   Row(

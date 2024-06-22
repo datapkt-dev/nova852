@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nova852/components/bottombar.dart';
-import 'package:nova852/components/button_s.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +16,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -36,6 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return BottomBar();
+    return const BottomBar();
   }
 }

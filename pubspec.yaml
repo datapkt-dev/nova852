@@ -159,6 +159,7 @@ flutter:
     - assets/images/tools/tools_d.jpeg
     - assets/images/tools/tools_e.jpeg
     - assets/images/bank_plan/HSBC_logo.png
+    - assets/images/index/news.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

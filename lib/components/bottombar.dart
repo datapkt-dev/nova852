@@ -29,7 +29,7 @@ class _BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFF2F2F2),
       body: SafeArea(
         child: pages[_currentIndex],
       ),

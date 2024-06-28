@@ -11,10 +11,10 @@ class PaymentListPage extends StatefulWidget {
 class _PaymentListPageState extends State<PaymentListPage> {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
+    // double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight= MediaQuery.of(context).size.height;
+    // double hScale = screenHeight/852;
+    // double wScale = screenWidth/393;
 
     return Scaffold(
       appBar: AppBar(
@@ -146,7 +146,7 @@ class _PaymentListPageState extends State<PaymentListPage> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(width: 8*wScale),
+                                      SizedBox(width: 8),
                                     ],
                                   ),
                                 ),

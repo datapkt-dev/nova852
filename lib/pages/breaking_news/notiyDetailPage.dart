@@ -10,176 +10,48 @@ class NotifyDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/812;
-    double wScale = screenWidth/375;
-
     return Scaffold(
       appBar: AppBar(
-
+        title: Text(
+          title,
+          style: TextStyle(
+            color: Color(0xFF171717),
+            fontSize: 20,
+            fontFamily: 'Noto Sans TC',
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        centerTitle: false,
       ),
       body: SafeArea(
         child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.all(30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
                   style: TextStyle(
-                    color: Color(0xFF333333),
-                    fontSize: 20,
-                    fontFamily: 'PingFang TC',
+                    color: Color(0xFF171717),
+                    fontSize: 16,
+                    fontFamily: 'Noto Sans TC',
                     fontWeight: FontWeight.w500,
-                    height: 0,
                   ),
                 ),
-                SizedBox(height: 20*hScale,),
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: '請透過電話與房東或房中聯繫，詢問未繳清房租金額\n',
-                        style: TextStyle(
-                          color: Color(0xFF4A74EA),
-                          fontSize: 14,
-                          fontFamily: 'PingFang TC',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        ),
-                      ),
-                    ],
-                  ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 15,),
+                  child: Divider(),
                 ),
-                SizedBox(height: 20*hScale,),
                 Text(
-                  '繳款截止日期',
+                  '遺憾地通知您,我們的記錄顯示您12月份的房租尚未繳交。如果在本月底前仍未收到租金,我將不得不採取進一步的措施。這可能包括向您發出最終通知,並啟動法律程序。我希望我們能夠通過友好的溝通來解決此事。\n請您儘快聯繫我,解釋未能如期繳付房租的原因,並確保在本月底前全額支付欠款。我樂意與您商討分期付款或其他便利的安排,以幫助您度過眼前的困難時期。我相信您能夠理解我的立場,並盡快採取行動解決此事。如果您有任何需要協助的地方,請隨時告訴我,我將竭盡全力予以援助。',
                   style: TextStyle(
-                    color: Color(0xFF848FAC),
-                    fontSize: 12,
-                    fontFamily: 'PingFang TC',
+                    color: Color(0xFF171717),
+                    fontSize: 16,
+                    fontFamily: 'Noto Sans TC',
                     fontWeight: FontWeight.w400,
-                    height: 0,
+                    height: 2,
                   ),
                 ),
-                SizedBox(height: 4*hScale,),
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: dueTime,
-                        style: TextStyle(
-                          color: Color(0xFF333333),
-                          fontSize: 16,
-                          fontFamily: 'SF Pro',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        ),
-                      ),
-                      TextSpan(
-                        text: '前',
-                        style: TextStyle(
-                          color: Color(0xFF333333),
-                          fontSize: 16,
-                          fontFamily: 'PingFang TC',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 20*hScale,),
-                Text(
-                  '銀行代碼',
-                  style: TextStyle(
-                    color: Color(0xFF848FAC),
-                    fontSize: 12,
-                    fontFamily: 'PingFang TC',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
-                ),
-                SizedBox(height: 4*hScale,),
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: bankCode,
-                        style: TextStyle(
-                          color: Color(0xFF333333),
-                          fontSize: 16,
-                          fontFamily: 'SF Pro',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 20*hScale,),
-                Text(
-                  '銀行帳號',
-                  style: TextStyle(
-                    color: Color(0xFF848FAC),
-                    fontSize: 12,
-                    fontFamily: 'PingFang TC',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
-                ),
-                SizedBox(height: 4*hScale,),
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: bankAccount,
-                        style: TextStyle(
-                          color: Color(0xFF333333),
-                          fontSize: 16,
-                          fontFamily: 'SF Pro',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 20*hScale,),
-                // Column(
-                //   children: [
-                //     Row(
-                //       mainAxisAlignment: MainAxisAlignment.center,
-                //       children: [
-                //         Container(
-                //           height: 220 * hScale,
-                //           width: 220 * wScale,
-                //           decoration: BoxDecoration(
-                //             border: Border.all(color: Color(0xFFEEEEEE)),
-                //             borderRadius: BorderRadius.circular(8),
-                //           ),
-                //           child: QrImageView(
-                //             data: bankAccount,
-                //             version: QrVersions.auto,
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //     SizedBox(height: 20*hScale,),
-                //     const Text(
-                //       '若您已經完成支付，請忽略此訊息。\n如有任何疑問或需要協助，請與我們聯繫',
-                //       textAlign: TextAlign.center,
-                //       style: TextStyle(
-                //         color: Color(0xFF999999),
-                //         fontSize: 12,
-                //         fontFamily: 'PingFang TC',
-                //         fontWeight: FontWeight.w400,
-                //         height: 0,
-                //       ),
-                //     ),
-                //   ],
-                // ),
               ],
             )
         ),

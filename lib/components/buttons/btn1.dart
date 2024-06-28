@@ -68,10 +68,11 @@ class _Btn1State extends State<Btn1> {
   bool isSelect = false;
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
+    // double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight= MediaQuery.of(context).size.height;
+    // double hScale = screenHeight/852;
+    // double wScale = screenWidth/393;
+
     return InkWell(
       onTap: (){
         setState(() {

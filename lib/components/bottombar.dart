@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/pages/breaking_news/breaking_news.dart';
 import 'package:nova852/pages/more/more.dart';
-import 'package:nova852/pages/profile/profile.dart';
+import 'package:nova852/pages/profile/new_profile.dart';
 import 'package:nova852/pages/search/search_page.dart';
-
 import '../pages/index/new_index_page.dart';
 
 class BottomBar extends StatefulWidget {
@@ -17,7 +16,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
 
   int _currentIndex = 0;
-  final pages = [NewIndexPage(), SearchPage(), ProfilePage(), BreakingNewsPage(), MorePage()];
+  final pages = [NewIndexPage(), SearchPage(), NewProfilePage(), BreakingNewsPage(), MorePage()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -63,7 +62,7 @@ class _BottomBarState extends State<BottomBar> {
               color: _currentIndex == 2 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
               'assets/icons/bottombar/personal.svg',
             ),
-            label: '個人',
+            label: '會員',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -81,7 +80,7 @@ class _BottomBarState extends State<BottomBar> {
               color: _currentIndex == 4 ? Color(0xFF50C5D5) : null,
               'assets/icons/bottombar/more_.svg',
             ),
-            label: '更多',
+            label: '設定',
           ),
         ],
         currentIndex: _currentIndex,

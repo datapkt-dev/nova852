@@ -11,10 +11,10 @@ class _PriceWidgetState extends State<PriceWidget> {
   RangeValues _currentRangeValues = const RangeValues(50000, 150000);
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
+    // double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight= MediaQuery.of(context).size.height;
+    // double hScale = screenHeight/852;
+    // double wScale = screenWidth/393;
 
     return Container(
         width: double.infinity,

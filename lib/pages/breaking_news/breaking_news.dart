@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../components/bottombar.dart';
 import 'notiyDetailPage.dart';
 
 class BreakingNewsPage extends StatefulWidget {
@@ -152,10 +150,10 @@ class _BreakingNewsPageState extends State<BreakingNewsPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
+    // double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight= MediaQuery.of(context).size.height;
+    // double hScale = screenHeight/852;
+    // double wScale = screenWidth/393;
 
     return Scaffold(
       appBar: AppBar(
@@ -237,7 +235,7 @@ class _BreakingNewsPageState extends State<BreakingNewsPage> {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NotifyDetailPage(title: "12月房租未繳內",dueTime: "2024/02/10",bankCode: "（812)3355123",bankAccount: "000123456",)), // 'NewPage' 是您要跳转的目标页面
+                        MaterialPageRoute(builder: (context) => NotifyDetailPage(title: "12月房租未繳納",dueTime: "2024/02/10",bankCode: "（812)3355123",bankAccount: "000123456",)), // 'NewPage' 是您要跳转的目标页面
                       );
                     },
                   );

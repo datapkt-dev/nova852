@@ -146,7 +146,7 @@ class ListItem extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ],

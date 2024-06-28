@@ -3,13 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nova852/about_us.dart';
 import 'package:nova852/item_detail.dart';
 import 'package:nova852/pages/index/bank_plan.dart';
 import 'package:nova852/pages/index/components/block_r_and_s.dart';
 import 'package:nova852/pages/index/components/list_item.dart';
 import 'package:nova852/pages/index/mortgage_page.dart';
+import 'package:nova852/pages/index/news.dart';
 import 'package:nova852/pages/index/rental_page.dart';
+import 'package:nova852/pages/index/transaction_history.dart';
 import 'package:nova852/pages/profile/contract_history.dart';
 import 'package:nova852/test/maptest.dart';
 
@@ -154,7 +155,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => MapTest()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionHistory()));
                             },
                             child: Column(
                               children: [
@@ -288,13 +289,18 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Text(
-                      '更多',
-                      style: TextStyle(
-                        color: Color(0xFF07A1B4),
-                        fontSize: 12,
-                        fontFamily: 'Noto Sans TC',
-                        fontWeight: FontWeight.w400,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => News()));
+                      },
+                      child: Text(
+                        '更多',
+                        style: TextStyle(
+                          color: Color(0xFF07A1B4),
+                          fontSize: 12,
+                          fontFamily: 'Noto Sans TC',
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     )
                   ],
@@ -303,7 +309,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                      children: List.generate(10, (index) {
+                    children: List.generate(10, (index) {
                         return GestureDetector(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 4),
@@ -385,7 +391,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           ),
                           onTap: () {},
                         );
-                      })
+                      }),
                   ),
                 ),
                 SizedBox(height: 12,),

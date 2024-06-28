@@ -1,12 +1,8 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nova852/lab/p1.dart';
-// import 'package:nova852/mortgage_page.dart';
-
 import '../../components/greenBackground.dart';
 import 'buying_page.dart';
-import '../../components/bottombar.dart';
 import '../../components/button_s.dart';
 import '../../components/featured_items.dart';
 import '../../components/info.dart';

@@ -45,7 +45,7 @@ class CentralTab extends StatelessWidget {
                       )
                   ),
                   const SizedBox(height: 4),
-                  Text(
+                  const Text(
                     '歷年合約',
                     textAlign: TextAlign.right,
                     style: TextStyle(
@@ -144,10 +144,10 @@ class PaymentTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
+    // double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight= MediaQuery.of(context).size.height;
+    // double hScale = screenHeight/852;
+    // double wScale = screenWidth/393;
 
     return Container(
       width: 345,

@@ -10,6 +10,14 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: false,
+        title: const Text('會員'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {},
+        ),
+      ),
       body: Stack(
           children: [
             const GreenBackground(),
@@ -18,11 +26,11 @@ class ProfilePage extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 32, vertical: 7),// 設定外邊距
                 child: Column(
                   children: [
-                    Avatar(photoUrl: "https://www.demonslayer.com.tw/wp-content/uploads/2021/02/%E7%82%AD%E6%B2%BB%E9%83%8E-1.jpg",),
-                    SizedBox(
+                    const Avatar(photoUrl: "https://www.demonslayer.com.tw/wp-content/uploads/2021/02/%E7%82%AD%E6%B2%BB%E9%83%8E-1.jpg",),
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       "房客姓名",
                       style: TextStyle(
                         color: Colors.white,

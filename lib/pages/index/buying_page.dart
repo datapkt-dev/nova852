@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nova852/item_detail.dart';
 import 'package:nova852/lab/components/price.dart';
 import 'package:nova852/pages/index/buying_detail.dart';
 import 'package:nova852/pages/index/components/area.dart';
@@ -20,7 +19,7 @@ class BuyingPage extends StatefulWidget {
 
 class _RentalPageState extends State<BuyingPage> {
   int _selectedIndex = 0;
-  double _height = 40;
+  // double _height = 40;
   bool _showContainer = false;
   final List<int> items = List<int>.generate(100, (i) => i + 1);
   bool _isOverlayVisible = false;

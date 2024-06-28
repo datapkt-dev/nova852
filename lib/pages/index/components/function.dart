@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 
 class FunctionWidget2 extends StatefulWidget {
   FunctionWidget2({super.key});
@@ -14,8 +13,8 @@ class FunctionWidget2 extends StatefulWidget {
 }
 
 class _FunctionWidgetState extends State<FunctionWidget2> {
-  int _selectedIndex = 0;
-  bool _showContainer = false;
+  // int _selectedIndex = 0;
+  // bool _showContainer = false;
 
   @override
   Widget build(BuildContext context) {

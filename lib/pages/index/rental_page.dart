@@ -28,10 +28,10 @@ class _RentalPageState extends State<RentalPage> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
+    // double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight= MediaQuery.of(context).size.height;
     double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
+    // double wScale = screenWidth/393;
 
     return Scaffold(
         appBar: AppBar(

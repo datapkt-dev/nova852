@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nova852/pages/profile/logged_in.dart';
 import 'package:nova852/pages/profile/step_one.dart';
 import 'package:nova852/pages/profile/step_two.dart';
 
@@ -11,7 +12,7 @@ class NewProfilePage extends StatefulWidget {
 
 class _NewProfileState extends State<NewProfilePage> {
 
-  final _block = [StepOne(), StepTwo(),];
+  final _block = [StepOne(), StepTwo(), LoggedIn(),];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _NewProfileState extends State<NewProfilePage> {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
-      body: _block[1],
+      body: _block[2],
     );
   }
 }

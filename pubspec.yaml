@@ -129,6 +129,11 @@ flutter:
     - assets/icons/furniture_new/10_dishwasher.svg
     - assets/icons/news/link.svg
     - assets/icons/news/like.svg
+    - assets/icons/profile/contract.svg
+    - assets/icons/profile/Invoice.svg
+    - assets/icons/profile/favorite.svg
+    - assets/icons/profile/setting.svg
+    - assets/icons/profile/contact.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg
@@ -163,6 +168,7 @@ flutter:
     - assets/images/bank_plan/HSBC_logo.png
     - assets/images/index/news.png
     - assets/images/index/news_page.png
+    - assets/images/profile/user.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

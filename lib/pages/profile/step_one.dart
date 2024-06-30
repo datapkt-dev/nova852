@@ -23,7 +23,7 @@ class _StepOneState extends State<StepOne> {
       width: double.infinity,
       height: double.infinity,
       color: const Color(0xFFF2F2F2),
-      padding: EdgeInsets.symmetric(horizontal: 40,),
+      padding: const EdgeInsets.symmetric(horizontal: 40,),
       child: Column(
         children: [
           const SizedBox(height: 30,),
@@ -106,28 +106,33 @@ class _StepOneState extends State<StepOne> {
             ],
           ),
           const SizedBox(height: 20,),
-          Container(
-            width: double.infinity,
-            height: 38,
-            alignment: Alignment.center,
-            decoration: ShapeDecoration(
-              gradient: LinearGradient(
-                begin: Alignment(0.99, -0.16),
-                end: Alignment(-0.99, 0.16),
-                colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+          GestureDetector(
+            onTap: () {
+
+            },
+            child: Container(
+              width: double.infinity,
+              height: 38,
+              alignment: Alignment.center,
+              decoration: ShapeDecoration(
+                gradient: const LinearGradient(
+                  begin: Alignment(0.99, -0.16),
+                  end: Alignment(-0.99, 0.16),
+                  colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                ),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
               ),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-            ),
-            child: Text(
-              '獲取一次性密碼',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-                fontFamily: 'Noto Sans TC',
-                fontWeight: FontWeight.w500,
+              child: Text(
+                '獲取一次性密碼',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontFamily: 'Noto Sans TC',
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );

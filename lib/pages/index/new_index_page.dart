@@ -14,6 +14,8 @@ import 'package:nova852/pages/index/transaction_history.dart';
 import 'package:nova852/pages/profile/contract_history.dart';
 import 'package:nova852/test/maptest.dart';
 
+import 'news_content.dart';
+
 class NewIndexPage extends StatefulWidget {
   const NewIndexPage({super.key});
 
@@ -297,7 +299,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         '更多',
                         style: TextStyle(
                           color: Color(0xFF07A1B4),
-                          fontSize: 12,
+                          fontSize: 14,
                           fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w400,
                         ),
@@ -389,7 +391,9 @@ class _NewIndexPageState extends State<NewIndexPage> {
                               ),
                             ),
                           ),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => NewsContent()));
+                          },
                         );
                       }),
                   ),
@@ -411,7 +415,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       '更多',
                       style: TextStyle(
                         color: Color(0xFF07A1B4),
-                        fontSize: 12,
+                        fontSize: 14,
                         fontFamily: 'Noto Sans TC',
                         fontWeight: FontWeight.w400,
                       ),
@@ -422,7 +426,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                      children: List.generate(10, (index) {
+                    children: List.generate(10, (index) {
                         return GestureDetector(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 4),
@@ -490,20 +494,20 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                       children: [
                                         Text(
                                           '將軍澳 東港城 1座 高層 C室 ${index+1}',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 16,
+                                            fontSize: 18,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
-                                        Row(
+                                        const Row(
                                           children: [
                                             Text(
                                               '實用 463呎',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -513,18 +517,18 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               '@ \$10,234',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
-                                                fontSize: 12,
+                                                fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w500,
                                               ),
                                             ),
                                           ],
                                         ),
-                                        Text(
+                                        const Text(
                                           '1房 1廳',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -536,7 +540,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
                                             color: Color(0xFFB3B3B3),
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -561,7 +565,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     'Tagging',
                                                     style: TextStyle(
                                                       color: Color(0xFF07A1B4),
-                                                      fontSize: 10,
+                                                      fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -582,7 +586,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     'Tagging',
                                                     style: TextStyle(
                                                       color: Color(0xFF07A1B4),
-                                                      fontSize: 10,
+                                                      fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
                                                     ),
@@ -601,6 +605,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               ),
                                               child: Row(
                                                 mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.end,
                                                 children: [
                                                   Text(
                                                     '\$900',
@@ -618,7 +623,6 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                       fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
                                                       fontWeight: FontWeight.w500,
-                                                      height: 0.22,
                                                     ),
                                                   ),
                                                 ],
@@ -637,7 +641,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
                           },
                         );
-                      })
+                      }),
                   ),
                 ),
                 SizedBox(height: 12,),
@@ -779,7 +783,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 14,
+                          fontSize: 16,
                           fontFamily: 'Noto Sans TC',
                           fontWeight: FontWeight.w500,
                         ),

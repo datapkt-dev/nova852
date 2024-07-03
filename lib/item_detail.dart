@@ -6,9 +6,7 @@ import 'package:nova852/pages/index/components/list_item.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ItemDetail extends StatefulWidget {
-  ItemDetail({super.key});
-
-  final List<String> tab = ['基礎信息', '屋內設備', '特色描述', '周邊配套',];
+  const ItemDetail({super.key});
 
   @override
   State<ItemDetail> createState() => _ItemDetailState();
@@ -16,14 +14,12 @@ class ItemDetail extends StatefulWidget {
 
 class _ItemDetailState extends State<ItemDetail> {
   // late GoogleMapController mapController;
+  final List<String> tab = ['基本資料', '單位詳情', '鄰近設施',];
+  int _selectedIndex = 0;
+  int _selectedHistory = 0;
 
   @override
   Widget build(BuildContext context) {
-    // double screenWidth = MediaQuery.of(context).size.width;
-    // double screenHeight= MediaQuery.of(context).size.height;
-    // double hScale = screenHeight/852;
-    // double wScale = screenWidth/393;
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -49,14 +45,47 @@ class _ItemDetailState extends State<ItemDetail> {
       ),
       body: SafeArea(
         child: Container(
-          color: Color(0xFFF5F6F7),
+          width: double.infinity,
+          height: double.infinity,
+          color: const Color(0xFFF5F6F7),
           child: Column(
             children: [
+              Container(
+                width: double.infinity,
+                height: 40,
+                color: Colors.white,
+                child: Row(
+                  children: List.generate(tab.length, (index) {
+                    return Expanded(
+                      flex: 1,
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: _selectedIndex == index ? BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                              color: Color(0xFF171717),
+                              width: 3,
+                            ),
+                          ),
+                        ) : null,
+                        child: GestureDetector(
+                          child: Text(tab[index]),
+                          onTap: () {
+                            setState(() {
+                              _selectedIndex = index;
+                            });
+                          },
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         height: 308,
                         child: Swiper(
@@ -92,14 +121,56 @@ class _ItemDetailState extends State<ItemDetail> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    '將軍澳 東港城 1座 高層 C室',
-                                    style: TextStyle(
-                                      color: Color(0xFF171717),
-                                      fontSize: 18,
-                                      fontFamily: 'Noto Sans TC',
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '將軍澳 東港城 1座 高層 C室',
+                                        style: TextStyle(
+                                          color: Color(0xFF171717),
+                                          fontSize: 18,
+                                          fontFamily: 'Noto Sans TC',
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          showDialogFunc(context, 'assets/images/item_detail/layout2.png');
+                                        },
+                                        child: Container(
+                                          width: 82,
+                                          height: 24,
+                                          alignment: Alignment.center,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: ShapeDecoration(
+                                            gradient: LinearGradient(
+                                              begin: Alignment(0.99, -0.16),
+                                              end: Alignment(-0.99, 0.16),
+                                              colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                            ),
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              SvgPicture.asset(
+                                                width: 16,
+                                                height: 16,
+                                                'assets/icons/item_detail/layout.svg',),
+                                              Text(
+                                                '平面圖',
+                                                style: TextStyle(
+                                                  color: Color(0xFFFFFFFF),
+                                                  fontSize: 14,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                   Padding(
                                     padding: EdgeInsets.symmetric(vertical: 5),
@@ -499,7 +570,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                       ),
                                       Column(
                                         children: [
-                                          Container(
+                                          SizedBox(
                                             width: 30,
                                             height: 30,
                                             child: SvgPicture.asset(
@@ -690,7 +761,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             borderRadius: BorderRadius.circular(10),
                                           ),
                                         ),
-                                        child: Text(
+                                        child: const Text(
                                           'Tagging',
                                           style: TextStyle(
                                             color: Color(0xFF07A1B4),
@@ -866,7 +937,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     ),
                                   ),
                                   SizedBox(height: 4,),
-                                  Container(
+                                  SizedBox(
                                     width: double.infinity,
                                     height: 212,
                                     // child: GoogleMap(
@@ -893,10 +964,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                           decoration: BoxDecoration(
                                             border: Border(
-                                                bottom: BorderSide(
-                                                  color: Color(0xFF07A1B4),
-                                                  width: 2,
-                                                )
+                                              bottom: BorderSide(
+                                                color: Color(0xFF07A1B4),
+                                                width: 2,
+                                              ),
                                             ),
                                           ),
                                           child: Text(
@@ -941,10 +1012,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                           decoration: BoxDecoration(
                                             border: Border(
-                                                bottom: BorderSide(
-                                                  color: Color(0xFFE3E3E3),
-                                                  width: 2,
-                                                )
+                                              bottom: BorderSide(
+                                                color: Color(0xFFE3E3E3),
+                                                width: 2,
+                                              ),
                                             ),
                                           ),
                                           child: Text(
@@ -1173,6 +1244,242 @@ class _ItemDetailState extends State<ItemDetail> {
                             ),
                             SizedBox(height: 20,),
                             Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                                decoration: ShapeDecoration(
+                                  color: Colors.white,
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const Text(
+                                          '最近成交',
+                                          style: TextStyle(
+                                            color: Color(0xFF171717),
+                                            fontSize: 18,
+                                            fontFamily: 'Noto Sans TC',
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 129,
+                                          height: 24,
+                                          decoration: ShapeDecoration(
+                                            shape: RoundedRectangleBorder(
+                                              side: const BorderSide(
+                                                width: 0.50,
+                                                color: Color(0xFF07A1B4),
+                                              ),
+                                              borderRadius: BorderRadius.circular(21.50),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              Flexible(
+                                                flex: _selectedHistory == 0 ? 12 : 10,
+                                                child: GestureDetector(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      _selectedHistory = 0;
+                                                    });
+                                                  },
+                                                  child: Container(
+                                                    decoration: _selectedHistory == 0 ? ShapeDecoration(
+                                                      color: Color(0xFF07A1B4),
+                                                      shape: RoundedRectangleBorder(
+                                                        borderRadius: BorderRadius.circular(21.50),
+                                                      ),
+                                                    ) : null,
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      '售',
+                                                      style: TextStyle(
+                                                        color: _selectedHistory == 0 ? Colors.white : Color(0xFF07A1B4),
+                                                        fontSize: 14,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Flexible(
+                                                flex: _selectedHistory == 1 ? 12 : 10,
+                                                child: GestureDetector(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      _selectedHistory = 1;
+                                                    });
+                                                  },
+                                                  child: Container(
+                                                    alignment: Alignment.center,
+                                                    decoration: _selectedHistory == 1 ? ShapeDecoration(
+                                                      color: Color(0xFF07A1B4),
+                                                      shape: RoundedRectangleBorder(
+                                                        borderRadius: BorderRadius.circular(21.50),
+                                                      ),
+                                                    ) : null,
+                                                    child: Text(
+                                                      '租',
+                                                      style: TextStyle(
+                                                        color: _selectedHistory == 1 ? Colors.white : Color(0xFF07A1B4),
+                                                        fontSize: 14,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: List.generate(5, (index) {
+                                        return Container(
+                                          width: double.infinity,
+                                          padding: const EdgeInsets.symmetric(vertical: 10),
+                                          decoration: index < 4 ? const BoxDecoration(
+                                            border: Border(
+                                                bottom: BorderSide(
+                                                  color: Color(0xFFB3B3B3),
+                                                  width: 1,
+                                                )
+                                            ),
+                                          ) : null,
+                                          child: Column(
+                                            children: [
+                                              const Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    '東港城 1座 高層 C室',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF171717),
+                                                      fontSize: 18,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Text(
+                                                        '\$600',
+                                                        style: TextStyle(
+                                                          color: Color(0xFFE86100),
+                                                          fontSize: 16,
+                                                          fontFamily: 'Noto Sans TC',
+                                                          fontWeight: FontWeight.w500,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        '萬',
+                                                        style: TextStyle(
+                                                          color: Color(0xFFE86100),
+                                                          fontSize: 12,
+                                                          fontFamily: 'Noto Sans TC',
+                                                          fontWeight: FontWeight.w500,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              const Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    '將軍澳 | 2房1廳',
+                                                    style: TextStyle(
+                                                      color: Color(0xFFB3B3B3),
+                                                      fontSize: 14,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    '實:430呎',
+                                                    style: TextStyle(
+                                                      color: Color(0xFFB3B3B3),
+                                                      fontSize: 14,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Container(
+                                                    padding: EdgeInsets.all(4),
+                                                    decoration: ShapeDecoration(
+                                                      color: Color(0xFF07A1B4),
+                                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                                                    ),
+                                                    child: Text(
+                                                      '成交',
+                                                      style: TextStyle(
+                                                        color: Color(0xFFFFFFFF),
+                                                        fontSize: 12,
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontWeight: FontWeight.w500,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(width: 10,),
+                                                  const Text(
+                                                    '06/04/2023',
+                                                    style: TextStyle(
+                                                      color: Color(0xFFB3B3B3),
+                                                      fontSize: 14,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      }),
+                                    ),
+                                    const SizedBox(height: 12,),
+                                    Container(
+                                      width: 164,
+                                      height: 30,
+                                      alignment: Alignment.center,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: ShapeDecoration(
+                                        gradient: LinearGradient(
+                                          begin: Alignment(0.99, -0.16),
+                                          end: Alignment(-0.99, 0.16),
+                                          colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                        ),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(20),
+                                        ),
+                                      ),
+                                      child: const Text(
+                                        '更多成交紀錄',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontFamily: 'Noto Sans TC',
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                            ),
+                            SizedBox(height: 20,),
+                            Container(
                               width: double.infinity,
                               padding: EdgeInsets.all(15),
                               decoration: BoxDecoration(
@@ -1342,10 +1649,38 @@ class _ItemDetailState extends State<ItemDetail> {
                                     ],
                                   ),
                                   SizedBox(height: 20,),
+                                  // Center(
+                                  //   child: Container(
+                                  //     width: 140,
+                                  //     height: 24,
+                                  //     alignment: Alignment.center,
+                                  //     clipBehavior: Clip.antiAlias,
+                                  //     decoration: ShapeDecoration(
+                                  //       gradient: LinearGradient(
+                                  //         begin: Alignment(0.99, -0.16),
+                                  //         end: Alignment(-0.99, 0.16),
+                                  //         colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                  //       ),
+                                  //       shape: RoundedRectangleBorder(
+                                  //         borderRadius: BorderRadius.circular(20),
+                                  //       ),
+                                  //     ),
+                                  //     child: Text(
+                                  //       '更多代理放盤',
+                                  //       textAlign: TextAlign.center,
+                                  //       style: TextStyle(
+                                  //         color: Colors.white,
+                                  //         fontSize: 14,
+                                  //         fontFamily: 'Noto Sans TC',
+                                  //         fontWeight: FontWeight.w500,
+                                  //       ),
+                                  //     ),
+                                  //   ),
+                                  // ),
                                   Center(
                                     child: Container(
-                                      width: 140,
-                                      height: 24,
+                                      width: 164,
+                                      height: 30,
                                       alignment: Alignment.center,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: ShapeDecoration(
@@ -1358,7 +1693,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           borderRadius: BorderRadius.circular(20),
                                         ),
                                       ),
-                                      child: Text(
+                                      child: const Text(
                                         '更多代理放盤',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
@@ -1419,109 +1754,209 @@ class _ItemDetailState extends State<ItemDetail> {
                   ),
                 ),
               ),
-            ],
-          ),
-        )
-      ),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 0,
-        child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.only(left: 12, right: 12, top: 10),
-          decoration: ShapeDecoration(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
-              ),
-            ),
-            shadows: [
-              BoxShadow(
-                color: Color(0x3FC9C9C9),
-                blurRadius: 4,
-                offset: Offset(0, -4),
-                spreadRadius: 0,
-              )
-            ],
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  CircleAvatar(
-                      radius: 20,
-                      backgroundImage: AssetImage('assets/icons/saler_female.png'),
-                  ),
-                  SizedBox(width: 8,),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Jay Chou',
-                        style: TextStyle(
-                          color: Color(0xFF171717),
-                          fontSize: 16,
-                          fontFamily: 'Noto Sans TC',
-                          fontWeight: FontWeight.w500,
-                        ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: double.infinity,
+                  height: 60,
+                  padding: EdgeInsets.only(left: 12, right: 12, top: 20),
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        topRight: Radius.circular(12),
                       ),
-                      Text(
-                        'C-123456',
-                        style: TextStyle(
-                          color: Color(0xFFB3B3B3),
-                          fontSize: 12,
-                          fontFamily: 'Noto Sans TC',
-                          fontWeight: FontWeight.w500,
-                        ),
+                    ),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0x3FC9C9C9),
+                        blurRadius: 4,
+                        offset: Offset(0, -4),
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundImage: AssetImage('assets/icons/saler_female.png'),
+                          ),
+                          SizedBox(width: 8,),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Jay Chou',
+                                style: TextStyle(
+                                  color: Color(0xFF171717),
+                                  fontSize: 16,
+                                  fontFamily: 'Noto Sans TC',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'C-123456',
+                                style: TextStyle(
+                                  color: Color(0xFFB3B3B3),
+                                  fontSize: 12,
+                                  fontFamily: 'Noto Sans TC',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: 44,
+                            height: 32,
+                            alignment: Alignment.center,
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            clipBehavior: Clip.antiAlias,
+                            decoration: ShapeDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment(0.99, -0.16),
+                                end: Alignment(-0.99, 0.16),
+                                colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                              ),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                            ),
+                            child: SvgPicture.asset('assets/icons/item_detail/phone.svg'),
+                          ),
+                          SizedBox(width: 8,),
+                          Container(
+                            width: 44,
+                            height: 32,
+                            alignment: Alignment.center,
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            clipBehavior: Clip.antiAlias,
+                            decoration: ShapeDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment(0.99, -0.16),
+                                end: Alignment(-0.99, 0.16),
+                                colors: [Color(0xFF07B42D), Color(0xFF9BD777)],
+                              ),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                            ),
+                            child: SvgPicture.asset('assets/icons/item_detail/whatsapp.svg'),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    width: 44,
-                    height: 32,
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: ShapeDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment(0.99, -0.16),
-                        end: Alignment(-0.99, 0.16),
-                        colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
-                      ),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-                    ),
-                    child: SvgPicture.asset('assets/icons/item_detail/phone.svg'),
-                  ),
-                  SizedBox(width: 8,),
-                  Container(
-                    width: 44,
-                    height: 32,
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: ShapeDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment(0.99, -0.16),
-                        end: Alignment(-0.99, 0.16),
-                        colors: [Color(0xFF07B42D), Color(0xFF9BD777)],
-                      ),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-                    ),
-                    child: SvgPicture.asset('assets/icons/item_detail/whatsapp.svg'),
-                  ),
-                ],
+                ),
               ),
             ],
           ),
-        )
+        ),
       ),
+      // bottomNavigationBar: BottomAppBar(
+      //   elevation: 0,
+      //   child: Container(
+      //     width: double.infinity,
+      //     padding: EdgeInsets.only(left: 12, right: 12, top: 10),
+      //     decoration: ShapeDecoration(
+      //       color: Colors.white,
+      //       shape: RoundedRectangleBorder(
+      //         borderRadius: BorderRadius.only(
+      //           topLeft: Radius.circular(12),
+      //           topRight: Radius.circular(12),
+      //         ),
+      //       ),
+      //       shadows: [
+      //         BoxShadow(
+      //           color: Color(0x3FC9C9C9),
+      //           blurRadius: 4,
+      //           offset: Offset(0, -4),
+      //           spreadRadius: 0,
+      //         )
+      //       ],
+      //     ),
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       children: [
+      //         Row(
+      //           children: [
+      //             CircleAvatar(
+      //                 radius: 20,
+      //                 backgroundImage: AssetImage('assets/icons/saler_female.png'),
+      //             ),
+      //             SizedBox(width: 8,),
+      //             Column(
+      //               mainAxisAlignment: MainAxisAlignment.center,
+      //               crossAxisAlignment: CrossAxisAlignment.start,
+      //               children: [
+      //                 Text(
+      //                   'Jay Chou',
+      //                   style: TextStyle(
+      //                     color: Color(0xFF171717),
+      //                     fontSize: 16,
+      //                     fontFamily: 'Noto Sans TC',
+      //                     fontWeight: FontWeight.w500,
+      //                   ),
+      //                 ),
+      //                 Text(
+      //                   'C-123456',
+      //                   style: TextStyle(
+      //                     color: Color(0xFFB3B3B3),
+      //                     fontSize: 12,
+      //                     fontFamily: 'Noto Sans TC',
+      //                     fontWeight: FontWeight.w500,
+      //                   ),
+      //                 ),
+      //               ],
+      //             ),
+      //           ],
+      //         ),
+      //         Row(
+      //           children: [
+      //             Container(
+      //               width: 44,
+      //               height: 32,
+      //               alignment: Alignment.center,
+      //               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      //               clipBehavior: Clip.antiAlias,
+      //               decoration: ShapeDecoration(
+      //                 gradient: LinearGradient(
+      //                   begin: Alignment(0.99, -0.16),
+      //                   end: Alignment(-0.99, 0.16),
+      //                   colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+      //                 ),
+      //                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      //               ),
+      //               child: SvgPicture.asset('assets/icons/item_detail/phone.svg'),
+      //             ),
+      //             SizedBox(width: 8,),
+      //             Container(
+      //               width: 44,
+      //               height: 32,
+      //               alignment: Alignment.center,
+      //               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      //               clipBehavior: Clip.antiAlias,
+      //               decoration: ShapeDecoration(
+      //                 gradient: LinearGradient(
+      //                   begin: Alignment(0.99, -0.16),
+      //                   end: Alignment(-0.99, 0.16),
+      //                   colors: [Color(0xFF07B42D), Color(0xFF9BD777)],
+      //                 ),
+      //                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      //               ),
+      //               child: SvgPicture.asset('assets/icons/item_detail/whatsapp.svg'),
+      //             ),
+      //           ],
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

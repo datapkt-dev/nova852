@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:nova852/pages/index/transaction_detail.dart';
 
 class TransactionHistory extends StatefulWidget {
   const TransactionHistory({super.key});
@@ -9,12 +9,15 @@ class TransactionHistory extends StatefulWidget {
 }
 
 class _TransactionHistoryState extends State<TransactionHistory> {
-  int _LowerBlockIndex = 0;
+  int _selectedIndex = 0;
+  int _selectedTab = 0;
+  final List tab = ['全港', '香港', '九龍', '新界',];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         centerTitle: false,
         title: Text('成交紀錄'),
       ),
@@ -62,15 +65,15 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                           child: Row(
                             children: [
                               Flexible(
-                                flex: _LowerBlockIndex == 0 ? 12 : 10,
+                                flex: _selectedIndex == 0 ? 12 : 10,
                                 child: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _LowerBlockIndex = 0;
+                                      _selectedIndex = 0;
                                     });
                                   },
                                   child: Container(
-                                    decoration: _LowerBlockIndex == 0 ? ShapeDecoration(
+                                    decoration: _selectedIndex == 0 ? ShapeDecoration(
                                       color: Color(0xFF07A1B4),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(21.50),
@@ -80,7 +83,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                                     child: Text(
                                       '售',
                                       style: TextStyle(
-                                        color: _LowerBlockIndex == 0 ? Colors.white : Color(0xFF07A1B4),
+                                        color: _selectedIndex == 0 ? Colors.white : Color(0xFF07A1B4),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
@@ -90,16 +93,16 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                                 ),
                               ),
                               Flexible(
-                                flex: _LowerBlockIndex == 1 ? 12 : 10,
+                                flex: _selectedIndex == 1 ? 12 : 10,
                                 child: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _LowerBlockIndex = 1;
+                                      _selectedIndex = 1;
                                     });
                                   },
                                   child: Container(
                                     alignment: Alignment.center,
-                                    decoration: _LowerBlockIndex == 1 ? ShapeDecoration(
+                                    decoration: _selectedIndex == 1 ? ShapeDecoration(
                                       color: Color(0xFF07A1B4),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(21.50),
@@ -108,7 +111,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                                     child: Text(
                                       '租',
                                       style: TextStyle(
-                                        color: _LowerBlockIndex == 1 ? Colors.white : Color(0xFF07A1B4),
+                                        color: _selectedIndex == 1 ? Colors.white : Color(0xFF07A1B4),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
@@ -124,109 +127,114 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                     ),
                     Column(
                       children: List.generate(5, (index) {
-                        return Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          decoration: index < 4 ? const BoxDecoration(
-                            border: Border(
-                                bottom: BorderSide(
-                                  color: Color(0xFFB3B3B3),
-                                  width: 1,
-                                )
-                            ),
-                          ) : null,
-                          child: Column(
-                            children: [
-                              const Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                  '東港城 1座 高層 C室',
-                                  style: TextStyle(
-                                    color: Color(0xFF171717),
-                                    fontSize: 18,
-                                    fontFamily: 'Noto Sans TC',
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        '\$600',
-                                        style: TextStyle(
-                                          color: Color(0xFFE86100),
-                                          fontSize: 16,
-                                          fontFamily: 'Noto Sans TC',
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionDetail()));
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            decoration: index < 4 ? const BoxDecoration(
+                              border: Border(
+                                  bottom: BorderSide(
+                                    color: Color(0xFFB3B3B3),
+                                    width: 1,
+                                  )
+                              ),
+                            ) : null,
+                            child: Column(
+                              children: [
+                                const Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '東港城 1座 高層 C室',
+                                      style: TextStyle(
+                                        color: Color(0xFF171717),
+                                        fontSize: 18,
+                                        fontFamily: 'Noto Sans TC',
+                                        fontWeight: FontWeight.w500,
                                       ),
-                                      Text(
-                                        '萬',
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          '\$600',
+                                          style: TextStyle(
+                                            color: Color(0xFFE86100),
+                                            fontSize: 16,
+                                            fontFamily: 'Noto Sans TC',
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                        Text(
+                                          '萬',
+                                          style: TextStyle(
+                                            color: Color(0xFFE86100),
+                                            fontSize: 12,
+                                            fontFamily: 'Noto Sans TC',
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                const Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '將軍澳 | 2房1廳',
+                                      style: TextStyle(
+                                        color: Color(0xFFB3B3B3),
+                                        fontSize: 14,
+                                        fontFamily: 'Noto Sans TC',
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      '實:430呎',
+                                      style: TextStyle(
+                                        color: Color(0xFFB3B3B3),
+                                        fontSize: 14,
+                                        fontFamily: 'Noto Sans TC',
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(4),
+                                      decoration: ShapeDecoration(
+                                        color: Color(0xFF07A1B4),
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                                      ),
+                                      child: Text(
+                                        '成交',
                                         style: TextStyle(
-                                          color: Color(0xFFE86100),
+                                          color: Color(0xFFFFFFFF),
                                           fontSize: 12,
                                           fontFamily: 'Noto Sans TC',
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              const Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    '將軍澳 | 2房1廳',
-                                    style: TextStyle(
-                                      color: Color(0xFFB3B3B3),
-                                      fontSize: 14,
-                                      fontFamily: 'Noto Sans TC',
-                                      fontWeight: FontWeight.w500,
                                     ),
-                                  ),
-                                  Text(
-                                    '實:430呎',
-                                    style: TextStyle(
-                                      color: Color(0xFFB3B3B3),
-                                      fontSize: 14,
-                                      fontFamily: 'Noto Sans TC',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.all(4),
-                                    decoration: ShapeDecoration(
-                                      color: Color(0xFF07A1B4),
-                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                                    ),
-                                    child: Text(
-                                      '成交',
+                                    const SizedBox(width: 10,),
+                                    const Text(
+                                      '06/04/2023',
                                       style: TextStyle(
-                                        color: Color(0xFFFFFFFF),
-                                        fontSize: 12,
+                                        color: Color(0xFFB3B3B3),
+                                        fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                  ),
-                                  const SizedBox(width: 10,),
-                                  const Text(
-                                    '06/04/2023',
-                                    style: TextStyle(
-                                      color: Color(0xFFB3B3B3),
-                                      fontSize: 14,
-                                      fontFamily: 'Noto Sans TC',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         );
                       }),
@@ -271,58 +279,63 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                 ),
                 child: Column(
                   children: [
-                    Text(
-                      '十大成交屋苑',
-                      style: TextStyle(
-                        color: Color(0xFF171717),
-                        fontSize: 18,
-                        fontFamily: 'Noto Sans TC',
-                        fontWeight: FontWeight.w500,
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        '十大成交屋苑',
+                        style: TextStyle(
+                          color: Color(0xFF171717),
+                          fontSize: 18,
+                          fontFamily: 'Noto Sans TC',
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                    SizedBox(height: 27,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '全港',
-                          style: TextStyle(
+                    SizedBox(height: 24,),
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
                             color: Color(0xFFB3B3B3),
-                            fontSize: 15,
-                            fontFamily: 'Noto Sans TC',
-                            fontWeight: FontWeight.w500,
+                            width: 1,
                           ),
-                        ),
-                        Text(
-                          '全港',
-                          style: TextStyle(
-                            color: Color(0xFFB3B3B3),
-                            fontSize: 15,
-                            fontFamily: 'Noto Sans TC',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          '全港',
-                          style: TextStyle(
-                            color: Color(0xFFB3B3B3),
-                            fontSize: 15,
-                            fontFamily: 'Noto Sans TC',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          '全港',
-                          style: TextStyle(
-                            color: Color(0xFFB3B3B3),
-                            fontSize: 15,
-                            fontFamily: 'Noto Sans TC',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
+                        )
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: List.generate(tab.length, (index) {
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _selectedTab = index;
+                              });
+                            },
+                            child: Container(
+                              width: 74,
+                              alignment: Alignment.center,
+                              decoration: _selectedTab == index ? BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Color(0xFF171717),
+                                    width: 6,
+                                  ),
+                                ),
+                              ) : null,
+                              child: Text(
+                                tab[index],
+                                style: TextStyle(
+                                  color: Color(0xFFB3B3B3),
+                                  fontSize: 15,
+                                  fontFamily: 'Noto Sans TC',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                      ),
                     ),
-                    Divider(),
                     Column(
                       children: List.generate(10, (index) {
                         return Container(

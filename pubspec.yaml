@@ -134,6 +134,8 @@ flutter:
     - assets/icons/profile/favorite.svg
     - assets/icons/profile/setting.svg
     - assets/icons/profile/contact.svg
+    - assets/icons/transaction/location.svg
+    - assets/icons/item_detail/layout.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg
@@ -169,6 +171,7 @@ flutter:
     - assets/images/index/news.png
     - assets/images/index/news_page.png
     - assets/images/profile/user.png
+    - assets/images/item_detail/layout2.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

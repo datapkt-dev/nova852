@@ -12,9 +12,9 @@ import 'package:nova852/pages/index/components/more.dart';
 class RentalPage extends StatefulWidget {
   RentalPage({super.key});
 
-  final List<String> tab = ['用途', '地區', '價錢', '面積', '其他', '排序'];
+  final List<String> tab = ['用途', '地區', '價錢', /*'面積', */'其他', '排序'];
   final List<String> tab2 = ['Tagging', 'Tagging', 'Tagging', 'Tagging', 'Tagging', 'Tagging', 'Tagging', 'Tagging'];
-  final filterWidget = [FunctionWidget2(), AreaWidget2(), PriceWidget(), Container(), MoreWidget(), Container()];
+  final filterWidget = [FunctionWidget2(), AreaWidget2(), PriceWidget(), /*Container(), */MoreWidget(), Container()];
 
   @override
   State<RentalPage> createState() => _RentalPageState();
@@ -182,20 +182,24 @@ class _RentalPageState extends State<RentalPage> {
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
-                                              if (index == 5) ...[
+                                              if (index == 4) ...[
                                                 SvgPicture.asset('assets/icons/rental_page/sorting.svg'),
                                               ] else ...[
-                                                Text(
-                                                  widget.tab[index],
-                                                  style: TextStyle(
-                                                    color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
-                                                    fontFamily: 'Noto Sans TC',
-                                                    fontSize: 20,
-                                                  ),
-                                                ),
-                                                Icon(
-                                                  Icons.arrow_drop_down,
-                                                  color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                                Row(
+                                                  children: [
+                                                    Text(
+                                                      widget.tab[index],
+                                                      style: TextStyle(
+                                                        color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                                        fontFamily: 'Noto Sans TC',
+                                                        fontSize: 20,
+                                                      ),
+                                                    ),
+                                                    Icon(
+                                                      Icons.arrow_drop_down,
+                                                      color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                                    ),
+                                                  ],
                                                 ),
                                               ]
                                             ],

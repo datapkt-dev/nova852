@@ -289,9 +289,10 @@ class _BankPlanState extends State<BankPlan> {
                                           ],
                                         ),
                                         Container(
-                                          width: 116,
-                                          height: 24,
+                                          height: 30,
+                                          width: 136,
                                           alignment: Alignment.center,
+                                          clipBehavior: Clip.antiAlias,
                                           decoration: ShapeDecoration(
                                             gradient: LinearGradient(
                                               begin: Alignment(0.99, -0.16),
@@ -302,7 +303,7 @@ class _BankPlanState extends State<BankPlan> {
                                               borderRadius: BorderRadius.circular(20),
                                             ),
                                           ),
-                                          child: Text(
+                                          child: const Text(
                                             '聯絡銀行',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(

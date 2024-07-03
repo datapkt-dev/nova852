@@ -143,6 +143,12 @@ class _NewsState extends State<News> {
                                         '6月租務旺季 東涌藍天海岸創區內呎租新高6月租務旺季 東涌藍天海岸創區內呎租新高6月租務旺季 東涌藍天海岸創區內呎租新高',
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          color: Color(0xFF171717),
+                                          fontSize: 16,
+                                          fontFamily: 'Noto Sans TC',
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                       ),
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

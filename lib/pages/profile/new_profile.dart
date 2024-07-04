@@ -19,6 +19,7 @@ class _NewProfileState extends State<NewProfilePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         centerTitle: false,
         title: const Text('會員'),
         leading: IconButton(

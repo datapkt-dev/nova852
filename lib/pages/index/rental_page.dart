@@ -35,6 +35,7 @@ class _RentalPageState extends State<RentalPage> {
 
     return Scaffold(
         appBar: AppBar(
+          scrolledUnderElevation: 0,
           title: Text('租屋'),
           actions: [
             IconButton(

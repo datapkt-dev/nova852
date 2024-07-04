@@ -22,6 +22,7 @@ class _ItemDetailState extends State<ItemDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         centerTitle: false,
         title: Text(
           '將軍澳 東港城 1座 高層 C室',
@@ -326,7 +327,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -908,7 +909,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                     '送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -1749,7 +1750,7 @@ class _ItemDetailState extends State<ItemDetail> {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

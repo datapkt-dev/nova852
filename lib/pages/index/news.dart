@@ -16,6 +16,7 @@ class _NewsState extends State<News> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         title: Text('樓市新聞'),
         centerTitle: false,
       ),

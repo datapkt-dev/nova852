@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nova852/pages/profile/payment_list.dart';
+import 'contract_history.dart';
 
 class LoggedIn extends StatelessWidget {
   const LoggedIn({super.key});
@@ -194,53 +196,63 @@ class LoggedIn extends StatelessWidget {
             ),
             SizedBox(height: 40,),
             Divider(),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
-              alignment: Alignment.centerLeft,
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    width: 22,
-                    height: 22,
-                    'assets/icons/profile/contract.svg',
-                  ),
-                  SizedBox(width: 12,),
-                  Text(
-                    '歷年合約',
-                    style: TextStyle(
-                      color: Color(0xFF171717),
-                      fontFamily: 'Noto Sans TC',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ContractHistory()));
+              },
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
+                alignment: Alignment.centerLeft,
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      width: 22,
+                      height: 22,
+                      'assets/icons/profile/contract.svg',
                     ),
-                  ),
-                ],
+                    SizedBox(width: 12,),
+                    Text(
+                      '歷年合約',
+                      style: TextStyle(
+                        color: Color(0xFF171717),
+                        fontFamily: 'Noto Sans TC',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Divider(),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
-              alignment: Alignment.centerLeft,
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    width: 22,
-                    height: 22,
-                    'assets/icons/profile/Invoice.svg',
-                  ),
-                  SizedBox(width: 12,),
-                  Text(
-                    '帳單列表',
-                    style: TextStyle(
-                      color: Color(0xFF171717),
-                      fontFamily: 'Noto Sans TC',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentListPage()));
+              },
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
+                alignment: Alignment.centerLeft,
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      width: 22,
+                      height: 22,
+                      'assets/icons/profile/Invoice.svg',
                     ),
-                  ),
-                ],
+                    SizedBox(width: 12,),
+                    Text(
+                      '帳單列表',
+                      style: TextStyle(
+                        color: Color(0xFF171717),
+                        fontFamily: 'Noto Sans TC',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Divider(),

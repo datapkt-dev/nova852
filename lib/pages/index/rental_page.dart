@@ -34,7 +34,8 @@ class _RentalPageState extends State<RentalPage> {
     // double wScale = screenWidth/393;
 
     return Scaffold(
-        appBar: AppBar(
+      backgroundColor: Color(0xFFF2F2F2),
+      appBar: AppBar(
           scrolledUnderElevation: 0,
           title: Text('租屋'),
           actions: [
@@ -48,183 +49,176 @@ class _RentalPageState extends State<RentalPage> {
             ),
           ],
         ),
-        body: SafeArea(
-            child: Stack(
-                  children: [
-                    Column(
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Column(
+              children: [
+                SizedBox(height: 35,),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
                       children: [
-                        SizedBox(height: 35,),
-                        Expanded(
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Container(
-                                    height: 50,
-                                    padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
-                                    alignment: Alignment.center,
-                                    child: Row(
-                                      children: List.generate(widget.tab2.length, (index) {
-                                        return Row(
-                                          children: [
-                                            InkWell(
-                                              onTap: () {
-                                                setState(() {
-                                                  _selectedIndex = index;
-                                                });
-                                              },
-                                              child: Container(
-                                                height: 20,
-                                                decoration: ShapeDecoration(
-                                                  gradient: _selectedIndex == index ? LinearGradient(
-                                                    begin: Alignment(0.99, -0.16),
-                                                    end: Alignment(-0.99, 0.16),
-                                                    colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
-                                                  ) : null,
-                                                  shape: RoundedRectangleBorder(
-                                                    side: BorderSide(
-                                                      width: 0.50,
-                                                      color: Color(0xFF07A1B4),
-                                                    ),
-                                                    borderRadius: BorderRadius.circular(10),
-                                                  ),
-                                                ),
-                                                alignment: Alignment.center,
-                                                padding: EdgeInsets.symmetric(horizontal: 12),
-                                                child: Text(
-                                                  widget.tab2[index],
-                                                  style: TextStyle(
-                                                    color: _selectedIndex == index ? Colors.white : Color(0xFF07A1B4),
-                                                    fontSize: 10,
-                                                    fontFamily: 'Noto Sans TC',
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(width: 4,),
-                                          ],
-                                        );
-                                      }),
-                                    ),
-                                  ),
-                                ),
-                                Column(
-                                children: List.generate(4, (index) {
-                                  return Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(6),
-                                    ),
-                                    padding: EdgeInsets.all(12),
-                                    child: GestureDetector(
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Container(
+                            height: 50,
+                            padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
+                            alignment: Alignment.center,
+                            child: Row(
+                              children: List.generate(widget.tab2.length, (index) {
+                                return Row(
+                                  children: [
+                                    InkWell(
                                       onTap: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                                        setState(() {
+                                          _selectedIndex = index;
+                                        });
                                       },
                                       child: Container(
-                                        padding: EdgeInsets.symmetric(vertical: 10),
-                                        child: ListItem(),
+                                        height: 20,
+                                        decoration: ShapeDecoration(
+                                          gradient: _selectedIndex == index ? LinearGradient(
+                                            begin: Alignment(0.99, -0.16),
+                                            end: Alignment(-0.99, 0.16),
+                                            colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                          ) : null,
+                                          shape: RoundedRectangleBorder(
+                                            side: BorderSide(
+                                              width: 0.50,
+                                              color: Color(0xFF07A1B4),
+                                            ),
+                                            borderRadius: BorderRadius.circular(10),
+                                          ),
+                                        ),
+                                        alignment: Alignment.center,
+                                        padding: EdgeInsets.symmetric(horizontal: 19),
+                                        child: Text(
+                                          widget.tab2[index],
+                                          style: TextStyle(
+                                            color: _selectedIndex == index ? Colors.white : Color(0xFF07A1B4),
+                                            fontSize: 12,
+                                            fontFamily: 'Noto Sans TC',
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  );
-                                }),
-                              ),
-                              ],
+                                    SizedBox(width: 4,),
+                                  ],
+                                );
+                              }),
                             ),
                           ),
                         ),
+                        Column(
+                        children: List.generate(4, (index) {
+                          return Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6,),
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                                },
+                                child: ListItem(),
+                              ),
+                            ),
+                          );
+                        }),
+                      ),
                       ],
                     ),
-                    if (_isOverlayVisible) ...[
-                      Positioned(
-                        top: 41 * hScale,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        child: ModalBarrier(
-                          color: Colors.black54,
-                          dismissible: true,
-                          onDismiss: () {
-                            setState(() {
-                              _showContainer = !_showContainer;
-                              _isOverlayVisible = false;
-                            });
-                          },
-                        ),
-                      ),
-                    ],
-                    Column(
-                      children: [
-                        Container(
-                          alignment: Alignment.topCenter,
-                          child: Column(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                alignment: Alignment.center,
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: List.generate(widget.tab.length, (index) {
-                                      return Container(
-                                        alignment: Alignment.center,
-                                        child: InkWell(
-                                          onTap: () {
-                                            _isOverlayVisible = !_isOverlayVisible;
-                                            setState(() {
-                                              _showContainer = !_showContainer;
-                                              _selectedIndex = index;
-                                            });
-                                          },
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              if (index == 4) ...[
-                                                SvgPicture.asset('assets/icons/rental_page/sorting.svg'),
-                                              ] else ...[
-                                                Row(
-                                                  children: [
-                                                    Text(
-                                                      widget.tab[index],
-                                                      style: TextStyle(
-                                                        color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
-                                                        fontFamily: 'Noto Sans TC',
-                                                        fontSize: 20,
-                                                      ),
-                                                    ),
-                                                    Icon(
-                                                      Icons.arrow_drop_down,
-                                                      color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ]
-                                            ],
+                  ),
+                ),
+              ],
+            ),
+            if (_isOverlayVisible) ...[
+              Positioned(
+                top: 41 * hScale,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: ModalBarrier(
+                  color: Colors.black54,
+                  dismissible: true,
+                  onDismiss: () {
+                    setState(() {
+                      _showContainer = !_showContainer;
+                      _isOverlayVisible = false;
+                    });
+                  },
+                ),
+              ),
+            ],
+            Column(
+              children: [
+                Container(
+                  alignment: Alignment.topCenter,
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: List.generate(widget.tab.length, (index) {
+                            return InkWell(
+                              onTap: () {
+                                _isOverlayVisible = !_isOverlayVisible;
+                                setState(() {
+                                  _showContainer = !_showContainer;
+                                  _selectedIndex = index;
+                                });
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  if (index == 4) ...[
+                                    SvgPicture.asset('assets/icons/rental_page/sorting.svg'),
+                                  ] else ...[
+                                    Row(
+                                      children: [
+                                        Text(
+                                          widget.tab[index],
+                                          style: TextStyle(
+                                            color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                            fontFamily: 'Noto Sans TC',
+                                            fontSize: 20,
                                           ),
                                         ),
-                                      );
-                                    }),
-                                  ),
-                                ),
+                                        Icon(
+                                          Icons.arrow_drop_down,
+                                          color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                        ),
+                                      ],
+                                    ),
+                                  ]
+                                ],
                               ),
-                              Divider(height: 0,),
-                            ],
-                          ),
+                            );
+                          }),
                         ),
-                        Visibility(
-                          visible: _showContainer,
-                          child: widget.filterWidget[_selectedIndex],
-                          // child: FunctionWidget2(),
-                        ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      Divider(height: 0,),
+                    ],
+                  ),
+                ),
+                Visibility(
+                  visible: _showContainer,
+                  child: widget.filterWidget[_selectedIndex],
+                  // child: FunctionWidget2(),
+                ),
+              ],
             ),
+          ],
         ),
+      ),
     );
   }
 }

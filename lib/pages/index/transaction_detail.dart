@@ -17,7 +17,10 @@ class TransactionDetail extends StatelessWidget {
         padding: EdgeInsets.all(12),
         child: Container(
           width: double.infinity,
-          color: Color(0xFFFFFFFF),
+          decoration: ShapeDecoration(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+          ),
           padding: EdgeInsets.symmetric(vertical: 6, horizontal: 14,),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -63,7 +66,7 @@ class TransactionDetail extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,7 +84,7 @@ class TransactionDetail extends StatelessWidget {
                               '\$600萬',
                               style: TextStyle(
                                 color: Color(0xFFE86100),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w700,
                               ),
@@ -91,7 +94,7 @@ class TransactionDetail extends StatelessWidget {
                       ),
                       SizedBox(height: 36,),
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,7 +112,7 @@ class TransactionDetail extends StatelessWidget {
                               '\$4,231',
                               style: TextStyle(
                                 color: Color(0xFF171717),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w700,
                               ),
@@ -119,13 +122,13 @@ class TransactionDetail extends StatelessWidget {
                       ),
                       SizedBox(height: 36,),
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '成交價',
+                              '成交類別',
                               style: TextStyle(
                                 color: Color(0xFFB3B3B3),
                                 fontSize: 12,
@@ -137,7 +140,7 @@ class TransactionDetail extends StatelessWidget {
                               '註冊處成交',
                               style: TextStyle(
                                 color: Color(0xFF171717),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
                               ),
@@ -149,9 +152,10 @@ class TransactionDetail extends StatelessWidget {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -169,7 +173,7 @@ class TransactionDetail extends StatelessWidget {
                               '506呎',
                               style: TextStyle(
                                 color: Color(0xFF171717),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
                               ),
@@ -179,7 +183,7 @@ class TransactionDetail extends StatelessWidget {
                       ),
                       SizedBox(height: 36,),
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -197,7 +201,7 @@ class TransactionDetail extends StatelessWidget {
                               '\$6,231',
                               style: TextStyle(
                                 color: Color(0xFF171717),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w700,
                               ),
@@ -207,7 +211,7 @@ class TransactionDetail extends StatelessWidget {
                       ),
                       SizedBox(height: 36,),
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -225,7 +229,7 @@ class TransactionDetail extends StatelessWidget {
                               '04/06/2024',
                               style: TextStyle(
                                 color: Color(0xFF171717),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
                               ),
@@ -240,7 +244,7 @@ class TransactionDetail extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -258,7 +262,7 @@ class TransactionDetail extends StatelessWidget {
                               '720呎',
                               style: TextStyle(
                                 color: Color(0xFF171717),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
                               ),
@@ -268,7 +272,7 @@ class TransactionDetail extends StatelessWidget {
                       ),
                       SizedBox(height: 36,),
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -286,7 +290,7 @@ class TransactionDetail extends StatelessWidget {
                               '-49.4%',
                               style: TextStyle(
                                 color: Color(0xFFEA5454),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w700,
                               ),
@@ -301,10 +305,10 @@ class TransactionDetail extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 34,
+                        height: 37,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               '成交價',
@@ -319,7 +323,7 @@ class TransactionDetail extends StatelessWidget {
                               '2房1廳',
                               style: TextStyle(
                                 color: Color(0xFF171717),
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
                               ),

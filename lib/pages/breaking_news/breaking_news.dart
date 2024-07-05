@@ -157,91 +157,97 @@ class _BreakingNewsPageState extends State<BreakingNewsPage> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        centerTitle: false,
         title: const Text('信息'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {},
+        ),
       ),
       body: SafeArea(
         child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: ListView.separated(
-                itemCount: 3, // 列表項目數量
-                itemBuilder: (context, index) {
-                  //var item = snapshot.data?['data']['list'][index];
-                  //print(item);
-
-                  return InkWell(
-                    child: Container(
-                      //color: Colors.amber,
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      //height: 100,
-                      child: Row(
-                        children: [
-                          SvgPicture.asset('assets/icons/redPonit.svg'),
-                          SizedBox(width: 12,),
-                          Expanded(
-                              child:Column(
-                                children: [
-                                  Container(
-                                    //color: Colors.amber,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "12月房租尚未繳納",
-                                          style: TextStyle(
-                                            color: Color(0xFF333333),
-                                            fontSize: 16,
-                                            fontFamily: 'PingFang TC',
-                                            fontWeight: FontWeight.w500,
-                                            height: 0,
-                                          ),
+          color: Colors.white,
+          padding: EdgeInsets.symmetric(horizontal: 15,),
+          child: ListView.separated(
+              itemCount: 3, // 列表項目數量
+              itemBuilder: (context, index) {
+                //var item = snapshot.data?['data']['list'][index];
+                //print(item);
+                return InkWell(
+                  child: Container(
+                    //color: Colors.amber,
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    //height: 100,
+                    child: Row(
+                      children: [
+                        SvgPicture.asset('assets/icons/redPonit.svg'),
+                        SizedBox(width: 12,),
+                        Expanded(
+                            child:Column(
+                              children: [
+                                Container(
+                                  //color: Colors.amber,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "12月房租尚未繳納",
+                                        style: TextStyle(
+                                          color: Color(0xFF333333),
+                                          fontSize: 16,
+                                          fontFamily: 'PingFang TC',
+                                          fontWeight: FontWeight.w500,
+                                          height: 0,
                                         ),
+                                      ),
 
-                                      ],
-                                    ),
+                                    ],
                                   ),
-                                  SizedBox(height: 4,),
-                                  Text(
-                                    "親愛的租客您好，請盡速繳交12月份房租......",
-                                    style: TextStyle(
-                                      color: Color(0xFF666666),
-                                      fontSize: 12,
-                                      fontFamily: 'PingFang TC',
-                                      fontWeight: FontWeight.w400,
-                                      height: 0,
-                                    ),
+                                ),
+                                SizedBox(height: 4,),
+                                Text(
+                                  "親愛的租客您好，請盡速繳交12月份房租......",
+                                  style: TextStyle(
+                                    color: Color(0xFF666666),
+                                    fontSize: 12,
+                                    fontFamily: 'PingFang TC',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
                                   ),
-                                  SizedBox(height: 4,),
-                                  Text(
-                                    "2024/04/22 13:20:00",
-                                    style: TextStyle(
-                                      color: Color(0xFF848FAC),
-                                      fontSize: 12,
-                                      fontFamily: 'SF Pro',
-                                      fontWeight: FontWeight.w400,
-                                      height: 0,
-                                    ),
-                                  )
-                                ],
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                              )
-                          ),
-                          SizedBox(width: 12,),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                          ),
-                        ],
-                      ),
+                                ),
+                                SizedBox(height: 4,),
+                                Text(
+                                  "2024/04/22 13:20:00",
+                                  style: TextStyle(
+                                    color: Color(0xFF848FAC),
+                                    fontSize: 12,
+                                    fontFamily: 'SF Pro',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0,
+                                  ),
+                                )
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                            )
+                        ),
+                        SizedBox(width: 12,),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ],
                     ),
-                    onTap: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => NotifyDetailPage(title: "12月房租未繳納",dueTime: "2024/02/10",bankCode: "（812)3355123",bankAccount: "000123456",)), // 'NewPage' 是您要跳转的目标页面
-                      );
-                    },
-                  );
-                },
-                separatorBuilder: (context, index) => Divider(height: 1),
-              ),
+                  ),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => NotifyDetailPage(title: "12月房租未繳納",dueTime: "2024/02/10",bankCode: "（812)3355123",bankAccount: "000123456",)),
+                    );
+                  },
+                );
+              },
+              separatorBuilder: (context, index) => Divider(height: 1),
+            ),
         ),
       ),
     );

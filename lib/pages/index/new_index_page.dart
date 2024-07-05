@@ -654,108 +654,98 @@ class _NewIndexPageState extends State<NewIndexPage> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.only(top: 25, left: 7, right: 7, bottom: 15,),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 13),
-                        child: Container(
-                          width: double.infinity,
-                          height: 33,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 0.50, color: Color(0xFF171717)),
-                              borderRadius: BorderRadius.circular(21.50),
-                            ),
-                          ),
-                          child: Row(
-                            children: [
-                              Flexible(
-                                flex: _LowerBlockIndex == 0 ? 12 : 10,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      _LowerBlockIndex = 0;
-                                    });
-                                  },
-                                  child: Container(
-                                    height: 33,
-                                    decoration: _LowerBlockIndex == 0 ? ShapeDecoration(
-                                      color: Color(0xFF171717),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(21.50),
-                                      ),
-                                    ) : null,
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      '我想買樓',
-                                      style: TextStyle(
-                                        color: _LowerBlockIndex == 0 ? Colors.white : Color(0xFFB3B3B3),
-                                        fontSize: 14,
-                                        fontFamily: 'Noto Sans TC',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Flexible(
-                                flex: _LowerBlockIndex == 1 ? 12 : 10,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      _LowerBlockIndex = 1;
-                                    });
-                                  },
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    decoration: _LowerBlockIndex == 1 ? ShapeDecoration(
-                                      color: Color(0xFF171717),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(21.50),
-                                      ),
-                                    ) : null,
-                                    child: Text(
-                                      '我想租樓',
-                                      style: TextStyle(
-                                        color: _LowerBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
-                                        fontSize: 14,
-                                        fontFamily: 'Noto Sans TC',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                SizedBox(height: 25,),
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 13),
+                      child: Container(
+                        width: double.infinity,
+                        height: 33,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 0.50, color: Color(0xFF171717)),
+                            borderRadius: BorderRadius.circular(21.50),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 10,),
-                      Column(
-                        children: List.generate(4, (index) {
-                          return GestureDetector(
-                            child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 10),
-                              decoration: index < 3 ? BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                                      color: Color(0xFFB3B3B3),
-                                      width: 1,
-                                    )
+                        child: Row(
+                          children: [
+                            Flexible(
+                              flex: _LowerBlockIndex == 0 ? 12 : 10,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _LowerBlockIndex = 0;
+                                  });
+                                },
+                                child: Container(
+                                  height: 33,
+                                  decoration: _LowerBlockIndex == 0 ? ShapeDecoration(
+                                    color: Color(0xFF171717),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(21.50),
+                                    ),
+                                  ) : null,
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    '我想買樓',
+                                    style: TextStyle(
+                                      color: _LowerBlockIndex == 0 ? Colors.white : Color(0xFFB3B3B3),
+                                      fontSize: 14,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
                                 ),
-                              ) : null,
-                              child: ListItem(),
+                              ),
                             ),
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
-                            },
-                          );
-                        }),
+                            Flexible(
+                              flex: _LowerBlockIndex == 1 ? 12 : 10,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _LowerBlockIndex = 1;
+                                  });
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  decoration: _LowerBlockIndex == 1 ? ShapeDecoration(
+                                    color: Color(0xFF171717),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(21.50),
+                                    ),
+                                  ) : null,
+                                  child: Text(
+                                    '我想租樓',
+                                    style: TextStyle(
+                                      color: _LowerBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
+                                      fontSize: 14,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(height: 10,),
+                    Column(
+                      children: List.generate(4, (index) {
+                        return GestureDetector(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: 5,),
+                            child: ListItem(),
+                          ),
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                          },
+                        );
+                      }),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 12,),
                 GestureDetector(

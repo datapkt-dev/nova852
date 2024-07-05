@@ -54,6 +54,7 @@ class NewsContent extends StatelessWidget {
                             fontSize: 18,
                             fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w400,
+                            height: 2,
                           ),
                         ),
                       ],

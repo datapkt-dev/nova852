@@ -1712,35 +1712,25 @@ class _ItemDetailState extends State<ItemDetail> {
                             SizedBox(height: 20,),
                             Container(
                               width: double.infinity,
-                              padding: EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(6),
-                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    '相關樓盤',
-                                    style: TextStyle(
-                                      color: Color(0xFF171717),
-                                      fontSize: 14,
-                                      fontFamily: 'Noto Sans TC',
-                                      fontWeight: FontWeight.w500,
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 25,),
+                                    child: Text(
+                                      '相關樓盤',
+                                      style: TextStyle(
+                                        color: Color(0xFF171717),
+                                        fontSize: 14,
+                                        fontFamily: 'Noto Sans TC',
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
                                   Column(
                                     children: List.generate(4, (index) {
-                                      return Container(
-                                        padding: EdgeInsets.symmetric(vertical: 10),
-                                        decoration: index < 3 ? BoxDecoration(
-                                          border: Border(
-                                              bottom: BorderSide(
-                                                color: Color(0xFFB3B3B3),
-                                                width: 1,
-                                              )
-                                          ),
-                                        ) : null,
+                                      return Padding(
+                                        padding: EdgeInsets.symmetric(vertical: 5,),
                                         child: ListItem(),
                                       );
                                     }),

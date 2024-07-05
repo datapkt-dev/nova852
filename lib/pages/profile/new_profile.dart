@@ -19,15 +19,15 @@ class _NewProfileState extends State<NewProfilePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
+        elevation: 0,
         centerTitle: false,
         title: const Text('會員'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {},
         ),
-        elevation: 0,
-        backgroundColor: Colors.white,
       ),
       body: _block[2],
     );

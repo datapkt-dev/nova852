@@ -163,7 +163,7 @@ class _BreakingNewsPageState extends State<BreakingNewsPage> {
         centerTitle: false,
         title: const Text('信息'),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back_ios_rounded),
           onPressed: () {},
         ),
       ),

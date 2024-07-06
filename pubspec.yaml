@@ -136,6 +136,14 @@ flutter:
     - assets/icons/profile/contact.svg
     - assets/icons/transaction/location.svg
     - assets/icons/item_detail/layout.svg
+    - assets/icons/setting/bell.svg
+    - assets/icons/setting/facebook.svg
+    - assets/icons/setting/globe.svg
+    - assets/icons/setting/home.svg
+    - assets/icons/setting/phone.svg
+    - assets/icons/setting/share.svg
+    - assets/icons/setting/thumbs.svg
+    - assets/icons/setting/twitch.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

@@ -4,6 +4,7 @@ import 'package:nova852/pages/breaking_news/breaking_news.dart';
 import 'package:nova852/pages/more/more.dart';
 import 'package:nova852/pages/profile/new_profile.dart';
 import 'package:nova852/pages/search/search_page.dart';
+import 'package:nova852/pages/setting/setting.dart';
 import '../pages/index/new_index_page.dart';
 
 class BottomBar extends StatefulWidget {
@@ -16,7 +17,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
 
   int _currentIndex = 0;
-  final pages = [NewIndexPage(), SearchPage(), NewProfilePage(), BreakingNewsPage(), MorePage()];
+  final pages = [NewIndexPage(), SearchPage(), NewProfilePage(), BreakingNewsPage(), Setting()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -28,7 +29,7 @@ class _BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Color(0xFFF2F2F2),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: pages[_currentIndex],
       ),

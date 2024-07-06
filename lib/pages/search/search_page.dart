@@ -9,6 +9,7 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
+  List tab = ['買樓', '租樓', '住宅', '豪宅', '工廈/商廈', '店鋪',];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,33 +66,12 @@ class _SearchPageState extends State<SearchPage> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 12,),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
+                children: List.generate(tab.length, (index) {
+                  return Container(
                     padding: EdgeInsets.symmetric(horizontal: 6,),
-                    child: Text('買樓'),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6,),
-                    child: Text('租樓'),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6,),
-                    child: Text('住宅'),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6,),
-                    child: Text('豪宅'),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6,),
-                    child: Text('工廈/商廈'),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6,),
-                    child: Text('店鋪'),
-                  ),
-                ],
+                    child: Text(tab[index],),
+                  );
+                }),
               ),
             ),
           ),

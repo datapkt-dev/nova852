@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SearchPage extends StatefulWidget {
@@ -32,100 +33,102 @@ class _SearchPageState extends State<SearchPage> {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            color: Colors.white,
-            padding: EdgeInsets.symmetric(horizontal: 12,),
-            child: Container(
+      body: Container(
+        color: Color(0xFFF2F2F2),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              color: Colors.white,
+              padding: EdgeInsets.symmetric(horizontal: 12,),
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 10,),
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(width: 1, color: Color(0xFF171717),),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+                child: TextField(
+                  maxLines: 1,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    hintText: '地區 / 屋苑 / 港鐵',
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 13,
+              color: Colors.white,
+            ),
+            Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 10,),
               decoration: ShapeDecoration(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(width: 1, color: Color(0xFF171717),),
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(6),
+                    bottomRight: Radius.circular(6),
+                  ),
                 ),
+                // shadows: [
+                //   BoxShadow(
+                //     color: Color(0x3FC9C9C9),
+                //     blurRadius: 4,
+                //     offset: Offset(0, 4),
+                //     spreadRadius: 0,
+                //   )
+                // ],
               ),
-              child: TextField(
-                maxLines: 1,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                  hintText: '地區 / 屋苑 / 港鐵',
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 13,),
-          Container(
-            width: double.infinity,
-            decoration: ShapeDecoration(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(6),
-                  bottomRight: Radius.circular(6),
-                ),
-              ),
-              // shadows: [
-              //   BoxShadow(
-              //     color: Color(0x3FC9C9C9),
-              //     blurRadius: 4,
-              //     offset: Offset(0, 4),
-              //     spreadRadius: 0,
-              //   )
-              // ],
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(tab.length, (index) {
-                return Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _selectedIndex = index;
-                      });
-                    },
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-                      decoration: _selectedIndex == index ? BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: Color(0xFF131313),
-                            width: 3,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: List.generate(tab.length, (index) {
+                  return Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _selectedIndex = index;
+                        });
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 3),
+                        decoration: _selectedIndex == index ? BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                              color: Color(0xFF131313),
+                              width: 3,
+                            ),
+                          ),
+                        )
+                            : BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                              color: Color(0xFFB3B3B3),
+                              width: 3,
+                            ),
                           ),
                         ),
-                      )
-                          : BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: Color(0xFFB3B3B3),
-                            width: 3,
+                        child: Text(
+                          tab[index],
+                          style: TextStyle(
+                            color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF6D6D6D),
+                            fontSize: 15,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w400,
                           ),
-                        ),
-                      ),
-                      child: Text(
-                        tab[index],
-                        style: TextStyle(
-                          color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF6D6D6D),
-                          fontSize: 15,
-                          fontFamily: 'Noto Sans TC',
-                          fontWeight: FontWeight.w400,
                         ),
                       ),
                     ),
-                  ),
-                );
-              }),
+                  );
+                }),
+              ),
             ),
-          ),
-          Container(
-            width: double.infinity,
-            color: Color(0xFFF2F2F2),
-            child: Expanded(
+            Expanded(
               child: SingleChildScrollView(
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 30, horizontal: 12,),
@@ -215,9 +218,9 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
+      )
     );
   }
 }

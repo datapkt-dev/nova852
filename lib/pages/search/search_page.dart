@@ -19,8 +19,9 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
         centerTitle: false,
+        backgroundColor: Colors.white,
         title: Text('搜尋'),
         actions: [
           IconButton(

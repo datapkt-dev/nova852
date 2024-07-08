@@ -17,18 +17,21 @@ class _TransactionHistoryState extends State<TransactionHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
+        elevation: 0,
         centerTitle: false,
         title: Text('成交紀錄'),
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12,),
+        padding: EdgeInsets.symmetric(horizontal: 12,),
         color: Color(0xFFF2F2F2),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: 12,),
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -321,7 +324,15 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                                     width: 6,
                                   ),
                                 ),
-                              ) : null,
+                              )
+                                  : BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 6,
+                                  ),
+                                ),
+                              ),
                               child: Text(
                                 tab[index],
                                 style: TextStyle(
@@ -444,6 +455,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                   ],
                 ),
               ),
+              SizedBox(height: 12,),
             ],
           ),
         ),

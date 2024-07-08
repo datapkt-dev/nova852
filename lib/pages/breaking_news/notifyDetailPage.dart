@@ -10,7 +10,12 @@ class NotifyDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        centerTitle: false,
         title: Text(
           title,
           style: TextStyle(
@@ -20,7 +25,6 @@ class NotifyDetailPage extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        centerTitle: false,
       ),
       body: SafeArea(
         child: Container(

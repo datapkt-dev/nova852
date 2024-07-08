@@ -12,26 +12,30 @@ class BankPlan extends StatefulWidget {
 class _BankPlanState extends State<BankPlan> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xFFF9F9F9),
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          centerTitle: false,
-          title: Text(
-            '銀行按揭計劃',
-            style: TextStyle(
-              color: Color(0xFF171717),
-              fontSize: 16,
-              fontFamily: 'Noto Sans TC',
-              fontWeight: FontWeight.w500,
-            ),
+    return Scaffold(
+      backgroundColor: Color(0xFFF2F2F2),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        centerTitle: false,
+        title: Text(
+          '銀行按揭計劃',
+          style: TextStyle(
+            color: Color(0xFF171717),
+            fontSize: 16,
+            fontFamily: 'Noto Sans TC',
+            fontWeight: FontWeight.w500,
           ),
         ),
-        body: SafeArea(
-          child: Column(
-            children: [
-              Container(
+      ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Color(0xFFF2F2F2),
+        child: Column(
+          children: [
+            Container(
                 width: double.infinity,
                 height: 40,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
@@ -87,12 +91,15 @@ class _BankPlanState extends State<BankPlan> {
                     ),
                   ],
                 )
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 35, horizontal: 15,),
-                    child: Column(
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15,),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 15,),
+                      Column(
                         children: List.generate(3, (index) {
                           return Column(
                             children: [
@@ -324,11 +331,13 @@ class _BankPlanState extends State<BankPlan> {
                           );
                         })
                     ),
+                      SizedBox(height: 15,),
+                    ],
+                  )
                 ),
               ),
-              ),
-            ],
-          )
+            ),
+          ],
         ),
       ),
     );

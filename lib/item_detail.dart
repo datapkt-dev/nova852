@@ -22,7 +22,9 @@ class _ItemDetailState extends State<ItemDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
+        elevation: 0,
         centerTitle: false,
         title: Text(
           '將軍澳 東港城 1座 高層 C室',
@@ -68,7 +70,15 @@ class _ItemDetailState extends State<ItemDetail> {
                               width: 3,
                             ),
                           ),
-                        ) : null,
+                        )
+                            : BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                              color: Colors.transparent,
+                              width: 3,
+                            ),
+                          ),
+                        ),
                         child: GestureDetector(
                           child: Text(tab[index]),
                           onTap: () {

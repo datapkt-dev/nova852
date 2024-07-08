@@ -144,6 +144,8 @@ flutter:
     - assets/icons/setting/share.svg
     - assets/icons/setting/thumbs.svg
     - assets/icons/setting/twitch.svg
+    - assets/icons/search_page/map-pin.svg
+    - assets/icons/search_page/search.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

@@ -417,7 +417,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => MapTest()));
+                          // Navigator.push(context, MaterialPageRoute(builder: (context) => MapTest()));
                         },
                         child: Text(
                           '更多',

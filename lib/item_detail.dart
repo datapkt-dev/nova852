@@ -949,20 +949,19 @@ class _ItemDetailState extends State<ItemDetail> {
                                   ),
                                   SizedBox(height: 4,),
                                   SizedBox(
-                                    width: double.infinitchild: GoogleMap(
-                                  initialCameraPosition: CameraPosition(
-                                  target: LatLng(-33.86, 151.20),
-                              zoom: 15,
-                            ),
-                        markers: {
-                          const Marker(
-                            markerId: MarkerId('Sydney'),
-                            position: LatLng(-33.86, 151.20),
-                          )
-                        },
-                      ),y,
-                                    height: 212,
-
+                                    width: double.infinity,
+                                    child: GoogleMap(
+                                      initialCameraPosition: CameraPosition(
+                                        target: LatLng(-33.86, 151.20),
+                                        zoom: 15,
+                                      ),
+                                      markers: {
+                                        const Marker(
+                                          markerId: MarkerId('Sydney'),
+                                          position: LatLng(-33.86, 151.20),
+                                        )
+                                      },
+                                    ),
                                   ),
                                   SizedBox(height: 24,),
                                   Row(

@@ -308,7 +308,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   SizedBox(height: 4,),
@@ -415,15 +415,20 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Text(
-                        '更多',
-                        style: TextStyle(
-                          color: Color(0xFF07A1B4),
-                          fontSize: 14,
-                          fontFamily: 'Noto Sans TC',
-                          fontWeight: FontWeight.w400,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => MapTest()));
+                        },
+                        child: Text(
+                          '更多',
+                          style: TextStyle(
+                            color: Color(0xFF07A1B4),
+                            fontSize: 14,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                   SizedBox(height: 4,),

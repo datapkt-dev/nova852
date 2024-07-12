@@ -12,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
+  - GoogleMaps
 
 SPEC REPOS:
   trunk:
@@ -28,6 +29,6 @@ SPEC CHECKSUMS:
   google_maps_flutter_ios: c454f18e0e22df6ac0e9f2a4df340858f5a3680c
   GoogleMaps: 8939898920281c649150e0af74aa291c60f2e77d
 
-PODFILE CHECKSUM: d5021345b87acf70bf51e37970faa9248827774e
+PODFILE CHECKSUM: cca3bccfe958c083cbe2e18ace46cccd7f2e0994
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

@@ -15,7 +15,9 @@ class ItemDetail extends StatefulWidget {
 class _ItemDetailState extends State<ItemDetail> {
   // late GoogleMapController mapController;
   final List<String> tab = ['基本資料', '單位詳情', '鄰近設施',];
+  final List<String> mapItem = ['交通', '超市', '餐飲', '銀行', '學校', '醫院',];
   int _selectedIndex = 0;
+  int _selectedItem = 0;
   int _selectedHistory = 0;
 
   @override
@@ -966,152 +968,185 @@ class _ItemDetailState extends State<ItemDetail> {
                                   SizedBox(height: 24,),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
+                                    children: List.generate(mapItem.length, (index) {
+                                      return Expanded(
                                         flex: 1,
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                              bottom: BorderSide(
-                                                color: Color(0xFF07A1B4),
-                                                width: 2,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedItem = index;
+                                            });
+                                          },
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                            decoration: BoxDecoration(
+                                              border: Border(
+                                                bottom: BorderSide(
+                                                  color: _selectedItem == index ? Color(0xFF07A1B4) : Color(0xFFE3E3E3),
+                                                  width: 2,
+                                                ),
+                                              ),
+                                            ),
+                                            child: Text(
+                                              mapItem[index],
+                                              style: TextStyle(
+                                                color: Color(0xFF171717),
+                                                fontSize: 12,
+                                                fontFamily: 'Noto Sans TC',
+                                                fontWeight: FontWeight.w500,
                                               ),
                                             ),
                                           ),
-                                          child: Text(
-                                            '交通',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                                bottom: BorderSide(
-                                                  color: Color(0xFFE3E3E3),
-                                                  width: 2,
-                                                )
-                                            ),
-                                          ),
-                                          child: Text(
-                                            '超市',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                              bottom: BorderSide(
-                                                color: Color(0xFFE3E3E3),
-                                                width: 2,
-                                              ),
-                                            ),
-                                          ),
-                                          child: Text(
-                                            '餐飲',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                                bottom: BorderSide(
-                                                  color: Color(0xFFE3E3E3),
-                                                  width: 2,
-                                                )
-                                            ),
-                                          ),
-                                          child: Text(
-                                            '銀行',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                                bottom: BorderSide(
-                                                  color: Color(0xFFE3E3E3),
-                                                  width: 2,
-                                                )
-                                            ),
-                                          ),
-                                          child: Text(
-                                            '學校',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                                bottom: BorderSide(
-                                                  color: Color(0xFFE3E3E3),
-                                                  width: 2,
-                                                )
-                                            ),
-                                          ),
-                                          child: Text(
-                                            '醫院',
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                                      );
+                                    }),
+                                    // children: [
+                                    //   Expanded(
+                                    //     flex: 1,
+                                    //     child: Container(
+                                    //       alignment: Alignment.center,
+                                    //       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                    //       decoration: BoxDecoration(
+                                    //         border: Border(
+                                    //           bottom: BorderSide(
+                                    //             color: Color(0xFF07A1B4),
+                                    //             width: 2,
+                                    //           ),
+                                    //         ),
+                                    //       ),
+                                    //       child: Text(
+                                    //         '交通',
+                                    //         style: TextStyle(
+                                    //           color: Color(0xFF171717),
+                                    //           fontSize: 12,
+                                    //           fontFamily: 'Noto Sans TC',
+                                    //           fontWeight: FontWeight.w500,
+                                    //         ),
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    //   Expanded(
+                                    //     flex: 1,
+                                    //     child: Container(
+                                    //       alignment: Alignment.center,
+                                    //       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                    //       decoration: BoxDecoration(
+                                    //         border: Border(
+                                    //             bottom: BorderSide(
+                                    //               color: Color(0xFFE3E3E3),
+                                    //               width: 2,
+                                    //             )
+                                    //         ),
+                                    //       ),
+                                    //       child: Text(
+                                    //         '超市',
+                                    //         style: TextStyle(
+                                    //           color: Color(0xFF171717),
+                                    //           fontSize: 12,
+                                    //           fontFamily: 'Noto Sans TC',
+                                    //           fontWeight: FontWeight.w500,
+                                    //         ),
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    //   Expanded(
+                                    //     flex: 1,
+                                    //     child: Container(
+                                    //       alignment: Alignment.center,
+                                    //       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                    //       decoration: BoxDecoration(
+                                    //         border: Border(
+                                    //           bottom: BorderSide(
+                                    //             color: Color(0xFFE3E3E3),
+                                    //             width: 2,
+                                    //           ),
+                                    //         ),
+                                    //       ),
+                                    //       child: Text(
+                                    //         '餐飲',
+                                    //         style: TextStyle(
+                                    //           color: Color(0xFF171717),
+                                    //           fontSize: 12,
+                                    //           fontFamily: 'Noto Sans TC',
+                                    //           fontWeight: FontWeight.w500,
+                                    //         ),
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    //   Expanded(
+                                    //     flex: 1,
+                                    //     child: Container(
+                                    //       alignment: Alignment.center,
+                                    //       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                    //       decoration: BoxDecoration(
+                                    //         border: Border(
+                                    //             bottom: BorderSide(
+                                    //               color: Color(0xFFE3E3E3),
+                                    //               width: 2,
+                                    //             )
+                                    //         ),
+                                    //       ),
+                                    //       child: Text(
+                                    //         '銀行',
+                                    //         style: TextStyle(
+                                    //           color: Color(0xFF171717),
+                                    //           fontSize: 12,
+                                    //           fontFamily: 'Noto Sans TC',
+                                    //           fontWeight: FontWeight.w500,
+                                    //         ),
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    //   Expanded(
+                                    //     flex: 1,
+                                    //     child: Container(
+                                    //       alignment: Alignment.center,
+                                    //       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                    //       decoration: BoxDecoration(
+                                    //         border: Border(
+                                    //             bottom: BorderSide(
+                                    //               color: Color(0xFFE3E3E3),
+                                    //               width: 2,
+                                    //             )
+                                    //         ),
+                                    //       ),
+                                    //       child: Text(
+                                    //         '學校',
+                                    //         style: TextStyle(
+                                    //           color: Color(0xFF171717),
+                                    //           fontSize: 12,
+                                    //           fontFamily: 'Noto Sans TC',
+                                    //           fontWeight: FontWeight.w500,
+                                    //         ),
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    //   Expanded(
+                                    //     flex: 1,
+                                    //     child: Container(
+                                    //       alignment: Alignment.center,
+                                    //       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                    //       decoration: BoxDecoration(
+                                    //         border: Border(
+                                    //             bottom: BorderSide(
+                                    //               color: Color(0xFFE3E3E3),
+                                    //               width: 2,
+                                    //             )
+                                    //         ),
+                                    //       ),
+                                    //       child: Text(
+                                    //         '醫院',
+                                    //         style: TextStyle(
+                                    //           color: Color(0xFF171717),
+                                    //           fontSize: 12,
+                                    //           fontFamily: 'Noto Sans TC',
+                                    //           fontWeight: FontWeight.w500,
+                                    //         ),
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    // ],
                                   ),
                                   SizedBox(height: 15,),
                                   Container(

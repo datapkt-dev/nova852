@@ -16,23 +16,29 @@ class _MapTestState extends State<MapTest> {
       appBar: AppBar(
         title: Text('地圖測試頁'),
       ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30,),
-        child: GoogleMap(
-          initialCameraPosition: CameraPosition(
-            target: LatLng(-33.86, 151.20),
-            zoom: 15,
-          ),
-          markers: {
-            const Marker(
-              markerId: MarkerId('Sydney'),
-              position: LatLng(-33.86, 151.20),
-            )
-          },
+      // body: Container(
+      //   height: double.infinity,
+      //   width: double.infinity,
+      //   padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30,),
+      //   child: GoogleMap(
+      //     initialCameraPosition: CameraPosition(
+      //       target: LatLng(-33.86, 151.20),
+      //       zoom: 15,
+      //     ),
+      //     markers: {
+      //       const Marker(
+      //         markerId: MarkerId('Sydney'),
+      //         position: LatLng(-33.86, 151.20),
+      //       )
+      //     },
+      //   ),
+      // ),
+      body: GoogleMap(
+        initialCameraPosition: CameraPosition(
+          target: LatLng(37.42796133580664, -122.085749655962),
+          zoom: 14.4746,
         ),
-      )
+      ),
     );
   }
 }

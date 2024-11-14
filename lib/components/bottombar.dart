@@ -5,7 +5,10 @@ import 'package:nova852/pages/more/more.dart';
 import 'package:nova852/pages/profile/new_profile.dart';
 import 'package:nova852/pages/search/search_page.dart';
 import 'package:nova852/pages/setting/setting.dart';
+import 'package:provider/provider.dart';
+import '../models/locale.dart';
 import '../pages/index/new_index_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';  // 必須導入
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -17,7 +20,13 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
 
   int _currentIndex = 0;
-  final pages = [NewIndexPage(), SearchPage(), NewProfilePage(), BreakingNewsPage(), Setting()];
+  final pages = [
+    const NewIndexPage(),
+    const SearchPage(),
+    const NewProfilePage(),
+    const BreakingNewsPage(),
+    const Setting(),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -27,7 +36,6 @@ class _BottomBarState extends State<BottomBar> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -45,7 +53,7 @@ class _BottomBarState extends State<BottomBar> {
               color: _currentIndex == 0 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
               'assets/icons/bottombar/home.svg',
             ),
-            label: '首頁',
+            label: AppLocalizations.of(context)!.home,
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -54,7 +62,7 @@ class _BottomBarState extends State<BottomBar> {
               color: _currentIndex == 1 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
               'assets/icons/bottombar/search.svg',
             ),
-            label: '搜尋',
+            label: AppLocalizations.of(context)!.setting,
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -63,7 +71,7 @@ class _BottomBarState extends State<BottomBar> {
               color: _currentIndex == 2 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
               'assets/icons/bottombar/personal.svg',
             ),
-            label: '會員',
+            label: AppLocalizations.of(context)!.membership,
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -72,7 +80,7 @@ class _BottomBarState extends State<BottomBar> {
               color: _currentIndex == 3 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
               'assets/icons/bottombar/message.svg',
             ),
-            label: '信息',
+            label: AppLocalizations.of(context)!.notification,
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -81,7 +89,7 @@ class _BottomBarState extends State<BottomBar> {
               color: _currentIndex == 4 ? Color(0xFF50C5D5) : null,
               'assets/icons/bottombar/more_.svg',
             ),
-            label: '設定',
+            label: AppLocalizations.of(context)!.setting,
           ),
         ],
         currentIndex: _currentIndex,

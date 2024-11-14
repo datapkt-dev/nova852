@@ -1,21 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:nova852/components/bottombar.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // 自動生成的本地化文件
+import 'package:provider/provider.dart';
+
+import 'components/bottombar.dart';
+import 'models/locale.dart';
+import 'models/theme_model.dart';
+import 'l10n/l10n.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeModel(ThemeData.light())),
+        ChangeNotifierProvider(create: (_) => LocaleModel()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
+  // Widget build(BuildContext context) {
+  //   final themeModel = Provider.of<ThemeModel>(context);
+  //
+  //   return MaterialApp(
+  //     title: '這裡是feature分支!',
+  //     theme: themeModel.themeData, // 使用 themeModel 中的主題資料
+  //     home: const MyHomePage(title: 'Flutter Demo Home Page'),
+  //   );
+  // }
   Widget build(BuildContext context) {
+    final themeModel = Provider.of<ThemeModel>(context);
+    final localeModel = Provider.of<LocaleModel>(context);
+
     return MaterialApp(
       title: '這裡是feature分支!',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: themeModel.themeData,
+      locale: localeModel.locale,
+      supportedLocales: L10n.all,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -31,10 +63,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-
     return const BottomBar();
   }
 }

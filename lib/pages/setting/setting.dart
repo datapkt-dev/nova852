@@ -17,6 +17,12 @@ class Setting extends StatefulWidget {
 class _SettingState extends State<Setting> {
   bool light = true;
   int _selectedLocale = 0;
+  late Locale currentLocale;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   void _showPicker(Widget child) {
     showCupertinoModalPopup<void>(
@@ -41,6 +47,10 @@ class _SettingState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     final localeModel = Provider.of<LocaleModel>(context);
+    currentLocale = Localizations.localeOf(context);
+    // print(currentLocale);
+    // print(currentLocale.languageCode);
+    _selectedLocale = L10n.languages.indexOf(currentLocale.languageCode);
 
     return Scaffold(
       // backgroundColor: Color(0xFFF2F2F2),

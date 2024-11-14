@@ -8,7 +8,7 @@ class L10n {
   ];
 
   static const List<String> languages = [
-    '繁體中文',
-    'English',
+    'zh',
+    'en',
   ];
 }

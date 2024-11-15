@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MortgagePage extends StatefulWidget {
@@ -9,526 +10,459 @@ class MortgagePage extends StatefulWidget {
 
 class _MortgagePageState extends State<MortgagePage> {
   bool light = true;
+  int _selectedTerms = 0;
+  int _selectedTax = 0;
+  List terms = ['1年（12）期', '2年（24）期', '3年（36）期',];
+  List taxIn = ['適用', '不適用'];
+
+  void _showPicker(Widget child) {
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext context) => Container(
+        height: 216,
+        padding: const EdgeInsets.only(top: 6.0),
+        // 讓 popup modal 對齊底部
+        margin: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        // Popup model 背景.
+        color: CupertinoColors.systemBackground.resolveFrom(context),
+        child: SafeArea(
+          top: false,
+          child: child,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight= MediaQuery.of(context).size.height;
-    double hScale = screenHeight/852;
-    double wScale = screenWidth/393;
-
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: const Color(0xFFF5F5F5),
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('按揭/稅費'),
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        centerTitle: false,
+        title: const Text('按揭/稅費'),
       ),
       body: Container(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x19333333),
-                    blurRadius: 0,
-                    offset: Offset(0, 1),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    '樓盤價格',
-                    style: TextStyle(
-                      color: Color(0xFF333333),
-                      fontSize: 15,
-                      fontFamily: 'PingFang TC',
-                      fontWeight: FontWeight.w400,
-                      height: 0.10,
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '300',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 18,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0.07,
-                                ),
-                              ),
-                              const SizedBox(width: 7),
-                              Text(
-                                '萬元',
-                                style: TextStyle(
-                                  color: Color(0xFF999999),
-                                  fontSize: 15,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0.10,
-                                ),
-                              ),
-                            ],
+        width: double.infinity,
+        height: double.infinity,
+        color: const Color(0xFFF2F2F2),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 2),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  height: 56,
+                  width: double.infinity,
+                  color: Colors.white,
+                  padding: EdgeInsets.all(16),
+                  child: const Row(
+                    children: [
+                      Text(
+                        '樓盤價格',
+                        style: TextStyle(
+                          color: Color(0xFF333333),
+                          fontSize: 15,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Spacer(),
+                      SizedBox(
+                        width: 60,
+                        child: TextField(
+                          textAlign: TextAlign.end,
+                          obscureText: false,
+                          maxLines: 1,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: '300',
+                            hintStyle: TextStyle(
+                              color: Color(0xFF333333),
+                              fontSize: 18,
+                              fontFamily: 'PingFang TC',
+                              fontWeight: FontWeight.w400,
+                            ),
+                            isDense: true,
+                            contentPadding: EdgeInsets.zero,
+                          ),
+                          style: TextStyle(
+                            color: Color(0xFF333333),
+                            fontSize: 18,
+                            fontFamily: 'PingFang TC',
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
-                        const SizedBox(width: 8),
-                        Container(
-                          width: 24,
-                          height: 24,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                          ),
+                      ),
+                      SizedBox(width: 7,),
+                      Text(
+                        '萬元',
+                        style: TextStyle(
+                          color: Color(0xFF999999),
+                          fontSize: 15,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 1),
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x19333333),
-                    blurRadius: 0,
-                    offset: Offset(0, 1),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    '按揭比例',
-                    style: TextStyle(
-                      color: Color(0xFF333333),
-                      fontSize: 15,
-                      fontFamily: 'PingFang TC',
-                      fontWeight: FontWeight.w400,
-                      height: 0.10,
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '90%（270）萬',
-                                style: TextStyle(
-                                  color: Color(0xFF999999),
-                                  fontSize: 15,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0.10,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Container(
-                          width: 24,
-                          height: 24,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 1),
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x19333333),
-                    blurRadius: 0,
-                    offset: Offset(0, 1),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    '按揭還款期',
-                    style: TextStyle(
-                      color: Color(0xFF333333),
-                      fontSize: 15,
-                      fontFamily: 'PingFang TC',
-                      fontWeight: FontWeight.w400,
-                      height: 0.10,
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '30年（360）期',
-                                style: TextStyle(
-                                  color: Color(0xFF999999),
-                                  fontSize: 15,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0.10,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Container(
-                          width: 24,
-                          height: 24,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 1),
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x19333333),
-                    blurRadius: 0,
-                    offset: Offset(0, 1),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    '按揭年息',
-                    style: TextStyle(
-                      color: Color(0xFF333333),
-                      fontSize: 15,
-                      fontFamily: 'PingFang TC',
-                      fontWeight: FontWeight.w400,
-                      height: 0.10,
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '2.5',
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 18,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0.07,
-                                ),
-                              ),
-                              const SizedBox(width: 7),
-                              Text(
-                                '%',
-                                style: TextStyle(
-                                  color: Color(0xFF999999),
-                                  fontSize: 15,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0.10,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 4*hScale,),
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              child: Text(
-                '印花稅',
-                style: TextStyle(
-                  color: Color(0xFF999999),
-                  fontSize: 15,
-                  fontFamily: 'PingFang TC',
-                  fontWeight: FontWeight.w400,
-                  height: 0.10,
                 ),
-              ),
-            ),
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x19333333),
-                    blurRadius: 0,
-                    offset: Offset(0, 1),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    '樓盤價格',
-                    style: TextStyle(
-                      color: Color(0xFF333333),
-                      fontSize: 15,
-                      fontFamily: 'PingFang TC',
-                      fontWeight: FontWeight.w400,
-                      height: 0.10,
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '不適用',
-                                style: TextStyle(
-                                  color: Color(0xFF999999),
-                                  fontSize: 15,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0.10,
-                                ),
-                              ),
-                            ],
-                          ),
+                const SizedBox(height: 1,),
+                Container(
+                  height: 56,
+                  width: double.infinity,
+                  color: Colors.white,
+                  padding: EdgeInsets.all(16),
+                  child: Row(
+                    children: [
+                      const Text(
+                        '按揭比例',
+                        style: TextStyle(
+                          color: Color(0xFF333333),
+                          fontSize: 15,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
                         ),
-                        const SizedBox(width: 8),
-                        Container(
-                          width: 24,
-                          height: 24,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                          ),
+                      ),
+                      const Spacer(),
+                      const Text(
+                        '90%(270萬)',
+                        style: TextStyle(
+                          color: Color(0xFF999999),
+                          fontSize: 15,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
                         ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        width: 24,
+                        height: 24,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(),
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x19333333),
-                    blurRadius: 0,
-                    offset: Offset(0, 1),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    '買家印花稅',
-                    style: TextStyle(
-                      color: Color(0xFF333333),
-                      fontSize: 15,
-                      fontFamily: 'PingFang TC',
-                      fontWeight: FontWeight.w400,
-                      height: 0.10,
-                    ),
-                  ),
-                  Container(
-                    child: Switch(
-                      // This bool value toggles the switch.
-                      value: light,
-                      activeColor: Color(0xFF50C5D5),
-                      onChanged: (bool value) {
-                        // This is called when the user toggles the switch.
+                ),
+                const SizedBox(height: 1,),
+                GestureDetector(
+                  onTap: () {
+                    _showPicker(
+                      CupertinoPicker(
+                      magnification: 1.22,
+                      squeeze: 1.2,
+                      useMagnifier: true,
+                      itemExtent: 32.0,
+                      scrollController: FixedExtentScrollController(
+                        initialItem: _selectedTerms,
+                      ),
+                      onSelectedItemChanged: (int selectedItem) {
                         setState(() {
-                          light = value;
+                          _selectedTerms = selectedItem;
                         });
                       },
+                      children: List<Widget>.generate(terms.length, (int index) {
+                        return Center(
+                          child: Text(terms[index]),
+                        );
+                      }),
+                    ),
+                    );
+                  },
+                  child: Container(
+                    height: 56,
+                    width: double.infinity,
+                    color: Colors.white,
+                    padding: EdgeInsets.all(16),
+                    child: Row(
+                      children: [
+                        const Text(
+                          '按揭還款期',
+                          style: TextStyle(
+                            color: Color(0xFF333333),
+                            fontSize: 15,
+                            fontFamily: 'PingFang TC',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const Spacer(),
+                        Text(
+                          '${terms[_selectedTerms]}',
+                          style: TextStyle(
+                            color: Color(0xFF999999),
+                            fontSize: 15,
+                            fontFamily: 'PingFang TC',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
+                          width: 24,
+                          height: 24,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(),
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              child: Text(
-                '*非香港居民或以公司名義購入（稅率劃ㄧ為15%）。',
-                style: TextStyle(
-                  color: Color(0xFF999999),
-                  fontSize: 15,
-                  fontFamily: 'PingFang TC',
-                  fontWeight: FontWeight.w400,
-                  height: 0.10,
                 ),
-              ),
-            ),
-            Container(
-              width: 393*wScale,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x19333333),
-                    blurRadius: 0,
-                    offset: Offset(0, 1),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    '雙倍印花稅',
+                const SizedBox(height: 1,),
+                Container(
+                  height: 56,
+                  width: double.infinity,
+                  color: Colors.white,
+                  padding: EdgeInsets.all(16),
+                  child: const Row(
+                    children: [
+                      Text(
+                        '按揭年息',
+                        style: TextStyle(
+                          color: Color(0xFF333333),
+                          fontSize: 15,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Spacer(),
+                      SizedBox(
+                        width: 60,
+                        child: TextField(
+                          textAlign: TextAlign.end,
+                          obscureText: false,
+                          maxLines: 1,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: '2.5',
+                            hintStyle: TextStyle(
+                              color: Color(0xFF333333),
+                              fontSize: 18,
+                              fontFamily: 'PingFang TC',
+                              fontWeight: FontWeight.w400,
+                            ),
+                            isDense: true,
+                            contentPadding: EdgeInsets.zero,
+                          ),
+                          style: TextStyle(
+                            color: Color(0xFF333333),
+                            fontSize: 18,
+                            fontFamily: 'PingFang TC',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 7,),
+                      Text(
+                        '%',
+                        style: TextStyle(
+                          color: Color(0xFF999999),
+                          fontSize: 15,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4,),
+                  child: const Text(
+                    '印花稅',
                     style: TextStyle(
-                      color: Color(0xFF333333),
+                      color: Color(0xFF999999),
                       fontSize: 15,
                       fontFamily: 'PingFang TC',
                       fontWeight: FontWeight.w400,
-                      height: 0.10,
                     ),
                   ),
-                  Container(
-                    child: Switch(
-                      // This bool value toggles the switch.
-                      value: light,
-                      activeColor: Color(0xFF50C5D5),
-                      onChanged: (bool value) {
-                        // This is called when the user toggles the switch.
+                ),
+                GestureDetector(
+                  onTap: () {
+                    _showPicker(
+                      CupertinoPicker(
+                      magnification: 1.22,
+                      squeeze: 1.2,
+                      useMagnifier: true,
+                      itemExtent: 32.0,
+                      scrollController: FixedExtentScrollController(
+                        initialItem: _selectedTax,
+                      ),
+                      onSelectedItemChanged: (int selectedItem) {
                         setState(() {
-                          light = value;
+                          _selectedTax = selectedItem;
                         });
                       },
+                      children: List<Widget>.generate(taxIn.length, (int index) {
+                        return Center(
+                          child: Text(taxIn[index]),
+                        );
+                      }),
+                    ),
+                    );
+                  },
+                  child: Container(
+                    height: 56,
+                    width: double.infinity,
+                    color: Colors.white,
+                    padding: EdgeInsets.all(16),
+                    child: Row(
+                      children: [
+                        const Text(
+                          '樓盤價格',
+                          style: TextStyle(
+                            color: Color(0xFF333333),
+                            fontSize: 15,
+                            fontFamily: 'PingFang TC',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const Spacer(),
+                        Text(
+                          '${taxIn[_selectedTax]}',
+                          style: const TextStyle(
+                            color: Color(0xFF999999),
+                            fontSize: 15,
+                            fontFamily: 'PingFang TC',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
+                          width: 24,
+                          height: 24,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(),
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20,),
-            Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white, backgroundColor: Color(0xFF50C5D5),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(3), // 設定按鈕圓角為3
-                    ),
                 ),
-                onPressed: () {},
-                child: const Text('開始計算'),
-              ),
+                const SizedBox(height: 1,),
+                Container(
+                  height: 56,
+                  width: double.infinity,
+                  color: Colors.white,
+                  padding: EdgeInsets.all(16),
+                  child: Row(
+                    children: [
+                      const Text(
+                        '買家印花稅',
+                        style: TextStyle(
+                          color: Color(0xFF333333),
+                          fontSize: 15,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const Spacer(),
+                      Container(
+                        child: Switch(
+                          // This bool value toggles the switch.
+                          value: light,
+                          activeColor: Color(0xFF50C5D5),
+                          onChanged: (bool value) {
+                            // This is called when the user toggles the switch.
+                            setState(() {
+                              light = value;
+                            });
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4,),
+                  child: const Text(
+                    '*非香港居民或以公司名義購入(稅率劃ㄧ為15%)。只用於住宅業務。',
+                    style: TextStyle(
+                      color: Color(0xFF999999),
+                      fontSize: 15,
+                      fontFamily: 'PingFang TC',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 56,
+                  width: double.infinity,
+                  color: Colors.white,
+                  padding: EdgeInsets.all(16),
+                  child: Row(
+                    children: [
+                      const Text(
+                        '雙倍印花稅',
+                        style: TextStyle(
+                          color: Color(0xFF333333),
+                          fontSize: 15,
+                          fontFamily: 'PingFang TC',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const Spacer(),
+                      Container(
+                        child: Switch(
+                          // This bool value toggles the switch.
+                          value: light,
+                          activeColor: Color(0xFF50C5D5),
+                          onChanged: (bool value) {
+                            // This is called when the user toggles the switch.
+                            setState(() {
+                              light = value;
+                            });
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4,),
+                  child: const Text(
+                    '*非首次置業買家（包括住宅、工商舖及單位），印花稅大概是原有的雙倍',
+                    style: TextStyle(
+                      color: Color(0xFF999999),
+                      fontSize: 15,
+                      fontFamily: 'PingFang TC',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: const Color(0xFF50C5D5),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(3),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text('開始計算'),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
-      )
+      ),
     );
   }
 }

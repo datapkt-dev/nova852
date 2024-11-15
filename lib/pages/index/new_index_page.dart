@@ -1,19 +1,17 @@
 import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/item_detail.dart';
 import 'package:nova852/pages/index/bank_plan.dart';
 import 'package:nova852/pages/index/components/block_r_and_s.dart';
 import 'package:nova852/pages/index/components/list_item.dart';
-import 'package:nova852/pages/index/mortgage_page.dart';
+import 'package:nova852/pages/index/old_mortgage_page.dart';
 import 'package:nova852/pages/index/news.dart';
 import 'package:nova852/pages/index/rental_page.dart';
 import 'package:nova852/pages/index/transaction_history.dart';
 import 'package:nova852/pages/profile/contract_history.dart';
 import 'package:nova852/test/maptest.dart';
-
+import 'mortgage_page.dart';
 import 'news_content.dart';
 
 class NewIndexPage extends StatefulWidget {

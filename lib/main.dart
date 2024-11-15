@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // 自動生成的本地化文件
+import 'package:nova852/login.dart';
 import 'package:provider/provider.dart';
 
 import 'components/bottombar.dart';
@@ -66,5 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return const BottomBar();
+    // return Login();
   }
 }

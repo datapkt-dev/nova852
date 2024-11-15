@@ -117,7 +117,8 @@ class _SettingState extends State<Setting> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        _showPicker(CupertinoPicker(
+                        _showPicker(
+                          CupertinoPicker(
                             magnification: 1.22,
                             squeeze: 1.2,
                             useMagnifier: true,
@@ -133,9 +134,12 @@ class _SettingState extends State<Setting> {
                               // print(_sclectedLocale)
                             },
                             children: List<Widget>.generate(
-                                L10n.languages.length, (int index) {
-                              return Center(child: Text(L10n.languages[index]));
-                            })));
+                              L10n.languages.length, (int index) {
+                                return Center(child: Text(L10n.languages[index]));
+                              }
+                            )
+                          ),
+                        );
                       },
                       child: Container(
                         width: double.infinity,

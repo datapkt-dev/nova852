@@ -18,20 +18,22 @@ class _MortgagePageState extends State<MortgagePage> {
   void _showPicker(Widget child) {
     showCupertinoModalPopup<void>(
       context: context,
-      builder: (BuildContext context) => Container(
-        height: 216,
-        padding: const EdgeInsets.only(top: 6.0),
-        // 讓 popup modal 對齊底部
-        margin: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-        ),
-        // Popup model 背景.
-        color: CupertinoColors.systemBackground.resolveFrom(context),
-        child: SafeArea(
-          top: false,
-          child: child,
-        ),
-      ),
+      builder: (BuildContext context) {
+        return Container(
+          height: 216,
+          padding: const EdgeInsets.only(top: 6.0),
+          // 讓 popup modal 對齊底部
+          margin: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          // Popup model 背景.
+          color: CupertinoColors.systemBackground.resolveFrom(context),
+          child: SafeArea(
+            top: false,
+            child: child,
+          ),
+        );
+      },
     );
   }
 
@@ -51,7 +53,7 @@ class _MortgagePageState extends State<MortgagePage> {
         height: double.infinity,
         color: const Color(0xFFF2F2F2),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 2),
+          padding: const EdgeInsets.symmetric(vertical: 2),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -59,7 +61,7 @@ class _MortgagePageState extends State<MortgagePage> {
                   height: 56,
                   width: double.infinity,
                   color: Colors.white,
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: const Row(
                     children: [
                       Text(
@@ -117,7 +119,7 @@ class _MortgagePageState extends State<MortgagePage> {
                   height: 56,
                   width: double.infinity,
                   color: Colors.white,
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Row(
                     children: [
                       const Text(
@@ -144,8 +146,8 @@ class _MortgagePageState extends State<MortgagePage> {
                         width: 24,
                         height: 24,
                         clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(),
-                        child: Icon(
+                        decoration: const BoxDecoration(),
+                        child: const Icon(
                           Icons.arrow_forward_ios,
                         ),
                       ),
@@ -181,7 +183,7 @@ class _MortgagePageState extends State<MortgagePage> {
                     height: 56,
                     width: double.infinity,
                     color: Colors.white,
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Row(
                       children: [
                         const Text(
@@ -196,7 +198,7 @@ class _MortgagePageState extends State<MortgagePage> {
                         const Spacer(),
                         Text(
                           '${terms[_selectedTerms]}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Color(0xFF999999),
                             fontSize: 15,
                             fontFamily: 'PingFang TC',
@@ -208,8 +210,8 @@ class _MortgagePageState extends State<MortgagePage> {
                           width: 24,
                           height: 24,
                           clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Icon(
+                          decoration: const BoxDecoration(),
+                          child: const Icon(
                             Icons.arrow_forward_ios,
                           ),
                         ),
@@ -222,7 +224,7 @@ class _MortgagePageState extends State<MortgagePage> {
                   height: 56,
                   width: double.infinity,
                   color: Colors.white,
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: const Row(
                     children: [
                       Text(
@@ -292,31 +294,31 @@ class _MortgagePageState extends State<MortgagePage> {
                   onTap: () {
                     _showPicker(
                       CupertinoPicker(
-                      magnification: 1.22,
-                      squeeze: 1.2,
-                      useMagnifier: true,
-                      itemExtent: 32.0,
-                      scrollController: FixedExtentScrollController(
-                        initialItem: _selectedTax,
+                        magnification: 1.22,
+                        squeeze: 1.2,
+                        useMagnifier: true,
+                        itemExtent: 32,
+                        scrollController: FixedExtentScrollController(
+                          initialItem: _selectedTax,
+                        ),
+                        onSelectedItemChanged: (int selectedItem) {
+                          setState(() {
+                            _selectedTax = selectedItem;
+                          });
+                        },
+                        children: List<Widget>.generate(taxIn.length, (int index) {
+                          return Center(
+                            child: Text(taxIn[index]),
+                          );
+                        }),
                       ),
-                      onSelectedItemChanged: (int selectedItem) {
-                        setState(() {
-                          _selectedTax = selectedItem;
-                        });
-                      },
-                      children: List<Widget>.generate(taxIn.length, (int index) {
-                        return Center(
-                          child: Text(taxIn[index]),
-                        );
-                      }),
-                    ),
                     );
                   },
                   child: Container(
                     height: 56,
                     width: double.infinity,
                     color: Colors.white,
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Row(
                       children: [
                         const Text(
@@ -343,8 +345,8 @@ class _MortgagePageState extends State<MortgagePage> {
                           width: 24,
                           height: 24,
                           clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Icon(
+                          decoration: const BoxDecoration(),
+                          child: const Icon(
                             Icons.arrow_forward_ios,
                           ),
                         ),
@@ -357,7 +359,7 @@ class _MortgagePageState extends State<MortgagePage> {
                   height: 56,
                   width: double.infinity,
                   color: Colors.white,
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Row(
                     children: [
                       const Text(
@@ -370,18 +372,16 @@ class _MortgagePageState extends State<MortgagePage> {
                         ),
                       ),
                       const Spacer(),
-                      Container(
-                        child: Switch(
-                          // This bool value toggles the switch.
-                          value: light,
-                          activeColor: Color(0xFF50C5D5),
-                          onChanged: (bool value) {
-                            // This is called when the user toggles the switch.
-                            setState(() {
-                              light = value;
-                            });
-                          },
-                        ),
+                      Switch(
+                        // This bool value toggles the switch.
+                        value: light,
+                        activeColor: const Color(0xFF50C5D5),
+                        onChanged: (bool value) {
+                          // This is called when the user toggles the switch.
+                          setState(() {
+                            light = value;
+                          });
+                        },
                       ),
                     ],
                   ),
@@ -403,7 +403,7 @@ class _MortgagePageState extends State<MortgagePage> {
                   height: 56,
                   width: double.infinity,
                   color: Colors.white,
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Row(
                     children: [
                       const Text(
@@ -416,18 +416,16 @@ class _MortgagePageState extends State<MortgagePage> {
                         ),
                       ),
                       const Spacer(),
-                      Container(
-                        child: Switch(
-                          // This bool value toggles the switch.
-                          value: light,
-                          activeColor: Color(0xFF50C5D5),
-                          onChanged: (bool value) {
-                            // This is called when the user toggles the switch.
-                            setState(() {
-                              light = value;
-                            });
-                          },
-                        ),
+                      Switch(
+                        // This bool value toggles the switch.
+                        value: light,
+                        activeColor: const Color(0xFF50C5D5),
+                        onChanged: (bool value) {
+                          // This is called when the user toggles the switch.
+                          setState(() {
+                            light = value;
+                          });
+                        },
                       ),
                     ],
                   ),

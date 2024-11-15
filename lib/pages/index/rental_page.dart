@@ -17,7 +17,7 @@ class RentalPage extends StatefulWidget {
 
   final List<String> tab = ['用途', '地區', '價錢', /*'面積', */'其他', '排序'];
   final List<String> tab2 = ['Tagging', 'Tagging', 'Tagging', 'Tagging', 'Tagging', 'Tagging', 'Tagging', 'Tagging'];
-  final filterWidget = [FunctionWidget2(), AreaWidget2(), PriceWidget(), /*Container(), */MoreWidget(), Container()];
+  final filterWidget = [const FunctionWidget2(), AreaWidget2(), const PriceWidget(), /*Container(), */const MoreWidget(), Container()];
 
   @override
   State<RentalPage> createState() => _RentalPageState();
@@ -40,7 +40,6 @@ class _RentalPageState extends State<RentalPage> {
 
   Future<void> fetchProperties() async {
     final response = await http.get(Uri.parse('$_baseUrl/properties'));
-    // print('feedback');
     // print(response.body);
     if (response.statusCode == 200) {
       List<dynamic> properties = json.decode(response.body);
@@ -66,10 +65,10 @@ class _RentalPageState extends State<RentalPage> {
     // double wScale = screenWidth/393;
 
     return Scaffold(
-      backgroundColor: Color(0xFFF2F2F2),
+      backgroundColor: const Color(0xFFF2F2F2),
       appBar: AppBar(
           scrolledUnderElevation: 0,
-          title: Text('租屋'),
+          title: const Text('租屋'),
           actions: [
             IconButton(
               onPressed: (){},
@@ -86,7 +85,7 @@ class _RentalPageState extends State<RentalPage> {
           children: [
             Column(
               children: [
-                SizedBox(height: 35,),
+                const SizedBox(height: 35,),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
@@ -95,7 +94,7 @@ class _RentalPageState extends State<RentalPage> {
                           scrollDirection: Axis.horizontal,
                           child: Container(
                             height: 50,
-                            padding: EdgeInsets.symmetric(horizontal: 16,vertical: 0),
+                            padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 0),
                             alignment: Alignment.center,
                             child: Row(
                               children: List.generate(widget.tab2.length, (index) {
@@ -110,13 +109,13 @@ class _RentalPageState extends State<RentalPage> {
                                       child: Container(
                                         height: 20,
                                         decoration: ShapeDecoration(
-                                          gradient: _selectedIndex == index ? LinearGradient(
+                                          gradient: _selectedIndex == index ? const LinearGradient(
                                             begin: Alignment(0.99, -0.16),
                                             end: Alignment(-0.99, 0.16),
                                             colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
                                           ) : null,
                                           shape: RoundedRectangleBorder(
-                                            side: BorderSide(
+                                            side: const BorderSide(
                                               width: 0.50,
                                               color: Color(0xFF07A1B4),
                                             ),
@@ -124,11 +123,11 @@ class _RentalPageState extends State<RentalPage> {
                                           ),
                                         ),
                                         alignment: Alignment.center,
-                                        padding: EdgeInsets.symmetric(horizontal: 19),
+                                        padding: const EdgeInsets.symmetric(horizontal: 19),
                                         child: Text(
                                           widget.tab2[index],
                                           style: TextStyle(
-                                            color: _selectedIndex == index ? Colors.white : Color(0xFF07A1B4),
+                                            color: _selectedIndex == index ? Colors.white : const Color(0xFF07A1B4),
                                             fontSize: 12,
                                             fontFamily: 'Noto Sans TC',
                                             fontWeight: FontWeight.w500,
@@ -136,7 +135,7 @@ class _RentalPageState extends State<RentalPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 4,),
+                                    const SizedBox(width: 4,),
                                   ],
                                 );
                               }),
@@ -146,7 +145,7 @@ class _RentalPageState extends State<RentalPage> {
                         Column(
                           children: List.generate(propertylist.length, (index) {
                           return Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6,),
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6,),
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
@@ -155,18 +154,18 @@ class _RentalPageState extends State<RentalPage> {
                               ),
                               child: GestureDetector(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemDetail()));
                                 },
                                 // child: ListItem(),
                                 child: Container(
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   decoration: ShapeDecoration(
                                     color: Colors.white,
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
                                   ),
                                   child: Row(
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         width: 120,
                                         height: 164,
                                         child: Image.network(propertylist[index]['imageUrl']),
@@ -178,7 +177,7 @@ class _RentalPageState extends State<RentalPage> {
                                         //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
                                         // ),
                                       ),
-                                      SizedBox(width: 10,),
+                                      const SizedBox(width: 10,),
                                       Expanded(
                                           child: SizedBox(
                                             height: 164,
@@ -189,14 +188,14 @@ class _RentalPageState extends State<RentalPage> {
                                               children: [
                                                 Text(
                                                   propertylist[index]['propertyName'],
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     color: Color(0xFF171717),
                                                     fontSize: 16,
                                                     fontFamily: 'Noto Sans TC',
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
-                                                Row(
+                                                const Row(
                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                   children: [
                                                     Text(
@@ -222,15 +221,15 @@ class _RentalPageState extends State<RentalPage> {
                                                 ),
                                                 Text(
                                                   '${propertylist[index]['propertyType']} ${propertylist[index]['label']}',
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     color: Color(0xFF6D6D6D),
                                                     fontSize: 14,
                                                     fontFamily: 'Noto Sans TC',
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
-                                                Divider(color: Color(0xFF6D6D6D),),
-                                                Text(
+                                                const Divider(color: Color(0xFF6D6D6D),),
+                                                const Text(
                                                   '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
                                                   style: TextStyle(
                                                     color: Color(0xFF171717),
@@ -251,12 +250,12 @@ class _RentalPageState extends State<RentalPage> {
                                                           height: 22,
                                                           decoration: ShapeDecoration(
                                                             shape: RoundedRectangleBorder(
-                                                              side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                              side: const BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
                                                               borderRadius: BorderRadius.circular(10),
                                                             ),
                                                           ),
                                                           alignment: Alignment.center,
-                                                          child: Text(
+                                                          child: const Text(
                                                             'Tagging',
                                                             style: TextStyle(
                                                               color: Color(0xFF07A1B4),
@@ -266,18 +265,18 @@ class _RentalPageState extends State<RentalPage> {
                                                             ),
                                                           ),
                                                         ),
-                                                        SizedBox(width: 4,),
+                                                        const SizedBox(width: 4,),
                                                         Container(
                                                           width: 62,
                                                           height: 22,
                                                           decoration: ShapeDecoration(
                                                             shape: RoundedRectangleBorder(
-                                                              side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                              side: const BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
                                                               borderRadius: BorderRadius.circular(10),
                                                             ),
                                                           ),
                                                           alignment: Alignment.center,
-                                                          child: Text(
+                                                          child: const Text(
                                                             'Tagging',
                                                             style: TextStyle(
                                                               color: Color(0xFF07A1B4),
@@ -293,14 +292,14 @@ class _RentalPageState extends State<RentalPage> {
                                                       children: [
                                                         Text(
                                                           '\$${propertylist[index]['defaultRent']}',
-                                                          style: TextStyle(
+                                                          style: const TextStyle(
                                                             color: Color(0xFFE86100),
                                                             fontSize: 16,
                                                             fontFamily: 'Noto Sans TC',
                                                             fontWeight: FontWeight.w500,
                                                           ),
                                                         ),
-                                                        Text(
+                                                        const Text(
                                                           '/月',
                                                           style: TextStyle(
                                                             color: Color(0xFFE86100),
@@ -356,7 +355,7 @@ class _RentalPageState extends State<RentalPage> {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         alignment: Alignment.center,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -381,14 +380,14 @@ class _RentalPageState extends State<RentalPage> {
                                         Text(
                                           widget.tab[index],
                                           style: TextStyle(
-                                            color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                            color: _selectedIndex == index ? const Color(0xFF07A1B4) : const Color(0xFF333333),
                                             fontFamily: 'Noto Sans TC',
                                             fontSize: 20,
                                           ),
                                         ),
                                         Icon(
                                           Icons.arrow_drop_down,
-                                          color: _selectedIndex == index ? Color(0xFF07A1B4) : Color(0xFF333333),
+                                          color: _selectedIndex == index ? const Color(0xFF07A1B4) : const Color(0xFF333333),
                                         ),
                                       ],
                                     ),
@@ -399,7 +398,7 @@ class _RentalPageState extends State<RentalPage> {
                           }),
                         ),
                       ),
-                      Divider(height: 0,),
+                      const Divider(height: 0,),
                     ],
                   ),
                 ),

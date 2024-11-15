@@ -8,7 +8,7 @@ class PriceWidget extends StatefulWidget {
 }
 
 class _PriceWidgetState extends State<PriceWidget> {
-  RangeValues _currentRangeValues = const RangeValues(50000, 150000);
+  RangeValues _currentRangeValues = const RangeValues(5000, 15000);
   @override
   Widget build(BuildContext context) {
     // double screenWidth = MediaQuery.of(context).size.width;
@@ -23,8 +23,8 @@ class _PriceWidgetState extends State<PriceWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '價格範圍\$62萬-\$2億',
+            const Text(
+              '價格範圍\$0 - 無限',
               style: TextStyle(
                 color: Color(0xFF333333),
                 fontSize: 15,
@@ -32,7 +32,7 @@ class _PriceWidgetState extends State<PriceWidget> {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             SizedBox(
               width: double.infinity,
               child: Row(
@@ -46,9 +46,9 @@ class _PriceWidgetState extends State<PriceWidget> {
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                     clipBehavior: Clip.antiAlias,
                     decoration: ShapeDecoration(
-                      color: Color(0xFFFBFBFB),
+                      color: const Color(0xFFFBFBFB),
                       shape: RoundedRectangleBorder(
-                        side: BorderSide(
+                        side: const BorderSide(
                           width: 1,
                           strokeAlign: BorderSide.strokeAlignCenter,
                           color: Color(0xFFEBEBEB),
@@ -60,7 +60,7 @@ class _PriceWidgetState extends State<PriceWidget> {
                       child: Text(
                         '\$${_currentRangeValues.start.round()}',
                         textAlign: TextAlign.right,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color(0xFF333333),
                           fontSize: 18,
                           fontFamily: 'PingFang TC',
@@ -71,10 +71,10 @@ class _PriceWidgetState extends State<PriceWidget> {
                     )
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Container(
                       width: 15,
-                      decoration: ShapeDecoration(
+                      decoration: const ShapeDecoration(
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
                             width: 2,
@@ -85,58 +85,47 @@ class _PriceWidgetState extends State<PriceWidget> {
                       ),
                     ),
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 115,
-                          height: 37,
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                          decoration: ShapeDecoration(
-                            color: Color(0xFFFBFBFB),
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignCenter,
-                                color: Color(0xFFEBEBEB),
-                              ),
-                              borderRadius: BorderRadius.circular(3),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 115,
+                        height: 37,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        decoration: ShapeDecoration(
+                          color: const Color(0xFFFBFBFB),
+                          shape: RoundedRectangleBorder(
+                            side: const BorderSide(
+                              width: 1,
+                              strokeAlign: BorderSide.strokeAlignCenter,
+                              color: Color(0xFFEBEBEB),
                             ),
+                            borderRadius: BorderRadius.circular(3),
                           ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                '\$${_currentRangeValues.end.round()}',
-                                textAlign: TextAlign.right,
-                                style: TextStyle(
-                                  color: Color(0xFF333333),
-                                  fontSize: 18,
-                                  fontFamily: 'PingFang TC',
-                                  fontWeight: FontWeight.w500,
-                                  height: 0,
-                                ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                            _currentRangeValues.end.round() > 80000 ? '無限' :'\$${_currentRangeValues.end.round()}',
+                              textAlign: TextAlign.right,
+                              style: const TextStyle(
+                                color: Color(0xFF333333),
+                                fontSize: 18,
+                                fontFamily: 'PingFang TC',
+                                fontWeight: FontWeight.w500,
+                                height: 0,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 8),
-                        Text(
-                          '萬',
-                          style: TextStyle(
-                            color: Color(0xFF333333),
-                            fontSize: 15,
-                            fontFamily: 'PingFang TC',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(width: 8),
+                    ],
                   ),
                 ],
               ),
@@ -150,16 +139,16 @@ class _PriceWidgetState extends State<PriceWidget> {
                   imageProvider: const AssetImage('assets/images/thumb.png'), // 或使用 SvgPicture.asset('assets/your_icon.svg').image
                 ),
                 // 可選，自定義其他屬性，例如滑塊的顏色
-                activeTrackColor: Color(0xFF50C5D5), // 滑動條激活部分的顏色
+                activeTrackColor: const Color(0xFF50C5D5), // 滑動條激活部分的顏色
                 inactiveTrackColor: Colors.grey, // 滑動條非激活部分的顏色
-                thumbColor: Color(0xFF50C5D5), // 滑塊的顏色
-                overlayColor: Color(0xFF50C5D5).withAlpha(32), // 滑塊外圍顯示的顏色
+                thumbColor: const Color(0xFF50C5D5), // 滑塊的顏色
+                overlayColor: const Color(0xFF50C5D5).withAlpha(32), // 滑塊外圍顯示的顏色
               ),
               child: RangeSlider(
                 values: _currentRangeValues,
                 min: 0,
-                max: 200000,
-                divisions: 200000,
+                max: 80100,
+                divisions: 800,
                 labels: RangeLabels(
                   _currentRangeValues.start.round().toString(),
                   _currentRangeValues.end.round().toString(),
@@ -171,10 +160,10 @@ class _PriceWidgetState extends State<PriceWidget> {
                 },
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Container(
-                padding: EdgeInsets.symmetric(vertical: 9, horizontal: 16),
-                decoration: ShapeDecoration(
+                padding: const EdgeInsets.symmetric(vertical: 9, horizontal: 16),
+                decoration: const ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
@@ -201,10 +190,10 @@ class _PriceWidgetState extends State<PriceWidget> {
                           height: 50,
                           alignment: Alignment.center,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFB3B3B3),
+                            color: const Color(0xFFB3B3B3),
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                           ),
-                          child: Text(
+                          child: const Text(
                             '重設',
                             style: TextStyle(
                               color: Colors.white,
@@ -216,13 +205,13 @@ class _PriceWidgetState extends State<PriceWidget> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 15,),
+                    const SizedBox(width: 15,),
                     Expanded(
                       flex: 2,
                       child: Container(
                         height: 50,
                         decoration: ShapeDecoration(
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             begin: Alignment(0.99, -0.16),
                             end: Alignment(-0.99, 0.16),
                             colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
@@ -230,7 +219,7 @@ class _PriceWidgetState extends State<PriceWidget> {
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                         ),
                         alignment: Alignment.center,
-                        child: Text(
+                        child: const Text(
                           '確定 (7,623個樓盤)',
                           textAlign: TextAlign.center,
                           style: TextStyle(

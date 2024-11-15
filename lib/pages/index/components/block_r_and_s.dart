@@ -4,7 +4,7 @@ import 'package:nova852/pages/index/rental_page.dart';
 class BlockRandS extends StatelessWidget {
   final int index;
 
-  const BlockRandS({Key? key, this.index = 0}) : super(key: key);
+  const BlockRandS({super.key, this.index = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +25,8 @@ class BlockRandS extends StatelessWidget {
                           decoration: ShapeDecoration(
                             image: DecorationImage(
                               image: index == 0
-                                  ? AssetImage('assets/images/index_block_buy.png')
-                                  : AssetImage('assets/images/index_block_rent.png'),
+                                  ? const AssetImage('assets/images/index_block_buy.png')
+                                  : const AssetImage('assets/images/index_block_rent.png'),
                               fit: BoxFit.cover,
                             ),
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),

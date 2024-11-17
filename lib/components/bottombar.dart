@@ -62,7 +62,7 @@ class _BottomBarState extends State<BottomBar> {
               color: _currentIndex == 1 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
               'assets/icons/bottombar/search.svg',
             ),
-            label: AppLocalizations.of(context)!.setting,
+            label: AppLocalizations.of(context)!.search,
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(

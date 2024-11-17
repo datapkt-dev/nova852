@@ -11,8 +11,7 @@ class NewProfilePage extends StatefulWidget {
 }
 
 class _NewProfileState extends State<NewProfilePage> {
-
-  final _block = [StepOne(), StepTwo(), LoggedIn(),];
+  final _block = [const StepOne(), const StepTwo(), const LoggedIn(),];
 
   @override
   Widget build(BuildContext context) {

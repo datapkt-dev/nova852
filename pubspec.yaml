@@ -152,6 +152,13 @@ flutter:
     - assets/icons/setting/twitch.svg
     - assets/icons/search_page/map-pin.svg
     - assets/icons/search_page/search.svg
+    - assets/icons/furniture/clothesDryer.svg
+    - assets/icons/furniture/dishwasher.svg
+    - assets/icons/furniture/heater.svg
+    - assets/icons/furniture/inductionCooker.svg
+    - assets/icons/furniture/oven.svg
+    - assets/icons/furniture/rangeHood.svg
+    - assets/icons/furniture/steamOven.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

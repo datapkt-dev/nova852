@@ -6,7 +6,8 @@ import 'package:nova852/pages/index/components/list_item.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ItemDetail extends StatefulWidget {
-  const ItemDetail({super.key});
+  final Map<String, dynamic>? itemData;
+  const ItemDetail({super.key, this.itemData,});
 
   @override
   State<ItemDetail> createState() => _ItemDetailState();
@@ -14,11 +15,75 @@ class ItemDetail extends StatefulWidget {
 
 class _ItemDetailState extends State<ItemDetail> {
   // late GoogleMapController mapController;
+  late final Map<String, dynamic>? itemData;
+  final ScrollController _scrollController = ScrollController();
   final List<String> tab = ['基本資料', '單位詳情', '鄰近設施',];
   final List<String> mapItem = ['交通', '超市', '餐飲', '銀行', '學校', '醫院',];
   int _selectedIndex = 0;
   int _selectedItem = 0;
   int _selectedHistory = 0;
+
+  final List<List<dynamic>> furniture = [
+    ['電視', 'assets/icons/furniture/tv.svg', true],
+    ['微波爐', 'assets/icons/furniture/microwave.svg', false],
+    ['冷氣機', 'assets/icons/furniture/aircon.svg', true],
+    ['洗衣機', 'assets/icons/furniture/washer.svg', true],
+    ['熱水爐', 'assets/icons/furniture/heater.svg', false],
+    ['雪櫃', 'assets/icons/furniture/refrigerator.svg', true],
+    ['蒸焗爐', 'assets/icons/furniture/steamOven.svg', true],
+    ['電磁爐', 'assets/icons/furniture/inductionCooker.svg', true],
+    ['抽油煙機', 'assets/icons/furniture/rangeHood.svg', true],
+    ['焗爐', 'assets/icons/furniture/oven.svg', false],
+    ['洗碗碟機', 'assets/icons/furniture/dishwasher.svg', false],
+    ['乾衣機', 'assets/icons/furniture/clothesDryer.svg', true],
+  ];
+
+  @override
+  void initState() {
+    print(widget.itemData);
+    super.initState();
+    itemData = widget.itemData;
+    _scrollController.addListener(() {
+      double offset = _scrollController.offset;
+
+      setState(() {
+        if (offset >= 0 && offset < 700) {
+          _selectedIndex = 0;
+        } else if (offset >= 700 && offset < 1260) {
+          _selectedIndex = 1;
+        } else if (offset >= 1260) {
+          _selectedIndex = 2;
+        }
+      });
+    });
+  }
+
+  showDialogFunc(context, img) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return Center(
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
+            padding: const EdgeInsets.all(15),
+            child: itemData != null
+                ? Image.network(itemData?['ad_parameters']['thumbnail_url'])
+                : Image.asset(img,),
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +94,8 @@ class _ItemDetailState extends State<ItemDetail> {
         elevation: 0,
         centerTitle: false,
         title: Text(
-          '將軍澳 東港城 1座 高層 C室',
-          style: TextStyle(
+          widget.itemData != null ? '${widget.itemData?['ad_parameters']['title']}' : '將軍澳 東港城 1座 高層 C室',
+          style: const TextStyle(
             color: Color(0xFF171717),
             fontSize: 18,
             fontFamily: 'Noto Sans TC',
@@ -65,7 +130,7 @@ class _ItemDetailState extends State<ItemDetail> {
                       flex: 1,
                       child: Container(
                         alignment: Alignment.center,
-                        decoration: _selectedIndex == index ? BoxDecoration(
+                        decoration: _selectedIndex == index ? const BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
                               color: Color(0xFF171717),
@@ -73,7 +138,7 @@ class _ItemDetailState extends State<ItemDetail> {
                             ),
                           ),
                         )
-                            : BoxDecoration(
+                            : const BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
                               color: Colors.transparent,
@@ -87,6 +152,15 @@ class _ItemDetailState extends State<ItemDetail> {
                             setState(() {
                               _selectedIndex = index;
                             });
+                            if(index==0) {
+                              _scrollController.jumpTo(0);
+                            }
+                            if(index==1) {
+                              _scrollController.jumpTo(700);
+                            }
+                            if(index==2) {
+                              _scrollController.jumpTo(1260);
+                            }
                           },
                         ),
                       ),
@@ -96,6 +170,7 @@ class _ItemDetailState extends State<ItemDetail> {
               ),
               Expanded(
                 child: SingleChildScrollView(
+                  controller: _scrollController,
                   child: Column(
                     children: [
                       SizedBox(
@@ -107,10 +182,9 @@ class _ItemDetailState extends State<ItemDetail> {
                               onTap: () {
                                 showDialogFunc(context, 'assets/images/item_img.jpeg');
                               },
-                              child: Image.asset(
-                                'assets/images/item_img.jpeg',
-                                fit: BoxFit.fill,
-                              ),
+                              child: widget.itemData != null
+                                  ? Image.network(widget.itemData?['ad_parameters']['thumbnail_url'])
+                                  : Image.asset('assets/images/item_img.jpeg', fit: BoxFit.fill,),
                             );
                             // return Image.asset(
                             //   'assets/images/item_img.jpeg',
@@ -121,7 +195,7 @@ class _ItemDetailState extends State<ItemDetail> {
                         ),
                       ), //照片
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 14,),
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14,),
                         child: Column(
                           children: [
                             Container(
@@ -130,7 +204,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(6),
                               ),
-                              padding: EdgeInsets.all(15),
+                              padding: const EdgeInsets.all(15),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -138,8 +212,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        '將軍澳 東港城 1座 高層 C室',
-                                        style: TextStyle(
+                                        widget.itemData != null ? '${widget.itemData?['ad_parameters']['title']}' : '將軍澳 東港城 1座 高層 C室',
+                                        style: const TextStyle(
                                           color: Color(0xFF171717),
                                           fontSize: 18,
                                           fontFamily: 'Noto Sans TC',
@@ -156,7 +230,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           alignment: Alignment.center,
                                           clipBehavior: Clip.antiAlias,
                                           decoration: ShapeDecoration(
-                                            gradient: LinearGradient(
+                                            gradient: const LinearGradient(
                                               begin: Alignment(0.99, -0.16),
                                               end: Alignment(-0.99, 0.16),
                                               colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
@@ -170,7 +244,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 width: 16,
                                                 height: 16,
                                                 'assets/icons/item_detail/layout.svg',),
-                                              Text(
+                                              const Text(
                                                 '平面圖',
                                                 style: TextStyle(
                                                   color: Color(0xFFFFFFFF),
@@ -186,14 +260,14 @@ class _ItemDetailState extends State<ItemDetail> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 5),
+                                    padding: const EdgeInsets.symmetric(vertical: 5),
                                     child: Row(
                                       children: [
                                         SvgPicture.asset('assets/icons/item_detail/location.svg'),
-                                        SizedBox(width: 3,),
+                                        const SizedBox(width: 3,),
                                         Text(
-                                          '將軍澳 坑口 重華路 8號',
-                                          style: TextStyle(
+                                          widget.itemData != null ? '${widget.itemData?['address']}' : '將軍澳 坑口 重華路 8號',
+                                          style: const TextStyle(
                                             color: Color(0xFFB3B3B3),
                                             fontSize: 12,
                                             fontFamily: 'Noto Sans TC',
@@ -203,13 +277,13 @@ class _ItemDetailState extends State<ItemDetail> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 8,),
-                                  const Row(
+                                  const SizedBox(height: 8,),
+                                  Row(
                                     children: [
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             '租金',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
@@ -219,8 +293,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                             ),
                                           ),
                                           Text(
-                                            '\$14,000 ',
-                                            style: TextStyle(
+                                            widget.itemData != null ? '\$${widget.itemData?['defaultRent']}' : '\$14,000 ',
+                                            style: const TextStyle(
                                               color: Color(0xFFE86100),
                                               fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
@@ -229,11 +303,11 @@ class _ItemDetailState extends State<ItemDetail> {
                                           )
                                         ],
                                       ),
-                                      SizedBox(width: 20,),
+                                      const SizedBox(width: 20,),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             '實用',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
@@ -246,8 +320,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                             crossAxisAlignment: CrossAxisAlignment.end,
                                             children: [
                                               Text(
-                                                '506',
-                                                style: TextStyle(
+                                                widget.itemData != null ? '${widget.itemData?['ad_parameters']['usable_area']}' : '506',
+                                                style: const TextStyle(
                                                   color: Color(0xFF171717),
                                                   fontSize: 16,
                                                   fontFamily: 'Noto Sans TC',
@@ -255,8 +329,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 ),
                                               ),
                                               Text(
-                                                '呎',
-                                                style: TextStyle(
+                                                widget.itemData != null ? '${widget.itemData?['ad_parameters']['unit']}' : '呎',
+                                                style: const TextStyle(
                                                   color: Color(0xFF171717),
                                                   fontSize: 12,
                                                   fontFamily: 'Noto Sans TC',
@@ -267,11 +341,11 @@ class _ItemDetailState extends State<ItemDetail> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(width: 20,),
+                                      const SizedBox(width: 20,),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             '建築',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
@@ -284,8 +358,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                             crossAxisAlignment: CrossAxisAlignment.end,
                                             children: [
                                               Text(
-                                                '720',
-                                                style: TextStyle(
+                                                widget.itemData != null ? '${widget.itemData?['ad_parameters']['gfa']}' : '720',
+                                                style: const TextStyle(
                                                   color: Color(0xFF171717),
                                                   fontSize: 16,
                                                   fontFamily: 'Noto Sans TC',
@@ -293,8 +367,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 ),
                                               ),
                                               Text(
-                                                '呎',
-                                                style: TextStyle(
+                                                widget.itemData != null ? '${widget.itemData?['ad_parameters']['unit']}' : '呎',
+                                                style: const TextStyle(
                                                   color: Color(0xFF171717),
                                                   fontSize: 12,
                                                   fontFamily: 'Noto Sans TC',
@@ -305,11 +379,11 @@ class _ItemDetailState extends State<ItemDetail> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(width: 20,),
+                                      const SizedBox(width: 20,),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             '間隔',
                                             style: TextStyle(
                                               color: Color(0xFFB3B3B3),
@@ -319,8 +393,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                             ),
                                           ),
                                           Text(
-                                            '2房1廳',
-                                            style: TextStyle(
+                                            widget.itemData != null ? '${widget.itemData?['layout']}' : '2房1廳',
+                                            style: const TextStyle(
                                               color: Color(0xFF171717),
                                               fontSize: 16,
                                               fontFamily: 'Noto Sans TC',
@@ -331,23 +405,25 @@ class _ItemDetailState extends State<ItemDetail> {
                                       ),
                                     ],
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.symmetric(vertical: 10),
                                     child: Divider(),
                                   ),
                                   Text(
-                                    '送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。',
-                                    style: TextStyle(
+                                    widget.itemData != null
+                                        ? '${widget.itemData?['ad_parameters']['description']}'
+                                        : '送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。送首期送印花稅，送埋36個月租金，3.5米樓底，送閣樓送傢俬。',
+                                    style: const TextStyle(
                                       color: Color(0xFF171717),
                                       fontSize: 14,
                                       fontFamily: 'Noto Sans TC',
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
-                                  SizedBox(height: 20,),
+                                  const SizedBox(height: 20,),
                                   Row(
                                     children: [
-                                      Flexible(
+                                      const Flexible(
                                         flex: 1,
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -392,13 +468,13 @@ class _ItemDetailState extends State<ItemDetail> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(width: 20,),
+                                      const SizedBox(width: 20,),
                                       Flexible(
                                         flex: 1,
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text(
+                                            const Text(
                                               '按金',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
@@ -407,7 +483,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 fontWeight: FontWeight.w400,
                                               ),
                                             ),
-                                            Text(
+                                            const Text(
                                               '2個',
                                               style: TextStyle(
                                                 color: Color(0xFF171717),
@@ -416,8 +492,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 fontWeight: FontWeight.w400,
                                               ),
                                             ),
-                                            SizedBox(height: 12,),
-                                            Text(
+                                            const SizedBox(height: 12,),
+                                            const Text(
                                               '樓齡',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
@@ -427,8 +503,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                               ),
                                             ),
                                             Text(
-                                              '14年',
-                                              style: TextStyle(
+                                              widget.itemData != null ? '${widget.itemData?['ad_parameters']['age']}年' : '14年',
+                                              style: const TextStyle(
                                                 color: Color(0xFF171717),
                                                 fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
@@ -438,13 +514,13 @@ class _ItemDetailState extends State<ItemDetail> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(width: 20,),
+                                      const SizedBox(width: 20,),
                                       Flexible(
                                         flex: 1,
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text(
+                                            const Text(
                                               '裝修',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
@@ -454,16 +530,16 @@ class _ItemDetailState extends State<ItemDetail> {
                                               ),
                                             ),
                                             Text(
-                                              '精緻裝修',
-                                              style: TextStyle(
+                                              widget.itemData != null ? '${widget.itemData?['ad_parameters']['renovation']}' : '精緻裝修',
+                                              style: const TextStyle(
                                                 color: Color(0xFF171717),
                                                 fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
                                               ),
                                             ),
-                                            SizedBox(height: 12,),
-                                            Text(
+                                            const SizedBox(height: 12,),
+                                            const Text(
                                               '刊登時間',
                                               style: TextStyle(
                                                 color: Color(0xFFB3B3B3),
@@ -473,8 +549,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                               ),
                                             ),
                                             Text(
-                                              '29/4/2024',
-                                              style: TextStyle(
+                                              widget.itemData != null ? '${widget.itemData?['ad_parameters']['posting_time']}' : '29/4/2024',
+                                              style: const TextStyle(
                                                 color: Color(0xFF171717),
                                                 fontSize: 14,
                                                 fontFamily: 'Noto Sans TC',
@@ -486,8 +562,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 20,),
-                                  Row(
+                                  const SizedBox(height: 20,),
+                                  const Row(
                                     children: [
                                       Text(
                                         '房源編號：R102390',
@@ -524,7 +600,7 @@ class _ItemDetailState extends State<ItemDetail> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     '屋內設施',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
@@ -533,124 +609,156 @@ class _ItemDetailState extends State<ItemDetail> {
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                  SizedBox(height: 4,),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Container(
-                                            width: 30,
-                                            height: 30,
-                                            child: SvgPicture.asset(
-                                              color: Color(0xFF07A1B4),
-                                              'assets/icons/furniture_new/1_tv.svg',
+                                  const SizedBox(height: 4,),
+                                  Wrap(
+                                    spacing: 46,
+                                    runSpacing: 10,
+                                    children: List.generate(furniture.length, (index) {
+                                      return SizedBox(
+                                        width: 50,
+                                        height: 60,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              width: 30,
+                                              height: 30,
+                                              child: SvgPicture.asset(
+                                                color: furniture[index][2] ? const Color(0xFF07A1B4) : const Color(0xFFB3B3B3),
+                                                furniture[index][1],
+                                              ),
                                             ),
-                                          ),
-                                          Text(
-                                            '電視',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w400,
+                                            Text(
+                                              furniture[index][0],
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: furniture[index][2] ? const Color(0xFF171717) : const Color(0xFFB3B3B3),
+                                                fontSize: 12,
+                                                fontFamily: 'Noto Sans TC',
+                                                fontWeight: FontWeight.w400,
+                                              ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Container(
-                                            width: 30,
-                                            height: 30,
-                                            child: SvgPicture.asset(
-                                              color: Color(0xFF07A1B4),
-                                              'assets/icons/furniture_new/4_washer.svg',
-                                            ),
-                                          ),
-                                          Text(
-                                            '洗衣機',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          SizedBox(
-                                            width: 30,
-                                            height: 30,
-                                            child: SvgPicture.asset(
-                                              color: Color(0xFF07A1B4),
-                                              'assets/icons/furniture_new/3_aricon.svg',
-                                            ),
-                                          ),
-                                          Text(
-                                            '冷氣',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Container(
-                                            width: 30,
-                                            height: 30,
-                                            child: SvgPicture.asset(
-                                              color: Color(0xFF07A1B4),
-                                              'assets/icons/furniture_new/2_microwave.svg',
-                                            ),
-                                          ),
-                                          Text(
-                                            '微波爐',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Container(
-                                            width: 30,
-                                            height: 30,
-                                            child: SvgPicture.asset(
-                                              color: Color(0xFF07A1B4),
-                                              'assets/icons/furniture_new/6_refrig.svg',
-                                            ),
-                                          ),
-                                          Text(
-                                            '雪櫃',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Color(0xFF171717),
-                                              fontSize: 12,
-                                              fontFamily: 'Noto Sans TC',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                          ],
+                                        ),
+                                      );
+                                    }),
                                   ),
-                                  SizedBox(height: 30,),
-                                  Text(
+                                  // Row(
+                                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  //   children: [
+                                  //     Column(
+                                  //       children: [
+                                  //         SizedBox(
+                                  //           width: 30,
+                                  //           height: 30,
+                                  //           child: SvgPicture.asset(
+                                  //             color: const Color(0xFFB3B3B3),
+                                  //             'assets/icons/furniture_new/1_tv.svg',
+                                  //           ),
+                                  //         ),
+                                  //         const Text(
+                                  //           '電視',
+                                  //           textAlign: TextAlign.center,
+                                  //           style: TextStyle(
+                                  //             color: Color(0xFFB3B3B3),
+                                  //             fontSize: 12,
+                                  //             fontFamily: 'Noto Sans TC',
+                                  //             fontWeight: FontWeight.w400,
+                                  //           ),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //     Column(
+                                  //       children: [
+                                  //         SizedBox(
+                                  //           width: 30,
+                                  //           height: 30,
+                                  //           child: SvgPicture.asset(
+                                  //             color: const Color(0xFFB3B3B3),
+                                  //             'assets/icons/furniture_new/4_washer.svg',
+                                  //           ),
+                                  //         ),
+                                  //         const Text(
+                                  //           '洗衣機',
+                                  //           textAlign: TextAlign.center,
+                                  //           style: TextStyle(
+                                  //             color: Color(0xFFB3B3B3),
+                                  //             fontSize: 12,
+                                  //             fontFamily: 'Noto Sans TC',
+                                  //             fontWeight: FontWeight.w400,
+                                  //           ),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //     Column(
+                                  //       children: [
+                                  //         SizedBox(
+                                  //           width: 30,
+                                  //           height: 30,
+                                  //           child: SvgPicture.asset(
+                                  //             color: Color(0xFF07A1B4),
+                                  //             'assets/icons/furniture_new/3_aricon.svg',
+                                  //           ),
+                                  //         ),
+                                  //         Text(
+                                  //           '冷氣',
+                                  //           textAlign: TextAlign.center,
+                                  //           style: TextStyle(
+                                  //             color: Color(0xFF171717),
+                                  //             fontSize: 12,
+                                  //             fontFamily: 'Noto Sans TC',
+                                  //             fontWeight: FontWeight.w400,
+                                  //           ),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //     Column(
+                                  //       children: [
+                                  //         Container(
+                                  //           width: 30,
+                                  //           height: 30,
+                                  //           child: SvgPicture.asset(
+                                  //             color: Color(0xFF07A1B4),
+                                  //             'assets/icons/furniture_new/2_microwave.svg',
+                                  //           ),
+                                  //         ),
+                                  //         Text(
+                                  //           '微波爐',
+                                  //           textAlign: TextAlign.center,
+                                  //           style: TextStyle(
+                                  //             color: Color(0xFF171717),
+                                  //             fontSize: 12,
+                                  //             fontFamily: 'Noto Sans TC',
+                                  //             fontWeight: FontWeight.w400,
+                                  //           ),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //     Column(
+                                  //       children: [
+                                  //         Container(
+                                  //           width: 30,
+                                  //           height: 30,
+                                  //           child: SvgPicture.asset(
+                                  //             color: Color(0xFF07A1B4),
+                                  //             'assets/icons/furniture_new/6_refrig.svg',
+                                  //           ),
+                                  //         ),
+                                  //         Text(
+                                  //           '雪櫃',
+                                  //           textAlign: TextAlign.center,
+                                  //           style: TextStyle(
+                                  //             color: Color(0xFF171717),
+                                  //             fontSize: 12,
+                                  //             fontFamily: 'Noto Sans TC',
+                                  //             fontWeight: FontWeight.w400,
+                                  //           ),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //   ],
+                                  // ),
+                                  const SizedBox(height: 30,),
+                                  const Text(
                                     '特色描述',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
@@ -1893,124 +2001,6 @@ class _ItemDetailState extends State<ItemDetail> {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomAppBar(
-      //   elevation: 0,
-      //   child: Container(
-      //     width: double.infinity,
-      //     padding: EdgeInsets.only(left: 12, right: 12, top: 10),
-      //     decoration: ShapeDecoration(
-      //       color: Colors.white,
-      //       shape: RoundedRectangleBorder(
-      //         borderRadius: BorderRadius.only(
-      //           topLeft: Radius.circular(12),
-      //           topRight: Radius.circular(12),
-      //         ),
-      //       ),
-      //       shadows: [
-      //         BoxShadow(
-      //           color: Color(0x3FC9C9C9),
-      //           blurRadius: 4,
-      //           offset: Offset(0, -4),
-      //           spreadRadius: 0,
-      //         )
-      //       ],
-      //     ),
-      //     child: Row(
-      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //       children: [
-      //         Row(
-      //           children: [
-      //             CircleAvatar(
-      //                 radius: 20,
-      //                 backgroundImage: AssetImage('assets/icons/saler_female.png'),
-      //             ),
-      //             SizedBox(width: 8,),
-      //             Column(
-      //               mainAxisAlignment: MainAxisAlignment.center,
-      //               crossAxisAlignment: CrossAxisAlignment.start,
-      //               children: [
-      //                 Text(
-      //                   'Jay Chou',
-      //                   style: TextStyle(
-      //                     color: Color(0xFF171717),
-      //                     fontSize: 16,
-      //                     fontFamily: 'Noto Sans TC',
-      //                     fontWeight: FontWeight.w500,
-      //                   ),
-      //                 ),
-      //                 Text(
-      //                   'C-123456',
-      //                   style: TextStyle(
-      //                     color: Color(0xFFB3B3B3),
-      //                     fontSize: 12,
-      //                     fontFamily: 'Noto Sans TC',
-      //                     fontWeight: FontWeight.w500,
-      //                   ),
-      //                 ),
-      //               ],
-      //             ),
-      //           ],
-      //         ),
-      //         Row(
-      //           children: [
-      //             Container(
-      //               width: 44,
-      //               height: 32,
-      //               alignment: Alignment.center,
-      //               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      //               clipBehavior: Clip.antiAlias,
-      //               decoration: ShapeDecoration(
-      //                 gradient: LinearGradient(
-      //                   begin: Alignment(0.99, -0.16),
-      //                   end: Alignment(-0.99, 0.16),
-      //                   colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
-      //                 ),
-      //                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-      //               ),
-      //               child: SvgPicture.asset('assets/icons/item_detail/phone.svg'),
-      //             ),
-      //             SizedBox(width: 8,),
-      //             Container(
-      //               width: 44,
-      //               height: 32,
-      //               alignment: Alignment.center,
-      //               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      //               clipBehavior: Clip.antiAlias,
-      //               decoration: ShapeDecoration(
-      //                 gradient: LinearGradient(
-      //                   begin: Alignment(0.99, -0.16),
-      //                   end: Alignment(-0.99, 0.16),
-      //                   colors: [Color(0xFF07B42D), Color(0xFF9BD777)],
-      //                 ),
-      //                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-      //               ),
-      //               child: SvgPicture.asset('assets/icons/item_detail/whatsapp.svg'),
-      //             ),
-      //           ],
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
     );
   }
-}
-
-showDialogFunc(context, img) {
-  return showDialog(
-    context: context,
-    builder: (context) {
-      return Center(
-        child: Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.white,
-          ),
-          padding: EdgeInsets.all(15),
-          child: Image.asset(img,),
-        ),
-      );
-    },
-  );
 }

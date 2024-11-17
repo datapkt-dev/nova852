@@ -30,7 +30,7 @@ class _RentalPageState extends State<RentalPage> {
   bool _showContainer = false;
   final List<int> items = List<int>.generate(100, (i) => i + 1);
   bool _isOverlayVisible = false;
-  List<Map<String, dynamic>> propertylist = [];
+  List<Map<String, dynamic>> propertyList = [];
 
   @override
   void initState() {
@@ -44,11 +44,11 @@ class _RentalPageState extends State<RentalPage> {
     if (response.statusCode == 200) {
       List<dynamic> properties = json.decode(response.body);
       // print(properties);
-      propertylist = properties.map((item) => item as Map<String, dynamic>).toList();
-      print(propertylist);
+      propertyList = properties.map((item) => item as Map<String, dynamic>).toList();
+      // print(propertyList);
 
-      // print('object');
-      // print(propertylist[0]);
+      // print('===========object');
+      // print(propertylist[0]['ad_parameters']['thumbnail_url']);
       setState(() {
         // propertylist = properties;
       });
@@ -143,18 +143,12 @@ class _RentalPageState extends State<RentalPage> {
                           ),
                         ),
                         Column(
-                          children: List.generate(propertylist.length, (index) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6,),
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(6),
-                              ),
+                          children: List.generate(propertyList.length, (index) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6,),
                               child: GestureDetector(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemDetail()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail(itemData: propertyList[index],)));
                                 },
                                 // child: ListItem(),
                                 child: Container(
@@ -168,86 +162,87 @@ class _RentalPageState extends State<RentalPage> {
                                       SizedBox(
                                         width: 120,
                                         height: 164,
-                                        child: Image.network(propertylist[index]['imageUrl']),
-                                        // decoration: ShapeDecoration(
-                                        //   image: DecorationImage(
-                                        //     image: AssetImage('assets/images/featured_item.png'),
-                                        //     fit: BoxFit.fill,
-                                        //   ),
-                                        //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                                        // ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(6),
+                                          child: Image.network(
+                                            propertyList[index]['ad_parameters']['thumbnail_url'],
+                                            fit: BoxFit.cover, // 根据需要调整图片的填充方式
+                                          ),
+                                        ),
                                       ),
                                       const SizedBox(width: 10,),
                                       Expanded(
-                                          child: SizedBox(
-                                            height: 164,
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  propertylist[index]['propertyName'],
-                                                  style: const TextStyle(
-                                                    color: Color(0xFF171717),
-                                                    fontSize: 16,
-                                                    fontFamily: 'Noto Sans TC',
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
+                                        child: SizedBox(
+                                          height: 164,
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                propertyList[index]['ad_parameters']['title'],
+                                                style: const TextStyle(
+                                                  color: Color(0xFF171717),
+                                                  fontSize: 16,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w500,
                                                 ),
-                                                const Row(
-                                                  mainAxisAlignment: MainAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      '實用 463呎',
-                                                      style: TextStyle(
-                                                        color: Color(0xFF6D6D6D),
-                                                        fontSize: 14,
-                                                        fontFamily: 'Noto Sans TC',
-                                                        fontWeight: FontWeight.w400,
-                                                      ),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    '實用 ${propertyList[index]['ad_parameters']['usable_area']}${propertyList[index]['ad_parameters']['unit']}',
+                                                    style: const TextStyle(
+                                                      color: Color(0xFF6D6D6D),
+                                                      fontSize: 14,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w400,
                                                     ),
-                                                    SizedBox(width: 8,),
-                                                    Text(
-                                                      '@\$10,234',
-                                                      style: TextStyle(
-                                                        color: Color(0xFF6D6D6D),
-                                                        fontSize: 14,
-                                                        fontFamily: 'Noto Sans TC',
-                                                        fontWeight: FontWeight.w400,
-                                                      ),
-                                                    )
-                                                  ],
-                                                ),
-                                                Text(
-                                                  '${propertylist[index]['propertyType']} ${propertylist[index]['label']}',
-                                                  style: const TextStyle(
-                                                    color: Color(0xFF6D6D6D),
-                                                    fontSize: 14,
-                                                    fontFamily: 'Noto Sans TC',
-                                                    fontWeight: FontWeight.w500,
                                                   ),
+                                                  const SizedBox(width: 8,),
+                                                  const Text(
+                                                    '@\$10,234',
+                                                    style: TextStyle(
+                                                      color: Color(0xFF6D6D6D),
+                                                      fontSize: 14,
+                                                      fontFamily: 'Noto Sans TC',
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                              Text(
+                                                '${propertyList[index]['layout']}',
+                                                style: const TextStyle(
+                                                  color: Color(0xFF6D6D6D),
+                                                  fontSize: 14,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w500,
                                                 ),
-                                                const Divider(color: Color(0xFF6D6D6D),),
-                                                const Text(
-                                                  '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢【東涌小T】海柏名海柏名邸獨立屋',
-                                                  style: TextStyle(
-                                                    color: Color(0xFF171717),
-                                                    fontSize: 14,
-                                                    fontFamily: 'Noto Sans TC',
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                  maxLines: 2,
-                                                  overflow: TextOverflow.ellipsis,
+                                              ),
+                                              const Divider(color: Color(0xFF6D6D6D),),
+                                              Text(
+                                                propertyList[index]['ad_parameters']['description'],
+                                                style: const TextStyle(
+                                                  color: Color(0xFF171717),
+                                                  fontSize: 14,
+                                                  fontFamily: 'Noto Sans TC',
+                                                  fontWeight: FontWeight.w400,
                                                 ),
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  children: [
-                                                    Row(
-                                                      children: [
-                                                        Container(
-                                                          width: 62,
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: List.generate(2, (index2) {
+                                                      return Padding(
+                                                        padding: const EdgeInsets.symmetric(horizontal: 1,),
+                                                        child: Container(
                                                           height: 22,
+                                                          padding: const EdgeInsets.symmetric(horizontal: 5,),
                                                           decoration: ShapeDecoration(
                                                             shape: RoundedRectangleBorder(
                                                               side: const BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
@@ -255,9 +250,9 @@ class _RentalPageState extends State<RentalPage> {
                                                             ),
                                                           ),
                                                           alignment: Alignment.center,
-                                                          child: const Text(
-                                                            'Tagging',
-                                                            style: TextStyle(
+                                                          child: Text(
+                                                            propertyList[index]['ad_parameters']['label'][index2],
+                                                            style: const TextStyle(
                                                               color: Color(0xFF07A1B4),
                                                               fontSize: 12,
                                                               fontFamily: 'Noto Sans TC',
@@ -265,65 +260,44 @@ class _RentalPageState extends State<RentalPage> {
                                                             ),
                                                           ),
                                                         ),
-                                                        const SizedBox(width: 4,),
-                                                        Container(
-                                                          width: 62,
-                                                          height: 22,
-                                                          decoration: ShapeDecoration(
-                                                            shape: RoundedRectangleBorder(
-                                                              side: const BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
-                                                              borderRadius: BorderRadius.circular(10),
-                                                            ),
-                                                          ),
-                                                          alignment: Alignment.center,
-                                                          child: const Text(
-                                                            'Tagging',
-                                                            style: TextStyle(
-                                                              color: Color(0xFF07A1B4),
-                                                              fontSize: 12,
-                                                              fontFamily: 'Noto Sans TC',
-                                                              fontWeight: FontWeight.w500,
-                                                            ),
-                                                          ),
+                                                      );
+                                                    }),
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Text(
+                                                        '\$${propertyList[index]['ad_parameters']['rent']}',
+                                                        style: const TextStyle(
+                                                          color: Color(0xFFE86100),
+                                                          fontSize: 16,
+                                                          fontFamily: 'Noto Sans TC',
+                                                          fontWeight: FontWeight.w500,
                                                         ),
-                                                      ],
-                                                    ),
-                                                    Row(
-                                                      children: [
-                                                        Text(
-                                                          '\$${propertylist[index]['defaultRent']}',
-                                                          style: const TextStyle(
-                                                            color: Color(0xFFE86100),
-                                                            fontSize: 16,
-                                                            fontFamily: 'Noto Sans TC',
-                                                            fontWeight: FontWeight.w500,
-                                                          ),
+                                                      ),
+                                                      const Text(
+                                                        '/月',
+                                                        style: TextStyle(
+                                                          color: Color(0xFFE86100),
+                                                          fontSize: 12,
+                                                          fontFamily: 'Noto Sans TC',
+                                                          fontWeight: FontWeight.w500,
                                                         ),
-                                                        const Text(
-                                                          '/月',
-                                                          style: TextStyle(
-                                                            color: Color(0xFFE86100),
-                                                            fontSize: 12,
-                                                            fontFamily: 'Noto Sans TC',
-                                                            fontWeight: FontWeight.w500,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          )
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ],
                                   ),
                                 ),
                               ),
-                            ),
-                          );
-                        }),
-                      ),
+                            );
+                          }),
+                        ),
                       ],
                     ),
                   ),

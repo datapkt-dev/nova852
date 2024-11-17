@@ -645,14 +645,14 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemDetail()));
                           },
                         );
                       }),
                     ),
                   ),
-                  SizedBox(height: 12,),
-                  Text(
+                  const SizedBox(height: 12,),
+                  const Text(
                     '最新放盤',
                     style: TextStyle(
                       color: Color(0xFF171717),
@@ -661,17 +661,17 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 25,),
+                  const SizedBox(height: 25,),
                   Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 13),
+                        padding: const EdgeInsets.symmetric(horizontal: 13),
                         child: Container(
                           width: double.infinity,
                           height: 33,
                           decoration: ShapeDecoration(
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 0.50, color: Color(0xFF171717)),
+                              side: const BorderSide(width: 0.50, color: Color(0xFF171717),),
                               borderRadius: BorderRadius.circular(21.50),
                             ),
                           ),
@@ -688,7 +688,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                   child: Container(
                                     height: 33,
                                     decoration: _LowerBlockIndex == 0 ? ShapeDecoration(
-                                      color: Color(0xFF171717),
+                                      color: const Color(0xFF171717),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(21.50),
                                       ),
@@ -697,7 +697,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     child: Text(
                                       '我想買樓',
                                       style: TextStyle(
-                                        color: _LowerBlockIndex == 0 ? Colors.white : Color(0xFFB3B3B3),
+                                        color: _LowerBlockIndex == 0 ? Colors.white : const Color(0xFFB3B3B3),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
@@ -717,7 +717,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                   child: Container(
                                     alignment: Alignment.center,
                                     decoration: _LowerBlockIndex == 1 ? ShapeDecoration(
-                                      color: Color(0xFF171717),
+                                      color: const Color(0xFF171717),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(21.50),
                                       ),

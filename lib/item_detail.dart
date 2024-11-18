@@ -1,13 +1,16 @@
+import 'dart:convert';
 import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/pages/index/components/list_item.dart';
+import 'package:http/http.dart' as http;
+import 'config/app_config.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ItemDetail extends StatefulWidget {
+  final String? itemId, itemTitle;
   final Map<String, dynamic>? itemData;
-  const ItemDetail({super.key, this.itemData,});
+  const ItemDetail({super.key, this.itemData, this.itemId, this.itemTitle});
 
   @override
   State<ItemDetail> createState() => _ItemDetailState();
@@ -15,7 +18,8 @@ class ItemDetail extends StatefulWidget {
 
 class _ItemDetailState extends State<ItemDetail> {
   // late GoogleMapController mapController;
-  late final Map<String, dynamic>? itemData;
+  final String _baseUrl = AppConfig.baseURL;
+  Map<String, dynamic>? itemData;
   final ScrollController _scrollController = ScrollController();
   final List<String> tab = ['基本資料', '單位詳情', '鄰近設施',];
   final List<String> mapItem = ['交通', '超市', '餐飲', '銀行', '學校', '醫院',];
@@ -23,26 +27,24 @@ class _ItemDetailState extends State<ItemDetail> {
   int _selectedItem = 0;
   int _selectedHistory = 0;
 
-  final List<List<dynamic>> furniture = [
-    ['電視', 'assets/icons/furniture/tv.svg', true],
-    ['微波爐', 'assets/icons/furniture/microwave.svg', false],
-    ['冷氣機', 'assets/icons/furniture/aircon.svg', true],
-    ['洗衣機', 'assets/icons/furniture/washer.svg', true],
-    ['熱水爐', 'assets/icons/furniture/heater.svg', false],
-    ['雪櫃', 'assets/icons/furniture/refrigerator.svg', true],
-    ['蒸焗爐', 'assets/icons/furniture/steamOven.svg', true],
-    ['電磁爐', 'assets/icons/furniture/inductionCooker.svg', true],
-    ['抽油煙機', 'assets/icons/furniture/rangeHood.svg', true],
-    ['焗爐', 'assets/icons/furniture/oven.svg', false],
-    ['洗碗碟機', 'assets/icons/furniture/dishwasher.svg', false],
-    ['乾衣機', 'assets/icons/furniture/clothesDryer.svg', true],
-  ];
+  Map<String, List<dynamic>> furniture = {
+    'tv' : ['電視', 'assets/icons/furniture/tv.svg', true],
+    'mv' : ['微波爐', 'assets/icons/furniture/microwave.svg', false],
+    'ac' : ['冷氣機', 'assets/icons/furniture/aircon.svg', true],
+    'wm' : ['洗衣機', 'assets/icons/furniture/washer.svg', true],
+    'wh' : ['熱水爐', 'assets/icons/furniture/heater.svg', false],
+    'fr' : ['雪櫃', 'assets/icons/furniture/refrigerator.svg', true],
+    'sc' : ['蒸焗爐', 'assets/icons/furniture/steamOven.svg', true],
+    'ih' : ['電磁爐', 'assets/icons/furniture/inductionCooker.svg', true],
+    'hx' : ['抽油煙機', 'assets/icons/furniture/rangeHood.svg', true],
+    'ov' : ['焗爐', 'assets/icons/furniture/oven.svg', false],
+    'dw' : ['洗碗碟機', 'assets/icons/furniture/dishwasher.svg', false],
+    'td' : ['乾衣機', 'assets/icons/furniture/clothesDryer.svg', true],
+  };
 
   @override
   void initState() {
-    print(widget.itemData);
     super.initState();
-    itemData = widget.itemData;
     _scrollController.addListener(() {
       double offset = _scrollController.offset;
 
@@ -56,6 +58,15 @@ class _ItemDetailState extends State<ItemDetail> {
         }
       });
     });
+  }
+
+  Future<Map<String, dynamic>> fetchProperties(String? id) async {
+    final response = await http.get(Uri.parse('${AppConfig.baseURL}/properties/$id'));
+    if (response.statusCode == 200) {
+      return json.decode(response.body);
+    } else {
+      throw Exception('Failed to load properties');
+    }
   }
 
   showDialogFunc(context, img) {
@@ -88,6 +99,7 @@ class _ItemDetailState extends State<ItemDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
@@ -591,14 +603,14 @@ class _ItemDetailState extends State<ItemDetail> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                             Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(6),
                               ),
-                              padding: EdgeInsets.all(15),
+                              padding: const EdgeInsets.all(15),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -616,6 +628,9 @@ class _ItemDetailState extends State<ItemDetail> {
                                     spacing: 46,
                                     runSpacing: 10,
                                     children: List.generate(furniture.length, (index) {
+                                      final key = furniture.keys.elementAt(index);
+                                      print(key);
+                                      final value = furniture[key];
                                       return SizedBox(
                                         width: 50,
                                         height: 60,
@@ -625,15 +640,15 @@ class _ItemDetailState extends State<ItemDetail> {
                                               width: 30,
                                               height: 30,
                                               child: SvgPicture.asset(
-                                                color: furniture[index][2] ? const Color(0xFF07A1B4) : const Color(0xFFB3B3B3),
-                                                furniture[index][1],
+                                                color: value?[2] ? const Color(0xFF07A1B4) : const Color(0xFFB3B3B3),
+                                                value?[1],
                                               ),
                                             ),
                                             Text(
-                                              furniture[index][0],
+                                              value?[0],
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
-                                                color: furniture[index][2] ? const Color(0xFF171717) : const Color(0xFFB3B3B3),
+                                                color: value?[2] ? const Color(0xFF171717) : const Color(0xFFB3B3B3),
                                                 fontSize: 12,
                                                 fontFamily: 'Noto Sans TC',
                                                 fontWeight: FontWeight.w400,
@@ -1258,10 +1273,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                     //   ),
                                     // ],
                                   ),
-                                  SizedBox(height: 15,),
+                                  const SizedBox(height: 15,),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 20),
-                                    child: Row(
+                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
@@ -1287,8 +1302,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 20),
-                                    child: Row(
+                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
@@ -1314,8 +1329,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 20),
-                                    child: Row(
+                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
@@ -1341,8 +1356,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 20),
-                                    child: Row(
+                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
@@ -1368,8 +1383,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 20),
-                                    child: Row(
+                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    child: const Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
@@ -1397,10 +1412,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                             Container(
                                 width: double.infinity,
-                                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
@@ -1443,7 +1458,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                   },
                                                   child: Container(
                                                     decoration: _selectedHistory == 0 ? ShapeDecoration(
-                                                      color: Color(0xFF07A1B4),
+                                                      color: const Color(0xFF07A1B4),
                                                       shape: RoundedRectangleBorder(
                                                         borderRadius: BorderRadius.circular(21.50),
                                                       ),
@@ -1472,7 +1487,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                   child: Container(
                                                     alignment: Alignment.center,
                                                     decoration: _selectedHistory == 1 ? ShapeDecoration(
-                                                      color: Color(0xFF07A1B4),
+                                                      color: const Color(0xFF07A1B4),
                                                       shape: RoundedRectangleBorder(
                                                         borderRadius: BorderRadius.circular(21.50),
                                                       ),
@@ -1571,12 +1586,12 @@ class _ItemDetailState extends State<ItemDetail> {
                                               Row(
                                                 children: [
                                                   Container(
-                                                    padding: EdgeInsets.all(4),
+                                                    padding: const EdgeInsets.all(4),
                                                     decoration: ShapeDecoration(
-                                                      color: Color(0xFF07A1B4),
+                                                      color: const Color(0xFF07A1B4),
                                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
                                                     ),
-                                                    child: Text(
+                                                    child: const Text(
                                                       '成交',
                                                       style: TextStyle(
                                                         color: Color(0xFFFFFFFF),
@@ -1610,7 +1625,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                       alignment: Alignment.center,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: ShapeDecoration(
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           begin: Alignment(0.99, -0.16),
                                           end: Alignment(-0.99, 0.16),
                                           colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
@@ -1633,10 +1648,10 @@ class _ItemDetailState extends State<ItemDetail> {
                                   ],
                                 )
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                             Container(
                               width: double.infinity,
-                              padding: EdgeInsets.all(15),
+                              padding: const EdgeInsets.all(15),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(6),
@@ -1644,7 +1659,7 @@ class _ItemDetailState extends State<ItemDetail> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     '聯絡代理',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
@@ -1653,11 +1668,11 @@ class _ItemDetailState extends State<ItemDetail> {
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                  SizedBox(height: 10,),
+                                  const SizedBox(height: 10,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Row(
+                                      const Row(
                                         children: [
                                           CircleAvatar(
                                             radius: 20,
@@ -1698,7 +1713,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                             clipBehavior: Clip.antiAlias,
                                             decoration: ShapeDecoration(
-                                              gradient: LinearGradient(
+                                              gradient: const LinearGradient(
                                                 begin: Alignment(0.99, -0.16),
                                                 end: Alignment(-0.99, 0.16),
                                                 colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
@@ -1707,7 +1722,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             ),
                                             child: SvgPicture.asset('assets/icons/item_detail/phone.svg'),
                                           ),
-                                          SizedBox(width: 8,),
+                                          const SizedBox(width: 8,),
                                           Container(
                                             width: 44,
                                             height: 32,
@@ -1715,7 +1730,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                             clipBehavior: Clip.antiAlias,
                                             decoration: ShapeDecoration(
-                                              gradient: LinearGradient(
+                                              gradient: const LinearGradient(
                                                 begin: Alignment(0.99, -0.16),
                                                 end: Alignment(-0.99, 0.16),
                                                 colors: [Color(0xFF07B42D), Color(0xFF9BD777)],
@@ -1728,8 +1743,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 20,),
-                                  Row(
+                                  const SizedBox(height: 20,),
+                                  const Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
@@ -1803,7 +1818,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 20,),
+                                  const SizedBox(height: 20,),
                                   // Center(
                                   //   child: Container(
                                   //     width: 140,
@@ -1839,7 +1854,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                       alignment: Alignment.center,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: ShapeDecoration(
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           begin: Alignment(0.99, -0.16),
                                           end: Alignment(-0.99, 0.16),
                                           colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
@@ -1863,13 +1878,13 @@ class _ItemDetailState extends State<ItemDetail> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20,),
-                            Container(
+                            const SizedBox(height: 20,),
+                            SizedBox(
                               width: double.infinity,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(left: 25,),
                                     child: Text(
                                       '相關樓盤',
@@ -1883,7 +1898,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                   ),
                                   Column(
                                     children: List.generate(4, (index) {
-                                      return Padding(
+                                      return const Padding(
                                         padding: EdgeInsets.symmetric(vertical: 5,),
                                         child: ListItem(),
                                       );
@@ -1904,8 +1919,8 @@ class _ItemDetailState extends State<ItemDetail> {
                 child: Container(
                   width: double.infinity,
                   height: 60,
-                  padding: EdgeInsets.only(left: 12, right: 12, top: 20),
-                  decoration: ShapeDecoration(
+                  padding: const EdgeInsets.only(left: 12, right: 12, top: 20),
+                  decoration: const ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
@@ -1925,7 +1940,7 @@ class _ItemDetailState extends State<ItemDetail> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
+                      const Row(
                         children: [
                           CircleAvatar(
                             radius: 20,
@@ -1967,7 +1982,7 @@ class _ItemDetailState extends State<ItemDetail> {
                             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                             clipBehavior: Clip.antiAlias,
                             decoration: ShapeDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 begin: Alignment(0.99, -0.16),
                                 end: Alignment(-0.99, 0.16),
                                 colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
@@ -1976,7 +1991,7 @@ class _ItemDetailState extends State<ItemDetail> {
                             ),
                             child: SvgPicture.asset('assets/icons/item_detail/phone.svg'),
                           ),
-                          SizedBox(width: 8,),
+                          const SizedBox(width: 8,),
                           Container(
                             width: 44,
                             height: 32,
@@ -1984,7 +1999,7 @@ class _ItemDetailState extends State<ItemDetail> {
                             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                             clipBehavior: Clip.antiAlias,
                             decoration: ShapeDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 begin: Alignment(0.99, -0.16),
                                 end: Alignment(-0.99, 0.16),
                                 colors: [Color(0xFF07B42D), Color(0xFF9BD777)],

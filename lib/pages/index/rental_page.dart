@@ -156,14 +156,29 @@ class _RentalPageState extends State<RentalPage> {
                                   ),
                                   child: Row(
                                     children: [
-                                      SizedBox(
+                                      Container(
                                         width: 120,
                                         height: 164,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(6),
+                                          color: Colors.grey[200],
+                                        ),
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(6),
-                                          child: Image.network(
-                                            propertyList[index]['ad_parameters']['thumbnail_url'],
-                                            fit: BoxFit.cover, // 根据需要调整图片的填充方式
+                                          child: Stack(
+                                            children: [
+                                              Image.network(
+                                                propertyList[index]['ad_parameters']['thumbnail_url'],
+                                                fit: BoxFit.cover,
+                                              ),
+                                              propertyList[index]['ad_parameters']['bookmark']
+                                                  ? Positioned(
+                                                top: 6,
+                                                right: 7,
+                                                child: SvgPicture.asset('assets/icons/collected.svg'),
+                                              )
+                                                  : Container(),
+                                            ],
                                           ),
                                         ),
                                       ),

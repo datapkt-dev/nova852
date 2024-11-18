@@ -159,6 +159,7 @@ flutter:
     - assets/icons/furniture/oven.svg
     - assets/icons/furniture/rangeHood.svg
     - assets/icons/furniture/steamOven.svg
+    - assets/icons/collected.svg
 
     - assets/images/landscape.jpeg
     - assets/images/house_a.jpeg

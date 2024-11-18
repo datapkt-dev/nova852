@@ -130,22 +130,23 @@ class _ItemDetailState extends State<ItemDetail> {
                       flex: 1,
                       child: Container(
                         alignment: Alignment.center,
-                        decoration: _selectedIndex == index ? const BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: Color(0xFF171717),
-                              width: 3,
-                            ),
-                          ),
-                        )
+                        decoration: _selectedIndex == index
+                            ? const BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  color: Color(0xFF171717),
+                                  width: 3,
+                                ),
+                              ),
+                            )
                             : const BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: Colors.transparent,
-                              width: 3,
+                              border: Border(
+                                bottom: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 3,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
                         child: GestureDetector(
                           child: Text(tab[index]),
                           onTap: () {
@@ -173,9 +174,10 @@ class _ItemDetailState extends State<ItemDetail> {
                   controller: _scrollController,
                   child: Column(
                     children: [
-                      SizedBox(
+                      Container(
                         width: double.infinity,
                         height: 308,
+                        color: Colors.white,
                         child: Swiper(
                           itemBuilder: (BuildContext context, int index) {
                             return GestureDetector(

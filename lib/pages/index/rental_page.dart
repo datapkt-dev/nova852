@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nova852/item_detail.dart';
-import 'package:nova852/lab/components/price.dart';
+import 'package:nova852/pages/index/components/price.dart';
 import 'package:nova852/pages/index/components/area.dart';
 import 'package:nova852/pages/index/components/function.dart';
-import 'package:nova852/pages/index/components/list_item.dart';
 import 'package:nova852/pages/index/components/more.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';

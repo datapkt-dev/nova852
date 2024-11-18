@@ -38,7 +38,7 @@ class LoggedIn extends StatelessWidget {
                           height: 80,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            image: DecorationImage(
+                            image: const DecorationImage(
                               image: AssetImage('assets/images/profile/user.png'),
                               fit: BoxFit.cover,
                               alignment: Alignment(
@@ -194,15 +194,15 @@ class LoggedIn extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 40,),
-            Divider(),
+            const SizedBox(height: 40,),
+            const Divider(),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ContractHistory()));
               },
               child: Container(
                 width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
+                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
                 alignment: Alignment.centerLeft,
                 child: Row(
                   children: [
@@ -211,8 +211,8 @@ class LoggedIn extends StatelessWidget {
                       height: 22,
                       'assets/icons/profile/contract.svg',
                     ),
-                    SizedBox(width: 12,),
-                    Text(
+                    const SizedBox(width: 12,),
+                    const Text(
                       '歷年合約',
                       style: TextStyle(
                         color: Color(0xFF171717),
@@ -225,14 +225,14 @@ class LoggedIn extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(),
+            const Divider(),
             GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentListPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const PaymentListPage()));
               },
               child: Container(
                 width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
+                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
                 alignment: Alignment.centerLeft,
                 child: Row(
                   children: [
@@ -241,8 +241,8 @@ class LoggedIn extends StatelessWidget {
                       height: 22,
                       'assets/icons/profile/Invoice.svg',
                     ),
-                    SizedBox(width: 12,),
-                    Text(
+                    const SizedBox(width: 12,),
+                    const Text(
                       '帳單列表',
                       style: TextStyle(
                         color: Color(0xFF171717),
@@ -255,10 +255,10 @@ class LoggedIn extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(),
+            const Divider(),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
               alignment: Alignment.centerLeft,
               child: Row(
                 children: [
@@ -267,8 +267,8 @@ class LoggedIn extends StatelessWidget {
                     height: 22,
                     'assets/icons/profile/favorite.svg',
                   ),
-                  SizedBox(width: 12,),
-                  Text(
+                  const SizedBox(width: 12,),
+                  const Text(
                     '收藏樓盤',
                     style: TextStyle(
                       color: Color(0xFF171717),
@@ -280,10 +280,10 @@ class LoggedIn extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(),
+            const Divider(),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
               alignment: Alignment.centerLeft,
               child: Row(
                 children: [
@@ -292,8 +292,8 @@ class LoggedIn extends StatelessWidget {
                     height: 22,
                     'assets/icons/profile/setting.svg',
                   ),
-                  SizedBox(width: 12,),
-                  Text(
+                  const SizedBox(width: 12,),
+                  const Text(
                     '更改個人資料',
                     style: TextStyle(
                       color: Color(0xFF171717),
@@ -305,10 +305,10 @@ class LoggedIn extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(),
+            const Divider(),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16,),
               alignment: Alignment.centerLeft,
               child: Row(
                 children: [
@@ -317,8 +317,8 @@ class LoggedIn extends StatelessWidget {
                     height: 22,
                     'assets/icons/profile/contact.svg',
                   ),
-                  SizedBox(width: 12,),
-                  Text(
+                  const SizedBox(width: 12,),
+                  const Text(
                     '聯絡客服',
                     style: TextStyle(
                       color: Color(0xFF171717),
@@ -330,19 +330,19 @@ class LoggedIn extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(),
-            SizedBox(height: 40,),
+            const Divider(),
+            const SizedBox(height: 40,),
             Container(
               width: 108,
               height: 30,
               alignment: Alignment.center,
               decoration: ShapeDecoration(
-                color: Color(0XFFE3E3E3),
+                color: const Color(0XFFE3E3E3),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: Text(
+              child: const Text(
                 '登出',
                 style: TextStyle(
                   color: Color(0XFF171717),
@@ -352,7 +352,7 @@ class LoggedIn extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 60,),
+            const SizedBox(height: 60,),
           ],
         ),
       ),

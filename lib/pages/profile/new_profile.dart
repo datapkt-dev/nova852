@@ -23,10 +23,10 @@ class _NewProfileState extends State<NewProfilePage> {
         elevation: 0,
         centerTitle: false,
         title: const Text('會員'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_rounded),
-          onPressed: () {},
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back_ios_rounded),
+        //   onPressed: () {},
+        // ),
       ),
       body: _block[2],
     );

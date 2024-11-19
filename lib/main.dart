@@ -25,22 +25,21 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  // Widget build(BuildContext context) {
-  //   final themeModel = Provider.of<ThemeModel>(context);
-  //
-  //   return MaterialApp(
-  //     title: '這裡是feature分支!',
-  //     theme: themeModel.themeData, // 使用 themeModel 中的主題資料
-  //     home: const MyHomePage(title: 'Flutter Demo Home Page'),
-  //   );
-  // }
   Widget build(BuildContext context) {
     final themeModel = Provider.of<ThemeModel>(context);
     final localeModel = Provider.of<LocaleModel>(context);
 
     return MaterialApp(
       title: '這裡是feature分支!',
-      theme: themeModel.themeData,
+      // theme: themeModel.themeData,
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          scrolledUnderElevation: 0,
+          elevation: 0,
+          centerTitle: false,
+        ),
+      ),
       locale: localeModel.locale,
       supportedLocales: L10n.all,
       localizationsDelegates: const [

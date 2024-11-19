@@ -13,10 +13,35 @@ class _MoreWidgetState extends State<MoreWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height-180,
+      color: const Color(0xFFF5F6F7),
       width: double.infinity,
-      decoration: BoxDecoration(color: Colors.white),
       child: Column(
         children: [
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: double.infinity,
+              height: 8,
+              decoration: const ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(12),
+                    bottomRight: Radius.circular(12),
+                  ),
+                ),
+                shadows: [
+                  BoxShadow(
+                    color: Color(0x3FC9C9C9),
+                    blurRadius: 4,
+                    offset: Offset(0, 4),
+                    spreadRadius: 0,
+                  )
+                ],
+              ),
+            ),
+          ),
           Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -760,6 +785,7 @@ class _MoreWidgetState extends State<MoreWidget> {
               ),
             ],
           ),
+          const Spacer(),
           Container(
             padding: EdgeInsets.symmetric(vertical: 9, horizontal: 16),
             decoration: ShapeDecoration(

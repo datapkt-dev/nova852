@@ -8,11 +8,7 @@ class NewsContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        scrolledUnderElevation: 0,
-        elevation: 0,
-        centerTitle: false,
-        title: Text(
+        title: const Text(
           '6月租務旺季 東涌藍天海岸創區內呎租新高',
           style: TextStyle(
             color: Color(0xFF171717),

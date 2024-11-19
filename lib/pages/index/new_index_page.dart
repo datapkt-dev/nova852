@@ -29,11 +29,11 @@ class _NewIndexPageState extends State<NewIndexPage> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Color(0xFFF2F2F2),
+      color: const Color(0xFFF2F2F2),
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 197,
               child: Swiper(
@@ -51,9 +51,9 @@ class _NewIndexPageState extends State<NewIndexPage> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 13),
+              padding: const EdgeInsets.symmetric(horizontal: 13),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -309,14 +309,14 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 4,),
+                  const SizedBox(height: 4,),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: List.generate(10, (index) {
                         return GestureDetector(
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4),
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
                             child: Container(
                               width: 286,
                               decoration: ShapeDecoration(
@@ -329,7 +329,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     width: 286,
                                     height: 181,
                                     decoration: ShapeDecoration(
-                                      image: DecorationImage(
+                                      image: const DecorationImage(
                                         image: AssetImage('assets/images/index/news.png'),
                                         fit: BoxFit.fill,
                                       ),
@@ -337,12 +337,12 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.only(left: 12, right: 12, bottom: 14, top: 3),
+                                    padding: const EdgeInsets.only(left: 12, right: 12, bottom: 14, top: 3),
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Row(
+                                        const Row(
                                           children: [
                                             Text(
                                               '#Tagging',
@@ -394,7 +394,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => NewsContent()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const NewsContent()));
                           },
                         );
                       }),

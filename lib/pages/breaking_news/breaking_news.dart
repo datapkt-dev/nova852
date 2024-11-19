@@ -157,15 +157,11 @@ class _BreakingNewsPageState extends State<BreakingNewsPage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        scrolledUnderElevation: 0,
-        elevation: 0,
-        centerTitle: false,
         title: const Text('信息'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_rounded),
-          onPressed: () {},
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back_ios_rounded),
+        //   onPressed: () {},
+        // ),
       ),
       body: SafeArea(
         child: Container(

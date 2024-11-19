@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AreaWidget2 extends StatefulWidget {
-  AreaWidget2({super.key});
-
-  final List<String> zone = ['地區', '港鐵',];
-  final List<String> area = ['港島', '九龍', '新界',];
-  final List<List<String>> areachild = [
-    ['全港島', '中西區', '灣仔區', '東區', '南區'],
-    ['全九龍', '油尖旺區', '深水埗區', '九龍城區', '黃大仙區', '觀塘區'],
-    ['全新界', '葵青區', '荃灣區', '元朗區', '屯門區', '北區', '大埔區', '沙田區', '西貢區', '離島區',],
-  ];
+  const AreaWidget2({super.key});
 
   @override
   State<AreaWidget2> createState() => _AreaWidgetState();
@@ -21,18 +13,59 @@ class _AreaWidgetState extends State<AreaWidget2> {
   int _selectedAreaChild = 0;
   bool _showArea = true;
 
+  final List<String> zone = ['地區', '港鐵',];
+  final List<String> area = ['港島', '九龍', '新界',];
+  final List<List<String>> areaChild = [
+    ['全港島', '中西區', '灣仔區', '東區', '南區'],
+    ['全九龍', '油尖旺區', '深水埗區', '九龍城區', '黃大仙區', '觀塘區'],
+    ['全新界', '葵青區', '荃灣區', '元朗區', '屯門區', '北區', '大埔區', '沙田區', '西貢區', '離島區',],
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height-180,
       color: const Color(0xFFF5F6F7),
       child: Column(
         children: [
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: double.infinity,
+              height: 8,
+              decoration: const ShapeDecoration(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(12),
+                    bottomRight: Radius.circular(12),
+                  ),
+                ),
+                shadows: [
+                  BoxShadow(
+                    color: Color(0x3FC9C9C9),
+                    blurRadius: 4,
+                    offset: Offset(0, 4),
+                    spreadRadius: 0,
+                  )
+                ],
+              ),
+            ),
+          ),
           Container(
             width: double.infinity,
             height: 50,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+            decoration: const BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: Color(0xFFB3B3B3),
+                  width: 1,
+                ),
+              ),
+            ),
             child: Row(
-              children: List.generate(widget.zone.length, (index) {
+              children: List.generate(zone.length, (index) {
                 return Row(
                   children: [
                     InkWell(
@@ -57,7 +90,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                           ),
                         ) : null,
                         child: Text(
-                          widget.zone[index],
+                          zone[index],
                           style: const TextStyle(
                             fontSize: 18,
                             fontFamily: 'Noto Sans TC',
@@ -82,8 +115,8 @@ class _AreaWidgetState extends State<AreaWidget2> {
                     visible: _showArea,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: List.generate(widget.area.length, (index) {
-                        return InkWell(
+                      children: List.generate(area.length, (index) {
+                        return GestureDetector(
                           onTap: () {
                             setState(() {
                               _selectedZone = index;
@@ -100,7 +133,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                                 end: Alignment(-0.99, 0.16),
                                 colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
                               ) : null,
-                              border: index < widget.area.length-1
+                              border: index < area.length-1
                                   ? const Border(
                                 bottom: BorderSide(
                                   color: Color(0xFFB3B3B3),
@@ -113,7 +146,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  widget.area[index],
+                                  area[index],
                                   style: TextStyle(
                                     color: _selectedZone == index ? Colors.white : null,
                                     fontSize: 16,
@@ -143,7 +176,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                     visible: _showArea,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: List.generate(widget.areachild[_selectedZone].length, (index) {
+                      children: List.generate(areaChild[_selectedZone].length, (index) {
                         return Column(
                           children: [
                             InkWell(
@@ -163,7 +196,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                                     end: Alignment(-0.99, 0.16),
                                     colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
                                   ) : null,
-                                  border: index < widget.areachild[_selectedZone].length-1
+                                  border: index < areaChild[_selectedZone].length-1
                                       ? const Border(
                                     bottom: BorderSide(
                                       color: Color(0xFFB3B3B3),
@@ -172,24 +205,14 @@ class _AreaWidgetState extends State<AreaWidget2> {
                                   )
                                       : null,
                                 ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      widget.areachild[_selectedZone][index],
-                                      style: TextStyle(
-                                        color: _selectedAreaChild == index ? Colors.white : null,
-                                        fontSize: 16,
-                                        fontFamily: 'Noto Sans TC',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                    Icon(
-                                      size: 16,
-                                      color: _selectedAreaChild == index ? Colors.white : null,
-                                      _selectedAreaChild == index ? Icons.arrow_back_ios : Icons.arrow_forward_ios,
-                                    ),
-                                  ],
+                                child: Text(
+                                  areaChild[_selectedZone][index],
+                                  style: TextStyle(
+                                    color: _selectedAreaChild == index ? Colors.white : null,
+                                    fontSize: 16,
+                                    fontFamily: 'Noto Sans TC',
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
                               ),
                             ),
@@ -202,6 +225,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
               ),
             ],
           ),
+          Spacer(),
           Container(
               padding: const EdgeInsets.symmetric(vertical: 9, horizontal: 16),
               decoration: const ShapeDecoration(

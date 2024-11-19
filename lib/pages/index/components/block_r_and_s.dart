@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nova852/pages/index/rental_page.dart';
 
+import '../new_rental_page.dart';
+
 class BlockRandS extends StatelessWidget {
   final int index;
 
@@ -56,7 +58,7 @@ class BlockRandS extends StatelessWidget {
                         },
                       ),
                     ),
-                    SizedBox(height: 4,),
+                    const SizedBox(height: 4,),
                     GestureDetector(
                       child: Container(
                         decoration: ShapeDecoration(
@@ -259,46 +261,51 @@ class BlockRandS extends StatelessWidget {
           children: [
             Flexible(
               flex: 1,
-              child: Container(
-                height: 176,
-                width: double.infinity,
-                decoration: ShapeDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/buying_featured.png'),
-                    fit: BoxFit.cover,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NewRentalPage()));
+                },
+                child: Container(
+                  height: 176,
+                  width: double.infinity,
+                  decoration: ShapeDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/buying_featured.png'),
+                      fit: BoxFit.cover,
+                    ),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                   ),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      top: 5,
-                      left: 5
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '精選新盤 (${index==0 ? '售' : '租'})',
-                        style: TextStyle(
-                          color: Color(0xFF171717),
-                          fontSize: 16,
-                          fontFamily: 'Noto Sans TC',
-                          fontWeight: FontWeight.w700,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        top: 5,
+                        left: 5
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '精選新盤 (${index==0 ? '售' : '租'})',
+                          style: TextStyle(
+                            color: Color(0xFF171717),
+                            fontSize: 16,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Nova為你推介最新精選筍盤',
-                        style: TextStyle(
-                          color: Color(0xFF171717),
-                          fontSize: 12,
-                          fontFamily: 'Noto Sans TC',
-                          fontWeight: FontWeight.w500,
+                        Text(
+                          'Nova為你推介最新精選筍盤',
+                          style: TextStyle(
+                            color: Color(0xFF171717),
+                            fontSize: 12,
+                            fontFamily: 'Noto Sans TC',
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
+              )
             ),
             SizedBox(width: 4,),
             Flexible(

@@ -629,7 +629,6 @@ class _ItemDetailState extends State<ItemDetail> {
                                     runSpacing: 10,
                                     children: List.generate(furniture.length, (index) {
                                       final key = furniture.keys.elementAt(index);
-                                      print(key);
                                       final value = furniture[key];
                                       return SizedBox(
                                         width: 50,

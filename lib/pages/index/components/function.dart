@@ -21,7 +21,7 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        height: MediaQuery.of(context).size.height-180,
+        height: MediaQuery.of(context).size.height - 180,
         color: const Color(0xFFF2F2F2),
         child: Column(
             children: [

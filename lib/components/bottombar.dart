@@ -50,7 +50,7 @@ class _BottomBarState extends State<BottomBar> {
             icon: SvgPicture.asset(
               width: 24,
               height: 24,
-              color: _currentIndex == 0 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
+              color: _currentIndex == 0 ? const Color(0xFF50C5D5) : const Color(0xFFB3B3B3),
               'assets/icons/bottombar/home.svg',
             ),
             label: AppLocalizations.of(context)!.home,
@@ -59,7 +59,7 @@ class _BottomBarState extends State<BottomBar> {
             icon: SvgPicture.asset(
               width: 24,
               height: 24,
-              color: _currentIndex == 1 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
+              color: _currentIndex == 1 ? const Color(0xFF50C5D5) : const Color(0xFFB3B3B3),
               'assets/icons/bottombar/search.svg',
             ),
             label: AppLocalizations.of(context)!.search,
@@ -68,7 +68,7 @@ class _BottomBarState extends State<BottomBar> {
             icon: SvgPicture.asset(
               width: 24,
               height: 24,
-              color: _currentIndex == 2 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
+              color: _currentIndex == 2 ? const Color(0xFF50C5D5) : const Color(0xFFB3B3B3),
               'assets/icons/bottombar/personal.svg',
             ),
             label: AppLocalizations.of(context)!.membership,
@@ -77,7 +77,7 @@ class _BottomBarState extends State<BottomBar> {
             icon: SvgPicture.asset(
               width: 24,
               height: 24,
-              color: _currentIndex == 3 ? Color(0xFF50C5D5) : Color(0xFFB3B3B3),
+              color: _currentIndex == 3 ? const Color(0xFF50C5D5) : const Color(0xFFB3B3B3),
               'assets/icons/bottombar/message.svg',
             ),
             label: AppLocalizations.of(context)!.notification,
@@ -86,14 +86,14 @@ class _BottomBarState extends State<BottomBar> {
             icon: SvgPicture.asset(
               width: 24,
               height: 24,
-              color: _currentIndex == 4 ? Color(0xFF50C5D5) : null,
+              color: _currentIndex == 4 ? const Color(0xFF50C5D5) : const Color(0xFFB3B3B3),
               'assets/icons/bottombar/more_.svg',
             ),
             label: AppLocalizations.of(context)!.setting,
           ),
         ],
         currentIndex: _currentIndex,
-        fixedColor: Color(0xFF50C5D5),
+        fixedColor: const Color(0xFF50C5D5),
         onTap: _onItemTapped,
       ),
     );

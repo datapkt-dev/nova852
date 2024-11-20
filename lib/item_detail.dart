@@ -214,19 +214,15 @@ class _ItemDetailState extends State<ItemDetail> {
                               height: 308,
                               color: Colors.white,
                               child: Swiper(
-                                itemBuilder: (BuildContext context, int index) {
+                                itemCount: itemData['imageUrl'].length,
+                                itemBuilder: (BuildContext context, index) {
                                   return GestureDetector(
                                     onTap: () {
-                                      showDialogFunc(context, 'assets/images/item_img.jpeg');
+                                      // showDialogFunc(context, 'assets/images/item_img.jpeg');
                                     },
-                                    child: Image.network(itemData['ad_parameters']['thumbnail_url']),
+                                    child: Image.network(itemData['imageUrl'][index]),
                                   );
-                                  // return Image.asset(
-                                  //   'assets/images/item_img.jpeg',
-                                  //   fit: BoxFit.fill,
-                                  // );
                                 },
-                                itemCount: 3,
                               ),
                             ),
                             Container(

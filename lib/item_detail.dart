@@ -215,6 +215,8 @@ class _ItemDetailState extends State<ItemDetail> {
                               color: Colors.white,
                               child: Swiper(
                                 itemCount: itemData['imageUrl'].length,
+                                pagination: const SwiperPagination(),
+                                control: const SwiperControl(),
                                 itemBuilder: (BuildContext context, index) {
                                   return GestureDetector(
                                     onTap: () {

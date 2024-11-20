@@ -37,17 +37,14 @@ class _NewRentalPageState extends State<NewRentalPage> {
 
   Future<List> fetchProperties() async {
     try {
-      print('fetch');
       final response = await http.get(Uri.parse('$_baseUrl/properties'));
       if (response.statusCode == 200) {
-        print('200');
         List<dynamic> properties = json.decode(response.body);
         propertyList = properties.map((item) => item as Map<String, dynamic>).toList();
         tag = propertyList
             .expand((property) => (property['ad_parameters']['label'] as List<dynamic>).map((label) => label.toString()))
             .toSet()
             .toList();
-        print(propertyList);
         return propertyList; // 正確返回 Future
       } else {
         throw Exception('Failed to load properties');
@@ -89,15 +86,12 @@ class _NewRentalPageState extends State<NewRentalPage> {
         future: fetchProperties(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            print('waiting...');
             return const ShimmerList();
           } else if (snapshot.hasError) {
-            print('Error');
             return Center(
               child: Text('Error: ${snapshot.error}'),
             );
           } else {
-            print('show UI');
             return Container(
               width: double.infinity,
               height: double.infinity,
@@ -248,7 +242,8 @@ class _NewRentalPageState extends State<NewRentalPage> {
                                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6,),
                                       child: GestureDetector(
                                         onTap: () {
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail(itemData: propertyList[index],)));
+                                          // Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail(itemData: propertyList[index],)));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail(itemId: propertyList[index]['propertyId'], itemTitle: propertyList[index]['ad_parameters']['title'],)));
                                         },
                                         // child: ListItem(),
                                         child: Container(

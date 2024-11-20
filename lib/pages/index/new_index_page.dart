@@ -645,7 +645,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemDetail()));
+                            // Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemDetail()));
                           },
                         );
                       }),
@@ -747,7 +747,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                               child: ListItem(),
                             ),
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
+                              // Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail()));
                             },
                           );
                         }),

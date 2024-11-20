@@ -145,7 +145,8 @@ class _RentalPageState extends State<RentalPage> {
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6,),
                               child: GestureDetector(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail(itemData: propertyList[index],)));
+                                  // Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail(itemData: propertyList[index],)));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetail(itemId: propertyList[index]['propertyId'], itemTitle: propertyList[index]['ad_parameters']['title'],)));
                                 },
                                 // child: ListItem(),
                                 child: Container(

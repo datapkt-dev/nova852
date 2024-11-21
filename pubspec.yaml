@@ -197,6 +197,9 @@ flutter:
     - assets/images/index/news_page.png
     - assets/images/profile/user.png
     - assets/images/item_detail/layout2.png
+    - assets/images/index/for_swiper/851-1.jpg
+    - assets/images/index/for_swiper/852-2.jpg
+    - assets/images/index/for_swiper/852-3.jpg
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

@@ -81,7 +81,7 @@ class _ItemDetailState extends State<ItemDetail> {
     }
   }
 
-  showDialogFunc(context, img) {
+  showDialogFunc(context, imgWidget) {
     return showDialog(
       context: context,
       builder: (context) {
@@ -93,9 +93,7 @@ class _ItemDetailState extends State<ItemDetail> {
               color: Colors.white,
             ),
             padding: const EdgeInsets.all(15),
-            child: itemData != null
-                ? Image.network(itemData?['ad_parameters']['thumbnail_url'])
-                : Image.asset(img,),
+            child: imgWidget,
           ),
         );
       },
@@ -220,7 +218,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                 itemBuilder: (BuildContext context, index) {
                                   return GestureDetector(
                                     onTap: () {
-                                      // showDialogFunc(context, 'assets/images/item_img.jpeg');
+                                      showDialogFunc(context, Image.network(itemData['imageUrl'][index]));
                                     },
                                     child: Image.network(itemData['imageUrl'][index]),
                                   );
@@ -255,7 +253,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             ),
                                             GestureDetector(
                                               onTap: () {
-                                                showDialogFunc(context, 'assets/images/item_detail/layout2.png');
+                                                showDialogFunc(context, Image.asset('assets/images/item_detail/layout2.png'));
                                               },
                                               child: Container(
                                                 width: 82,

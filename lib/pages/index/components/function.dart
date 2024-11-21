@@ -8,13 +8,23 @@ class FunctionWidget2 extends StatefulWidget {
 }
 
 class _FunctionWidgetState extends State<FunctionWidget2> {
-  final List<String> function = ['全部用途', '住宅', '寫字樓', '工廠大廈', '全部用途', '住宅'];
-  List<bool> checked = [];
+  final List<String> function = ['全部', '住宅', '車位', '工商', '店鋪', '土地'];
+  final List<List<String>> functionChild = [
+    [],
+    ['全部', '私人屋苑', '居屋', '村屋', '獨立屋', '公屋', '唐樓', '洋樓', '單幢式大廈',],
+    ['全部', '電單車位', '貨車車位', '工商車位', '住宅車位',],
+    ['全部', '工商大廈', '寫字樓',],
+    ['全部', '商場舖位', '樓上舖', '地鋪', '生意頂讓',],
+    ['全部', '私人住宅土地', '村屋土地', '農地', '倉地', '貨倉', '康樂地',],
+  ];
+  late List<List<bool>> selectedFuncChild = [];
+
+  int _selectedFunc = 0;
 
   @override
   void initState() {
     super.initState();
-    checked = List.generate(function.length, (index) => false);
+    selectedFuncChild = functionChild.map((childList) => List<bool>.generate(childList.length, (index) => index == 0)).toList();
   }
 
   @override
@@ -49,42 +59,120 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                   ),
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                child: Column(
-                  children: List.generate(function.length, (index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10,),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 16,
-                            height: 16,
-                            child: Checkbox(
-                              value: checked[index],
-                              activeColor: const Color(0xFF07A1B4),
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  checked[index] = value!;
-                                });
-                              },
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: List.generate(function.length, (index) {
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _selectedFunc = index;
+                              });
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: 36,
+                              alignment: Alignment.center,
+                              padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 10,),
+                              decoration: BoxDecoration(
+                                gradient: _selectedFunc == index ? const LinearGradient(
+                                  begin: Alignment(0.99, -0.16),
+                                  end: Alignment(-0.99, 0.16),
+                                  colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                ) : null,
+                                border: index < function.length-1
+                                    ? const Border(
+                                  bottom: BorderSide(
+                                    color: Color(0xFFB3B3B3),
+                                    width: 1,
+                                  ),
+                                )
+                                    : null,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    function[index],
+                                    style: TextStyle(
+                                      color: _selectedFunc == index ? Colors.white : null,
+                                      fontSize: 16,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 30,),
+                                  Icon(
+                                    size: 16,
+                                    color: _selectedFunc == index ? Colors.white : null,
+                                    _selectedFunc == index ? Icons.arrow_back_ios : Icons.arrow_forward_ios,
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          const SizedBox(width: 5,),
-                          Text(
-                            function[index],
-                            style: const TextStyle(
-                              color: Color(0xFF333333),
-                              fontSize: 16,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
+                          );
+                        }),
                       ),
-                    );
-                  }),
-                ),
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: List.generate(functionChild[_selectedFunc].length, (index) {
+                          return Column(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    // _selectedAreaChild = index;
+                                    selectedFuncChild[_selectedFunc][index] = !selectedFuncChild[_selectedFunc][index];
+                                  });
+                                },
+                                child: Container(
+                                  height: 36,
+                                  padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 10,),
+                                  alignment: Alignment.centerLeft,
+                                  decoration: BoxDecoration(
+                                    // color: _selectedAreaChild == index ? Color(0xFF50C5D5) : null,
+                                    gradient: selectedFuncChild[_selectedFunc][index] ? const LinearGradient(
+                                      begin: Alignment(0.99, -0.16),
+                                      end: Alignment(-0.99, 0.16),
+                                      colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
+                                    ) : null,
+                                    border: index < functionChild[_selectedFunc].length-1
+                                        ? const Border(
+                                      bottom: BorderSide(
+                                        color: Color(0xFFB3B3B3),
+                                        width: 1,
+                                      ),
+                                    )
+                                        : null,
+                                  ),
+                                  child: Text(
+                                    functionChild[_selectedFunc][index],
+                                    style: TextStyle(
+                                      color: selectedFuncChild[_selectedFunc][index] ? Colors.white : null,
+                                      fontSize: 16,
+                                      fontFamily: 'Noto Sans TC',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        }),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               const Spacer(),
               Container(
@@ -113,7 +201,6 @@ class _FunctionWidgetState extends State<FunctionWidget2> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            checked = List.generate(function.length, (index) => false);
                           });
                         },
                         child: Container(

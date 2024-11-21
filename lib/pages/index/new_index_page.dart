@@ -22,8 +22,14 @@ class NewIndexPage extends StatefulWidget {
 }
 
 class _NewIndexPageState extends State<NewIndexPage> {
-  int _UpperBlockIndex = 0;
-  int _LowerBlockIndex = 0;
+  int _upperBlockIndex = 0;
+  int _lowerBlockIndex = 0;
+  final List<String> swiperImg = [
+    'assets/images/index/for_swiper/851-1.jpg',
+    'assets/images/index/for_swiper/852-2.jpg',
+    'assets/images/index/for_swiper/852-3.jpg',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,14 +43,14 @@ class _NewIndexPageState extends State<NewIndexPage> {
               width: double.infinity,
               height: 197,
               child: Swiper(
-                itemCount: 5,
+                itemCount: swiperImg.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Image.asset(
-                    'assets/images/index_banner.png',
+                    swiperImg[index],
                     fit: BoxFit.fill,
                   );
                 },
-                pagination: SwiperPagination(
+                pagination: const SwiperPagination(
                   builder: DotSwiperPaginationBuilder(
                     activeColor: Colors.black,
                   ),
@@ -58,7 +64,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -67,24 +73,24 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           height: 33,
                           decoration: ShapeDecoration(
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 0.50, color: Color(0xFF171717)),
+                              side: const BorderSide(width: 0.50, color: Color(0xFF171717)),
                               borderRadius: BorderRadius.circular(21.50),
                             ),
                           ),
                           child: Row(
                             children: [
                               Flexible(
-                                flex: _UpperBlockIndex == 0 ? 12 : 10,
+                                flex: _upperBlockIndex == 0 ? 12 : 10,
                                 child: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _UpperBlockIndex = 0;
+                                      _upperBlockIndex = 0;
                                     });
                                   },
                                   child: Container(
                                     height: 33,
-                                    decoration: _UpperBlockIndex == 0 ? ShapeDecoration(
-                                      color: Color(0xFF171717),
+                                    decoration: _upperBlockIndex == 0 ? ShapeDecoration(
+                                      color: const Color(0xFF171717),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(21.50),
                                       ),
@@ -93,7 +99,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     child: Text(
                                       '我想買樓',
                                       style: TextStyle(
-                                        color: _UpperBlockIndex == 0 ? Colors.white : Color(0xFFB3B3B3),
+                                        color: _upperBlockIndex == 0 ? Colors.white : const Color(0xFFB3B3B3),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
@@ -103,16 +109,16 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                 ),
                               ),
                               Flexible(
-                                flex: _UpperBlockIndex == 1 ? 12 : 10,
+                                flex: _upperBlockIndex == 1 ? 12 : 10,
                                 child: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _UpperBlockIndex = 1;
+                                      _upperBlockIndex = 1;
                                     });
                                   },
                                   child: Container(
-                                    decoration: _UpperBlockIndex == 1 ? ShapeDecoration(
-                                      color: Color(0xFF171717),
+                                    decoration: _upperBlockIndex == 1 ? ShapeDecoration(
+                                      color: const Color(0xFF171717),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(21.50),
                                       ),
@@ -121,7 +127,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     child: Text(
                                       '我想租樓',
                                       style: TextStyle(
-                                        color: _UpperBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
+                                        color: _upperBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
@@ -133,16 +139,16 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 8,),
-                        BlockRandS(index: _UpperBlockIndex,),
+                        const SizedBox(height: 8,),
+                        BlockRandS(index: _upperBlockIndex,),
                       ],
                     ),
                   ),
-                  SizedBox(height: 12,),
+                  const SizedBox(height: 12,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         '相關工具',
                         style: TextStyle(
                           color: Color(0xFF171717),
@@ -151,9 +157,9 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 4,),
+                      const SizedBox(height: 4,),
                       Container(
-                        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 14),
+                        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -166,11 +172,11 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                   CircleAvatar(
                                     radius: 25,
                                     // backgroundImage: AssetImage('assets/images/tools/tools_a.jpeg'),
-                                    backgroundColor: Color(0xFFFF763C),
+                                    backgroundColor: const Color(0xFFFF763C),
                                     child: SvgPicture.asset('assets/icons/tools/deal.svg'),
                                   ),
-                                  SizedBox(height: 4,),
-                                  Text(
+                                  const SizedBox(height: 4,),
+                                  const Text(
                                     '成交紀錄',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
@@ -184,18 +190,18 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => MortgagePage()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const MortgagePage()));
                               },
                               child: Column(
                                 children: [
                                   CircleAvatar(
                                     radius: 25,
                                     // backgroundImage: AssetImage('assets/images/tools/tools_a.jpeg'),
-                                    backgroundColor: Color(0xFF58A9E1),
+                                    backgroundColor: const Color(0xFF58A9E1),
                                     child: SvgPicture.asset('assets/icons/tools/plan.svg'),
                                   ),
-                                  SizedBox(height: 4,),
-                                  Text(
+                                  const SizedBox(height: 4,),
+                                  const Text(
                                     '按揭計劃',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
@@ -234,11 +240,11 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                   CircleAvatar(
                                     radius: 25,
                                     // backgroundImage: AssetImage('assets/images/tools/tools_a.jpeg'),
-                                    backgroundColor: Color(0xFFFFC700),
+                                    backgroundColor: const Color(0xFFFFC700),
                                     child: SvgPicture.asset('assets/icons/tools/bank.svg',),
                                   ),
-                                  SizedBox(height: 4,),
-                                  Text(
+                                  const SizedBox(height: 4,),
+                                  const Text(
                                     '銀行計劃',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
@@ -252,18 +258,18 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => ContractHistory()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const ContractHistory()));
                               },
                               child: Column(
                                 children: [
                                   CircleAvatar(
                                     radius: 25,
                                     // backgroundImage: AssetImage('assets/images/tools/tools_d.jpeg'),
-                                    backgroundColor: Color(0XFF249607),
+                                    backgroundColor: const Color(0XFF249607),
                                     child: SvgPicture.asset('assets/icons/tools/contract.svg'),
                                   ),
-                                  SizedBox(height: 4,),
-                                  Text(
+                                  const SizedBox(height: 4,),
+                                  const Text(
                                     '電子租約',
                                     style: TextStyle(
                                       color: Color(0xFF171717),
@@ -280,11 +286,11 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 24,),
+                  const SizedBox(height: 24,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         '樓市新聞',
                         style: TextStyle(
                           color: Color(0xFF171717),
@@ -295,9 +301,9 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => News()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const News()));
                         },
-                        child: Text(
+                        child: const Text(
                           '更多',
                           style: TextStyle(
                             color: Color(0xFF07A1B4),
@@ -400,11 +406,11 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       }),
                     ),
                   ),
-                  SizedBox(height: 12,),
+                  const SizedBox(height: 12,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         '精選樓盤',
                         style: TextStyle(
                           color: Color(0xFF171717),
@@ -417,7 +423,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => MapTest()));
                         },
-                        child: Text(
+                        child: const Text(
                           '更多',
                           style: TextStyle(
                             color: Color(0xFF07A1B4),
@@ -429,14 +435,14 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 4,),
+                  const SizedBox(height: 4,),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: List.generate(10, (index) {
                         return GestureDetector(
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4),
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
                             child: Container(
                               width: 286,
                               decoration: ShapeDecoration(
@@ -451,7 +457,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                         width: 286,
                                         height: 181,
                                         decoration: ShapeDecoration(
-                                          image: DecorationImage(
+                                          image: const DecorationImage(
                                             image: AssetImage('assets/images/featured_item.png'),
                                             fit: BoxFit.fill,
                                           ),
@@ -461,7 +467,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                       Container(
                                         width: 50,
                                         height: 22,
-                                        decoration: ShapeDecoration(
+                                        decoration: const ShapeDecoration(
                                           color: Color(0xFF171717),
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.only(
@@ -472,13 +478,13 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                         ),
                                         child: Row(
                                           children: [
-                                            SizedBox(width: 4,),
+                                            const SizedBox(width: 4,),
                                             SvgPicture.asset(
                                               width: 14,
                                               height: 14,
                                               'assets/icons/diamond.svg',
                                             ),
-                                            SizedBox(width: 2,),
+                                            const SizedBox(width: 2,),
                                             const Text(
                                               '精選',
                                               style: TextStyle(
@@ -494,7 +500,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     ],
                                   ),
                                   Container(
-                                    padding: EdgeInsets.only(left: 12, right: 12, bottom: 14, top: 3),
+                                    padding: const EdgeInsets.only(left: 12, right: 12, bottom: 14, top: 3),
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -540,8 +546,8 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
-                                        Divider(),
-                                        Text(
+                                        const Divider(),
+                                        const Text(
                                           '獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢涌小T】海柏名【東；獨立屋 全幢【東涌小T】海柏名邸獨立屋 罕放租獨立屋 全幢涌小T】海柏名【東；',
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
@@ -552,7 +558,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
-                                        SizedBox(height: 7,),
+                                        const SizedBox(height: 7,),
                                         Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
@@ -564,11 +570,11 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                   alignment: Alignment.center,
                                                   decoration: ShapeDecoration(
                                                     shape: RoundedRectangleBorder(
-                                                      side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                      side: const BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
                                                       borderRadius: BorderRadius.circular(10),
                                                     ),
                                                   ),
-                                                  child: Text(
+                                                  child: const Text(
                                                     'Tagging',
                                                     style: TextStyle(
                                                       color: Color(0xFF07A1B4),
@@ -578,18 +584,18 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                                     ),
                                                   ),
                                                 ),
-                                                SizedBox(width: 4,),
+                                                const SizedBox(width: 4,),
                                                 Container(
                                                   width: 57,
                                                   height: 20,
                                                   alignment: Alignment.center,
                                                   decoration: ShapeDecoration(
                                                     shape: RoundedRectangleBorder(
-                                                      side: BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
+                                                      side: const BorderSide(width: 0.50, color: Color(0xFF07A1B4)),
                                                       borderRadius: BorderRadius.circular(10),
                                                     ),
                                                   ),
-                                                  child: Text(
+                                                  child: const Text(
                                                     'Tagging',
                                                     style: TextStyle(
                                                       color: Color(0xFF07A1B4),
@@ -605,12 +611,12 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                               width: 64,
                                               height: 20,
                                               decoration: ShapeDecoration(
-                                                color: Color(0xFFE86100),
+                                                color: const Color(0xFFE86100),
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius: BorderRadius.circular(10),
                                                 ),
                                               ),
-                                              child: Row(
+                                              child: const Row(
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 crossAxisAlignment: CrossAxisAlignment.end,
                                                 children: [
@@ -678,16 +684,16 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           child: Row(
                             children: [
                               Flexible(
-                                flex: _LowerBlockIndex == 0 ? 12 : 10,
+                                flex: _lowerBlockIndex == 0 ? 12 : 10,
                                 child: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _LowerBlockIndex = 0;
+                                      _lowerBlockIndex = 0;
                                     });
                                   },
                                   child: Container(
                                     height: 33,
-                                    decoration: _LowerBlockIndex == 0 ? ShapeDecoration(
+                                    decoration: _lowerBlockIndex == 0 ? ShapeDecoration(
                                       color: const Color(0xFF171717),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(21.50),
@@ -697,7 +703,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     child: Text(
                                       '我想買樓',
                                       style: TextStyle(
-                                        color: _LowerBlockIndex == 0 ? Colors.white : const Color(0xFFB3B3B3),
+                                        color: _lowerBlockIndex == 0 ? Colors.white : const Color(0xFFB3B3B3),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
@@ -707,16 +713,16 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                 ),
                               ),
                               Flexible(
-                                flex: _LowerBlockIndex == 1 ? 12 : 10,
+                                flex: _lowerBlockIndex == 1 ? 12 : 10,
                                 child: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _LowerBlockIndex = 1;
+                                      _lowerBlockIndex = 1;
                                     });
                                   },
                                   child: Container(
                                     alignment: Alignment.center,
-                                    decoration: _LowerBlockIndex == 1 ? ShapeDecoration(
+                                    decoration: _lowerBlockIndex == 1 ? ShapeDecoration(
                                       color: const Color(0xFF171717),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(21.50),
@@ -725,7 +731,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     child: Text(
                                       '我想租樓',
                                       style: TextStyle(
-                                        color: _LowerBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
+                                        color: _lowerBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
@@ -738,11 +744,11 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       Column(
                         children: List.generate(4, (index) {
                           return GestureDetector(
-                            child: Padding(
+                            child: const Padding(
                               padding: EdgeInsets.symmetric(vertical: 5,),
                               child: ListItem(),
                             ),
@@ -754,7 +760,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 12,),
+                  const SizedBox(height: 12,),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
@@ -766,7 +772,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                         alignment: Alignment.center,
                         clipBehavior: Clip.antiAlias,
                         decoration: ShapeDecoration(
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             begin: Alignment(0.99, -0.16),
                             end: Alignment(-0.99, 0.16),
                             colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
@@ -775,7 +781,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        child: Text(
+                        child: const Text(
                           '更多樓盤',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -788,7 +794,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30,),
+                  const SizedBox(height: 30,),
                 ],
               ),
             ),

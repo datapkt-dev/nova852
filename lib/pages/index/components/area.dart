@@ -10,7 +10,7 @@ class AreaWidget2 extends StatefulWidget {
 class _AreaWidgetState extends State<AreaWidget2> {
   int _selectedZone = 0;
   int _selectedArea = 0;
-  int _selectedAreaChild = 0;
+  // int _selectedAreaChild = 0;
   bool _showArea = true;
 
   final List<String> zone = ['地區', '港鐵',];
@@ -20,6 +20,13 @@ class _AreaWidgetState extends State<AreaWidget2> {
     ['全九龍', '油尖旺區', '深水埗區', '九龍城區', '黃大仙區', '觀塘區'],
     ['全新界', '葵青區', '荃灣區', '元朗區', '屯門區', '北區', '大埔區', '沙田區', '西貢區', '離島區',],
   ];
+  late List<List<bool>> selectedAreaChild = [];
+
+  @override
+  void initState() {
+    super.initState();
+    selectedAreaChild = areaChild.map((childList) => List<bool>.generate(childList.length, (index) => index == 0)).toList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +75,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
               children: List.generate(zone.length, (index) {
                 return Row(
                   children: [
-                    InkWell(
+                    GestureDetector(
                       onTap: () {
                         setState(() {
                           _selectedArea = index;
@@ -179,10 +186,11 @@ class _AreaWidgetState extends State<AreaWidget2> {
                       children: List.generate(areaChild[_selectedZone].length, (index) {
                         return Column(
                           children: [
-                            InkWell(
+                            GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  _selectedAreaChild = index;
+                                  // _selectedAreaChild = index;
+                                  selectedAreaChild[_selectedZone][index] = !selectedAreaChild[_selectedZone][index];
                                 });
                               },
                               child: Container(
@@ -191,7 +199,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                                 alignment: Alignment.centerLeft,
                                 decoration: BoxDecoration(
                                   // color: _selectedAreaChild == index ? Color(0xFF50C5D5) : null,
-                                  gradient: _selectedAreaChild == index ? const LinearGradient(
+                                  gradient: selectedAreaChild[_selectedZone][index] ? const LinearGradient(
                                     begin: Alignment(0.99, -0.16),
                                     end: Alignment(-0.99, 0.16),
                                     colors: [Color(0xFF07A1B4), Color(0xFF77D1D7)],
@@ -208,7 +216,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                                 child: Text(
                                   areaChild[_selectedZone][index],
                                   style: TextStyle(
-                                    color: _selectedAreaChild == index ? Colors.white : null,
+                                    color: selectedAreaChild[_selectedZone][index] ? Colors.white : null,
                                     fontSize: 16,
                                     fontFamily: 'Noto Sans TC',
                                     fontWeight: FontWeight.w400,
@@ -225,7 +233,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Container(
               padding: const EdgeInsets.symmetric(vertical: 9, horizontal: 16),
               decoration: const ShapeDecoration(
@@ -249,7 +257,7 @@ class _AreaWidgetState extends State<AreaWidget2> {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: (){
                         setState(() {
                           _selectedZone = 0;

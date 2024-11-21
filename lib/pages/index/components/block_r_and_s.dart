@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nova852/pages/index/rental_page.dart';
-
 import '../new_rental_page.dart';
 
 class BlockRandS extends StatelessWidget {
@@ -54,7 +53,7 @@ class BlockRandS extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const NewRentalPage()));
                         },
                       ),
                     ),
@@ -64,8 +63,8 @@ class BlockRandS extends StatelessWidget {
                         decoration: ShapeDecoration(
                           image: DecorationImage(
                             image: index == 0
-                                ? AssetImage('assets/images/index_block_buy.png')
-                                : AssetImage('assets/images/index_block_rent.png'),
+                                ? const AssetImage('assets/images/index_block_buy.png')
+                                : const AssetImage('assets/images/index_block_rent.png'),
                             fit: BoxFit.cover,
                           ),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -81,7 +80,7 @@ class BlockRandS extends StatelessWidget {
                             Text(
                               '店鋪',
                               style: TextStyle(
-                                color: index == 0 ? Color(0xFF171717) : Colors.white,
+                                color: index == 0 ? const Color(0xFF171717) : Colors.white,
                                 fontSize: 16,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
@@ -91,13 +90,13 @@ class BlockRandS extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const NewRentalPage()));
                       },
                     ),
                   ],
                 ),
               ),
-              SizedBox(width: 4,),
+              const SizedBox(width: 4,),
               Expanded(
                 child: Column(
                   children: [
@@ -106,8 +105,8 @@ class BlockRandS extends StatelessWidget {
                         decoration: ShapeDecoration(
                           image: DecorationImage(
                             image: index == 0
-                                ? AssetImage('assets/images/index_block_buy.png')
-                                : AssetImage('assets/images/index_block_rent.png'),
+                                ? const AssetImage('assets/images/index_block_buy.png')
+                                : const AssetImage('assets/images/index_block_rent.png'),
                             fit: BoxFit.cover,
                           ),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -125,7 +124,7 @@ class BlockRandS extends StatelessWidget {
                             Text(
                               '住宅',
                               style: TextStyle(
-                                color: index == 0 ? Color(0xFF171717) : Colors.white,
+                                color: index == 0 ? const Color(0xFF171717) : Colors.white,
                                 fontSize: 16,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
@@ -138,14 +137,14 @@ class BlockRandS extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
                       },
                     ),
-                    SizedBox(height: 4,),
+                    const SizedBox(height: 4,),
                     GestureDetector(
                       child: Container(
                         decoration: ShapeDecoration(
                           image: DecorationImage(
                             image: index == 0
-                                ? AssetImage('assets/images/index_block_buy.png')
-                                : AssetImage('assets/images/index_block_rent.png'),
+                                ? const AssetImage('assets/images/index_block_buy.png')
+                                : const AssetImage('assets/images/index_block_rent.png'),
                             fit: BoxFit.cover,
                           ),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -163,7 +162,7 @@ class BlockRandS extends StatelessWidget {
                             Text(
                               '豪宅',
                               style: TextStyle(
-                                color: index == 0 ? Color(0xFF171717) : Colors.white,
+                                color: index == 0 ? const Color(0xFF171717) : Colors.white,
                                 fontSize: 16,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
@@ -176,14 +175,14 @@ class BlockRandS extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
                       },
                     ),
-                    SizedBox(height: 4,),
+                    const SizedBox(height: 4,),
                     GestureDetector(
                       child: Container(
                         decoration: ShapeDecoration(
                           image: DecorationImage(
                             image: index == 0
-                                ? AssetImage('assets/images/index_block_buy.png')
-                                : AssetImage('assets/images/index_block_rent.png'),
+                                ? const AssetImage('assets/images/index_block_buy.png')
+                                : const AssetImage('assets/images/index_block_rent.png'),
                             fit: BoxFit.cover,
                           ),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -201,7 +200,7 @@ class BlockRandS extends StatelessWidget {
                             Text(
                               '工廈/商廈',
                               style: TextStyle(
-                                color: index == 0 ? Color(0xFF171717) : Colors.white,
+                                color: index == 0 ? const Color(0xFF171717) : Colors.white,
                                 fontSize: 16,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
@@ -214,14 +213,14 @@ class BlockRandS extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => RentalPage()));
                       },
                     ),
-                    SizedBox(height: 4,),
+                    const SizedBox(height: 4,),
                     GestureDetector(
                       child: Container(
                         decoration: ShapeDecoration(
                           image: DecorationImage(
                             image: index == 0
-                                ? AssetImage('assets/images/index_block_buy.png')
-                                : AssetImage('assets/images/index_block_rent.png'),
+                                ? const AssetImage('assets/images/index_block_buy.png')
+                                : const AssetImage('assets/images/index_block_rent.png'),
                             fit: BoxFit.cover,
                           ),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
@@ -237,7 +236,7 @@ class BlockRandS extends StatelessWidget {
                             Text(
                               '車位',
                               style: TextStyle(
-                                color: index == 0 ? Color(0xFF171717) : Colors.white,
+                                color: index == 0 ? const Color(0xFF171717) : Colors.white,
                                 fontSize: 16,
                                 fontFamily: 'Noto Sans TC',
                                 fontWeight: FontWeight.w500,
@@ -256,27 +255,26 @@ class BlockRandS extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 30,),
+        const SizedBox(height: 30,),
         Row(
           children: [
             Flexible(
               flex: 1,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => NewRentalPage()));
                 },
                 child: Container(
                   height: 176,
                   width: double.infinity,
                   decoration: ShapeDecoration(
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('assets/images/buying_featured.png'),
                       fit: BoxFit.cover,
                     ),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 5,
                         left: 5
                     ),
@@ -285,14 +283,14 @@ class BlockRandS extends StatelessWidget {
                       children: [
                         Text(
                           '精選新盤 (${index==0 ? '售' : '租'})',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Color(0xFF171717),
                             fontSize: 16,
                             fontFamily: 'Noto Sans TC',
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Nova為你推介最新精選筍盤',
                           style: TextStyle(
                             color: Color(0xFF171717),
@@ -307,7 +305,7 @@ class BlockRandS extends StatelessWidget {
                 ),
               )
             ),
-            SizedBox(width: 4,),
+            const SizedBox(width: 4,),
             Flexible(
               flex: 1,
               child: Column(
@@ -316,14 +314,14 @@ class BlockRandS extends StatelessWidget {
                     height: 86,
                     width: double.infinity,
                     decoration: ShapeDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage('assets/images/buying_discount.png'),
                         fit: BoxFit.cover,
                       ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           top: 5,
                           left: 5
                       ),
@@ -331,60 +329,60 @@ class BlockRandS extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: index==0
                             ? [
-                              Text(
-                            '優惠上車盤',
-                            style: TextStyle(
-                              color: Color(0xFF171717),
-                              fontSize: 16,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                              Text(
-                            '600萬內筍盤',
-                            style: TextStyle(
-                              color: Color(0xFF171717),
-                              fontSize: 12,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
+                              const Text(
+                                '優惠上車盤',
+                                style: TextStyle(
+                                  color: Color(0xFF171717),
+                                  fontSize: 16,
+                                  fontFamily: 'Noto Sans TC',
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              const Text(
+                                '600萬內筍盤',
+                                style: TextStyle(
+                                  color: Color(0xFF171717),
+                                  fontSize: 12,
+                                  fontFamily: 'Noto Sans TC',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ]
                             : [
-                              Text(
-                            '優惠租盤',
-                            style: TextStyle(
-                              color: Color(0xFF171717),
-                              fontSize: 16,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                              Text(
-                            '呎租萬七內筍盤',
-                            style: TextStyle(
-                              color: Color(0xFF171717),
-                              fontSize: 12,
-                              fontFamily: 'Noto Sans TC',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
+                              const Text(
+                                '優惠租盤',
+                                style: TextStyle(
+                                  color: Color(0xFF171717),
+                                  fontSize: 16,
+                                  fontFamily: 'Noto Sans TC',
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              const Text(
+                                '呎租萬七內筍盤',
+                                style: TextStyle(
+                                  color: Color(0xFF171717),
+                                  fontSize: 12,
+                                  fontFamily: 'Noto Sans TC',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 4,),
+                  const SizedBox(height: 4,),
                   Container(
                     height: 86,
                     width: double.infinity,
                     decoration: ShapeDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage('assets/images/buying_hot.png'),
                         fit: BoxFit.cover,
                       ),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
                     ),
-                    child: Padding(
+                    child: const Padding(
                       padding: EdgeInsets.only(
                           top: 5,
                           left: 5

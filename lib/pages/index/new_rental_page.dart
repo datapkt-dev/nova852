@@ -41,7 +41,6 @@ class _NewRentalPageState extends State<NewRentalPage> {
     try {
       final response = await http.get(Uri.parse('$_baseUrl/properties'));
       if (response.statusCode == 200) {
-        print(200);
         List<dynamic> properties = json.decode(response.body);
         propertyList = properties.map((item) => item as Map<String, dynamic>).toList();
         tag = propertyList.expand((property) => (property['ad_parameters']['label'] as List<dynamic>).map((label) => label.toString())).toSet().toList();

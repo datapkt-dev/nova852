@@ -67,14 +67,11 @@ class _ItemDetailState extends State<ItemDetail> {
   Future<Map<String, dynamic>> fetchProperties(String? id) async {
     final response = await http.get(Uri.parse('${AppConfig.baseURL}/properties/$id'));
     if (response.statusCode == 200) {
-      print(200);
       itemData = json.decode(response.body);
       Map<String, dynamic> amenities = itemData['ad_parameters']['amenities'];
-      print(amenities);
       furniture.forEach((key, value) {
         furniture[key]![2] = amenities[key]!;
       });
-      print(furniture);
       return json.decode(response.body);
     } else {
       throw Exception('Failed to load properties');
@@ -740,11 +737,11 @@ class _ItemDetailState extends State<ItemDetail> {
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(6),
                                     ),
-                                    padding: EdgeInsets.all(15),
+                                    padding: const EdgeInsets.all(15),
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text(
+                                        const Text(
                                           '鄰近設施',
                                           style: TextStyle(
                                             color: Color(0xFF171717),
@@ -753,8 +750,8 @@ class _ItemDetailState extends State<ItemDetail> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
-                                        SizedBox(height: 4,),
-                                        SizedBox(
+                                        const SizedBox(height: 4,),
+                                        const SizedBox(
                                           width: double.infinity,
                                           // child: GoogleMap(
                                           //   initialCameraPosition: CameraPosition(
@@ -769,7 +766,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                           //   },
                                           // ),
                                         ),
-                                        SizedBox(height: 24,),
+                                        const SizedBox(height: 24,),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: List.generate(mapItem.length, (index) {
@@ -783,18 +780,18 @@ class _ItemDetailState extends State<ItemDetail> {
                                                 },
                                                 child: Container(
                                                   alignment: Alignment.center,
-                                                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                                   decoration: BoxDecoration(
                                                     border: Border(
                                                       bottom: BorderSide(
-                                                        color: _selectedItem == index ? Color(0xFF07A1B4) : Color(0xFFE3E3E3),
+                                                        color: _selectedItem == index ? const Color(0xFF07A1B4) : const Color(0xFFE3E3E3),
                                                         width: 2,
                                                       ),
                                                     ),
                                                   ),
                                                   child: Text(
                                                     mapItem[index],
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       color: Color(0xFF171717),
                                                       fontSize: 12,
                                                       fontFamily: 'Noto Sans TC',
@@ -1146,7 +1143,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                           child: Text(
                                                             '售',
                                                             style: TextStyle(
-                                                              color: _selectedHistory == 0 ? Colors.white : Color(0xFF07A1B4),
+                                                              color: _selectedHistory == 0 ? Colors.white : const Color(0xFF07A1B4),
                                                               fontSize: 14,
                                                               fontFamily: 'Noto Sans TC',
                                                               fontWeight: FontWeight.w500,
@@ -1174,7 +1171,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                                           child: Text(
                                                             '租',
                                                             style: TextStyle(
-                                                              color: _selectedHistory == 1 ? Colors.white : Color(0xFF07A1B4),
+                                                              color: _selectedHistory == 1 ? Colors.white : const Color(0xFF07A1B4),
                                                               fontSize: 14,
                                                               fontFamily: 'Noto Sans TC',
                                                               fontWeight: FontWeight.w500,

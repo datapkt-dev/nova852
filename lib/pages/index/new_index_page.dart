@@ -12,6 +12,7 @@ import 'package:nova852/pages/index/transaction_history.dart';
 import 'package:nova852/pages/profile/contract_history.dart';
 import 'package:nova852/test/maptest.dart';
 import 'mortgage_page.dart';
+import 'new_rental_page.dart';
 import 'news_content.dart';
 
 class NewIndexPage extends StatefulWidget {
@@ -127,7 +128,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     child: Text(
                                       '我想租樓',
                                       style: TextStyle(
-                                        color: _upperBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
+                                        color: _upperBlockIndex == 1 ? Colors.white : const Color(0xFFB3B3B3),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,
@@ -165,7 +166,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => TransactionHistory()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const TransactionHistory()));
                               },
                               child: Column(
                                 children: [
@@ -215,7 +216,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => BankPlan()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const BankPlan()));
                               },
                               child: Column(
                                 children: [
@@ -385,7 +386,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                           '9000萬賣旺角老字號茶記鋪位 過億入手 勁蝕1500萬離場 ${index+1}',
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Color(0xFF171717),
                                             fontSize: 16,
                                             fontFamily: 'Noto Sans TC',
@@ -421,7 +422,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => MapTest()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const MapTest()));
                         },
                         child: const Text(
                           '更多',
@@ -731,7 +732,7 @@ class _NewIndexPageState extends State<NewIndexPage> {
                                     child: Text(
                                       '我想租樓',
                                       style: TextStyle(
-                                        color: _lowerBlockIndex == 1 ? Colors.white : Color(0xFFB3B3B3),
+                                        color: _lowerBlockIndex == 1 ? Colors.white : const Color(0xFFB3B3B3),
                                         fontSize: 14,
                                         fontFamily: 'Noto Sans TC',
                                         fontWeight: FontWeight.w500,

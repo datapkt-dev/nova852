@@ -23,6 +23,8 @@ class _ItemDetailState extends State<ItemDetail> {
   final List<String> tab = ['基本資料', '單位詳情', '鄰近設施',];
   final List<String> mapItem = ['交通', '超市', '餐飲', '銀行', '學校', '醫院',];
   final ScrollController _scrollController = ScrollController();
+  // final itemKey = GlobalKey();
+  late List scrollKey;
 
   int _selectedIndex = 0;
   int _selectedItem = 0;
@@ -31,24 +33,26 @@ class _ItemDetailState extends State<ItemDetail> {
   late Future<Map<String, dynamic>> _futureData;
 
   Map<String, List<dynamic>> furniture = {
+    'tv' : ['電視', 'assets/icons/furniture/tv.svg', true],
     'ac' : ['冷氣機', 'assets/icons/furniture/aircon.svg', true],
-    'dw' : ['洗碗碟機', 'assets/icons/furniture/dishwasher.svg', false],
-    'fr' : ['雪櫃', 'assets/icons/furniture/refrigerator.svg', true],
-    'hx' : ['抽油煙機', 'assets/icons/furniture/rangeHood.svg', true],
-    'ih' : ['電磁爐', 'assets/icons/furniture/inductionCooker.svg', true],
+    'wh' : ['熱水爐', 'assets/icons/furniture/heater.svg', false],
     'mw' : ['微波爐', 'assets/icons/furniture/microwave.svg', false],
+    'wm' : ['洗衣機', 'assets/icons/furniture/washer.svg', true],
+    'td' : ['乾衣機', 'assets/icons/furniture/clothesDryer.svg', true],
+    'fr' : ['雪櫃', 'assets/icons/furniture/refrigerator.svg', true],
+    'ih' : ['電磁爐', 'assets/icons/furniture/inductionCooker.svg', true],
+    'hx' : ['抽油煙機', 'assets/icons/furniture/rangeHood.svg', true],
     'ov' : ['焗爐', 'assets/icons/furniture/oven.svg', false],
     'sc' : ['蒸焗爐', 'assets/icons/furniture/steamOven.svg', true],
-    'td' : ['乾衣機', 'assets/icons/furniture/clothesDryer.svg', true],
-    'tv' : ['電視', 'assets/icons/furniture/tv.svg', true],
-    'wh' : ['熱水爐', 'assets/icons/furniture/heater.svg', false],
-    'wm' : ['洗衣機', 'assets/icons/furniture/washer.svg', true],
+    'dw' : ['洗碗碟機', 'assets/icons/furniture/dishwasher.svg', false],
   };
 
   @override
   void initState() {
     super.initState();
     _futureData = fetchProperties(widget.itemId);
+    scrollKey = List.generate(tab.length, (index) => GlobalKey());
+
     _scrollController.addListener(() {
       double offset = _scrollController.offset;
 
@@ -65,7 +69,7 @@ class _ItemDetailState extends State<ItemDetail> {
   }
 
   Future<Map<String, dynamic>> fetchProperties(String? id) async {
-    final response = await http.get(Uri.parse('${AppConfig.baseURL}/properties/$id'));
+    final response = await http.get(Uri.parse('$_baseUrl/properties/$id'));
     if (response.statusCode == 200) {
       itemData = json.decode(response.body);
       Map<String, dynamic> amenities = itemData['ad_parameters']['amenities'];
@@ -78,7 +82,12 @@ class _ItemDetailState extends State<ItemDetail> {
     }
   }
 
-  showDialogFunc(context, imgWidget) {
+  Future scrollTo(index) async {
+    final context = scrollKey[index].currentContext!;
+    await Scrollable.ensureVisible(context);
+  }
+
+  popImg(context, imgWidget) {
     return showDialog(
       context: context,
       builder: (context) {
@@ -123,7 +132,8 @@ class _ItemDetailState extends State<ItemDetail> {
         ),
         actions: [
           IconButton(
-            onPressed: (){},
+            onPressed: (){
+            },
             icon: SvgPicture.asset('assets/icons/item_detail/bookmark.svg'),
           ),
           IconButton(
@@ -180,18 +190,19 @@ class _ItemDetailState extends State<ItemDetail> {
                               child: GestureDetector(
                                 child: Text(tab[index]),
                                 onTap: () {
+                                  scrollTo(index);
                                   setState(() {
                                     _selectedIndex = index;
                                   });
-                                  if(index==0) {
-                                    _scrollController.jumpTo(0);
-                                  }
-                                  if(index==1) {
-                                    _scrollController.jumpTo(700);
-                                  }
-                                  if(index==2) {
-                                    _scrollController.jumpTo(1260);
-                                  }
+                                  // if(index==0) {
+                                  //   _scrollController.jumpTo(0);
+                                  // }
+                                  // if(index==1) {
+                                  //   _scrollController.jumpTo(700);
+                                  // }
+                                  // if(index==2) {
+                                  //   _scrollController.jumpTo(1260);
+                                  // }
                                 },
                               ),
                             ),
@@ -205,6 +216,7 @@ class _ItemDetailState extends State<ItemDetail> {
                         child: Column(
                           children: [
                             Container(
+                              key: scrollKey[0],
                               width: double.infinity,
                               height: 308,
                               color: Colors.white,
@@ -215,7 +227,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                 itemBuilder: (BuildContext context, index) {
                                   return GestureDetector(
                                     onTap: () {
-                                      showDialogFunc(context, Image.network(itemData['imageUrl'][index]));
+                                      popImg(context, Image.network(itemData['imageUrl'][index]));
                                     },
                                     child: Image.network(itemData['imageUrl'][index]),
                                   );
@@ -250,7 +262,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                             ),
                                             GestureDetector(
                                               onTap: () {
-                                                showDialogFunc(context, Image.asset('assets/images/item_detail/layout2.png'));
+                                                popImg(context, Image.asset('assets/images/item_detail/layout2.png'));
                                               },
                                               child: Container(
                                                 width: 82,
@@ -617,6 +629,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                   ),
                                   const SizedBox(height: 20,),
                                   Container(
+                                    key: scrollKey[1],
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -732,6 +745,7 @@ class _ItemDetailState extends State<ItemDetail> {
                                   ),
                                   const SizedBox(height: 20,),
                                   Container(
+                                    key: scrollKey[2],
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Colors.white,

@@ -12,7 +12,7 @@ class _PriceWidgetState extends State<PriceWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height-180,
+      height: MediaQuery.of(context).size.height-170,
       width: double.infinity,
       color: const Color(0xFFF5F6F7),
       child: Column(
@@ -192,8 +192,8 @@ class _PriceWidgetState extends State<PriceWidget> {
           ),
           const Spacer(),
           Container(
-              padding: const EdgeInsets.symmetric(vertical: 9, horizontal: 16),
-              decoration: const ShapeDecoration(
+            padding: const EdgeInsets.symmetric(vertical: 9, horizontal: 16),
+            decoration: const ShapeDecoration(
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
@@ -210,34 +210,37 @@ class _PriceWidgetState extends State<PriceWidget> {
                   )
                 ],
               ),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 50,
-                        alignment: Alignment.center,
-                        decoration: ShapeDecoration(
-                          color: const Color(0xFFB3B3B3),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-                        ),
-                        child: const Text(
-                          '重設',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontFamily: 'Noto Sans TC',
-                            fontWeight: FontWeight.w500,
-                          ),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      alignment: Alignment.center,
+                      decoration: ShapeDecoration(
+                        color: const Color(0xFFB3B3B3),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                      ),
+                      child: const Text(
+                        '重設',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontFamily: 'Noto Sans TC',
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 15,),
-                  Expanded(
-                    flex: 2,
+                ),
+                const SizedBox(width: 15,),
+                Expanded(
+                  flex: 2,
+                  child: GestureDetector(
+                    onTap: () {
+                    },
                     child: Container(
                       height: 50,
                       decoration: ShapeDecoration(
@@ -250,7 +253,7 @@ class _PriceWidgetState extends State<PriceWidget> {
                       ),
                       alignment: Alignment.center,
                       child: const Text(
-                        '確定 (7,623個樓盤)',
+                        '確定',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -261,8 +264,9 @@ class _PriceWidgetState extends State<PriceWidget> {
                       ),
                     ),
                   ),
-                ],
-              )
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -308,6 +312,6 @@ class CustomSliderThumbImage extends SliderComponentShape {
     });
 
     imageStream.addListener(listener);
-    imageStream.removeListener(listener); // You might need a better way to manage the listener's lifecycle
+    imageStream.removeListener(listener);
   }
 }

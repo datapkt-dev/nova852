@@ -24,7 +24,7 @@ class _NewRentalPageState extends State<NewRentalPage> {
   late List<String> tag = ['Tagging'];
   List<bool> _selectedTag = [false];
 
-  final filterWidget = [const FunctionWidget2(), const AreaWidget2(), const PriceWidget(), const MoreWidget(), Container()];
+  // final filterWidget = [const FunctionWidget2(), const AreaWidget2(), const PriceWidget(), const MoreWidget(), Container()];
   int _selectedTab = 0;
   bool _filterExpand = false;
   List<Map<String, dynamic>> propertyList = [];
@@ -38,9 +38,10 @@ class _NewRentalPageState extends State<NewRentalPage> {
     _futureData = fetchProperties();
   }
 
-  Future<List> fetchProperties() async {
+  Future<List> fetchProperties({Map<String, String>? queryParams}) async {
     try {
-      final response = await http.get(Uri.parse('$_baseUrl/properties'));
+      final uri = Uri.parse('$_baseUrl/properties').replace(queryParameters: queryParams);
+      final response = await http.get(uri);
       if (response.statusCode == 200) {
         List<dynamic> properties = json.decode(response.body);
         propertyList = properties.map((item) => item as Map<String, dynamic>).toList();
@@ -104,8 +105,25 @@ class _NewRentalPageState extends State<NewRentalPage> {
     });
   }
 
+  Map<String, String> _selectedFilter = {};
+  void _handleConfirmedFilter(Map<String, String> filter) async {
+    setState(() {
+      _filterExpand = !_filterExpand;
+      _selectedFilter = filter;
+    });
+
+    try {
+      await fetchProperties(queryParams: _selectedFilter);
+    } catch (error) {
+      print('Error while fetching properties: $error');
+    }
+
+    // print('選擇範圍：${_selectedRange[0]} - ${_selectedRange[1]}');
+  }
+
   @override
   Widget build(BuildContext context) {
+    final filterWidget = [const FunctionWidget2(), const AreaWidget2(), PriceWidget(onConfirmed: _handleConfirmedFilter), const MoreWidget(), Container()];
     return Scaffold(
       backgroundColor: const Color(0xFFF2F2F2),
       appBar: AppBar(
@@ -202,13 +220,13 @@ class _NewRentalPageState extends State<NewRentalPage> {
                             }
                             else {
                               setState(() {
-                              if (_selectedTab == index) {
-                                _filterExpand = !_filterExpand;
-                              } else {
-                                _filterExpand = true;
-                                _selectedTab = index;
-                              }
-                            });
+                                if (_selectedTab == index) {
+                                  _filterExpand = !_filterExpand;
+                                } else {
+                                  _filterExpand = true;
+                                  _selectedTab = index;
+                                }
+                              });
                             }
                           },
                           child: Row(

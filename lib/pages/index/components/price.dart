@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PriceWidget extends StatefulWidget {
-  const PriceWidget({super.key});
+  final ValueChanged<Map<String, String>> onConfirmed;
+
+  const PriceWidget({super.key, required this.onConfirmed});
 
   @override
   State<PriceWidget> createState() => _PriceWidgetState();
@@ -240,6 +242,11 @@ class _PriceWidgetState extends State<PriceWidget> {
                   flex: 2,
                   child: GestureDetector(
                     onTap: () {
+                      Map<String, String> priceRange= {
+                        'min_rent': '${_currentRangeValues.start.round()}',
+                        'max_rent': '${_currentRangeValues.end.round()}',
+                      };
+                      widget.onConfirmed(priceRange);
                     },
                     child: Container(
                       height: 50,
